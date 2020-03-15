@@ -33,4 +33,20 @@ DEFAULT_PAGINATION = 8
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
-OUTPUT_PATH = './output'
+
+# set output folder
+OUTPUT_PATH = '../output'
+
+# set theme folder
+THEME = 'theme'
+
+# set plugin folder
+PLUGIN_PATHS = ['plugins/', ]
+
+# set plugins
+PLUGINS = ['i18n_subsites', ]
+
+# add jinja envir. for i18n_subsite
+JINJA_ENVIRONMENT = {
+    'extensions': ['jinja2.ext.i18n'],
+}
