@@ -58,3 +58,12 @@ BOOTSTRAP_THEME = 'flatly'
 # setting Pygments code highlighter
 # from source/theme/css/pygments
 PYGMENTS_STYLE = 'monokai'
+
+# set path for articles/blog posts     
+ARTICLE_PATHS = ['articles']
+
+# set static media files path
+STATIC_PATHS = ['img', 'pdf']
+
+# set pages folder link
+PAGE_PATHS = ['pages']
