@@ -67,3 +67,8 @@ STATIC_PATHS = ['img', 'pdf']
 
 # set pages folder link
 PAGE_PATHS = ['pages']
+
+# set custom url
+# add date
+ARTICLE_URL = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
