@@ -36,11 +36,20 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a href="/" class="navbar-brand">
 Code Snippets            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/blogging.html">Blogging</a>
+                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -59,6 +68,18 @@ Code Snippets            </a>
     <section id="categories">
       <h1>All Categories for Code Snippets</h1>
         <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-blogging">blogging <span class="badge pull-right">1</span></a>
+                    </h4>
+                </div>
+                <div id="collapse-blogging" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p><span class="categories-timestamp"><time datetime="2019-03-16T10:00:00+01:00">sob 16 marca 2019</time></span> <a href="/my-first-blog-post.html">My First Blog Post</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>
@@ -110,7 +131,7 @@ Code Snippets            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy;  kostyrko
+         <div class="col-xs-10">&copy; 2019 kostyrko
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

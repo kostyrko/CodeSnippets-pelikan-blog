@@ -36,11 +36,20 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a href="/" class="navbar-brand">
 Code Snippets            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/blogging.html">Blogging</a>
+                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -56,6 +65,13 @@ Code Snippets            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
+            <article>
+                <h2><a href="/my-first-blog-post.html">My First Blog Post</a></h2>
+                <div class="summary"><p>Blog post content goes here</p>
+                    <a class="btn btn-default btn-xs" href="/my-first-blog-post.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -105,7 +121,7 @@ Code Snippets            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy;  kostyrko
+         <div class="col-xs-10">&copy; 2019 kostyrko
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
