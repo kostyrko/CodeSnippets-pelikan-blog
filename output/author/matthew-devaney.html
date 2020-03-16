@@ -66,6 +66,24 @@ Code Snippets            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="/markdown-examples-part-3.html">Markdown Examples Part 3</a></h2>
+                <div class="summary"><p>Code blocks are preceded by an indent, three : symbols and the name of the language.<br>
+All of the following code will be highlighted while the text is indented.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">wrapper_do_twice</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">wrapper_do_twice</span>
+
+<span class="nd">@do_twice</span>
+<span class="k">def</span> <span class="nf">say_whee</span><span class="p">(</span><span class="n">some_text</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">some_text</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Whee …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="/markdown-examples-part-3.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="/markdown-examples-part-2.html">Markdown Examples Part 2</a></h2>
                 <div class="summary"><p>Images can be displayed in Markdown.<br>
 Text within the square brackets is the image name. The path to the image goes between the round brackets.<br>
