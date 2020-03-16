@@ -50,3 +50,11 @@ PLUGINS = ['i18n_subsites', ]
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
 }
+
+# setting bootstrap theme
+# from source/theme/css
+BOOTSTRAP_THEME = 'flatly'
+
+# setting Pygments code highlighter
+# from source/theme/css/pygments
+PYGMENTS_STYLE = 'monokai'
