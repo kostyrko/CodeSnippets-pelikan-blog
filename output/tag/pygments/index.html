@@ -44,7 +44,7 @@
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="http://localhost:8000"/>
 
-  <title>Notatki z frontu &ndash; Tagi</title>
+  <title>Notatki z frontu &ndash; Tag pygments</title>
 
 </head>
 <body>
@@ -60,7 +60,10 @@
 
             <li><a target="_blank" href="http://localhost:8000/pages/about-me/#about-me">About Me</a></li>
 
-            <li><a target="_blank" href="http://getpelican.com/" >Pelian</a></li>
+            <li><a target="_blank" href="http://getpelican.com/" >Pelican</a></li>
+            <li><a target="_blank" href="http://python.org/" >Python.org</a></li>
+            <li><a target="_blank" href="http://jinja.pocoo.org/" >Jinja2</a></li>
+            <li><a target="_blank" href="#" >You</a></li>
         </ul>
       </nav>
 
@@ -89,17 +92,41 @@
 
     </nav>
 
-<article class="single">
+
+
+<article>
   <header>
-    <h1 id="tags">Tagi</h1>
+    <h2><a href="http://localhost:8000/articles/2020/03/23/my-third-blog-post/#my-third-blog-post">My Third Blog Post</a></h2>
+    <p>
+      Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blogging">blogging</a>
+
+          &#8226; Tagi: 
+              <a href="http://localhost:8000/tag/markdown">markdown</a>,              <a href="http://localhost:8000/tag/pygments">pygments</a>
+    </p>
   </header>
   <div>
-    <ul class="list">          <li><a href="http://localhost:8000/tag/markdown">markdown</a> (2)</li>
-          <li><a href="http://localhost:8000/tag/pelican">pelican</a> (2)</li>
-          <li><a href="http://localhost:8000/tag/python">python</a> (2)</li>
-    </ul>
+      <p>Code blocks are preceeded by an indent, three : symbols and the name of the language.<br>
+All of the following code will be highlighted while the text is indented.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">wrapper_do_twice</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">wrapper_do_twice</span>
+
+<span class="nd">@do_twice</span>
+<span class="k">def</span> <span class="nf">say_whee</span><span class="p">(</span><span class="n">some_text</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">some_text</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Whee …</span></code></pre></div>
+        <br>
+        <a class="btn" href="http://localhost:8000/articles/2020/03/23/my-third-blog-post/#my-third-blog-post">Czytaj dalej</a>
   </div>
 </article>
+
+  <div class="pagination">
+  </div>
+
+
+
 
     <footer>
 <p>

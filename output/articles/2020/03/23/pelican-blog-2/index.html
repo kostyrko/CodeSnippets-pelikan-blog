@@ -35,16 +35,27 @@
     <!-- Microsoft EDGE -->
     <meta name="msapplication-TileColor" content="#383838">
 
-    <meta name="author" content="mkostyrko" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="Notatki z frontu"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="Notatki z frontu"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="pl_PL"/>
-<meta property="og:url" content="http://localhost:8000"/>
+<meta name="author" content="mkostyrko" />
+<meta name="description" content="Basic markdown examples are shown below after matthewdevaney.com This text is bold This text is also bold This text is italic This text is also italic This text is italic and bold An h1 heading An h2 heading An h3 heading... An h6 heading A list with numbers: 1 …" />
+<meta name="keywords" content="python, markdown, pelican">
 
-  <title>Notatki z frontu</title>
+
+<meta property="og:site_name" content="Notatki z frontu"/>
+<meta property="og:title" content="Pelican Blog 2"/>
+<meta property="og:description" content="Basic markdown examples are shown below after matthewdevaney.com This text is bold This text is also bold This text is italic This text is also italic This text is italic and bold An h1 heading An h2 heading An h3 heading... An h6 heading A list with numbers: 1 …"/>
+<meta property="og:locale" content="pl_PL"/>
+<meta property="og:url" content="http://localhost:8000/articles/2020/03/23/pelican-blog-2/"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-03-23 09:05:00+01:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://localhost:8000/author/mkostyrko.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="markdown"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="og:image" content="">
+
+  <title>Notatki z frontu &ndash; Pelican Blog 2</title>
 
 </head>
 <body>
@@ -89,20 +100,19 @@
 
     </nav>
 
-
-
-<article>
+<article class="single">
   <header>
-    <h2><a href="http://localhost:8000/articles/2020/03/23/pelican-blog-2/#pelican-blog-2">Pelican Blog 2</a></h2>
+      
+    <h1 id="pelican-blog-2">Pelican Blog 2</h1>
     <p>
       Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blog">blog</a>
 
-          &#8226; Tagi: 
-              <a href="http://localhost:8000/tag/python">python</a>,              <a href="http://localhost:8000/tag/markdown">markdown</a>,              <a href="http://localhost:8000/tag/pelican">pelican</a>
     </p>
   </header>
+
+
   <div>
-      <p>Basic markdown examples are shown below
+    <p>Basic markdown examples are shown below
 after <a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/">matthewdevaney.com</a></p>
 <p>This text is <strong>bold</strong>
 This text is also <strong>bold</strong></p>
@@ -114,32 +124,70 @@ This text is also <em>italic</em></p>
 <h3>An h3 heading...</h3>
 <h6>An h6 heading</h6>
 <p>A list with numbers:
-1 …</p>
-        <br>
-        <a class="btn" href="http://localhost:8000/articles/2020/03/23/pelican-blog-2/#pelican-blog-2">Czytaj dalej</a>
+1. One
+2. Two
+3. Three</p>
+<p>A list with bullets:
+* Bullet
+* Bullet
+* Bullet</p>
+<p>Here's a blockquote:</p>
+<p>&gt; Simple is better than complex</p>
+<p>Here's a table:</p>
+<table>
+<thead>
+<tr>
+<th>Column1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value 1</td>
+<td>Value 2</td>
+<td>Value 3</td>
+</tr>
+<tr>
+<td>Value 4</td>
+<td>Value 5</td>
+<td>Value 6</td>
+</tr>
+<tr>
+<td>Value 7</td>
+<td>Value 8</td>
+<td>Value 9</td>
+</tr>
+</tbody>
+</table>
+<p>Code blocks are preceeded by an indent, three : symbols and the name of the language.<br>
+All of the following code will be highlighted while the text is indented.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">wrapper_do_twice</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">wrapper_do_twice</span>
+
+<span class="nd">@do_twice</span>
+<span class="k">def</span> <span class="nf">say_whee</span><span class="p">(</span><span class="n">some_text</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">some_text</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Whee!&#39;</span>
+<span class="n">say_whee</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://localhost:8000/articles/2020/03/23/pelican-blog/#pelican-blog">Pelican blog</a></h2>
+  <div class="tag-cloud">
     <p>
-      Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blog">blog</a>
-
-          &#8226; Tagi: 
-              <a href="http://localhost:8000/tag/python">python</a>,              <a href="http://localhost:8000/tag/markdown">markdown</a>,              <a href="http://localhost:8000/tag/pelican">pelican</a>
+      <a href="http://localhost:8000/tag/python">python</a>
+      <a href="http://localhost:8000/tag/markdown">markdown</a>
+      <a href="http://localhost:8000/tag/pelican">pelican</a>
     </p>
-  </header>
-  <div>
-      <p><a href="https://docs.getpelican.com/en/stable/settings.html">Settings for Pelican blog</a></p>
   </div>
+
+
+
+
+
 </article>
-
-  <div class="pagination">
-  </div>
-
-
-
 
     <footer>
 <p>
