@@ -28,10 +28,10 @@ AUTHOR_FEED_RSS = None
 # LINKS = (('Przykładowy link', 'http://getpelican.com/'),)
 
 
-# Social widget
+# Social widget <- important begain with small letter
 SOCIAL = (
-    ('Twitter', 'https://twitter.com/m_kostyrko'),
-    ('Github', 'https://github.com/kostyrko'),
+    ('twitter', 'https://twitter.com/m_kostyrko'),
+    ('github', 'https://github.com/kostyrko'),
 )
 
 DEFAULT_PAGINATION = 10
