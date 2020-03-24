@@ -2,3 +2,9 @@
 aside {
   background-color: #44151a;
 }
+
+@media (min-width: 768px) {
+  aside {
+    width: 18vw;
+  }
+}
