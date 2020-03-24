@@ -115,11 +115,11 @@ ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
-CATEGORY_URL = 'category/{slug}'
-CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+# CATEGORY_URL = 'category/{slug}'
+# CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 
-TAG_URL = 'tag/{slug}'
-TAG_SAVE_AS = 'tag/{slug}/index.html'
+# TAG_URL = 'tag/{slug}'
+# TAG_SAVE_AS = 'tag/{slug}/index.html'
 
-# set siqus name
-DISQUS_SITENAME = 'zFrontu'
+# set disqus name // link to disqus.com
+DISQUS_SITENAME = 'zfrontu'
