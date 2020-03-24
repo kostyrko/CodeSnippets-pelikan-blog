@@ -90,7 +90,7 @@ I18N_TEMPLATES_LANG = 'en'
 CUSTOM_CSS = 'theme/custom_css/custom.css'
 
 # set to False to disable using the hard-coded combined CSS file
-# COMBINED_CSS = True
+COMBINED_CSS = True
 
 # setting Pygments code highlighter
 # from source/theme/static/css/pygments
@@ -108,18 +108,17 @@ CC_LICENSE = {
 }
 
 # defining url structure
-
 ARTICLE_URL = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 PAGE_URL = 'pages/{slug}/'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
-# CATEGORY_URL = 'category/{slug}'
-# CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+CATEGORY_URL = 'category/{slug}'
+CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 
-# TAG_URL = 'tag/{slug}'
-# TAG_SAVE_AS = 'tag/{slug}/index.html'
+TAG_URL = 'tag/{slug}'
+TAG_SAVE_AS = 'tag/{slug}/index.html'
 
 # set disqus name // link to disqus.com
 DISQUS_SITENAME = 'zfrontu'
