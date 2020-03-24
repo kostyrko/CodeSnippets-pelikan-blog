@@ -8,14 +8,14 @@ SITENAME = 'Notatki z frontu'
 SITEURL = 'http://localhost:8000'
 SITETITLE = "Notatki z frontu"
 SITESUBTITLE = "JS/CSS/PY"
-FAVICON = SITEURL + 'theme/img/favicon.ico'
-BROWSER_COLOR = "#383838"
+FAVICON = SITEURL + '/theme/img/favicon.ico'
+# BROWSER_COLOR = "#44151a"
+
 
 PATH = 'content'
 
 TIMEZONE = 'Europe/Warsaw'
 DEFAULT_LANG = 'pl'
-
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -25,7 +25,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelian', 'http://getpelican.com/'),)
+LINKS = (('Przykładowy link', 'http://getpelican.com/'),)
 
 
 # Social widget
@@ -74,7 +74,7 @@ JINJA_ENVIRONMENT = {
 
 
 # set path for articles/blog posts     
-# ARTICLE_PATHS = ['articles']
+ARTICLE_PATHS = ['articles']
 
 # set path for translation
 DEFAULT_LANG = 'pl'
@@ -85,7 +85,7 @@ I18N_TEMPLATES_LANG = 'en'
 
 
 # set custom css path
-# CUSTOM_CSS = 'static/custom.css'
+CUSTOM_CSS = 'theme/css/custom.css'
 
 # set to False to disable using the hard-coded combined CSS file
 # COMBINED_CSS = True
