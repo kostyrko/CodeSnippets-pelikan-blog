@@ -1,9 +1,10 @@
-Title: Pelican Blog 2
+Title: Markdown
 Author: mkostyrko
 Date: 2020-03-23 9:05
 Category: blog
 Tags: python, markdown, pelican
-Slug: pelican-blog-2
+Slug: markdown
+related_posts: pelican-blog
 
 Basic markdown examples are shown below
 after [matthewdevaney.com](https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/)

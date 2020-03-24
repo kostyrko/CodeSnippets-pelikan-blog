@@ -65,7 +65,7 @@ THEME = "theme/Flex"
 PLUGIN_PATHS = ['plugins/', ]
 
 #set plugins
-PLUGINS = ['i18n_subsites', 'post_stats']
+PLUGINS = ['i18n_subsites', 'post_stats', 'related_posts']
 
 #set jinja
 JINJA_ENVIRONMENT = {

@@ -33,17 +33,17 @@
 
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="http://localhost:8000 Przydatne linki: Ustawienia dla Pelican blog - pelicanconf.py Dokumentacja Pelican blog Źródło: mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp; Theme Build A Blog With Pelican And Python - Pt. 2 Creating Content How to Create Your First Static Site with Pelican and Jinja2 Inne generatory …" />
+<meta name="description" content="Basic markdown examples are shown below after matthewdevaney.com This text is bold This text is also bold This text is italic This text is also italic This text is italic and bold An h1 heading An h2 heading An h3 heading... An h6 heading A list with numbers: 1 …" />
 <meta name="keywords" content="python, markdown, pelican">
 
 
 <meta property="og:site_name" content="Notatki z frontu"/>
-<meta property="og:title" content="Pelican blog - wprowadzenie"/>
-<meta property="og:description" content="http://localhost:8000 Przydatne linki: Ustawienia dla Pelican blog - pelicanconf.py Dokumentacja Pelican blog Źródło: mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp; Theme Build A Blog With Pelican And Python - Pt. 2 Creating Content How to Create Your First Static Site with Pelican and Jinja2 Inne generatory …"/>
+<meta property="og:title" content="Markdown"/>
+<meta property="og:description" content="Basic markdown examples are shown below after matthewdevaney.com This text is bold This text is also bold This text is italic This text is also italic This text is italic and bold An h1 heading An h2 heading An h3 heading... An h6 heading A list with numbers: 1 …"/>
 <meta property="og:locale" content="pl_PL"/>
-<meta property="og:url" content="http://localhost:8000/articles/2020/03/23/pelican-blog/"/>
+<meta property="og:url" content="http://localhost:8000/articles/2020/03/23/markdown/"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2020-03-23 09:00:00+01:00"/>
+<meta property="article:published_time" content="2020-03-23 09:05:00+01:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="http://localhost:8000/author/mkostyrko.html">
 <meta property="article:section" content="blog"/>
@@ -52,7 +52,7 @@
 <meta property="article:tag" content="pelican"/>
 <meta property="og:image" content="">
 
-  <title>Notatki z frontu &ndash; Pelican blog - wprowadzenie</title>
+  <title>Notatki z frontu &ndash; Markdown</title>
 
 </head>
 <body>
@@ -99,7 +99,7 @@
 <article class="single">
   <header>
       
-    <h1 id="pelican-blog">Pelican blog - wprowadzenie</h1>
+    <h1 id="markdown">Markdown</h1>
     <p>
       Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blog">blog</a>
 
@@ -109,18 +109,68 @@
 
 
   <div>
-    <p><a href="http://localhost:8000">http://localhost:8000</a></p>
-<p>Przydatne linki: </p>
-<p><a href="https://docs.getpelican.com/en/stable/settings.html">Ustawienia dla Pelican blog - pelicanconf.py</a></p>
-<p><a href="http://docs.getpelican.com/en/latest/">Dokumentacja Pelican blog</a></p>
-<p>Źródło:</p>
-<p><a href="https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/">mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp; Theme</a></p>
-<p><a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/">Build A Blog With Pelican And Python - Pt. 2 Creating Content</a></p>
-<p><a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html">How to Create Your First Static Site with Pelican and Jinja2</a></p>
-<p>Inne generatory stron statycznych korzystające z Pythona:</p>
-<p><a href="https://www.getlektor.com/">Lektor</a> - posiada wbudowany CMS (Content Management System)</p>
-<p>Skórki warte uwagi:
-<a href="https://github.com/PurePelicanTheme/pure">Pure</a></p>
+    <p>Basic markdown examples are shown below
+after <a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/">matthewdevaney.com</a></p>
+<p>This text is <strong>bold</strong>
+This text is also <strong>bold</strong></p>
+<p>This text is <em>italic</em>
+This text is also <em>italic</em></p>
+<p>This text is <strong><em>italic and bold</em></strong></p>
+<h1>An h1 heading</h1>
+<h2>An h2 heading</h2>
+<h3>An h3 heading...</h3>
+<h6>An h6 heading</h6>
+<p>A list with numbers:
+1. One
+2. Two
+3. Three</p>
+<p>A list with bullets:
+* Bullet
+* Bullet
+* Bullet</p>
+<p>Here's a blockquote:</p>
+<p>&gt; Simple is better than complex</p>
+<p>Here's a table:</p>
+<table>
+<thead>
+<tr>
+<th>Column1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value 1</td>
+<td>Value 2</td>
+<td>Value 3</td>
+</tr>
+<tr>
+<td>Value 4</td>
+<td>Value 5</td>
+<td>Value 6</td>
+</tr>
+<tr>
+<td>Value 7</td>
+<td>Value 8</td>
+<td>Value 9</td>
+</tr>
+</tbody>
+</table>
+<p>Code blocks are preceeded by an indent, three : symbols and the name of the language.<br>
+All of the following code will be highlighted while the text is indented.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">wrapper_do_twice</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="k">return</span> <span class="n">wrapper_do_twice</span>
+
+<span class="nd">@do_twice</span>
+<span class="k">def</span> <span class="nf">say_whee</span><span class="p">(</span><span class="n">some_text</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">some_text</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Whee!&#39;</span>
+<span class="n">say_whee</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
   </div>
   <div class="tag-cloud">
     <p>
@@ -135,7 +185,7 @@
   <div class="related-posts">
     <h4>Zobacz także</h4>
     <ul class="related-posts">
-      <li><a href="http://localhost:8000/articles/2020/03/23/markdown/">Markdown</a></li>
+      <li><a href="http://localhost:8000/articles/2020/03/23/pelican-blog/">Pelican blog - wprowadzenie</a></li>
     </ul>
   </div>
 
