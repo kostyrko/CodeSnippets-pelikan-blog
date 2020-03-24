@@ -13,27 +13,19 @@
     <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/stylesheet/style.min.css">
 
 
-  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/monokai.min.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/pygments/github.min.css">
   <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/fontawesome.css">
   <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/brands.css">
   <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/font-awesome/css/solid.css">
 
+    <link href="http://localhost:8000/theme/custom_css/custom.css" rel="stylesheet">
 
 
 
-    <link rel="shortcut icon" href="http://localhost:8000theme/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="http://localhost:8000theme/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost:8000/theme/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://localhost:8000/theme/img/favicon.ico" type="image/x-icon">
 
 
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#383838">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#383838">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Microsoft EDGE -->
-    <meta name="msapplication-TileColor" content="#383838">
 
     <meta name="author" content="mkostyrko" />
     <meta name="description" content="" />
@@ -58,12 +50,9 @@
 <p>JS/CSS/PY</p>      <nav>
         <ul class="list">
 
-            <li><a target="_blank" href="http://localhost:8000/pages/about-me.html#about-me">About Me</a></li>
+            <li><a target="_blank" href="http://localhost:8000/pages/about-me/#about-me">About Me</a></li>
 
-            <li><a target="_blank" href="http://getpelican.com/" >Pelican</a></li>
-            <li><a target="_blank" href="http://python.org/" >Python.org</a></li>
-            <li><a target="_blank" href="http://jinja.pocoo.org/" >Jinja2</a></li>
-            <li><a target="_blank" href="#" >You</a></li>
+            <li><a target="_blank" href="http://getpelican.com/" >Przykładowy link</a></li>
         </ul>
       </nav>
 
@@ -96,44 +85,18 @@
 
 <article>
   <header>
-    <h2><a href="http://localhost:8000/my-third-blog-post.html#my-third-blog-post">My Third Blog Post</a></h2>
+    <h2><a href="http://localhost:8000/articles/2020/03/23/pelican-blog-2/#pelican-blog-2">Pelican Blog 2</a></h2>
     <p>
-      Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blogging.html">blogging</a>
-
-          &#8226; Tagi: 
-              <a href="http://localhost:8000/tag/markdown.html">markdown</a>,              <a href="http://localhost:8000/tag/pygments.html">pygments</a>
-    </p>
-  </header>
-  <div>
-      <p>Code blocks are preceeded by an indent, three : symbols and the name of the language.<br>
-All of the following code will be highlighted while the text is indented.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">do_twice</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<span class="k">def</span> <span class="nf">wrapper_do_twice</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="k">return</span> <span class="n">wrapper_do_twice</span>
-
-<span class="nd">@do_twice</span>
-<span class="k">def</span> <span class="nf">say_whee</span><span class="p">(</span><span class="n">some_text</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">some_text</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Whee …</span></code></pre></div>
-        <br>
-        <a class="btn" href="http://localhost:8000/my-third-blog-post.html#my-third-blog-post">Czytaj dalej</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="http://localhost:8000/my-second-blog-post.html#my-second-blog-post">My Second Blog Post</a></h2>
-    <p>
-      Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blogging.html">blogging</a>
+      Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blog.html">blog</a>
 
           &#8226; Tagi: 
               <a href="http://localhost:8000/tag/python.html">python</a>,              <a href="http://localhost:8000/tag/markdown.html">markdown</a>,              <a href="http://localhost:8000/tag/pelican.html">pelican</a>
+        &#8226; 1 min read
     </p>
   </header>
   <div>
-      <p>Basic markdown examples are shown below</p>
+      <p>Basic markdown examples are shown below
+after <a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/">matthewdevaney.com</a></p>
 <p>This text is <strong>bold</strong>
 This text is also <strong>bold</strong></p>
 <p>This text is <em>italic</em>
@@ -144,25 +107,35 @@ This text is also <em>italic</em></p>
 <h3>An h3 heading...</h3>
 <h6>An h6 heading</h6>
 <p>A list with numbers:
-1. One
-2. Two …</p>
+1 …</p>
         <br>
-        <a class="btn" href="http://localhost:8000/my-second-blog-post.html#my-second-blog-post">Czytaj dalej</a>
+        <a class="btn" href="http://localhost:8000/articles/2020/03/23/pelican-blog-2/#pelican-blog-2">Czytaj dalej</a>
   </div>
   <hr />
 </article>
 <article>
   <header>
-    <h2><a href="http://localhost:8000/my-first-blog-post.html#my-first-blog-post">My First Blog Post</a></h2>
+    <h2><a href="http://localhost:8000/articles/2020/03/23/pelican-blog/#pelican-blog">Pelican blog - wprowadzenie</a></h2>
     <p>
-      Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blogging.html">blogging</a>
+      Opublikowano pon 23 marca 2020 w <a href="http://localhost:8000/category/blog.html">blog</a>
 
           &#8226; Tagi: 
               <a href="http://localhost:8000/tag/python.html">python</a>,              <a href="http://localhost:8000/tag/markdown.html">markdown</a>,              <a href="http://localhost:8000/tag/pelican.html">pelican</a>
+        &#8226; 1 min read
     </p>
   </header>
   <div>
-      <p>Blog post content goes here.</p>
+      <p><a href="http://localhost:8000">http://localhost:8000</a></p>
+<p>Przydatne linki: </p>
+<p><a href="https://docs.getpelican.com/en/stable/settings.html">Ustawienia dla Pelican blog - pelicanconf.py</a></p>
+<p><a href="http://docs.getpelican.com/en/latest/">Dokumentacja Pelican blog</a></p>
+<p>Źródło:</p>
+<p><a href="https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/">mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp; Theme</a></p>
+<p><a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/">Build A Blog With Pelican And Python - Pt. 2 Creating Content</a></p>
+<p><a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html">How to Create Your First Static Site with Pelican and Jinja2</a></p>
+<p>Inne generatory …</p>
+        <br>
+        <a class="btn" href="http://localhost:8000/articles/2020/03/23/pelican-blog/#pelican-blog">Czytaj dalej</a>
   </div>
 </article>
 

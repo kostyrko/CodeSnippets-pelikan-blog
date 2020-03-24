@@ -25,7 +25,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Przykładowy link', 'http://getpelican.com/'),)
+# LINKS = (('Przykładowy link', 'http://getpelican.com/'),)
 
 
 # Social widget
