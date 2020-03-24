@@ -84,6 +84,7 @@ LOCALE = 'pl_PL.UTF-8'
 I18N_TEMPLATES_LANG = 'en'
 
 
+
 # set custom css path
 CUSTOM_CSS = 'theme/css/custom.css'
 
@@ -92,7 +93,7 @@ CUSTOM_CSS = 'theme/css/custom.css'
 
 # setting Pygments code highlighter
 # from source/theme/static/css/pygments
-PYGMENTS_STYLE = 'monokai'
+PYGMENTS_STYLE = 'github'
 
 # few ideas taken from https://github.com/pzelnip/www.codependentcodr.com/blob/master/pelicanconf.py
 # set copyright year
@@ -118,3 +119,6 @@ CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 
 TAG_URL = 'tag/{slug}'
 TAG_SAVE_AS = 'tag/{slug}/index.html'
+
+# set siqus name
+DISQUS_SITENAME = 'zFrontu'
