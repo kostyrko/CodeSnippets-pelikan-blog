@@ -53,7 +53,7 @@ OUTPUT_PATH = '../output'
 ARTICLE_PATHS = ['articles']
 
 # where to look for the static media files
-STATIC_PATHS = ['img', 'pdf']
+STATIC_PATHS = ['img', 'pdf', 'custom_css']
 
 # It is not necessary to state the path but it is a good practice to do so
 PAGE_PATHS = ['pages']
@@ -85,8 +85,9 @@ I18N_TEMPLATES_LANG = 'en'
 
 
 
-# set custom css path
-CUSTOM_CSS = 'theme/css/custom.css'
+# set custom css path 
+# in source/theme/Flex/static/custom_css/custom.css
+CUSTOM_CSS = 'theme/custom_css/custom.css'
 
 # set to False to disable using the hard-coded combined CSS file
 # COMBINED_CSS = True
