@@ -8,7 +8,7 @@ SITENAME = 'Notatki z frontu'
 SITEURL = 'http://localhost:8000'
 SITETITLE = "Notatki z frontu"
 SITESUBTITLE = "JS/CSS/PY"
-FAVICON = SITEURL + '/theme/img/favicon.ico'
+FAVICON = SITEURL + '/theme/img/favicon.png'
 # BROWSER_COLOR = "#44151a"
 
 
