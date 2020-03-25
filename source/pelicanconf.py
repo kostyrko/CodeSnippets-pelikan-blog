@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from datetime import datetime
 
 AUTHOR = 'mkostyrko'
-SITENAME = 'Notatki z frontu'
+SITENAME = '...z frontu'
 SITEURL = 'http://localhost:8000'
 SITETITLE = "Notatki z frontu"
 SITESUBTITLE = "JS/CSS/PY"
