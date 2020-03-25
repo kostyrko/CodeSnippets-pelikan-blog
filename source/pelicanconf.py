@@ -5,7 +5,7 @@ from datetime import datetime
 
 AUTHOR = 'mkostyrko'
 SITENAME = '...z frontu'
-SITEURL = 'http://localhost:8000'
+SITEURL = 'http://127.0.0.1:8000/'
 SITETITLE = "Notatki z frontu"
 SITESUBTITLE = "JS/CSS/PY"
 FAVICON = SITEURL + '/theme/img/favicon.png'
