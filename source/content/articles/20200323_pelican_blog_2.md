@@ -62,3 +62,6 @@ All of the following code will be highlighted while the text is indented.
 
     x = 'Whee!'
     say_whee(x)
+
+    :::markdown
+    ## H1
