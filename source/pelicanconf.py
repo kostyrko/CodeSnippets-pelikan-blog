@@ -122,3 +122,6 @@ TAG_SAVE_AS = 'tag/{slug}/index.html'
 
 # set disqus name // link to disqus.com
 DISQUS_SITENAME = 'zfrontu'
+
+# set google analytics
+# GOOGLE_ANALYTICS = "UA-########-#"
