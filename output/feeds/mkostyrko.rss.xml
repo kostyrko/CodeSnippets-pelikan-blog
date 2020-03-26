@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>...z frontu - mkostyrko</title><link>/</link><description>JS/CSS/PY</description><lastBuildDate>Fri, 27 Mar 2020 09:00:00 +0100</lastBuildDate><item><title>Flexbox - wprowadzenie</title><link>articles/2020/03/27/flexbox-wprowadzenie/</link><description>&lt;p&gt;Wprowadzenie do flexboxa &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">mkostyrko</dc:creator><pubDate>Fri, 27 Mar 2020 09:00:00 +0100</pubDate><guid isPermaLink="false">tag:None,2020-03-27:articles/2020/03/27/flexbox-wprowadzenie/</guid><category>css</category><category>css</category><category>flexbox</category><category>pozycjonowanie-css</category></item><item><title>Ubuntu - zamiana bobra na gronostaja</title><link>articles/2020/03/26/linux-aktualizacja/</link><description>&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
+&lt;h3&gt;Zawieszający się ekran ładowania Ubuntu 19.10 po aktualizacji&lt;/h3&gt;
+&lt;p&gt;Ekran ładowania (tzw. splash screen) się zawiesił, musiałem wyłączyć …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">mkostyrko</dc:creator><pubDate>Thu, 26 Mar 2020 21:00:00 +0100</pubDate><guid isPermaLink="false">tag:None,2020-03-26:articles/2020/03/26/linux-aktualizacja/</guid><category>ubuntu</category><category>linux</category><category>ubuntu</category><category>aktualizacja</category><category>ciemny motyw</category><category>ubuntu 19.10</category></item><item><title>Markdown</title><link>articles/2020/03/26/markdown/</link><description>&lt;p&gt;Szybkie wprowadzenie do języka &lt;strong&gt;Markdown&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Nagłówki/Headers&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;H1&lt;/span&gt;
+&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="n"&gt;H2&lt;/span&gt;
+&lt;span class="o"&gt;###&lt;/span&gt; &lt;span class="n"&gt;H3&lt;/span&gt;
+&lt;span class="o"&gt;####&lt;/span&gt; &lt;span class="n"&gt;H4&lt;/span&gt;
+&lt;span class="o"&gt;#####&lt;/span&gt; &lt;span class="n"&gt;H5&lt;/span&gt;
+&lt;span class="o"&gt;######&lt;/span&gt; &lt;span class="n"&gt;H6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Nagłówek1&lt;/h1&gt;
+&lt;h2&gt;Nagłówek2&lt;/h2&gt;
+&lt;h3&gt;Nagłówek3&lt;/h3&gt;
+&lt;h4&gt;Nagłówek4&lt;/h4&gt;
+&lt;h5&gt;Nagłówek5&lt;/h5&gt;
+&lt;h6&gt;Nagłówek6&lt;/h6&gt;
+&lt;h3&gt;Style liniowe/inlinowe&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;
+&lt;span class="o"&gt;~~&lt;/span&gt;&lt;span class="n"&gt;crossed&lt;/span&gt;&lt;span class="o"&gt;~~&lt;/span&gt;
+&lt;span class="c1"&gt;---strikethrough text---&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;italics&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;pogrubiony&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;~~przekreślony~~ (tu się nie sprawdza)&lt;/p&gt;
+&lt;p&gt;---przekreślony tekst--- (również się nie sprawdza :( )&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;italik&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Obrazy&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Nazwa&lt;/span&gt; &lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;ś&lt;/span&gt;&lt;span class="n"&gt;cieżka&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;można również:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;Format …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">mkostyrko</dc:creator><pubDate>Thu, 26 Mar 2020 19:05:00 +0100</pubDate><guid isPermaLink="false">tag:None,2020-03-26:articles/2020/03/26/markdown/</guid><category>blog</category><category>python</category><category>markdown</category><category>pelican</category></item><item><title>Pelican blog - wprowadzenie</title><link>articles/2020/03/23/pelican-blog/</link><description>&lt;p&gt;&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Przydatne linki: &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.getpelican.com/en/stable/settings.html"&gt;Ustawienia dla Pelican blog - pelicanconf.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/"&gt;Dokumentacja Pelican blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Źródło:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/"&gt;mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp;amp; Theme&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/"&gt;Build A Blog With Pelican And Python - Pt. 2 Creating Content&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html"&gt;How to Create Your First Static Site with Pelican and Jinja2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Inne generatory …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">mkostyrko</dc:creator><pubDate>Mon, 23 Mar 2020 09:00:00 +0100</pubDate><guid isPermaLink="false">tag:None,2020-03-23:articles/2020/03/23/pelican-blog/</guid><category>blog</category><category>python</category><category>markdown</category><category>pelican</category></item></channel></rss>

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>...z frontu - mkostyrko</title><link href="/" rel="alternate"></link><link href="feeds/mkostyrko.atom.xml" rel="self"></link><id>/</id><updated>2020-03-27T09:00:00+01:00</updated><subtitle>JS/CSS/PY</subtitle><entry><title>Flexbox - wprowadzenie</title><link href="articles/2020/03/27/flexbox-wprowadzenie/" rel="alternate"></link><published>2020-03-27T09:00:00+01:00</published><updated>2020-03-27T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/flexbox-wprowadzenie/</id><content type="html">&lt;p&gt;Wprowadzenie do flexboxa &lt;/p&gt;</content><category term="css"></category><category term="css"></category><category term="flexbox"></category><category term="pozycjonowanie-css"></category></entry><entry><title>Ubuntu - zamiana bobra na gronostaja</title><link href="articles/2020/03/26/linux-aktualizacja/" rel="alternate"></link><published>2020-03-26T21:00:00+01:00</published><updated>2020-03-26T21:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/linux-aktualizacja/</id><summary type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
+&lt;h3&gt;Zawieszający się ekran ładowania Ubuntu 19.10 po aktualizacji&lt;/h3&gt;
+&lt;p&gt;Ekran ładowania (tzw. splash screen) się zawiesił, musiałem wyłączyć …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
+&lt;h3&gt;Zawieszający się ekran ładowania Ubuntu 19.10 po aktualizacji&lt;/h3&gt;
+&lt;p&gt;Ekran ładowania (tzw. splash screen) się zawiesił, musiałem wyłączyć komputer ręcznie a następnie w momencie pojawienia się Gruba wybrałęm literę 'e' - pozwalającą na edycję ustawień opcji włączania systemu. Za pierwszym razem system od razu się uruchomił bez mojej konieczności zmiany ustawień. W trakcie kolejnego włączani powtórzył się ten sam problem. Tym razem postąpiłem zgodnie z opisanymi &lt;a href="https://nezhar.com/blog/fix-ubuntu-19.10-stuck-on-splash-screen/"&gt;w tym miejscu krokami&lt;/a&gt; - opcję&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;quiet&lt;/span&gt; &lt;span class="n"&gt;splash_&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;zmieniłem na&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;nonsplash&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;system uruchomił się bez większych problemów.&lt;/p&gt;
+&lt;p&gt;Po uruchomieniu się systemu nie przechodziłem kolejnych opisanych kroków tylko zaktualizowałem gruba&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;grub&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Ubuntu 19.10 zmiana motywu na ciemny&lt;/h3&gt;
+&lt;p&gt;Bóbr przyzwyczaił mnie do miłego dla oka ciemnego motywu oprogramowania. Fioletowy terminal z zielonymi i jasnymi literami również przypadł mi do gustu (na szczęście zmiana z podstawowego jasnego na ciemny motyw jest prosta) niestety Gronostaj już ciemnego motywu aplikacji nie posiada w trybie podstawowym i trzeba go dodać.&lt;/p&gt;
+&lt;p&gt;W pierwszej kolejności należy zainstalować program Gnome Tweaks
+Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;gnome&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tweak&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tool&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;W zakładce &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Appearance -&amp;gt; Themes -&amp;gt; Aplications -&amp;gt; Adwait&lt;/strong&gt; - skórka podstawowa można zmienić np. na &lt;strong&gt;Yaru-dark&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;(z tej obecnie korzystam - zrobiło się nieco ciemniej niż za kadencji Bobra, ale pewnie szybko się przyzwyczaję)&lt;/p&gt;
+&lt;p&gt;Jednak aby powrócić do ciemnych ustawień aplikacji należy zmienić opcję Shell, ta jednak jest nieaktywna&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shell -&amp;gt; ! - nieaktywny&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Na szczęście rozwiązanie trudne nie jest i postępując zgodnie z opisanymi &lt;a href="https://www.linuxuprising.com/2019/10/how-to-get-dark-gnome-shell-menus-and.html"&gt;w tym miejscu&lt;/a&gt; krokami można dodać nową/starą skórkę - (motywem Gronostaja jest fioletowy i trzeba przyznać, że widoczność tego koloru na ciemnym tle jest słabsza od bobrowego pomarańczowego)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Instalujemy skórkę Yaru &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;meson&lt;/span&gt; &lt;span class="n"&gt;sassc&lt;/span&gt; &lt;span class="n"&gt;libglib2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libxml2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;utils&lt;/span&gt;
+
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ubuntu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yaru&lt;/span&gt;
+
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;yaru&lt;/span&gt;
+
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;c22b5178f321f62f8d914e27b4739eecb7e3b6b&lt;/span&gt;
+
+&lt;span class="n"&gt;meson&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;
+
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;
+
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;ninja&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(zwróć uwagę, że wybieramy konkretną wersję, która posiada czarną skórkę)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Instalujemy rozszerzenie GNOME Shell User themes&lt;/p&gt;
+&lt;p&gt;sudo apt install gnome-tweaks gnome-shell-extensions&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Restartujemy GNOME Shell  &lt;code&gt;ALT + F2&lt;/code&gt; następnie wpisujemy &lt;code&gt;r&lt;/code&gt; i wybieramy &lt;code&gt;ENTER&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;W (GNOME) Tweaks wybieramy zakładkę &lt;strong&gt;Extensions&lt;/strong&gt; i włączamy &lt;strong&gt;User themes&lt;/strong&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;wyłączamy i włączamy program&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Przechodzimy do zakładki &lt;strong&gt;Appearance&lt;/strong&gt; i możemy w &lt;strong&gt;Shell&lt;/strong&gt; wybrać &lt;strong&gt;Yaru-dark&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dodatkowe opcje w nowej wersji Ubuntu (które do tej pory zauważyłem)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;W momencie wybierania linka, który otwiera przeglądarkę pojawiła się nowa opcja &lt;strong&gt;configure trusted domains&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="ubuntu"></category><category term="linux"></category><category term="ubuntu"></category><category term="aktualizacja"></category><category term="ciemny motyw"></category><category term="ubuntu 19.10"></category></entry><entry><title>Markdown</title><link href="articles/2020/03/26/markdown/" rel="alternate"></link><published>2020-03-26T19:05:00+01:00</published><updated>2020-03-26T19:05:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/markdown/</id><summary type="html">&lt;p&gt;Szybkie wprowadzenie do języka &lt;strong&gt;Markdown&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Nagłówki/Headers&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;H1&lt;/span&gt;
+&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="n"&gt;H2&lt;/span&gt;
+&lt;span class="o"&gt;###&lt;/span&gt; &lt;span class="n"&gt;H3&lt;/span&gt;
+&lt;span class="o"&gt;####&lt;/span&gt; &lt;span class="n"&gt;H4&lt;/span&gt;
+&lt;span class="o"&gt;#####&lt;/span&gt; &lt;span class="n"&gt;H5&lt;/span&gt;
+&lt;span class="o"&gt;######&lt;/span&gt; &lt;span class="n"&gt;H6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Nagłówek1&lt;/h1&gt;
+&lt;h2&gt;Nagłówek2&lt;/h2&gt;
+&lt;h3&gt;Nagłówek3&lt;/h3&gt;
+&lt;h4&gt;Nagłówek4&lt;/h4&gt;
+&lt;h5&gt;Nagłówek5&lt;/h5&gt;
+&lt;h6&gt;Nagłówek6&lt;/h6&gt;
+&lt;h3&gt;Style liniowe/inlinowe&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;
+&lt;span class="o"&gt;~~&lt;/span&gt;&lt;span class="n"&gt;crossed&lt;/span&gt;&lt;span class="o"&gt;~~&lt;/span&gt;
+&lt;span class="c1"&gt;---strikethrough text---&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;italics&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;pogrubiony&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;~~przekreślony~~ (tu się nie sprawdza)&lt;/p&gt;
+&lt;p&gt;---przekreślony tekst--- (również się nie sprawdza :( )&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;italik&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Obrazy&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Nazwa&lt;/span&gt; &lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;ś&lt;/span&gt;&lt;span class="n"&gt;cieżka&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;można również:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;Format …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Szybkie wprowadzenie do języka &lt;strong&gt;Markdown&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Nagłówki/Headers&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;H1&lt;/span&gt;
+&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="n"&gt;H2&lt;/span&gt;
+&lt;span class="o"&gt;###&lt;/span&gt; &lt;span class="n"&gt;H3&lt;/span&gt;
+&lt;span class="o"&gt;####&lt;/span&gt; &lt;span class="n"&gt;H4&lt;/span&gt;
+&lt;span class="o"&gt;#####&lt;/span&gt; &lt;span class="n"&gt;H5&lt;/span&gt;
+&lt;span class="o"&gt;######&lt;/span&gt; &lt;span class="n"&gt;H6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Nagłówek1&lt;/h1&gt;
+&lt;h2&gt;Nagłówek2&lt;/h2&gt;
+&lt;h3&gt;Nagłówek3&lt;/h3&gt;
+&lt;h4&gt;Nagłówek4&lt;/h4&gt;
+&lt;h5&gt;Nagłówek5&lt;/h5&gt;
+&lt;h6&gt;Nagłówek6&lt;/h6&gt;
+&lt;h3&gt;Style liniowe/inlinowe&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;
+&lt;span class="o"&gt;~~&lt;/span&gt;&lt;span class="n"&gt;crossed&lt;/span&gt;&lt;span class="o"&gt;~~&lt;/span&gt;
+&lt;span class="c1"&gt;---strikethrough text---&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;italics&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;pogrubiony&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;~~przekreślony~~ (tu się nie sprawdza)&lt;/p&gt;
+&lt;p&gt;---przekreślony tekst--- (również się nie sprawdza :( )&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;italik&lt;/em&gt;&lt;/p&gt;
+&lt;h3&gt;Obrazy&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Nazwa&lt;/span&gt; &lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;ś&lt;/span&gt;&lt;span class="n"&gt;cieżka&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;można również:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;Format&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Linki&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;nazwa&lt;/span&gt; &lt;span class="n"&gt;obiektu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;strony&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;przykladowy&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Notatki&lt;/span&gt; &lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="n"&gt;frontu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;kostyrko&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;zfrontu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://kostyrko.github.io/zfrontu/"&gt;Notatki z frontu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;można również:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;kostyrko&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;zfrontu&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;https://kostyrko.github.io/zfrontu/
+(tu akurat nie działa za to np. w VSC się sprawdza)&lt;/p&gt;
+&lt;h3&gt;Kod&lt;/h3&gt;
+&lt;p&gt;Kod w lini tekstu&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="n"&gt;back&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;odwrotny apostrof&lt;/code&gt; - na lewo od 1 (tam gdzie lambda)&lt;/p&gt;
+&lt;p&gt;Kod blokowy&lt;/p&gt;
+&lt;p&gt;Potrójny zwrotny apostrof&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="o"&gt;```&lt;/span&gt;
+    &lt;span class="k"&gt;no&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Python syntax highlighting&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+    &lt;span class="o"&gt;```&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;no&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Python syntax highlighting&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ze wskazaniem języka :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    ```&lt;span class="nv"&gt;python&lt;/span&gt;
+    &lt;span class="nv"&gt;yes&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;Python syntax highlighting&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;print&lt;/span&gt; &lt;span class="nv"&gt;s&lt;/span&gt;
+    &lt;span class="nv"&gt;nice&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;html&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nv"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+    ```
+    ```&lt;span class="nv"&gt;javascript&lt;/span&gt;
+    &lt;span class="nv"&gt;var&lt;/span&gt; &lt;span class="nv"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;JavaScript syntax highlighting&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="c1"&gt;;&lt;/span&gt;
+    &lt;span class="nv"&gt;alert&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;s&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;&lt;span class="c1"&gt;;&lt;/span&gt;
+    ```
+    ```&lt;span class="nv"&gt;html&lt;/span&gt;
+    &lt;span class="nv"&gt;nice&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nv"&gt;html&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nv"&gt;bold&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+    ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Python syntax highlighting&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;s&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;JavaScript syntax highlighting&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nx"&gt;alert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;s&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nice for &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;bold&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;html&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;bold&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Blokowe cytaty&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Blokowe&lt;/span&gt; &lt;span class="n"&gt;cytowanie&lt;/span&gt; &lt;span class="n"&gt;wybranego&lt;/span&gt; &lt;span class="n"&gt;fragmentu&lt;/span&gt; &lt;span class="n"&gt;tekstu&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;Blokowe cytowanie wybranego fragmentu tekstu&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Tabela&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Kolumna&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Kolumna&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Kolumna&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="c1"&gt;---|---|---|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Wartość&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Kolumna 1&lt;/th&gt;
+&lt;th&gt;Kolumna 2&lt;/th&gt;
+&lt;th&gt;Kolumna 3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Wartość 1&lt;/td&gt;
+&lt;td&gt;Wartość 2&lt;/td&gt;
+&lt;td&gt;Wartość 3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wartość 4&lt;/td&gt;
+&lt;td&gt;Wartość 5&lt;/td&gt;
+&lt;td&gt;Wartość 6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wartość 7&lt;/td&gt;
+&lt;td&gt;Wartość 8&lt;/td&gt;
+&lt;td&gt;Wartość 9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Tworzenie list&lt;/h3&gt;
+&lt;p&gt;Uporządkowana lista&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+    &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;
+    &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Obiekt 1&lt;/li&gt;
+&lt;li&gt;Obiekt 2&lt;/li&gt;
+&lt;li&gt;Obiekt 3&lt;ol&gt;
+&lt;li&gt;Obiekt 3a&lt;/li&gt;
+&lt;li&gt;Obiekt 3b&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Nieuporządkowana:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Obiekt&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+    &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;obiekt&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;obiekt&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Obiekt 1&lt;/li&gt;
+&lt;li&gt;Obiekt 2&lt;/li&gt;
+&lt;li&gt;Obiekt 3&lt;ul&gt;
+&lt;li&gt;obiekt 3.1&lt;/li&gt;
+&lt;li&gt;obiekt 3.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Styl mieszany:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Obiekt1&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Obiekt2&lt;/span&gt;
+    &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;Obiekt3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ol&gt;
+&lt;li&gt;Obiekt1&lt;/li&gt;
+&lt;li&gt;Obiekt2&lt;ul&gt;
+&lt;li&gt;Obiekt3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Tworzenie linii&lt;/h3&gt;
+&lt;p&gt;Dwa z możliwych sposobów (potrójne znaki):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;___&lt;/span&gt;
+&lt;span class="c1"&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3&gt;Emotki&lt;/h3&gt;
+&lt;p&gt;:smile:&lt;/p&gt;
+&lt;p&gt;Strony warte odwiedzenia:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.markdownguide.org/getting-started/"&gt;www.markdownguide.org&lt;/a&gt; - nauka języka, wersja podstawowa jak i rozszerzona oraz Cheat Sheet&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://dillinger.io/"&gt;Dillinger&lt;/a&gt; - onlinowy edytor języka Markdown - w jednym oknie się wpisuje w kolejnym widać tego efekty&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.markdowntutorial.com/"&gt;www.markdowntutorial.com/&lt;/a&gt; - interaktywna nauka języka Markdown online&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://guides.github.com/features/mastering-markdown/"&gt;Markdown cheat sheet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md"&gt;Emoji cheat sheet&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="python"></category><category term="markdown"></category><category term="pelican"></category></entry><entry><title>Pelican blog - wprowadzenie</title><link href="articles/2020/03/23/pelican-blog/" rel="alternate"></link><published>2020-03-23T09:00:00+01:00</published><updated>2020-03-23T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-23:articles/2020/03/23/pelican-blog/</id><summary type="html">&lt;p&gt;&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Przydatne linki: &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.getpelican.com/en/stable/settings.html"&gt;Ustawienia dla Pelican blog - pelicanconf.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/"&gt;Dokumentacja Pelican blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Źródło:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/"&gt;mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp;amp; Theme&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/"&gt;Build A Blog With Pelican And Python - Pt. 2 Creating Content&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html"&gt;How to Create Your First Static Site with Pelican and Jinja2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Inne generatory …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Przydatne linki: &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.getpelican.com/en/stable/settings.html"&gt;Ustawienia dla Pelican blog - pelicanconf.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/"&gt;Dokumentacja Pelican blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Źródło:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/"&gt;mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp;amp; Theme&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/"&gt;Build A Blog With Pelican And Python - Pt. 2 Creating Content&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html"&gt;How to Create Your First Static Site with Pelican and Jinja2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Inne generatory stron statycznych korzystające z Pythona:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.getlektor.com/"&gt;Lektor&lt;/a&gt; - posiada wbudowany CMS (Content Management System)&lt;/p&gt;
+&lt;p&gt;Skórki warte uwagi:
+&lt;a href="https://github.com/PurePelicanTheme/pure"&gt;Pure&lt;/a&gt;&lt;/p&gt;</content><category term="blog"></category><category term="python"></category><category term="markdown"></category><category term="pelican"></category></entry></feed>
