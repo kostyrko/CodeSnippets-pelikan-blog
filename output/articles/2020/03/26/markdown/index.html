@@ -34,13 +34,13 @@
 
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Szybkie wprowadzenie do języka Markdown Nagłówki/Headers # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 Nagłówek1 Nagłówek2 Nagłówek3 Nagłówek4 Nagłówek5 Nagłówek6 Style liniowe/inlinowe **bold** ~~crossed~~ ---strikethrough text--- *italics* pogrubiony ~~przekreślony~~ (tu się nie sprawdza) ---przekreślony tekst--- (również się nie sprawdza :( ) italik Obrazy ![Nazwa obrazu](/ścieżka/obrazu.jpg) można również: Format …" />
+<meta name="description" content="Szybkie wprowadzenie do języka Markdown Nagłówki/Headers # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 Nagłówek1 Nagłówek2 Nagłówek3 Nagłówek4 Nagłówek5 Nagłówek6 Style liniowe/inlinowe **bold** ~~crossed~~ ---strikethrough text--- *italics* pogrubiony ~~przekreślony~~ (tu się nie sprawdza) ---wykreślony tekst--- (również się nie sprawdza :( ) italik Obrazy ![Nazwa obrazu](/sciezka/obrazu.jpg) można również: ![Alt Text …" />
 <meta name="keywords" content="python, markdown, pelican">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="Markdown"/>
-<meta property="og:description" content="Szybkie wprowadzenie do języka Markdown Nagłówki/Headers # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 Nagłówek1 Nagłówek2 Nagłówek3 Nagłówek4 Nagłówek5 Nagłówek6 Style liniowe/inlinowe **bold** ~~crossed~~ ---strikethrough text--- *italics* pogrubiony ~~przekreślony~~ (tu się nie sprawdza) ---przekreślony tekst--- (również się nie sprawdza :( ) italik Obrazy ![Nazwa obrazu](/ścieżka/obrazu.jpg) można również: Format …"/>
+<meta property="og:description" content="Szybkie wprowadzenie do języka Markdown Nagłówki/Headers # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 Nagłówek1 Nagłówek2 Nagłówek3 Nagłówek4 Nagłówek5 Nagłówek6 Style liniowe/inlinowe **bold** ~~crossed~~ ---strikethrough text--- *italics* pogrubiony ~~przekreślony~~ (tu się nie sprawdza) ---wykreślony tekst--- (również się nie sprawdza :( ) italik Obrazy ![Nazwa obrazu](/sciezka/obrazu.jpg) można również: ![Alt Text …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="../../../../../articles/2020/03/26/markdown/"/>
 <meta property="og:type" content="article"/>
@@ -138,15 +138,15 @@
 
 <p><strong>pogrubiony</strong></p>
 <p>~~przekreślony~~ (tu się nie sprawdza)</p>
-<p>---przekreślony tekst--- (również się nie sprawdza :( )</p>
+<p>---wykreślony tekst--- (również się nie sprawdza :( )</p>
 <p><em>italik</em></p>
 <h3>Obrazy</h3>
-<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="p">[</span><span class="n">Nazwa</span> <span class="n">obrazu</span><span class="p">](</span><span class="o">/</span><span class="err">ś</span><span class="n">cieżka</span><span class="o">/</span><span class="n">obrazu</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="p">[</span><span class="n">Nazwa</span> <span class="n">obrazu</span><span class="p">](</span><span class="o">/</span><span class="n">sciezka</span><span class="o">/</span><span class="n">obrazu</span><span class="p">.</span><span class="n">jpg</span><span class="p">)</span>
 </code></pre></div>
 
 
 <p>można również:</p>
-<div class="highlight"><pre><span></span><code><span class="nl">Format</span><span class="p">:</span> <span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">Text</span><span class="p">](</span><span class="n">url</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="p">[</span><span class="n">Alt</span> <span class="n">Text</span><span class="p">](</span><span class="n">url</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -164,7 +164,30 @@
 
 <p>https://kostyrko.github.io/zfrontu/
 (tu akurat nie działa za to np. w VSC się sprawdza)</p>
-<h3>Kod</h3>
+<p>link działający w ramach strony</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">sprawdź</span> <span class="n">również</span> <span class="n">tą</span> <span class="n">część</span> <span class="n">tekstu</span><span class="p">](</span><span class="o">#</span><span class="n">strony</span><span class="p">)</span>
+<span class="n">gdzie</span><span class="p">:</span>
+<span class="o">####</span><span class="n">Strony</span> <span class="n">warte</span> <span class="n">odwiedzenia</span>
+</code></pre></div>
+
+
+<p>lub (pewniejsza opcja, ale wykorzystująca HTML)</p>
+<div class="highlight"><pre><span></span><code>[Strony warte odwiedzenia](#strony)
+gdzie:
+<span class="nt">&lt;a</span> <span class="na">name=</span><span class="s">&quot;strony&quot;</span><span class="nt">&gt;</span>
+### Strony warte odwiedzenia
+<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
+
+
+<p>kolejna możliwość</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">Strony</span> <span class="n">warte</span> <span class="n">odwiedzenia</span><span class="p">](</span><span class="o">#</span><span class="n">strony</span><span class="p">)</span>
+<span class="n">gdzie</span>
+<span class="o">###</span> <span class="n">Strony</span> <span class="n">warte</span> <span class="n">odwiedzenia</span> <span class="err">{</span><span class="o">#</span><span class="n">strony</span><span class="err">}</span>
+</code></pre></div>
+
+
+<p><a href="#strony">Strony warte odwiedzenia</a></p>
 <p>Kod w lini tekstu</p>
 <div class="highlight"><pre><span></span><code><span class="o">`</span><span class="n">back</span> <span class="n">quote</span><span class="o">`</span>
 </code></pre></div>
@@ -319,8 +342,9 @@
 <hr>
 <hr>
 <h3>Emotki</h3>
-<p>:smile:</p>
-<p>Strony warte odwiedzenia:</p>
+<p>:smile: (nie działa)</p>
+<hr>
+<h3 id="strony">Strony warte odwiedzenia</h3>
 <ul>
 <li>
 <p><a href="https://www.markdownguide.org/getting-started/">www.markdownguide.org</a> - nauka języka, wersja podstawowa jak i rozszerzona oraz Cheat Sheet</p>
@@ -338,6 +362,7 @@
 <p><a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md">Emoji cheat sheet</a></p>
 </li>
 </ul>
+<h2 id="mht">my heading text</h2>
   </div>
   <div class="tag-cloud">
     <p>
@@ -349,12 +374,6 @@
 
 
 
-  <div class="related-posts">
-    <h4>Zobacz także</h4>
-    <ul class="related-posts">
-      <li><a href="../../../../../articles/2020/03/23/pelican-blog/">Pelican blog - wprowadzenie</a></li>
-    </ul>
-  </div>
 
 
 <!-- Disqus -->

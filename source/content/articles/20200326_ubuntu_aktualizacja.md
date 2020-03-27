@@ -4,8 +4,8 @@ Date: 2020-03-26 21:00
 Updated: 
 Category: ubuntu
 Tags: linux, ubuntu, aktualizacja, ciemny motyw, ubuntu 19.10
-Slug: linux-aktualizacja
-related_posts:
+Slug: ubuntu-aktualizacja-gronostaj
+related_posts: ubuntu-skroty-klawiszowe
 
 Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. 
 
@@ -21,9 +21,11 @@ zmieniłem na
 
 system uruchomił się bez większych problemów.
 
-Po uruchomieniu się systemu nie przechodziłem kolejnych opisanych kroków tylko zaktualizowałem gruba
+Po uruchomieniu się systemu nie przechodziłem kolejnych kroków opisanych w podlinkowanym wyżej poście tylko zaktualizowałem gruba
 
     sudo update-grub
+
+Na pierwszy rzut oka faktycznie Gronostaj jest szybszy od Bobra w trakcie uruchamiania i zdaje się działać płynniej.
 
 ### Ubuntu 19.10 zmiana motywu na ciemny
 
@@ -81,4 +83,10 @@ Na szczęście rozwiązanie trudne nie jest i postępując zgodnie z opisanymi [
 ### Dodatkowe opcje w nowej wersji Ubuntu (które do tej pory zauważyłem)
 
 * W momencie wybierania linka, który otwiera przeglądarkę pojawiła się nowa opcja **configure trusted domains**
+* Więcej opcji pojawiło się również przy prawym kliknięciu na ikonę przeglądarki Chromium
+* W podstawowym oknie ustawień (tam gdzie się również wyłącza system) doszła parę nowych ustawień w tym nowa opcja linkująca do zarządzania opcjami zasilania
+* Prawym przyciskiem na głównym ekranie możemy również przejść do ustawień ekranu
+* Część ikon zyskała nową skórkę
+* Zacząłem korzystać z motywu nocnego (podoba mi się opcja dostosowania nasilenia filtra)
 
+**W przyszłym miesiącu pojawia się kolejna wersja Ubuntu i pewnie również skorzystam z aktualizacji jak tylko mi system taką zaproponuje**

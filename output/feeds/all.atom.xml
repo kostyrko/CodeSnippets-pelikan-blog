@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>...z frontu</title><link href="/" rel="alternate"></link><link href="feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2020-03-27T09:00:00+01:00</updated><subtitle>JS/CSS/PY</subtitle><entry><title>Flexbox - wprowadzenie</title><link href="articles/2020/03/27/flexbox-wprowadzenie/" rel="alternate"></link><published>2020-03-27T09:00:00+01:00</published><updated>2020-03-27T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/flexbox-wprowadzenie/</id><content type="html">&lt;p&gt;Wprowadzenie do flexboxa &lt;/p&gt;</content><category term="css"></category><category term="css"></category><category term="flexbox"></category><category term="pozycjonowanie-css"></category></entry><entry><title>Ubuntu - zamiana bobra na gronostaja</title><link href="articles/2020/03/26/linux-aktualizacja/" rel="alternate"></link><published>2020-03-26T21:00:00+01:00</published><updated>2020-03-26T21:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/linux-aktualizacja/</id><summary type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>...z frontu</title><link href="/" rel="alternate"></link><link href="feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2020-03-27T21:00:00+01:00</updated><subtitle>JS/CSS/PY</subtitle><entry><title>Visual Studio Code - skróty klawiszowe</title><link href="articles/2020/03/27/vsc-skroty-klawiszowe/" rel="alternate"></link><published>2020-03-27T21:00:00+01:00</published><updated>2020-03-27T21:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/vsc-skroty-klawiszowe/</id><content type="html">&lt;p&gt;Przydatne skróty klawiszowe o których warto pamiętać korzystając z Visual Studio Code&lt;/p&gt;</content><category term="VSC"></category><category term="vsc"></category><category term="skróty klawiszowe"></category><category term="visual studio code"></category><category term="visual studio"></category></entry><entry><title>Ubuntu - skróty klawiszowe</title><link href="articles/2020/03/27/ubuntu-skroty-klawiszowe/" rel="alternate"></link><published>2020-03-27T20:00:00+01:00</published><updated>2020-03-27T20:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/ubuntu-skroty-klawiszowe/</id><content type="html">&lt;p&gt;Przydatne skróty klawiszowe o których warto pamiętać korzystając z Ubuntu&lt;/p&gt;</content><category term="ubuntu"></category><category term="linux"></category><category term="ubuntu"></category><category term="skróty klawiszowe"></category></entry><entry><title>Flexbox - wprowadzenie</title><link href="articles/2020/03/27/flexbox-wprowadzenie/" rel="alternate"></link><published>2020-03-27T09:00:00+01:00</published><updated>2020-03-27T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/flexbox-wprowadzenie/</id><content type="html">&lt;p&gt;Wprowadzenie do flexboxa &lt;/p&gt;</content><category term="css"></category><category term="css"></category><category term="flexbox"></category><category term="pozycjonowanie-css"></category></entry><entry><title>Ubuntu - zamiana bobra na gronostaja</title><link href="articles/2020/03/26/ubuntu-aktualizacja-gronostaj/" rel="alternate"></link><published>2020-03-26T21:00:00+01:00</published><updated>2020-03-26T21:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/ubuntu-aktualizacja-gronostaj/</id><summary type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
 &lt;h3&gt;Zawieszający się ekran ładowania Ubuntu 19.10 po aktualizacji&lt;/h3&gt;
 &lt;p&gt;Ekran ładowania (tzw. splash screen) się zawiesił, musiałem wyłączyć …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
 &lt;h3&gt;Zawieszający się ekran ładowania Ubuntu 19.10 po aktualizacji&lt;/h3&gt;
@@ -14,11 +14,12 @@
 
 
 &lt;p&gt;system uruchomił się bez większych problemów.&lt;/p&gt;
-&lt;p&gt;Po uruchomieniu się systemu nie przechodziłem kolejnych opisanych kroków tylko zaktualizowałem gruba&lt;/p&gt;
+&lt;p&gt;Po uruchomieniu się systemu nie przechodziłem kolejnych kroków opisanych w podlinkowanym wyżej poście tylko zaktualizowałem gruba&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;grub&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Na pierwszy rzut oka faktycznie Gronostaj jest szybszy od Bobra w trakcie uruchamiania i zdaje się działać płynniej.&lt;/p&gt;
 &lt;h3&gt;Ubuntu 19.10 zmiana motywu na ciemny&lt;/h3&gt;
 &lt;p&gt;Bóbr przyzwyczaił mnie do miłego dla oka ciemnego motywu oprogramowania. Fioletowy terminal z zielonymi i jasnymi literami również przypadł mi do gustu (na szczęście zmiana z podstawowego jasnego na ciemny motyw jest prosta) niestety Gronostaj już ciemnego motywu aplikacji nie posiada w trybie podstawowym i trzeba go dodać.&lt;/p&gt;
 &lt;p&gt;W pierwszej kolejności należy zainstalować program Gnome Tweaks
@@ -74,7 +75,13 @@ Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
 &lt;h3&gt;Dodatkowe opcje w nowej wersji Ubuntu (które do tej pory zauważyłem)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;W momencie wybierania linka, który otwiera przeglądarkę pojawiła się nowa opcja &lt;strong&gt;configure trusted domains&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="ubuntu"></category><category term="linux"></category><category term="ubuntu"></category><category term="aktualizacja"></category><category term="ciemny motyw"></category><category term="ubuntu 19.10"></category></entry><entry><title>Markdown</title><link href="articles/2020/03/26/markdown/" rel="alternate"></link><published>2020-03-26T19:05:00+01:00</published><updated>2020-03-26T19:05:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/markdown/</id><summary type="html">&lt;p&gt;Szybkie wprowadzenie do języka &lt;strong&gt;Markdown&lt;/strong&gt;&lt;/p&gt;
+&lt;li&gt;Więcej opcji pojawiło się również przy prawym kliknięciu na ikonę przeglądarki Chromium&lt;/li&gt;
+&lt;li&gt;W podstawowym oknie ustawień (tam gdzie się również wyłącza system) doszła parę nowych ustawień w tym nowa opcja linkująca do zarządzania opcjami zasilania&lt;/li&gt;
+&lt;li&gt;Prawym przyciskiem na głównym ekranie możemy również przejść do ustawień ekranu&lt;/li&gt;
+&lt;li&gt;Część ikon zyskała nową skórkę&lt;/li&gt;
+&lt;li&gt;Zacząłem korzystać z motywu nocnego (podoba mi się opcja dostosowania nasilenia filtra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;W przyszłym miesiącu pojawia się kolejna wersja Ubuntu i pewnie również skorzystam z aktualizacji jak tylko mi system taką zaproponuje&lt;/strong&gt;&lt;/p&gt;</content><category term="ubuntu"></category><category term="linux"></category><category term="ubuntu"></category><category term="aktualizacja"></category><category term="ciemny motyw"></category><category term="ubuntu 19.10"></category></entry><entry><title>Markdown</title><link href="articles/2020/03/26/markdown/" rel="alternate"></link><published>2020-03-26T19:05:00+01:00</published><updated>2020-03-26T19:05:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/markdown/</id><summary type="html">&lt;p&gt;Szybkie wprowadzenie do języka &lt;strong&gt;Markdown&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Nagłówki/Headers&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;H1&lt;/span&gt;
 &lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="n"&gt;H2&lt;/span&gt;
@@ -101,15 +108,15 @@ Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;pogrubiony&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;~~przekreślony~~ (tu się nie sprawdza)&lt;/p&gt;
-&lt;p&gt;---przekreślony tekst--- (również się nie sprawdza :( )&lt;/p&gt;
+&lt;p&gt;---wykreślony tekst--- (również się nie sprawdza :( )&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;italik&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Obrazy&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Nazwa&lt;/span&gt; &lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;ś&lt;/span&gt;&lt;span class="n"&gt;cieżka&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Nazwa&lt;/span&gt; &lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sciezka&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;można również:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;Format …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Szybkie wprowadzenie do języka &lt;strong&gt;Markdown&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;Text …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Szybkie wprowadzenie do języka &lt;strong&gt;Markdown&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;Nagłówki/Headers&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;H1&lt;/span&gt;
 &lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="n"&gt;H2&lt;/span&gt;
@@ -136,15 +143,15 @@ Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;pogrubiony&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;~~przekreślony~~ (tu się nie sprawdza)&lt;/p&gt;
-&lt;p&gt;---przekreślony tekst--- (również się nie sprawdza :( )&lt;/p&gt;
+&lt;p&gt;---wykreślony tekst--- (również się nie sprawdza :( )&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;italik&lt;/em&gt;&lt;/p&gt;
 &lt;h3&gt;Obrazy&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Nazwa&lt;/span&gt; &lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;ś&lt;/span&gt;&lt;span class="n"&gt;cieżka&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Nazwa&lt;/span&gt; &lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sciezka&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;obrazu&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jpg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;można również:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nl"&gt;Format&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Alt&lt;/span&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -162,7 +169,30 @@ Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
 
 &lt;p&gt;https://kostyrko.github.io/zfrontu/
 (tu akurat nie działa za to np. w VSC się sprawdza)&lt;/p&gt;
-&lt;h3&gt;Kod&lt;/h3&gt;
+&lt;p&gt;link działający w ramach strony&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sprawdź&lt;/span&gt; &lt;span class="n"&gt;również&lt;/span&gt; &lt;span class="n"&gt;tą&lt;/span&gt; &lt;span class="n"&gt;część&lt;/span&gt; &lt;span class="n"&gt;tekstu&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;strony&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gdzie&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;####&lt;/span&gt;&lt;span class="n"&gt;Strony&lt;/span&gt; &lt;span class="n"&gt;warte&lt;/span&gt; &lt;span class="n"&gt;odwiedzenia&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;lub (pewniejsza opcja, ale wykorzystująca HTML)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;[Strony warte odwiedzenia](#strony)
+gdzie:
+&lt;span class="nt"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;strony&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+### Strony warte odwiedzenia
+&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;kolejna możliwość&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Strony&lt;/span&gt; &lt;span class="n"&gt;warte&lt;/span&gt; &lt;span class="n"&gt;odwiedzenia&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;strony&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;gdzie&lt;/span&gt;
+&lt;span class="o"&gt;###&lt;/span&gt; &lt;span class="n"&gt;Strony&lt;/span&gt; &lt;span class="n"&gt;warte&lt;/span&gt; &lt;span class="n"&gt;odwiedzenia&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;strony&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="#strony"&gt;Strony warte odwiedzenia&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Kod w lini tekstu&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="n"&gt;back&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -317,8 +347,9 @@ Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
 &lt;hr&gt;
 &lt;hr&gt;
 &lt;h3&gt;Emotki&lt;/h3&gt;
-&lt;p&gt;:smile:&lt;/p&gt;
-&lt;p&gt;Strony warte odwiedzenia:&lt;/p&gt;
+&lt;p&gt;:smile: (nie działa)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="strony"&gt;Strony warte odwiedzenia&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://www.markdownguide.org/getting-started/"&gt;www.markdownguide.org&lt;/a&gt; - nauka języka, wersja podstawowa jak i rozszerzona oraz Cheat Sheet&lt;/p&gt;
@@ -335,23 +366,84 @@ Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md"&gt;Emoji cheat sheet&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"></category><category term="python"></category><category term="markdown"></category><category term="pelican"></category></entry><entry><title>Pelican blog - wprowadzenie</title><link href="articles/2020/03/23/pelican-blog/" rel="alternate"></link><published>2020-03-23T09:00:00+01:00</published><updated>2020-03-23T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-23:articles/2020/03/23/pelican-blog/</id><summary type="html">&lt;p&gt;&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Przydatne linki: &lt;/p&gt;
-&lt;p&gt;&lt;a href="https://docs.getpelican.com/en/stable/settings.html"&gt;Ustawienia dla Pelican blog - pelicanconf.py&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/"&gt;Dokumentacja Pelican blog&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Źródło:&lt;/p&gt;
+&lt;/ul&gt;
+&lt;h2 id="mht"&gt;my heading text&lt;/h2&gt;</content><category term="blog"></category><category term="python"></category><category term="markdown"></category><category term="pelican"></category></entry><entry><title>Pelican blog - instalacja</title><link href="articles/2020/03/23/pelican-blog-instalacja/" rel="alternate"></link><published>2020-03-23T09:00:00+01:00</published><updated>2020-03-23T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-23:articles/2020/03/23/pelican-blog-instalacja/</id><summary type="html">&lt;p&gt;Gdy szukałem platformy do tworzenia bloga, wybór w pierwszej kolejności padł na Jakyll (Ruby on Rails), rozważałem również Hugo (Go), ostatecznie padło jednak na Pelicana bo ten "stoi" na Pythonie, choć jest dużo mniej popularny od wcześniej wspomnianych generatorów stron statycznych. W przyszłości planuję również wypróbować &lt;a href="https://www.getlektor.com/"&gt;Lektora&lt;/a&gt;, który również wywodzi …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Gdy szukałem platformy do tworzenia bloga, wybór w pierwszej kolejności padł na Jakyll (Ruby on Rails), rozważałem również Hugo (Go), ostatecznie padło jednak na Pelicana bo ten "stoi" na Pythonie, choć jest dużo mniej popularny od wcześniej wspomnianych generatorów stron statycznych. W przyszłości planuję również wypróbować &lt;a href="https://www.getlektor.com/"&gt;Lektora&lt;/a&gt;, który również wywodzi się z Pythona&lt;/p&gt;
+&lt;p&gt;W trakcie tworzenia bloga przy pomocy Pelicana korzystałem z informacji zawartych &lt;a href="matthewdevaney.com"&gt;na tym blogu&lt;/a&gt; posiłkując się informacjami zawartymi w dokumentacji Pelicana oraz Flexa (wybranego przeze mnie motywu) - patrz &lt;a href="#zrodla"&gt;źródła&lt;/a&gt;) jak i &lt;a href="https://github.com/alexandrevicenzi/Flex/wiki/Flex-users"&gt;repozytoriów na githubie&lt;/a&gt; wykorzystujących ten sam motyw. &lt;/p&gt;
+&lt;h3&gt;Instalacja&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Uruchomienie&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;przygotowanie struktury folderów &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;blog&lt;/span&gt;
+  &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="k"&gt;output&lt;/span&gt;
+  &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="k"&gt;source&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Wypełnienie podstawowych informacji&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Where&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="nv"&gt;you&lt;/span&gt; &lt;span class="nv"&gt;want&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;create&lt;/span&gt; &lt;span class="nv"&gt;your&lt;/span&gt; &lt;span class="nv"&gt;new&lt;/span&gt; &lt;span class="nv"&gt;web&lt;/span&gt; &lt;span class="nv"&gt;site&lt;/span&gt;? [.] .
+# &lt;span class="nv"&gt;wskazanie&lt;/span&gt; &lt;span class="nv"&gt;folderu&lt;/span&gt; &lt;span class="nv"&gt;w&lt;/span&gt; &lt;span class="nv"&gt;kt&lt;/span&gt;ó&lt;span class="nv"&gt;rym&lt;/span&gt; &lt;span class="nv"&gt;ma&lt;/span&gt; &lt;span class="nv"&gt;by&lt;/span&gt;ć &lt;span class="nv"&gt;zapisana&lt;/span&gt; &lt;span class="nv"&gt;strona&lt;/span&gt;
+&lt;span class="nv"&gt;What&lt;/span&gt; &lt;span class="nv"&gt;will&lt;/span&gt; &lt;span class="nv"&gt;be&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;title&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;this&lt;/span&gt; &lt;span class="nv"&gt;web&lt;/span&gt; &lt;span class="nv"&gt;site&lt;/span&gt;? ...&lt;span class="nv"&gt;z&lt;/span&gt; &lt;span class="nv"&gt;frontu&lt;/span&gt;
+# &lt;span class="nv"&gt;nazwa&lt;/span&gt;
+&lt;span class="nv"&gt;Who&lt;/span&gt; &lt;span class="nv"&gt;will&lt;/span&gt; &lt;span class="nv"&gt;be&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;author&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;this&lt;/span&gt; &lt;span class="nv"&gt;web&lt;/span&gt; &lt;span class="nv"&gt;site&lt;/span&gt;? &lt;span class="nv"&gt;kostyrko&lt;/span&gt;
+# &lt;span class="nv"&gt;autor&lt;/span&gt; 
+&lt;span class="nv"&gt;What&lt;/span&gt; &lt;span class="nv"&gt;will&lt;/span&gt; &lt;span class="nv"&gt;be&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt; &lt;span class="nv"&gt;language&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;this&lt;/span&gt; &lt;span class="nv"&gt;web&lt;/span&gt; &lt;span class="nv"&gt;site&lt;/span&gt;? [&lt;span class="nv"&gt;English&lt;/span&gt;] &lt;span class="nv"&gt;pl&lt;/span&gt;
+# &lt;span class="nv"&gt;j&lt;/span&gt;ę&lt;span class="nv"&gt;zyk&lt;/span&gt;
+&lt;span class="k"&gt;Do&lt;/span&gt; &lt;span class="nv"&gt;you&lt;/span&gt; &lt;span class="nv"&gt;want&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;specify&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;URL&lt;/span&gt; &lt;span class="nv"&gt;prefix&lt;/span&gt;? &lt;span class="nv"&gt;e&lt;/span&gt;.&lt;span class="nv"&gt;g&lt;/span&gt;., &lt;span class="nv"&gt;https&lt;/span&gt;:&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="nv"&gt;example&lt;/span&gt;.&lt;span class="nv"&gt;com&lt;/span&gt;   &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;n&lt;/span&gt;
+# &lt;span class="nv"&gt;wskazanie&lt;/span&gt; &lt;span class="nv"&gt;adresu&lt;/span&gt; &lt;span class="nv"&gt;strony&lt;/span&gt;
+&lt;span class="k"&gt;Do&lt;/span&gt; &lt;span class="nv"&gt;you&lt;/span&gt; &lt;span class="nv"&gt;want&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;enable&lt;/span&gt; &lt;span class="nv"&gt;article&lt;/span&gt; &lt;span class="nv"&gt;pagination&lt;/span&gt;? &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;Y&lt;/span&gt;
+# &lt;span class="nv"&gt;ograniczona&lt;/span&gt; &lt;span class="nv"&gt;ilo&lt;/span&gt;ść &lt;span class="nv"&gt;post&lt;/span&gt;ó&lt;span class="nv"&gt;w&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;artyku&lt;/span&gt;łó&lt;span class="nv"&gt;w&lt;/span&gt; &lt;span class="nv"&gt;na&lt;/span&gt; &lt;span class="nv"&gt;stronie&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="nv"&gt;paginacja&lt;/span&gt;
+&lt;span class="nv"&gt;What&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;your&lt;/span&gt; &lt;span class="nv"&gt;time&lt;/span&gt; &lt;span class="nv"&gt;zone&lt;/span&gt;? [&lt;span class="nv"&gt;Europe&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;Paris&lt;/span&gt;] &lt;span class="nv"&gt;Europe&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;Warsaw&lt;/span&gt;
+# &lt;span class="nv"&gt;strefa&lt;/span&gt; &lt;span class="nv"&gt;czasowa&lt;/span&gt;
+&lt;span class="k"&gt;Do&lt;/span&gt; &lt;span class="nv"&gt;you&lt;/span&gt; &lt;span class="nv"&gt;want&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;generate&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;tasks&lt;/span&gt;.&lt;span class="nv"&gt;py&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;Makefile&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;automate&lt;/span&gt; &lt;span class="nv"&gt;generation&lt;/span&gt; &lt;span class="nv"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;publishing&lt;/span&gt;? &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;Y&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;Y&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Powyżej zawarte informacje będą zawarte w pliku pelicanconf.py i można je zmienić
+Uzyskany efekt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;blog&lt;/span&gt;
+  &lt;span class="err"&gt;├──&lt;/span&gt;  &lt;span class="k"&gt;output&lt;/span&gt;
+  &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="k"&gt;source&lt;/span&gt;
+      &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="k"&gt;output&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;folder&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;pelicanconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+      &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;publishconf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;w pliku pelicanconf.py definiujemy miejsce w którym będzie generować się statyczna strona&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;OUTPUT_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;../output&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Tworzymy zawartość strony komendą:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Tworzymy server lokalny pozwalający na przeglądanie strony (:8000)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="c1"&gt;--listen&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Przeglądamy osiągnięty efekt:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://127.0.0.1:8000/"&gt;http://127.0.0.1:8000/&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="zrodla"&gt;Przydatne liki i źródła:&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/"&gt;mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp;amp; Theme&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/"&gt;Build A Blog With Pelican And Python - Pt. 2 Creating Content&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html"&gt;How to Create Your First Static Site with Pelican and Jinja2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Inne generatory …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Przydatne linki: &lt;/p&gt;
 &lt;p&gt;&lt;a href="https://docs.getpelican.com/en/stable/settings.html"&gt;Ustawienia dla Pelican blog - pelicanconf.py&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/latest/"&gt;Dokumentacja Pelican blog&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Źródło:&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/04/build-a-blog-with-pelican-and-python-pt-1-installation-theme/"&gt;mBuild A Blog With Pelican And Python - Pt. 1 Installation &amp;amp; Theme&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://matthewdevaney.com/posts/2019/03/07/build-a-blog-with-pelican-and-python-pt-2-creating-content/"&gt;Build A Blog With Pelican And Python - Pt. 2 Creating Content&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.fullstackpython.com/blog/generating-static-websites-pelican-jinja2-markdown.html"&gt;How to Create Your First Static Site with Pelican and Jinja2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/alexandrevicenzi/Flex"&gt;Flex&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Inne generatory stron statycznych korzystające z Pythona:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.getlektor.com/"&gt;Lektor&lt;/a&gt; - posiada wbudowany CMS (Content Management System)&lt;/p&gt;
-&lt;p&gt;Skórki warte uwagi:
+&lt;p&gt;Motywy warte uwagi:
 &lt;a href="https://github.com/PurePelicanTheme/pure"&gt;Pure&lt;/a&gt;&lt;/p&gt;</content><category term="blog"></category><category term="python"></category><category term="markdown"></category><category term="pelican"></category></entry></feed>

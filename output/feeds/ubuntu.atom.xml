@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>...z frontu - ubuntu</title><link href="/" rel="alternate"></link><link href="feeds/ubuntu.atom.xml" rel="self"></link><id>/</id><updated>2020-03-26T21:00:00+01:00</updated><subtitle>JS/CSS/PY</subtitle><entry><title>Ubuntu - zamiana bobra na gronostaja</title><link href="articles/2020/03/26/linux-aktualizacja/" rel="alternate"></link><published>2020-03-26T21:00:00+01:00</published><updated>2020-03-26T21:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/linux-aktualizacja/</id><summary type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>...z frontu - ubuntu</title><link href="/" rel="alternate"></link><link href="feeds/ubuntu.atom.xml" rel="self"></link><id>/</id><updated>2020-03-27T20:00:00+01:00</updated><subtitle>JS/CSS/PY</subtitle><entry><title>Ubuntu - skróty klawiszowe</title><link href="articles/2020/03/27/ubuntu-skroty-klawiszowe/" rel="alternate"></link><published>2020-03-27T20:00:00+01:00</published><updated>2020-03-27T20:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/ubuntu-skroty-klawiszowe/</id><content type="html">&lt;p&gt;Przydatne skróty klawiszowe o których warto pamiętać korzystając z Ubuntu&lt;/p&gt;</content><category term="ubuntu"></category><category term="linux"></category><category term="ubuntu"></category><category term="skróty klawiszowe"></category></entry><entry><title>Ubuntu - zamiana bobra na gronostaja</title><link href="articles/2020/03/26/ubuntu-aktualizacja-gronostaj/" rel="alternate"></link><published>2020-03-26T21:00:00+01:00</published><updated>2020-03-26T21:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-26:articles/2020/03/26/ubuntu-aktualizacja-gronostaj/</id><summary type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
 &lt;h3&gt;Zawieszający się ekran ładowania Ubuntu 19.10 po aktualizacji&lt;/h3&gt;
 &lt;p&gt;Ekran ładowania (tzw. splash screen) się zawiesił, musiałem wyłączyć …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) ale gdy system zaproponował mi aktualizację na Eonicznego Gronostaja (19.10) postanowiłem z niej skorzystać. Zmiana nie obyła się bez małego zgrzytu. &lt;/p&gt;
 &lt;h3&gt;Zawieszający się ekran ładowania Ubuntu 19.10 po aktualizacji&lt;/h3&gt;
@@ -14,11 +14,12 @@
 
 
 &lt;p&gt;system uruchomił się bez większych problemów.&lt;/p&gt;
-&lt;p&gt;Po uruchomieniu się systemu nie przechodziłem kolejnych opisanych kroków tylko zaktualizowałem gruba&lt;/p&gt;
+&lt;p&gt;Po uruchomieniu się systemu nie przechodziłem kolejnych kroków opisanych w podlinkowanym wyżej poście tylko zaktualizowałem gruba&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;grub&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Na pierwszy rzut oka faktycznie Gronostaj jest szybszy od Bobra w trakcie uruchamiania i zdaje się działać płynniej.&lt;/p&gt;
 &lt;h3&gt;Ubuntu 19.10 zmiana motywu na ciemny&lt;/h3&gt;
 &lt;p&gt;Bóbr przyzwyczaił mnie do miłego dla oka ciemnego motywu oprogramowania. Fioletowy terminal z zielonymi i jasnymi literami również przypadł mi do gustu (na szczęście zmiana z podstawowego jasnego na ciemny motyw jest prosta) niestety Gronostaj już ciemnego motywu aplikacji nie posiada w trybie podstawowym i trzeba go dodać.&lt;/p&gt;
 &lt;p&gt;W pierwszej kolejności należy zainstalować program Gnome Tweaks
@@ -74,4 +75,10 @@ Instalowanie programu do zarządzania wyglądem/skórką Ubuntu&lt;/p&gt;
 &lt;h3&gt;Dodatkowe opcje w nowej wersji Ubuntu (które do tej pory zauważyłem)&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;W momencie wybierania linka, który otwiera przeglądarkę pojawiła się nowa opcja &lt;strong&gt;configure trusted domains&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="ubuntu"></category><category term="linux"></category><category term="ubuntu"></category><category term="aktualizacja"></category><category term="ciemny motyw"></category><category term="ubuntu 19.10"></category></entry></feed>
+&lt;li&gt;Więcej opcji pojawiło się również przy prawym kliknięciu na ikonę przeglądarki Chromium&lt;/li&gt;
+&lt;li&gt;W podstawowym oknie ustawień (tam gdzie się również wyłącza system) doszła parę nowych ustawień w tym nowa opcja linkująca do zarządzania opcjami zasilania&lt;/li&gt;
+&lt;li&gt;Prawym przyciskiem na głównym ekranie możemy również przejść do ustawień ekranu&lt;/li&gt;
+&lt;li&gt;Część ikon zyskała nową skórkę&lt;/li&gt;
+&lt;li&gt;Zacząłem korzystać z motywu nocnego (podoba mi się opcja dostosowania nasilenia filtra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;W przyszłym miesiącu pojawia się kolejna wersja Ubuntu i pewnie również skorzystam z aktualizacji jak tylko mi system taką zaproponuje&lt;/strong&gt;&lt;/p&gt;</content><category term="ubuntu"></category><category term="linux"></category><category term="ubuntu"></category><category term="aktualizacja"></category><category term="ciemny motyw"></category><category term="ubuntu 19.10"></category></entry></feed>
