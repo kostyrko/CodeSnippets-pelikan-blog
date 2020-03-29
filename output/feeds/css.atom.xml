@@ -1,2 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>...z frontu - css</title><link href="/" rel="alternate"></link><link href="feeds/css.atom.xml" rel="self"></link><id>/</id><updated>2020-03-27T09:00:00+01:00</updated><subtitle>JS/CSS/PY</subtitle><entry><title>Flexbox - wprowadzenie</title><link href="articles/2020/03/27/flexbox-wprowadzenie/" rel="alternate"></link><published>2020-03-27T09:00:00+01:00</published><updated>2020-03-27T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/flexbox-wprowadzenie/</id><content type="html">&lt;p&gt;Wprowadzenie do flexboxa &lt;/p&gt;</content><category term="css"></category><category term="css"></category><category term="flexbox"></category><category term="pozycjonowanie-css"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>...z frontu - css</title><link href="/" rel="alternate"></link><link href="feeds/css.atom.xml" rel="self"></link><id>/</id><updated>2020-03-27T09:00:00+01:00</updated><subtitle>JS/CSS/PY</subtitle><entry><title>Flexbox - wprowadzenie</title><link href="articles/2020/03/27/flexbox-wprowadzenie/" rel="alternate"></link><published>2020-03-27T09:00:00+01:00</published><updated>2020-03-27T09:00:00+01:00</updated><author><name>mkostyrko</name></author><id>tag:None,2020-03-27:articles/2020/03/27/flexbox-wprowadzenie/</id><summary type="html">&lt;p&gt;Flexbox jest technologią odpowiedzialną za układ treści znajdujących się na stronie internetowej w dosłownym tłumaczeniu można by to nazwać technologią &lt;em&gt;elastycznych-pudełek&lt;/em&gt;. Faktycznie ten sposób organizacji tzw layoutu lub też interfejsu oparty jest na równorzędnych &lt;strong&gt;kontenerach&lt;/strong&gt; zwierających treść, które mogą być organizowane &lt;strong&gt;w sposób poziomy (liniowy) lub pionowy (kolumnowy)&lt;/strong&gt; i pozwala …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Flexbox jest technologią odpowiedzialną za układ treści znajdujących się na stronie internetowej w dosłownym tłumaczeniu można by to nazwać technologią &lt;em&gt;elastycznych-pudełek&lt;/em&gt;. Faktycznie ten sposób organizacji tzw layoutu lub też interfejsu oparty jest na równorzędnych &lt;strong&gt;kontenerach&lt;/strong&gt; zwierających treść, które mogą być organizowane &lt;strong&gt;w sposób poziomy (liniowy) lub pionowy (kolumnowy)&lt;/strong&gt; i pozwala na tworzenie &lt;strong&gt;prostej i czytelnej struktury&lt;/strong&gt; strony i pozwala w relatywnie sposób na budowę &lt;strong&gt;responsywnego projektu&lt;/strong&gt; strony internetowej.&lt;/p&gt;
+&lt;p&gt;Stosując flexboxa możemy łatwo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pionowe i poziome wycentrować element względem rodzica&lt;/li&gt;
+&lt;li&gt;Uszeregowanie elementów by wypełniały rodzica a odległość pomiędzy nimi była równa&lt;/li&gt;
+&lt;li&gt;Elementy będą automatycznie zawijane w zależności od wielkości ekranu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Istotne jest to aby pamiętać, że dziecko rodzica zorganizowane w sposób flexboxowy również może być rodzicem dla własnego dziecka, którego pozycja będzie oparta na flexboxie&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Podstawowa deklaracje - rodzic&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3&gt;display: flex&lt;/h3&gt;
+&lt;p&gt;Zdefiniowanie układu opartego o flexboxa dokonujemy poprzez deklarację &lt;code&gt;display: flex&lt;/code&gt; i oznacza to, że dzieci danego &lt;code&gt;div&lt;/code&gt;'a (dzielnika/kontenera) będą zachowywały się w sposób &lt;em&gt;elastyczny&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Przykładowe zastosowanie&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Podstawą zarządzania treścią opartą na flex-boxie są dwie osie &lt;strong&gt;"pozioma" tzw. oś główna - ang. main axis&lt;/strong&gt; oraz &lt;strong&gt;"pionowa" tzw. oś przecinające - ang. cross axis&lt;/strong&gt; 
+(te są &lt;strong&gt;zależne od&lt;/strong&gt; zdefiniowania &lt;strong&gt;głównego kierunku organizacji projektu&lt;/strong&gt; przy pomocy &lt;strong&gt;flex-direction&lt;/strong&gt; z podstawowego &lt;strong&gt;liniowego&lt;/strong&gt; w &lt;strong&gt;kolumnowy&lt;/strong&gt; i dlatego istotne jest aby nie przywiązywać się do kierunków &lt;strong&gt;pionowy&lt;/strong&gt; czy &lt;strong&gt;poziomy&lt;/strong&gt; bo są one relatywne)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Schemat przedstawiający ogranizację flexboxa" src="https://developer.mozilla.org/files/3739/flex_terms.png"&gt;&lt;/p&gt;
+&lt;p&gt;Schemat przedstawiający ogranizację flexboxa&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Układ liniowy vs kolumnowy" src="https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg"&gt;&lt;/p&gt;
+&lt;p&gt;Układ liniowy vs kolumnowy&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;flex-direction&lt;/h3&gt;
+&lt;p&gt;Deklaracja &lt;strong&gt;dotycząca rodzica&lt;/strong&gt; i definiująca podstawowy układ zawartych w nim elementów (flex-items/dzieci)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;row&lt;/code&gt; - układ liniowy/poziomy zaczynający się od lewej&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;row-reverse&lt;/code&gt; - układ poziomy zaczynający się od prawej&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;column&lt;/code&gt; - układ kolumnowy/pionowy zaczynający się od góry&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;column-revers&lt;/code&gt; - układ kolumnowy/pionowy zaczynający się od dołu&lt;/p&gt;
+&lt;p&gt;Przykładowe zastosowanie&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;flex-direction&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;row&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h3&gt;justify-content&lt;/h3&gt;
+&lt;p&gt;Deklaracja wyrównująca elementy wzdłuż &lt;strong&gt;głównej osi&lt;/strong&gt; (main-axis)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-start&lt;/code&gt; - obiekty są przyklejone &lt;strong&gt;do  początku&lt;/strong&gt;(start)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-end&lt;/code&gt; - obiekty są przyklejone &lt;strong&gt;do końca&lt;/strong&gt; (end)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;center&lt;/code&gt; - obiekty są &lt;strong&gt;wyśrodkowane&lt;/strong&gt; wzdłuż linii&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;space-between&lt;/code&gt; - obiekty są &lt;strong&gt;równo rozdystrybuowane&lt;/strong&gt; w ramach rodzica i &lt;strong&gt;przyklejone do granic&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;space-around&lt;/code&gt; - obiekty są &lt;strong&gt;równo rozdystrybuowane&lt;/strong&gt; w ramach rodzica z taką samą odległością &lt;strong&gt;pomiędzy sobą jak i granicą&lt;/strong&gt; [pierwszy obiekt ma odległość w skali 1 po lewej ale 2 po prawej ponieważ sumuje się odległość obiektu 1. i 2.]&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;space-evenly&lt;/code&gt; - odległość pomiędzy każdym z &lt;strong&gt;elementów i granic&lt;/strong&gt; jest równa&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;start&lt;/code&gt; / &lt;code&gt;end&lt;/code&gt; / &lt;code&gt;right&lt;/code&gt; / &lt;code&gt;left&lt;/code&gt; - obiekty są zależne od &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"&gt;&lt;code&gt;writing-mode&lt;/code&gt;&lt;/a&gt; i uporządkowane kolejno od początku, końca, prawa, lewa&lt;/p&gt;
+&lt;p&gt;&lt;img alt="justify-content" src="https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg" width="50%"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;align-items&lt;/h3&gt;
+&lt;p&gt;Deklaracja wyrównująca elementy wzdłuż &lt;strong&gt;osi przecinającej&lt;/strong&gt; (cross-axis)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-start&lt;/code&gt; - elementy ułożone są przy górnej krawędzi rodzica (cross start)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-end&lt;/code&gt; - elementy ułożone są przy dolnej krawędzi rodzica (cross end)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;center&lt;/code&gt; - wyśrodkowane wobec osi przecinającej&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;stretch&lt;/code&gt; - wypełnia cały kontener&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;baseline&lt;/code&gt; - wyśrodkowane wobec linii bazowej&lt;/p&gt;
+&lt;p&gt;&lt;img alt="align-items" src="https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg" width="50%"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;align-content&lt;/h3&gt;
+&lt;p&gt;Deklaracja wyrównująca elementy &lt;strong&gt;wzdłuż głównej osi&lt;/strong&gt; (main-axis)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-start&lt;/code&gt; - element spakowane są do krawędzi górnej rodzica (cross-start)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-end&lt;/code&gt; - elementy spakowane są do krawędzi dolnej rodzica (cross-end)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;center&lt;/code&gt; - elementy spakowane są do środka/ wycentrowane w ramach kontenera&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;stretch&lt;/code&gt; - elementy są rozciągnięte i wypełniają całą powierzchnię rodzica&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;space-between&lt;/code&gt; - elementy są równo rozdystrybuowane po kontenerze z równą przestrzenią pomiędzy sobą&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;space-around&lt;/code&gt; - elementy są równo rozdystrybuowane po kontenerze&lt;/p&gt;
+&lt;p&gt;&lt;img alt="align-content" src="https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg" width="50%"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;flex-wrap&lt;/h3&gt;
+&lt;p&gt;Deklaracja &lt;code&gt;flex-wrap&lt;/code&gt; definiuje zawijanie się zawartych w rodzicu elementów.&lt;/p&gt;
+&lt;p&gt;Przykładowe zastosowanie&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;flex-direction&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;row&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;flex-wrap&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;wrap&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Możliwe opcje: &lt;code&gt;nowrap&lt;/code&gt; oraz &lt;code&gt;wrap-reverse&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Więcej na ten temat znajdziesz &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap"&gt;tutaj&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;flex&lt;/h3&gt;
+&lt;p&gt;Przy pomocy deklaracji &lt;code&gt;flex&lt;/code&gt; istnieje możliwość zdefiniowania minimalnej wielkości dziecka np. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;flex-direction&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;row&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;flex-wrap&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;wrap&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ta &lt;strong&gt;deklaracja&lt;/strong&gt; może być użyta również w ramach deklaracji &lt;strong&gt;dziecka&lt;/strong&gt; - patrz niżej&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;flex-flow&lt;/h3&gt;
+&lt;p&gt;flex-direction + flex-wrap = flex-flow np.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;flex-flow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;column&lt;/span&gt; &lt;span class="kc"&gt;wrap&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h2&gt;Podstawowe deklaracje - dzieci (flex-items)&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3&gt;align-self&lt;/h3&gt;
+&lt;p&gt;Ta deklaracja pozwala na przedefiniowanie układu zdefiniowane z pozycji rodzica dla każdego elementu osobno -&amp;gt; patrz &lt;code&gt;align-items&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-start&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;flex-end&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;center&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;baseline&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;stretch&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;flex-grow/shrink&lt;/h3&gt;
+&lt;p&gt;Definiuję współczynnik (factor) w jakim poszczególne elementy kurczą (grow) się lub rozrastają (shrink)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;.obiekt&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;flex-shrink:&lt;/span&gt; &lt;span class="err"&gt;1&lt;/span&gt;&lt;span class="c"&gt;;&lt;/span&gt;
+  &lt;span class="err"&gt;}&lt;/span&gt;
+
+&lt;span class="nl"&gt;.obiekt:&lt;/span&gt;&lt;span class="nf"&gt;nth-of-type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;flex:&lt;/span&gt; &lt;span class="err"&gt;2&lt;/span&gt;&lt;span class="c"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h3&gt;flex-basis&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;flex-basis&lt;/code&gt; definiuje wielkość danego elementu, np.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;.obiekt&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;flex-basis:&lt;/span&gt; &lt;span class="err"&gt;20%&lt;/span&gt;&lt;span class="c"&gt;;  &amp;lt;podstawową wartością jest: auto&amp;gt;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h3&gt;flew po raz kolejny&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;flex-grow/shrink + flex-basis = flex&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Deklaracja &lt;code&gt;flex&lt;/code&gt; w ramach dziecka może być użyta w kontekście potrzeby zdefiniowania jego wielkości oraz istotności w rozrastaniu-kurczeniu się wobec jego rodzeństwa - gdzie liczba na początku definiuje skalę a kolejna wielkość wyrażoną w px.
+Przykładowe zastosowanie:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;.obiekt&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;flex:&lt;/span&gt; &lt;span class="err"&gt;1&lt;/span&gt; &lt;span class="err"&gt;200&lt;/span&gt;&lt;span class="nf"&gt;px&lt;/span&gt;&lt;span class="c"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+
+&lt;span class="nl"&gt;.obiekt:&lt;/span&gt;&lt;span class="nf"&gt;nth-of-type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;flex:&lt;/span&gt; &lt;span class="err"&gt;2&lt;/span&gt; &lt;span class="err"&gt;200&lt;/span&gt;&lt;span class="nf"&gt;px&lt;/span&gt;&lt;span class="c"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h3&gt;order&lt;/h3&gt;
+&lt;p&gt;Definiuję kolejność w jakiej dany element się pojawia np. &lt;code&gt;order: -1&lt;/code&gt; będzie oznaczał, że dany element &lt;em&gt;nadpisze&lt;/em&gt; kolejność elementu zawartą w html i wyświetli go przed pierwszym elementem.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;Podsumowanie&lt;/h2&gt;
+&lt;p&gt;Dla przypomnienia: istotne jest to aby pamiętać, że dziecko rodzica zorganizowane w sposób flexboxowy również może być rodzicem dla własnego dziecka, którego pozycja będzie oparta na flexboxie&lt;/p&gt;
+&lt;p&gt;&lt;img alt="flexbox w flexboxie" src="https://mdn.mozillademos.org/files/13418/flexbox-example7.png"&gt;&lt;/p&gt;
+&lt;p&gt;Źródła (w tym grafik):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://developer.mozilla.org/pl/docs/Learn/CSS/CSS_layout/Flexbox"&gt;developer.mozilla.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://rejkowicz.pl/blog/co-to-jest-flexbox/"&gt;rejkowicz.pl&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"&gt;css-tricks.com&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="css"></category><category term="css"></category><category term="flexbox"></category><category term="pozycjonowanie-css"></category></entry></feed>
