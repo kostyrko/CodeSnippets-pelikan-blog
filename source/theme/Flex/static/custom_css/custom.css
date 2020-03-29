@@ -1,6 +1,7 @@
 
 article header h2 a {
   color: #a82a37;
+  font-weight: 400;
 }
 
 aside {
@@ -11,4 +12,9 @@ aside {
   aside {
     width: 18vw;
   }
+}
+
+#tipue_search_input {
+  margin-top: 25px;
+  border-radius: 25px;
 }

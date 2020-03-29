@@ -19,11 +19,11 @@ TIMEZONE = 'Europe/Warsaw'
 DEFAULT_LANG = 'pl'
 
 # Feed generation is usually not desired when developing
-# FEED_ALL_ATOM = None
-# CATEGORY_FEED_ATOM = None
-# TRANSLATION_FEED_ATOM = None
-# AUTHOR_FEED_ATOM = None
-# AUTHOR_FEED_RSS = None
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 # Blogroll
 # LINKS = (('Przykładowy link', 'http://getpelican.com/'),)
@@ -40,12 +40,18 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
+
+USE_FOLDER_AS_CATEGORY = False
 MAIN_MENU = True
+HOME_HIDE_TAGS = False
 
 DISPLAY_CATEGORIES_ON_MENU = True
 
-# MENUITEMS = (('CSS', '/css.html'),
-#              ('JS', '/js.html'))
+MENUITEMS = (("Kategorie", "/categories.html"),
+    ("Tagi", "/tags.html"),
+    # ("Sitemap", "/sitemap.xml")
+)
+
 
 #set output path
 OUTPUT_PATH = '../output'
@@ -65,8 +71,20 @@ THEME = "theme/Flex"
 # set plugin folder
 PLUGIN_PATHS = ['plugins/', ]
 
+# DIRECT_TEMPLATES = (('index','authors', 'tags', 'categories', 'archives','search'))
+DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
+
+# set tipe_search
+USE_TIPUE_SEARCH = False
+
+SITEMAP = {
+    "format": "xml",
+    "priorities": {"articles": 0.8, "indexes": 0.6, "pages": 0.7},
+    "changefreqs": {"articles": "weekly", "indexes": "daily", "pages": "monthly"},
+}
+
 #set plugins
-PLUGINS = ['i18n_subsites', 'post_stats', 'related_posts']
+PLUGINS = ['i18n_subsites', 'post_stats', 'related_posts', 'tipue_search']
 
 #set jinja
 JINJA_ENVIRONMENT = {
@@ -126,3 +144,4 @@ DISQUS_SITENAME = 'zfrontu'
 
 # set google analytics
 # GOOGLE_ANALYTICS = "UA-########-#"
+

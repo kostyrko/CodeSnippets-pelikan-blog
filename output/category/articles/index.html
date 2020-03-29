@@ -12,6 +12,11 @@
 
     <link rel="stylesheet" type="text/css" href="../../theme/stylesheet/style.min.css">
 
+    <script src="../../theme/tipuesearch/jquery.min.js"></script>
+    <script src="../../theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="../../theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="../../theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <link rel="stylesheet" href="../../theme/tipuesearch/tipuesearch.min.css" />
 
   <link rel="stylesheet" type="text/css" href="../../theme/pygments/github.min.css">
   
@@ -73,6 +78,11 @@
             </i>
           </a></li>
       </ul>
+
+        <form class="navbar-search" action="/search.html" role="search">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
+        </form>
+
     </div>
 
 
@@ -115,7 +125,7 @@
 <p>
   &copy;  2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
-<p>Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme with modifications </p><p>
+<p>Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme with few modifications by mkostyrko </p><p>
   <a rel="license"
      href="http://creativecommons.org/licenses/by-sa/4.0/"
      target="_blank">
@@ -144,5 +154,10 @@
 </script>
 
 
+    <script>
+      $(document).ready(function() {
+          $('#tipue_search_input').tipuesearch();
+      });
+    </script>
 </body>
 </html>

@@ -115,8 +115,7 @@
       </a>
       <h1><a href="{{ SITEURL }}">{{ SITETITLE }}</a></h1>
 
-      {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
-      {% if pages or LINKS %}
+      
       <nav>
         <ul class="list">
           {# Open links in new window depending on the LINKS_IN_NEW_TAB setting #}
@@ -145,6 +144,8 @@
             <li><a target="{{ get_target(link) }}" href="{{ link }}" >{{ name }}</a></li>
           {% endfor %}
         </ul>
+
+        
       </nav>
       {% endif %}
 
@@ -157,13 +158,6 @@
           </a></li>
         {% endfor %}
       </ul>
-
-      {% if USE_TIPUE_SEARCH %}
-        <form class="navbar-search" action="/search.html" role="search">
-            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
-        </form>
-      {% endif %}
-
     </div>
 
     {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.aside %}
