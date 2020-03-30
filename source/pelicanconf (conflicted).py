@@ -129,12 +129,12 @@ CC_LICENSE = {
 
 # defining url structure
 
-ARTICLE_URL = '{slug}.html'
+# ARTICLE_URL = '{slug}.html'
 
-ARTICLE_SAVE_AS = '{slug}.html'
+# ARTICLE_SAVE_AS = '{slug}.html'
 
-# ARTICLE_URL = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}.html'
-# ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}.html'
+ARTICLE_URL = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = 'articles/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 
 # PAGE_URL = 'pages/{slug}/'
 # PAGE_SAVE_AS = 'pages/{slug}/index.html'
