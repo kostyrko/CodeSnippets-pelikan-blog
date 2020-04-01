@@ -1,11 +1,11 @@
 Title: Flexbox - wprowadzenie
 Author: mkostyrko
-Date: 2020-03-27 9:00
-Updated: 2020-03-29 9:00
+Date: 2020-03-30 6:00
+Updated:
 Category: css
 Tags: css, flexbox, pozycjonowanie-css
-Slug: flexbox-wprowadzenie
-related_posts: 
+Slug: css-flexbox
+related_posts: css-place-items
 
 Flexbox jest technologią odpowiedzialną za układ treści znajdujących się na stronie internetowej w dosłownym tłumaczeniu można by to nazwać *elastycznym modelem pudełkowym*. Faktycznie ten sposób organizacji tzw layoutu lub też interfejsu oparty jest na równorzędnych **kontenerach** zwierających treść, które mogą być organizowane **w sposób poziomy (liniowy) lub pionowy (kolumnowy)** i pozwala na tworzenie **prostej i czytelnej struktury** strony i pozwala w relatywnie sposób na budowę **responsywnego projektu** strony internetowej.
 

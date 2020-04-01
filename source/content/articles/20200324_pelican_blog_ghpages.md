@@ -1,20 +1,21 @@
 Title: Pelican blog - GitHub pages
 Author: mkostyrko
-Date: 2020-03-27 22:00
+Date: 2020-03-24 22:00
 Updated:
-Category: blog
-Tags: python, gh-pages, pelican, github, github pages
+Category: pelican-blog
+Tags: python, gh-pages, pelican, github, github pages, blog
 Slug: pelican-blog-ghpages
 related_posts: pelican-blog-instalacja
 
+Krótka instrukcja hostowania bloga przy pomocy GitHub-Pages
 
 * Instalowanie gh-pages dla Pelicana
 
     `pip install pelican ghp-import Markdown`
 
-* Sklonowanie pustego repozytorium
+* Sklonowanie pustego repozytorium / Repo wcześniej stworzone na stronie github.com
 
-    `git clone https://GitHub.com/username/username.github.io blog`
+    `git clone https://GitHub.com/username/username.github.io`
 
 * Stworzenie nowej gałęzi `content` gdzie przechowywane będą surowe/źródłowe pliki - Git Hub pages będzie czerpało z głównej gałęzi `master`
 
@@ -26,7 +27,7 @@ related_posts: pelican-blog-instalacja
 
     `pelican content -o output -s publishconf.py`
 
-    (gdzie -s oznacza settings/ustawienia + wskazanie pliku, w którym się znajdują)
+    (gdzie -s oznacza settings/ustawienia a -o miejsce w którym mają się zapisać pliki)
 
 * Tworzenie plików do wgrania do repozytorium (gdzie output - miejsce zapisu plików może być np. '.' jeśli w danym folderze) ale tego do gałęzi `master`
 
@@ -34,7 +35,7 @@ related_posts: pelican-blog-instalacja
 
     tłumacząc
 
-    `ghp-import -m "wiadomość" --no-jekyll -b nazwa_gałęzi folder_zapisu_danych`
+    `ghp-import -m "wiadomość" --no-jekyll -b [nazwa_gałęzi] [folder_zapisu_danych]`
 
 * Wypchnięcie do repozytorium
 

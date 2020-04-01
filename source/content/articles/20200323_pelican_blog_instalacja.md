@@ -2,8 +2,8 @@ Title: Pelican blog - instalacja
 Author: mkostyrko
 Date: 2020-03-23 9:00
 Updated: 2020-03-24 10:00
-Category: blog
-Tags: python, markdown, pelican
+Category: pelican-blog
+Tags: python, markdown, pelican, blog
 Slug: pelican-blog-instalacja
 
 Gdy szukałem platformy do tworzenia bloga, wybór w pierwszej kolejności padł na Jakyll (Ruby on Rails), rozważałem również Hugo (Go), ostatecznie padło jednak na Pelicana bo ten "stoi" na Pythonie, choć jest dużo mniej popularny od wcześniej wspomnianych generatorów stron statycznych. W przyszłości planuję również wypróbować [Lektora](https://www.getlektor.com/), który również wywodzi się z Pythona
