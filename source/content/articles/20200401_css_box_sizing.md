@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-04-01 10:00
 Updated:
 Category: css
-Tags: css
+Tags: css, box-sizing, border-box, padding-box, content-box
 Slug: css-box-sizing
 related_posts: css-place-items, css-float
 

@@ -3,8 +3,8 @@ Author: mkostyrko
 Date: 2020-04-01 09:00
 Updated:
 Category: css
-Tags: css
-Slug: 
+Tags: css, selektory, znaczniki, potomek, dziecko
+Slug: css-selektory
 related_posts: css-pseudo-elementy
 
 
