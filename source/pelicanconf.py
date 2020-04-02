@@ -74,6 +74,7 @@ PLUGIN_PATHS = ['plugins/', ]
 
 # set tipe_search
 USE_TIPUE_SEARCH = True
+# integration added based on https://github.com/JackMcKew
 
 SITEMAP = {
     "format": "xml",
