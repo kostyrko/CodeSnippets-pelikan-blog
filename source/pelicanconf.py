@@ -73,7 +73,7 @@ PLUGIN_PATHS = ['plugins/', ]
 
 
 # set tipe_search
-# USE_TIPUE_SEARCH = True
+USE_TIPUE_SEARCH = True
 
 SITEMAP = {
     "format": "xml",
@@ -82,15 +82,15 @@ SITEMAP = {
 }
 
 #set plugins
-PLUGINS = ['i18n_subsites', 'post_stats', 'related_posts']
-# PLUGINS = ['i18n_subsites', 'post_stats', 'related_posts', 'tipue_search']
+# PLUGINS = ['i18n_subsites', 'post_stats', 'related_posts']
+PLUGINS = ['i18n_subsites', 'post_stats', 'related_posts', 'tipue_search']
 
 #set jinja
 JINJA_ENVIRONMENT = {
     'extensions': ['jinja2.ext.i18n'],
 }
 
-# DIRECT_TEMPLATES = (('index','authors', 'tags', 'categories', 'archives','search'))
+DIRECT_TEMPLATES = (('index','authors', 'tags', 'categories', 'archives','search'))
 # DIRECT_TEMPLATES = ['index', 'tags', 'categories', 'authors', 'archives', 'search']
 
 # set path for articles/blog posts     

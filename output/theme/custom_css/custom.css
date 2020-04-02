@@ -8,13 +8,15 @@ aside {
   background-color: #44151a;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   aside {
     width: 18vw;
   }
 }
 
 #tipue_search_input {
+  max-width: 300px;
+  width: 90%;
   margin-top: 25px;
   border-radius: 25px;
 }
