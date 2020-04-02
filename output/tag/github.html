@@ -12,6 +12,12 @@
 
     <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
 
+  <script src="../theme/tipuesearch/jquery.min.js"></script>
+  <script src="../theme/tipuesearch/tipuesearch.min.js"></script>
+  <script src="../theme/tipuesearch/tipuesearch.js"></script>
+  <script src="../theme/tipuesearch/tipuesearch_set.js"></script>
+  <link rel="stylesheet" href="../theme/tipuesearch/tipuesearch.css" />
+  <script src="../tipuesearch_content.js"></script>
 
   <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
   
@@ -82,7 +88,10 @@
             </i>
           </a></li>
       </ul>
-
+      
+        <form class="navbar-search" action="../search.html" role="search">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
+        </form>
 
     </div>
 
@@ -114,6 +123,28 @@
   </header>
   <div>
       <p>Planowane</p>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../pelican-rozszerzenia.html">Pelican blog - rozszerzenia</a></h2>
+    <p>
+      Opublikowano wto 24 marca 2020 w <a href="../category/misc.html">misc</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/python.html">python</a>,              <a href="../tag/pelican.html">pelican</a>,              <a href="../tag/github.html">github</a>,              <a href="../tag/blog.html">blog</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>Planowany -&gt; CMS</p>
+<p>https://blurringexistence.net/pelicide-demo/</p>
+<h3 id="zrodla">Źródło:</h3>
+<p>https://github.com/iksteen/pelicide</p>
+<p>https://github.com/FedericoCeratto/shoebill</p>
+<p>https://github.com/mirekdlugosz/pelican-metadata-generator</p>
+<p>http://jsliang.com/sublime-pelican/</p>
   </div>
   <hr />
 </article>
@@ -185,5 +216,10 @@
 </script>
 
 
+  <script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+    });
+  </script>
 </body>
 </html>

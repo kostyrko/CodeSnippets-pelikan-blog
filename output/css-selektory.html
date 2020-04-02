@@ -12,6 +12,12 @@
 
     <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
 
+  <script src="./theme/tipuesearch/jquery.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch_set.js"></script>
+  <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
+  <script src="./tipuesearch_content.js"></script>
 
   <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
   
@@ -43,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Selektory Źródło i polecane linki:" />
-<meta name="keywords" content="css">
+<meta name="description" content="Schemat reguła { - deklaracja właściwość - wartość; } Selektor znacznika np strong Selektor klasy poprzedzony jest kropką . Selektor id poprzedzony jest haszem # Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet. Selektory elementów * - każdy element/ selektor uniwersalny e p - element &#34;p&#34; będący potomkiem …" />
+<meta name="keywords" content="css, selektory, znaczniki, potomek, dziecko">
 
 
 <meta property="og:site_name" content="...z frontu"/>
-<meta property="og:title" content="CSS - selektory"/>
-<meta property="og:description" content="Selektory Źródło i polecane linki:"/>
+<meta property="og:title" content="CSS - składnia selektory"/>
+<meta property="og:description" content="Schemat reguła { - deklaracja właściwość - wartość; } Selektor znacznika np strong Selektor klasy poprzedzony jest kropką . Selektor id poprzedzony jest haszem # Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet. Selektory elementów * - każdy element/ selektor uniwersalny e p - element &#34;p&#34; będący potomkiem …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./css-selektory.html"/>
 <meta property="og:type" content="article"/>
@@ -58,9 +64,13 @@
 <meta property="article:author" content="./author/mkostyrko.html">
 <meta property="article:section" content="css"/>
 <meta property="article:tag" content="css"/>
+<meta property="article:tag" content="selektory"/>
+<meta property="article:tag" content="znaczniki"/>
+<meta property="article:tag" content="potomek"/>
+<meta property="article:tag" content="dziecko"/>
 <meta property="og:image" content="">
 
-  <title>...z frontu &ndash; CSS - selektory</title>
+  <title>...z frontu &ndash; CSS - składnia selektory</title>
 
 </head>
 <body>
@@ -91,7 +101,10 @@
             </i>
           </a></li>
       </ul>
-
+      
+        <form class="navbar-search" action="./search.html" role="search">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
+        </form>
 
     </div>
 
@@ -111,7 +124,7 @@
 <article class="single">
   <header>
       
-    <h1 id="css-selektory">CSS - selektory</h1>
+    <h1 id="css-selektory">CSS - składnia selektory</h1>
     <p>
       Opublikowano śro 01 kwietnia 2020 w <a href="./category/css.html">css</a>
 
@@ -121,12 +134,73 @@
 
 
   <div>
-    <p>Selektory</p>
+    <p>Schemat</p>
+<div class="highlight"><pre><span></span><code><span class="n">reguła</span> <span class="err">{</span> <span class="o">-</span> <span class="n">deklaracja</span>
+<span class="n">właściwość</span> <span class="o">-</span> <span class="n">wartość</span><span class="p">;</span>
+<span class="err">}</span>
+</code></pre></div>
+
+
+<p>Selektor znacznika np <code>strong</code>
+Selektor klasy poprzedzony jest kropką <code>.</code></p>
+<p>Selektor id poprzedzony jest haszem <code>#</code></p>
+<p>Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet.</p>
+<hr>
+<h3>Selektory elementów</h3>
+<p><strong><code>*</code></strong> - każdy element/ selektor uniwersalny</p>
+<p><strong><code>e p</code></strong> - element "p" będący <strong>potomkie</strong>m elementu "e"</p>
+<p><strong><code>e &gt; p</code></strong> - element "p" będący <strong>dzieckiem</strong> elementu "e"</p>
+<p><strong><code>e + p</code></strong> - element "e" bezpośrednio poprzedzony elementem "e"</p>
+<p><strong><code>e ~ p</code></strong> - element "e" poprzedzany przez element "p"</p>
+<hr>
+<h3>Selektory atrybutów</h3>
+<p><strong><code>e[atrybut]</code></strong> - element zawierający wybrany atrybut</p>
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="o">[</span><span class="n">target</span><span class="o">]</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">background</span><span class="o">-</span><span class="nl">color</span><span class="p">:</span><span class="w"> </span><span class="n">yellow</span><span class="p">;</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+
+<span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="ss">&quot;http://www.wikipedia.org&quot;</span><span class="w"> </span><span class="n">target</span><span class="o">=</span><span class="ss">&quot;_top&quot;</span><span class="o">&gt;</span><span class="n">wikipedia</span><span class="p">.</span><span class="n">org</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w"></span>
+</code></pre></div>
+
+
+<p><strong><code>e[atrybut="wartość"]</code></strong> - element posiadający atrybut z konkretną wartością</p>
+<div class="highlight"><pre><span></span><code>a[target=&quot;_blank&quot;] {
+  background-color: yellow;
+}
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.wikipedia.org&quot;</span> <span class="na">target=</span><span class="s">&quot;_top&quot;</span><span class="nt">&gt;</span>wikipedia.org<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.w3schools.com&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>w3schools.com<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
+
+
+<p><strong><code>e[atrybut~="konkretna_wartość"]</code></strong> - element zawierający atrybut, którego częścią jest konkretna wartość</p>
+<div class="highlight"><pre><span></span><code><span class="cp">[</span><span class="nx">title</span><span class="err">~</span><span class="o">=</span><span class="s2">&quot;flower&quot;</span><span class="cp">]</span> <span class="p">{</span>
+  <span class="k">border</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">&lt;</span><span class="nt">img</span> <span class="nt">src</span><span class="o">=</span><span class="s2">&quot;img_flwr.gif&quot;</span> <span class="nt">title</span><span class="o">=</span><span class="s2">&quot;flower&quot;</span> <span class="nt">width</span><span class="o">=</span><span class="s2">&quot;224&quot;</span> <span class="nt">height</span><span class="o">=</span><span class="s2">&quot;162&quot;</span><span class="o">&gt;</span>
+</code></pre></div>
+
+
+<p><a href="http://www.kurshtml.edu.pl/css/selektory.html">Pełna lista</a></p>
+<hr>
+<p><strong>Gra selektory</strong></p>
+<p>http://flukeout.github.io/</p>
+<hr>
+<h3>Moce selektorów</h3>
+<p><img alt="Star Wars Selectors" src="https://stuffandnonsense.co.uk/archives/images/css-specificity-wars.png"></p>
 <p>Źródło i polecane linki:</p>
+<p>https://the-awwwesomes.gitbooks.io/html-css-step-by-step/content/pl/css-advanced-selectors/index.html</p>
+<p>https://developer.mozilla.org/pl/docs/Web/CSS/Na_pocz%C4%85tek/Selektory</p>
+<p>https://stuffandnonsense.co.uk/archives/css_specificity_wars.html</p>
   </div>
   <div class="tag-cloud">
     <p>
       <a href="./tag/css.html">css</a>
+      <a href="./tag/selektory.html">selektory</a>
+      <a href="./tag/znaczniki.html">znaczniki</a>
+      <a href="./tag/potomek.html">potomek</a>
+      <a href="./tag/dziecko.html">dziecko</a>
     </p>
   </div>
 
@@ -189,5 +263,10 @@
 </script>
 
 
+  <script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+    });
+  </script>
 </body>
 </html>

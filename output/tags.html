@@ -12,6 +12,12 @@
 
     <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
 
+  <script src="./theme/tipuesearch/jquery.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch_set.js"></script>
+  <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
+  <script src="./tipuesearch_content.js"></script>
 
   <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
   
@@ -82,7 +88,10 @@
             </i>
           </a></li>
       </ul>
-
+      
+        <form class="navbar-search" action="./search.html" role="search">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
+        </form>
 
     </div>
 
@@ -110,22 +119,26 @@
           <li><a href="./tag/angles.html">angles</a> (1)</li>
           <li><a href="./tag/before.html">::before</a> (1)</li>
           <li><a href="./tag/block.html">block</a> (1)</li>
-          <li><a href="./tag/blog.html">blog</a> (3)</li>
+          <li><a href="./tag/blog.html">blog</a> (4)</li>
           <li><a href="./tag/bloki.html">bloki</a> (1)</li>
+          <li><a href="./tag/border-box.html">border-box</a> (1)</li>
+          <li><a href="./tag/box-sizing.html">box-sizing</a> (1)</li>
           <li><a href="./tag/calc.html">calc</a> (1)</li>
           <li><a href="./tag/center.html">center</a> (1)</li>
           <li><a href="./tag/ciemny-motyw.html">ciemny motyw</a> (1)</li>
           <li><a href="./tag/clear.html">clear</a> (1)</li>
           <li><a href="./tag/clearfix.html">clearfix</a> (1)</li>
+          <li><a href="./tag/content-box.html">content-box</a> (1)</li>
           <li><a href="./tag/css.html">css</a> (10)</li>
           <li><a href="./tag/display.html">display</a> (1)</li>
+          <li><a href="./tag/dziecko.html">dziecko</a> (1)</li>
           <li><a href="./tag/first-line.html">first-line</a> (1)</li>
           <li><a href="./tag/fixed.html">fixed</a> (1)</li>
           <li><a href="./tag/flexbox.html">flexbox</a> (2)</li>
           <li><a href="./tag/float.html">float</a> (1)</li>
           <li><a href="./tag/gh-pages.html">gh-pages</a> (2)</li>
           <li><a href="./tag/git.html">git</a> (1)</li>
-          <li><a href="./tag/github.html">github</a> (2)</li>
+          <li><a href="./tag/github.html">github</a> (3)</li>
           <li><a href="./tag/github-pages.html">github pages</a> (2)</li>
           <li><a href="./tag/grid.html">grid</a> (1)</li>
           <li><a href="./tag/inline.html">inline</a> (1)</li>
@@ -138,14 +151,17 @@
           <li><a href="./tag/markdown.html">markdown</a> (2)</li>
           <li><a href="./tag/number.html">number</a> (1)</li>
           <li><a href="./tag/overflow.html">overflow</a> (1)</li>
-          <li><a href="./tag/pelican.html">pelican</a> (3)</li>
+          <li><a href="./tag/padding-box.html">padding-box</a> (1)</li>
+          <li><a href="./tag/pelican.html">pelican</a> (4)</li>
           <li><a href="./tag/place-items.html">place-items</a> (1)</li>
+          <li><a href="./tag/potomek.html">potomek</a> (1)</li>
           <li><a href="./tag/pozycjonowanie.html">pozycjonowanie</a> (1)</li>
           <li><a href="./tag/pozycjonowanie-css.html">pozycjonowanie-css</a> (1)</li>
           <li><a href="./tag/pseudo-elementy.html">pseudo-elementy</a> (1)</li>
           <li><a href="./tag/pseudo-klasy.html">pseudo-klasy</a> (1)</li>
-          <li><a href="./tag/python.html">python</a> (3)</li>
+          <li><a href="./tag/python.html">python</a> (4)</li>
           <li><a href="./tag/relative.html">relative</a> (1)</li>
+          <li><a href="./tag/selektory.html">selektory</a> (1)</li>
           <li><a href="./tag/skroty-klawiszowe.html">skróty klawiszowe</a> (2)</li>
           <li><a href="./tag/start.html">start</a> (1)</li>
           <li><a href="./tag/static.html">static</a> (1)</li>
@@ -160,6 +176,7 @@
           <li><a href="./tag/visual-studio-code.html">visual studio code</a> (2)</li>
           <li><a href="./tag/vsc.html">vsc</a> (2)</li>
           <li><a href="./tag/wyswietlanie.html">wyswietlanie</a> (1)</li>
+          <li><a href="./tag/znaczniki.html">znaczniki</a> (1)</li>
     </ul>
   </div>
 </article>
@@ -197,5 +214,10 @@
 </script>
 
 
+  <script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+    });
+  </script>
 </body>
 </html>

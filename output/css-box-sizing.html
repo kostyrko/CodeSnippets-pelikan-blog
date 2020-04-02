@@ -12,6 +12,12 @@
 
     <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
 
+  <script src="./theme/tipuesearch/jquery.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch_set.js"></script>
+  <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
+  <script src="./tipuesearch_content.js"></script>
 
   <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
   
@@ -44,7 +50,7 @@
 
 <meta name="author" content="mkostyrko" />
 <meta name="description" content="Box-sizing Możliwe wartości do zastosowania przy tej właściwości border-box - wielkość kontenera (div) jest dokładnie taka jak wskazano - definiuje wielkość kontenera po jego granicy content-box- podstawowe, zachowanie się kontenera (div) od obszaru, w którym znajduje się jego zwartość /wskazana wartość wielkość pudełka odnosi się do jego zawartości, - oznaczo to że margines …" />
-<meta name="keywords" content="css">
+<meta name="keywords" content="css, box-sizing, border-box, padding-box, content-box">
 
 
 <meta property="og:site_name" content="...z frontu"/>
@@ -58,6 +64,10 @@
 <meta property="article:author" content="./author/mkostyrko.html">
 <meta property="article:section" content="css"/>
 <meta property="article:tag" content="css"/>
+<meta property="article:tag" content="box-sizing"/>
+<meta property="article:tag" content="border-box"/>
+<meta property="article:tag" content="padding-box"/>
+<meta property="article:tag" content="content-box"/>
 <meta property="og:image" content="">
 
   <title>...z frontu &ndash; CSS: box-sizing</title>
@@ -91,7 +101,10 @@
             </i>
           </a></li>
       </ul>
-
+      
+        <form class="navbar-search" action="./search.html" role="search">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
+        </form>
 
     </div>
 
@@ -149,6 +162,10 @@
   <div class="tag-cloud">
     <p>
       <a href="./tag/css.html">css</a>
+      <a href="./tag/box-sizing.html">box-sizing</a>
+      <a href="./tag/border-box.html">border-box</a>
+      <a href="./tag/padding-box.html">padding-box</a>
+      <a href="./tag/content-box.html">content-box</a>
     </p>
   </div>
 
@@ -212,5 +229,10 @@
 </script>
 
 
+  <script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+    });
+  </script>
 </body>
 </html>

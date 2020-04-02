@@ -5,7 +5,7 @@ from datetime import datetime
 
 AUTHOR = 'mkostyrko'
 SITENAME = '...z frontu'
-SITEURL = ''
+SITEURL = 'https://kostyrko.github.io/zfrontu/'
 SITETITLE = "Notatki z frontu"
 SITESUBTITLE = "JS/CSS/PY"
 # FAVICON = SITEURL + '/theme/img/favicon.png'
@@ -24,9 +24,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
-# Blogroll
-# LINKS = (('Przykładowy link', 'http://getpelican.com/'),)
 
 
 # Social widget <- important begain with small letter
@@ -74,7 +71,7 @@ PLUGIN_PATHS = ['plugins/', ]
 
 # set tipe_search
 USE_TIPUE_SEARCH = True
-# integration added based on https://github.com/JackMcKew
+
 
 SITEMAP = {
     "format": "xml",
