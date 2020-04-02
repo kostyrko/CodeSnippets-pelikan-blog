@@ -242,6 +242,14 @@ Przykładowe zastosowanie:
 
 ---
 
+### Gry do ćwiczenia Flexboxa
+
+http://www.flexboxdefense.com/
+
+https://flexboxfroggy.com/
+
+---
+
 ## Podsumowanie
 
 Dla przypomnienia: istotne jest to aby pamiętać, że dziecko rodzica zorganizowane w sposób flexboxowy również może być rodzicem dla własnego dziecka, którego pozycja będzie oparta na flexboxie
