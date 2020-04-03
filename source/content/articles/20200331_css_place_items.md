@@ -14,7 +14,7 @@ Deklaracja **`place-items`** jest połączeniem `align-items` oraz `justify-item
 Przykładowe zastosowanie
 
     .item {
-      display: flexbox;
+      display: flex;
       place-items: start center;
     }
 
@@ -31,14 +31,14 @@ W momencie kidy jedna wartość jest wskazana, wówczas przyjęta jest ona jako 
 Przykładowe zastosowanie
 
     .item {
-      display: flexbox;
+      display: flex;
       place-items: start;
     }
 
 i odpowiada to:
 
     .item {
-      display: flexbox;
+      display: flex;
       align-items: start;
       justify-items: start;
     }
