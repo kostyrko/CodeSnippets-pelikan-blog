@@ -2,7 +2,7 @@ Title: Pelican blog - rozszerzenia
 Author: mkostyrko
 Date: 2020-03-24 22:20
 Updated:
-Category: 
+Category: pelican-blog
 Tags: python, pelican, github, blog
 Slug: pelican-rozszerzenia
 related_posts: pelican-blog-instalacja

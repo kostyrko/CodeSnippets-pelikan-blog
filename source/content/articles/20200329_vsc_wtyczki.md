@@ -7,53 +7,31 @@ Tags: vsc, visual studio code, visual studio
 Slug: vsc-wtyczki
 related_posts: vsc-skroty-klawiszowe
 
+### Lista wtyczek wartych polecenia (alfabetycznie)
 
+Beautify (HookQR) - szuka małych błędów w kodzie oraz poprawia ich wygląd (identacje) [podobnie działająca wtyczka Prettier - Code formatter (Esban Pereren)]
 
+**Bracket Pair Colorizer** (CoenraadS) - koloruje nawiasy należące do tej samej pary odpowiednim kolorem [podobnie działająca wtyczka Rainbow Brackets (2gua)]
 
-Planowane
+Better comments (Aaron Bond) - pozwala na wprowadzanie komentarzy różnego typu do kodu JS (poprawia ich widoczność)
 
-Anacodna Extension Pack  (Mircrosoft)- połączenie z środowiskiem Anaconda / moje źródło Pythona
+Code Spell Checker (Street Side Software) - sprawdza błędy ortograficzne
 
-Beautify (HookQR)
+Git Extension Pack i Git History (Don Jayamanne) - wtyczka pozwalająca mieć kontrolę i zarządzać GITem
 
-Bracket Pair Colorizer (CoenraadS)
+HTML Boilerplae (sidthesloth) - Snippetty/Podpowiedzi do HTML
 
-Code Runner (Jun Han)
+JavaScript (ES6) code snippets - Snippetty/Podpowiedzi do JS
 
-Code Spell Checker (Street Side Software)
+Live Sass Compiler (Ritwick Dey) - podstawowa wtyczka do pracy z Sassem, na bieżąco tworzy/kompiluje CSS
 
-Easy Less (mrcrowl)
+Live Server (Ritwick Dey) - stawia serwer, który pozwala na podgląd HTML
 
-ESlin (Dirk Baeumar)
+markdownlint (David Anson) - pilnuje składni języka Mark Down
 
-Git Extension Pack (Don Jayamanne)
+**Polish - Code Spell Checker** (Street Side Software) - sprawdza błędy ortograficzne w języku polskim
 
-Git History (Don Jayamanne)
+**Project Manager** (Alessandro Fragnani) - na bocznym pasku pojawia się nowa ikona folderu i dzięki niej mamy szybki dostęp do wybranych projektów
 
-gitignore (CodeZomnier)
-
-HTML Boilerplae (sidthesloth)
-
-JavaScript (ES6) code snippets
-
-Live Sass Compiler (Ritwick Dey)
-
-Live Server (Ritwick Dey)
-
-markdownlint (David Anson)
-
-Polish - Code Spell Checker (Street Side Software)
-
-Prettier - Code formatter (Esban Pereren)
-
-Quokka.js (Wallaby.js)
-
-Quokka Statusbar Buttons (Skethcbuch)
-
-Rainbow Brackets (2gua)
-
-Toggle light/ Dark Theme (panzerstadt)
-
-Project Manager (Alessandro Fragnani)
-
-Quick HMTL Previewer (daiyy)
+**==> Quokka.js <==** (Wallaby.js) - wymaga instalacji node.js a dzięki niej w głównym oknie VSC będzie wywoływany JS - Gorąco polecam!!!
+ - sprawdź również Quokka Statusbar Buttons (Skethcbuch)
