@@ -25,31 +25,35 @@ Krótka instrukcja hostowania bloga przy pomocy GitHub-Pages
 
 * Tworzenie treści - stron statycznych gotowej do publikacji. W terminali wpisz (gdzie wyjściowym folderem jest source a output miejsce zapisania plików do wgrania do repozytorium na githubie) - praca na gałęzi `content`:
 
-    `pelican content -o output -s publishconf.py`
+        pelican content -o output -s publishconf.py
 
     (gdzie -s oznacza settings/ustawienia a -o miejsce w którym mają się zapisać pliki)
 
+    np.
+
+        pelican content -o ../../zfrontu/site -s publishconf.py
+
 * Tworzenie plików do wgrania do repozytorium (gdzie output - miejsce zapisu plików może być np. '.' jeśli w danym folderze) ale tego do gałęzi `master`
 
-    `ghp-import -m "Generate Pelican site" --no-jekyll -b master output`
+        ghp-import -m "Generate Pelican site" --no-jekyll -b master output
 
     tłumacząc
 
-    `ghp-import -m "wiadomość" --no-jekyll -b [nazwa_gałęzi] [folder_zapisu_danych]`
+        ghp-import -m "wiadomość" --no-jekyll -b [nazwa_gałęzi] [folder_zapisu_danych]
 
 * Wypchnięcie do repozytorium
 
-    `git push origin master`
+        git push origin master
 
     (alternatywnie można zautomatyzować ten proces `make publish` [więcej na ten temat tutaj](http://docs.getpelican.com/en/3.6.3/publish.html))
 
 * Dodawanie nowej treści do gałęzi `content`
 
-    `git add content`
+        git add content
 
-    `git commit -m 'treść wiadomości'`
+        git commit -m 'treść wiadomości
 
-    `git push origin content`
+        git push origin content
 
 
 ### Źródło: {#zrodla}

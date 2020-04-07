@@ -152,25 +152,47 @@
 </li>
 <li>
 <p>Tworzenie treści - stron statycznych gotowej do publikacji. W terminali wpisz (gdzie wyjściowym folderem jest source a output miejsce zapisania plików do wgrania do repozytorium na githubie) - praca na gałęzi <code>content</code>:</p>
-<p><code>pelican content -o output -s publishconf.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">pelican</span> <span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="k">output</span> <span class="o">-</span><span class="n">s</span> <span class="n">publishconf</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+
+
 <p>(gdzie -s oznacza settings/ustawienia a -o miejsce w którym mają się zapisać pliki)</p>
+<p>np.</p>
+<div class="highlight"><pre><span></span><code><span class="n">pelican</span> <span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="n">zfrontu</span><span class="o">/</span><span class="n">site</span> <span class="o">-</span><span class="n">s</span> <span class="n">publishconf</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+
+
 </li>
 <li>
 <p>Tworzenie plików do wgrania do repozytorium (gdzie output - miejsce zapisu plików może być np. '.' jeśli w danym folderze) ale tego do gałęzi <code>master</code></p>
-<p><code>ghp-import -m "Generate Pelican site" --no-jekyll -b master output</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Generate Pelican site&quot;</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">jekyll</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span> <span class="n">output</span>
+</code></pre></div>
+
+
 <p>tłumacząc</p>
-<p><code>ghp-import -m "wiadomość" --no-jekyll -b [nazwa_gałęzi] [folder_zapisu_danych]</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;wiadomość&quot;</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">jekyll</span> <span class="o">-</span><span class="n">b</span> <span class="p">[</span><span class="n">nazwa_gałęzi</span><span class="p">]</span> <span class="p">[</span><span class="n">folder_zapisu_danych</span><span class="p">]</span>
+</code></pre></div>
+
+
 </li>
 <li>
 <p>Wypchnięcie do repozytorium</p>
-<p><code>git push origin master</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">master</span>
+</code></pre></div>
+
+
 <p>(alternatywnie można zautomatyzować ten proces <code>make publish</code> <a href="http://docs.getpelican.com/en/3.6.3/publish.html">więcej na ten temat tutaj</a>)</p>
 </li>
 <li>
 <p>Dodawanie nowej treści do gałęzi <code>content</code></p>
-<p><code>git add content</code></p>
-<p><code>git commit -m 'treść wiadomości'</code></p>
-<p><code>git push origin content</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="k">add</span> <span class="n">content</span>
+
+<span class="n">git</span> <span class="k">commit</span> <span class="o">-</span><span class="n">m</span> <span class="err">&#39;</span><span class="n">treść</span> <span class="n">wiadomości</span>
+
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">content</span>
+</code></pre></div>
+
+
 </li>
 </ul>
 <h3 id="zrodla">Źródło:</h3>
