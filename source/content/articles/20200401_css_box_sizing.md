@@ -1,4 +1,4 @@
-Title: CSS: box-sizing
+Title: CSS - box-sizing
 Author: mkostyrko
 Date: 2020-04-01 10:00
 Updated:

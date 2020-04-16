@@ -49,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Schemat reguła { - deklaracja właściwość - wartość; } Selektor znacznika np strong Selektor klasy poprzedzony jest kropką . Selektor id poprzedzony jest haszem # Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet. Selektory elementów * - każdy element/ selektor uniwersalny e p - element &#34;p&#34; będący potomkiem …" />
+<meta name="description" content="Schemat Lista dyrektyw selektor { właściwość - wartość właściwości; /* razem tworzą deklarację */ } ang. rule set Selector { property: property value; /* declaration */ } Selektor znacznika np strong Selektor klasy poprzedzony jest kropką . Selektor id poprzedzony jest haszem # Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet …" />
 <meta name="keywords" content="css, selektory, znaczniki, potomek, dziecko">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="CSS - składnia selektory"/>
-<meta property="og:description" content="Schemat reguła { - deklaracja właściwość - wartość; } Selektor znacznika np strong Selektor klasy poprzedzony jest kropką . Selektor id poprzedzony jest haszem # Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet. Selektory elementów * - każdy element/ selektor uniwersalny e p - element &#34;p&#34; będący potomkiem …"/>
+<meta property="og:description" content="Schemat Lista dyrektyw selektor { właściwość - wartość właściwości; /* razem tworzą deklarację */ } ang. rule set Selector { property: property value; /* declaration */ } Selektor znacznika np strong Selektor klasy poprzedzony jest kropką . Selektor id poprzedzony jest haszem # Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./css-selektory.html"/>
 <meta property="og:type" content="article"/>
@@ -135,9 +135,17 @@
 
   <div>
     <p>Schemat</p>
-<div class="highlight"><pre><span></span><code><span class="n">reguła</span> <span class="err">{</span> <span class="o">-</span> <span class="n">deklaracja</span>
-<span class="n">właściwość</span> <span class="o">-</span> <span class="n">wartość</span><span class="p">;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">Lista</span> <span class="nt">dyrektyw</span>
+
+<span class="nt">selektor</span> <span class="p">{</span> 
+<span class="err">właściwość</span> <span class="err">-</span> <span class="err">wartość</span> <span class="err">właściwości</span><span class="p">;</span> <span class="c">/* razem tworzą deklarację */</span>
+<span class="p">}</span>
+
+<span class="nt">ang</span><span class="o">.</span> <span class="nt">rule</span> <span class="nt">set</span>
+
+<span class="nt">Selector</span> <span class="p">{</span>
+  <span class="n">property</span><span class="p">:</span> <span class="n">property</span> <span class="n">value</span><span class="p">;</span> <span class="c">/* declaration */</span>
+<span class="p">}</span>
 </code></pre></div>
 
 
@@ -193,6 +201,7 @@ Selektor klasy poprzedzony jest kropką <code>.</code></p>
 <p>https://the-awwwesomes.gitbooks.io/html-css-step-by-step/content/pl/css-advanced-selectors/index.html</p>
 <p>https://developer.mozilla.org/pl/docs/Web/CSS/Na_pocz%C4%85tek/Selektory</p>
 <p>https://stuffandnonsense.co.uk/archives/css_specificity_wars.html</p>
+<p>https://developer.mozilla.org/pl/docs/Learn/Getting_started_with_the_web/CSS_basics</p>
   </div>
   <div class="tag-cloud">
     <p>

@@ -27,6 +27,8 @@ Krótka instrukcja hostowania bloga przy pomocy GitHub-Pages
 
         pelican content -o output -s publishconf.py
 
+        np.
+
     (gdzie -s oznacza settings/ustawienia a -o miejsce w którym mają się zapisać pliki)
 
     np.

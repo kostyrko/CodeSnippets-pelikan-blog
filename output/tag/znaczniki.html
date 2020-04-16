@@ -123,20 +123,24 @@
   </header>
   <div>
       <p>Schemat</p>
-<div class="highlight"><pre><span></span><code><span class="n">reguła</span> <span class="err">{</span> <span class="o">-</span> <span class="n">deklaracja</span>
-<span class="n">właściwość</span> <span class="o">-</span> <span class="n">wartość</span><span class="p">;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">Lista</span> <span class="nt">dyrektyw</span>
+
+<span class="nt">selektor</span> <span class="p">{</span> 
+<span class="err">właściwość</span> <span class="err">-</span> <span class="err">wartość</span> <span class="err">właściwości</span><span class="p">;</span> <span class="c">/* razem tworzą deklarację */</span>
+<span class="p">}</span>
+
+<span class="nt">ang</span><span class="o">.</span> <span class="nt">rule</span> <span class="nt">set</span>
+
+<span class="nt">Selector</span> <span class="p">{</span>
+  <span class="n">property</span><span class="p">:</span> <span class="n">property</span> <span class="n">value</span><span class="p">;</span> <span class="c">/* declaration */</span>
+<span class="p">}</span>
 </code></pre></div>
 
 
 <p>Selektor znacznika np <code>strong</code>
 Selektor klasy poprzedzony jest kropką <code>.</code></p>
 <p>Selektor id poprzedzony jest haszem <code>#</code></p>
-<p>Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet.</p>
-<hr>
-<h3>Selektory elementów</h3>
-<p><strong><code>*</code></strong> - każdy element/ selektor uniwersalny</p>
-<p><strong><code>e p</code></strong> - element "p" będący <strong>potomkie</strong>m …</p>
+<p>Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę, a selektor znacznika/typu ma najmniejszy priorytet …</p>
         <br>
         <a class="btn" href="../css-selektory.html">Czytaj dalej</a>
   </div>

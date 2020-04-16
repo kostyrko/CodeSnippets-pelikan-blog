@@ -10,8 +10,16 @@ related_posts: css-pseudo-elementy
 
 Schemat
 
-    reguła { - deklaracja
-    właściwość - wartość;
+    Lista dyrektyw
+
+    selektor { 
+    właściwość - wartość właściwości; /* razem tworzą deklarację */
+    }
+
+    ang. rule set
+
+    Selector {
+      property: property value; /* declaration */
     }
 
 Selektor znacznika np `strong`
@@ -87,4 +95,6 @@ https://the-awwwesomes.gitbooks.io/html-css-step-by-step/content/pl/css-advanced
 https://developer.mozilla.org/pl/docs/Web/CSS/Na_pocz%C4%85tek/Selektory
 
 https://stuffandnonsense.co.uk/archives/css_specificity_wars.html
+
+https://developer.mozilla.org/pl/docs/Learn/Getting_started_with_the_web/CSS_basics
 

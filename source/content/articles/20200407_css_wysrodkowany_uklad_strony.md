@@ -1,6 +1,6 @@
 Title: CSS - wyśrodkowany układ strony
 Author: mkostyrko
-Date: 2020-07-02 10:00
+Date: 2020-04-07 10:00
 Updated:
 Category: css
 Tags: css, flex, flexbox, layout, układ

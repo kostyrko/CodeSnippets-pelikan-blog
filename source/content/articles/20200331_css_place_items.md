@@ -1,4 +1,4 @@
-Title: CSS: place-items (umieść element)
+Title: CSS - place-items (umieść element)
 Author: mkostyrko
 Date: 2020-03-31 08:00
 Updated:

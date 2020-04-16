@@ -1,4 +1,4 @@
-Title: CSS:klasy
+Title: CSS:pseudo-klasy
 Author: mkostyrko
 Date: 2020-04-02 10:00
 Updated:

@@ -22,3 +22,8 @@ aside {
   background: #f5f5f5;
   box-shadow: inset 4px 4px 4px #d0d0d0, inset -4px -4px 4px #ffffff;
 }
+
+.pagination .btn {
+  font-size: 1rem;
+  background-color: #a82a37;
+}
