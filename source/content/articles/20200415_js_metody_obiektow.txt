@@ -1,0 +1,49 @@
+Title: JavaScript - obiekty
+Author: mkostyrko
+Date: 2020-04-15 10:00
+Updated:
+Category: javascript
+Tags: javascript, js, array
+Slug: js-obiekty
+related_posts: js-podstawowe-typy, js-tablice
+
+
+Programowani obiektowego uczyłem się na podstawie Pythona i początkowo miałem problem z uchwyceniem konceptu, zrozumienie obiektu w JavaScript okazało się być czymś prostszym (przypomina pythonowy słownik na sterydach - choć faktycznie bliżej mu do obiektu znanego mi z tego języka, sam jednak zapis jest mniej skomplikowany - tam tworzy się tzw klasy).
+
+Obiekty zawierają właściwości/klucze (properties/keys), którym przypisane są konkretne wartości (values), owymi wartościami mogą być wszystkie prymitywne typy, jak i tablice czy funkcje - te rozdzielone są przecinkami. Kolokacje te zwane są parami klucza-wartości (key-value pairs) i są rozdzielone dwukropkiem. Obiekt zadeklarowany jest poprzez użycie słowa kluczowego jak przy innych zmiennych `let` lub `const` oraz poprzez zastosowanie nawiasów klamrowych.
+
+    const person = {
+    name: 'Mikołaj',
+    age: 99,
+    animals : ["cat","dog"],
+    sayHello: function() {
+      console.log("hello Mikolaj")
+    }
+    };
+
+    person.sayHello()
+    > hello Mikolaj
+
+    console.log(person.animals[1])
+    > dog
+
+Odwołujemy się do poszczególnej wartości poprzez przywołanie nazwy obiektu oraz właściwości po kropce lub funkcji otwierając i zamykając nawias. Alternatywnie można stosować kwadratowe nawiasy np. `person["animals"]`
+
+Dodawanie nowych par klucza-wartości odbywa się w podobny sposób jak w przypadku tablic
+
+    person.height = 1.8
+    // lub:
+    person['gender'] = "male"
+
+    console.log(person)
+    > {name: 'Mikołaj',age: 99,animals : ["cat","dog"],
+    sayHello: function() {console.log("hello Mikolaj"), 
+    height: 1.8, gender : "male"}
+
+Poprzez odwołanie się do słów kluczowych 
+
+Źródła:
+
+https://launchschool.com/books/javascript/read/objects#whatareobjects
+
+https://www.youtube.com/watch?v=qs3F-z6ridc

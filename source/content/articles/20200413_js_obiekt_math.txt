@@ -1,0 +1,14 @@
+Title: JavaScript - tablice (obiekt array)
+Author: mkostyrko
+Date: 2020-04-10 10:00
+Updated:
+Category: javascript
+Tags: javascript, js, math, obiekt math, object
+Slug: js-math
+related_posts: 
+
+
+
+
+Źródła:
+

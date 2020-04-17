@@ -49,17 +49,17 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Źródła: https://launchschool.com/books/javascript/read/objects#whatareobjects" />
+<meta name="description" content="Programowani obiektowego uczyłem się na podstawie Pythona i początkowo miałem problem z uchwyceniem konceptu, zrozumienie obiektu w JavaScript okazało się być czymś prostszym (przypomina pythonowy słownik na sterydach - choć faktycznie bliżej mu do obiektu znanego mi z tego języka, sam jednak zapis jest mniej skomplikowany - tam tworzy się tzw klasy …" />
 <meta name="keywords" content="javascript, js, array">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="JavaScript - obiekty"/>
-<meta property="og:description" content="Źródła: https://launchschool.com/books/javascript/read/objects#whatareobjects"/>
+<meta property="og:description" content="Programowani obiektowego uczyłem się na podstawie Pythona i początkowo miałem problem z uchwyceniem konceptu, zrozumienie obiektu w JavaScript okazało się być czymś prostszym (przypomina pythonowy słownik na sterydach - choć faktycznie bliżej mu do obiektu znanego mi z tego języka, sam jednak zapis jest mniej skomplikowany - tam tworzy się tzw klasy …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-obiekty.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2020-04-10 00:00:00+02:00"/>
+<meta property="article:published_time" content="2020-04-14 00:00:00+02:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="./author/mkostyrko.html">
 <meta property="article:section" content="javascript"/>
@@ -124,16 +124,83 @@
       
     <h1 id="js-obiekty">JavaScript - obiekty</h1>
     <p>
-      Opublikowano pią 10 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
+      Opublikowano wto 14 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
 
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
 
 
   <div>
-    <p>Źródła:</p>
+    <p>Programowani obiektowego uczyłem się na podstawie Pythona i początkowo miałem problem z uchwyceniem konceptu, zrozumienie obiektu w JavaScript okazało się być czymś prostszym (przypomina pythonowy słownik na sterydach - choć faktycznie bliżej mu do obiektu znanego mi z tego języka, sam jednak zapis jest mniej skomplikowany - tam tworzy się tzw klasy).</p>
+<p>Obiekty zawierają właściwości, którymi są pary składające się z klucza i przypisanych im wartości, owymi wartościami mogą być wszystkie prymitywne typy, jak i tablice czy funkcje - te rozdzielone są przecinkami. Kolokacje te (key-value pairs) są rozdzielone dwukropkiem. Obiekt zadeklarowany jest poprzez użycie słowa kluczowego jak przy innych zmiennych <code>let</code> lub <code>const</code> oraz poprzez zastosowanie nawiasów klamrowych.</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">person</span> <span class="o">=</span> <span class="err">{</span>
+<span class="n">name</span><span class="p">:</span> <span class="s1">&#39;Mikołaj&#39;</span><span class="p">,</span>
+<span class="n">age</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span>
+<span class="n">animals</span> <span class="p">:</span> <span class="p">[</span><span class="ss">&quot;cat&quot;</span><span class="p">,</span><span class="ss">&quot;dog&quot;</span><span class="p">],</span>
+<span class="n">sayHello</span><span class="p">:</span> <span class="k">function</span><span class="p">()</span> <span class="err">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="ss">&quot;hello Mikolaj&quot;</span><span class="p">)</span>
+<span class="err">}</span>
+<span class="err">}</span><span class="p">;</span>
+
+<span class="n">person</span><span class="p">.</span><span class="n">sayHello</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="n">hello</span> <span class="n">Mikolaj</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="n">animals</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="o">&gt;</span> <span class="n">dog</span>
+</code></pre></div>
+
+
+<p>Odwołujemy się do poszczególnej wartości poprzez przywołanie nazwy obiektu oraz właściwości po kropce lub funkcji otwierając i zamykając nawias. Alternatywnie można stosować kwadratowe nawiasy np. <code>person["animals"]</code></p>
+<p>Dodawanie nowych par klucza-wartości odbywa się w podobny sposób jak w przypadku tablic</p>
+<div class="highlight"><pre><span></span><code><span class="n">person</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">8</span>
+<span class="o">//</span> <span class="n">lub</span><span class="p">:</span>
+<span class="n">person</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="ss">&quot;male&quot;</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="err">{</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;Mikołaj&#39;</span><span class="p">,</span><span class="n">age</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span><span class="n">animals</span> <span class="p">:</span> <span class="p">[</span><span class="ss">&quot;cat&quot;</span><span class="p">,</span><span class="ss">&quot;dog&quot;</span><span class="p">],</span>
+<span class="n">sayHello</span><span class="p">:</span> <span class="k">function</span><span class="p">()</span> <span class="err">{</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="ss">&quot;hello Mikolaj&quot;</span><span class="p">),</span> 
+<span class="n">height</span><span class="p">:</span> <span class="mi">1</span><span class="p">.</span><span class="mi">8</span><span class="p">,</span> <span class="n">gender</span> <span class="p">:</span> <span class="ss">&quot;male&quot;</span><span class="err">}</span>
+</code></pre></div>
+
+
+<p>Poprzez odwołanie się do słów kluczowych <code>delete</code> istnieje możliwość usunięcia wybranych właściwości obiektu</p>
+<div class="highlight"><pre><span></span><code><span class="k">delete</span> <span class="n">person</span><span class="p">.</span><span class="n">height</span>
+<span class="o">&gt;</span> <span class="k">true</span> <span class="o">//</span> <span class="n">zwraca</span> <span class="k">false</span> <span class="o">-</span> <span class="n">jeśli</span> <span class="n">nie</span> <span class="n">jest</span> <span class="k">to</span> <span class="n">możliwe</span>
+<span class="k">delete</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="k">true</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="err">{</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;Mikołaj&#39;</span><span class="p">,</span><span class="n">age</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span><span class="n">animals</span> <span class="p">:</span> <span class="p">[</span><span class="ss">&quot;cat&quot;</span><span class="p">,</span><span class="ss">&quot;dog&quot;</span><span class="p">],</span>
+<span class="n">sayHello</span><span class="p">:</span> <span class="k">function</span><span class="p">()</span> <span class="err">{</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="ss">&quot;hello Mikolaj&quot;</span><span class="p">)</span><span class="err">}</span>
+</code></pre></div>
+
+
+<p>Zmiana wartości, przypisanej do klucza odbywa jest prosta i również zbliżona do tego co znane jest z tablicy, jednak zamiast odwoływać się do pozycji indeksowej, należy odwołać się do klucza</p>
+<div class="highlight"><pre><span></span><code><span class="n">person</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="ss">&quot;Michał&quot;</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="err">{</span><span class="n">name</span><span class="p">:</span> <span class="s1">&#39;Mikołaj&#39;</span><span class="p">,</span><span class="n">age</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span><span class="n">animals</span> <span class="p">:</span> <span class="p">[</span><span class="ss">&quot;cat&quot;</span><span class="p">,</span><span class="ss">&quot;dog&quot;</span><span class="p">],</span>
+<span class="n">sayHello</span><span class="p">:</span> <span class="k">function</span><span class="p">()</span> <span class="err">{</span><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="ss">&quot;hello Mikolaj&quot;</span><span class="p">)</span><span class="err">}</span>
+</code></pre></div>
+
+
+<p>W wewnętrznej funkcji obiektu można odwołać się do wartości przypisanych do kluczy w niej zawartej w dwojaki sposób odwołując się do klucza lub słowa kluczowego <code>this</code> (który odwołuje się do obiektu okna)</p>
+<div class="highlight"><pre><span></span><code>const person2 = {
+  name: &#39;Mike&#39;,
+  sayHello: function() {
+    console.log(`hello <span class="cp">${</span><span class="n">this</span><span class="o">.</span><span class="n">name</span><span class="cp">}</span>`) // lub person2.name &gt; hello Mike
+  }
+  };
+</code></pre></div>
+
+
+<hr>
+<h3>Prototypy</h3>
+<p>Obiekty mogą dziedziczyć elementy z innych obiektów. Prototypem nazywany wówczas jest obiekt, który jest "dawcą"</p>
+<hr>
+<p>Źródła:</p>
 <p>https://launchschool.com/books/javascript/read/objects#whatareobjects</p>
+<p>https://www.youtube.com/watch?v=qs3F-z6ridc</p>
+<p>https://dev.to/valentinogagliardi/the-secret-life-of-javascript-objects-2a33</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -145,6 +212,13 @@
 
 
 
+  <div class="related-posts">
+    <h4>Zobacz także</h4>
+    <ul class="related-posts">
+      <li><a href="./js-podstawowe-typy.html">JavaScript - składnia, deklaracje i podstawowe typy danych oraz ich operatory</a></li>
+      <li><a href="./js-tablice.html">JavaScript - tablice (obiekt array)</a></li>
+    </ul>
+  </div>
 
 
 <!-- Disqus -->

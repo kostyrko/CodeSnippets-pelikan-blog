@@ -49,26 +49,27 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Planowany Źródła: https://www.youtube.com/watch?v=qS79OIceQ7k&amp;feature=youtu.be https://launchschool.com/books/javascript/read/arrays#whatisanarray" />
-<meta name="keywords" content="javascript, js, array">
+<meta name="description" content="Tablica (array) jest uporządkowaną listą zawierająca elementy, gdzie każdy z elementów ma dowolną wartość (są heterogeniczne). Tablica jest definiowana poprzez umieszczenie wartości pomiędzy kwadratowymi nawiasami let Arr = []; // pusta tablica let arr = [&#34;Mikolaj&#34;, 2020, &#34;kwiecień&#34;, 17.04]; Zadeklarowanie tablicy słowem kluczowym const pozwala na modyfikację jej zawartości ale nie na zmianę …" />
+<meta name="keywords" content="javascript, js, array, tablica">
 
 
 <meta property="og:site_name" content="...z frontu"/>
-<meta property="og:title" content="JavaScript - tablice (array)"/>
-<meta property="og:description" content="Planowany Źródła: https://www.youtube.com/watch?v=qS79OIceQ7k&amp;feature=youtu.be https://launchschool.com/books/javascript/read/arrays#whatisanarray"/>
+<meta property="og:title" content="JavaScript - tablice (obiekt array)"/>
+<meta property="og:description" content="Tablica (array) jest uporządkowaną listą zawierająca elementy, gdzie każdy z elementów ma dowolną wartość (są heterogeniczne). Tablica jest definiowana poprzez umieszczenie wartości pomiędzy kwadratowymi nawiasami let Arr = []; // pusta tablica let arr = [&#34;Mikolaj&#34;, 2020, &#34;kwiecień&#34;, 17.04]; Zadeklarowanie tablicy słowem kluczowym const pozwala na modyfikację jej zawartości ale nie na zmianę …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-tablice.html"/>
 <meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2020-04-13 10:00:00+02:00"/>
+<meta property="article:published_time" content="2020-04-11 10:00:00+02:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="./author/mkostyrko.html">
 <meta property="article:section" content="javascript"/>
 <meta property="article:tag" content="javascript"/>
 <meta property="article:tag" content="js"/>
 <meta property="article:tag" content="array"/>
+<meta property="article:tag" content="tablica"/>
 <meta property="og:image" content="">
 
-  <title>...z frontu &ndash; JavaScript - tablice (array)</title>
+  <title>...z frontu &ndash; JavaScript - tablice (obiekt array)</title>
 
 </head>
 <body>
@@ -122,9 +123,9 @@
 <article class="single">
   <header>
       
-    <h1 id="js-tablice">JavaScript - tablice (array)</h1>
+    <h1 id="js-tablice">JavaScript - tablice (obiekt array)</h1>
     <p>
-      Opublikowano pon 13 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
+      Opublikowano sob 11 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
 
         &#8226; 1 min read
     </p>
@@ -132,9 +133,47 @@
 
 
   <div>
-    <p><strong>Planowany</strong></p>
+    <p>Tablica (array) jest uporządkowaną listą zawierająca elementy, gdzie każdy z elementów ma dowolną wartość (są heterogeniczne). Tablica jest definiowana poprzez umieszczenie wartości pomiędzy kwadratowymi nawiasami</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">Arr</span> <span class="o">=</span> <span class="p">[];</span> <span class="o">//</span> <span class="n">pusta</span> <span class="n">tablica</span>
+<span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="ss">&quot;Mikolaj&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="ss">&quot;kwiecień&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">.</span><span class="mi">04</span><span class="p">];</span>
+</code></pre></div>
+
+
+<p>Zadeklarowanie tablicy słowem kluczowym <strong><code>const</code></strong> pozwala na modyfikację jej zawartości ale nie na zmianę miejsca, w którym jest ona przechowywana</p>
+<p>Każdemu elementowi przyporządkowana jest liczba indeksowa, pozwalająca na odwołanie się do niego.
+Tablica może zawierać również obiekty jak i tablice.</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="n">Mikolaj</span>
+</code></pre></div>
+
+
+<p>Właściwość <code>length</code> zwraca "długość" tablicy</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="k">length</span>
+<span class="o">&gt;</span> <span class="mi">4</span>
+</code></pre></div>
+
+
+<p>Aby odwołać się do ostatniego elementu należy zastosować <code>length - 1</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="p">.</span><span class="k">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;</span> <span class="mi">17</span><span class="p">.</span><span class="mi">04</span>
+</code></pre></div>
+
+
+<p>Przy wykorzystaniu operator składającego się z kwadratowych nawiasów <code>[]</code> oraz wpisanego w nie indeksu można zmieniać wybrany element tablicy</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="ss">&quot;maj&quot;</span>
+<span class="p">[</span><span class="ss">&quot;Mikolaj&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="ss">&quot;maj&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">.</span><span class="mi">04</span><span class="p">]</span>
+</code></pre></div>
+
+
+<p>Wykorzystując właściwość <code>length</code> można również dodać element do końca tablicy</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="n">arr</span><span class="p">.</span><span class="k">length</span><span class="p">]</span>  <span class="o">=</span> <span class="ss">&quot;ostatnia&quot;</span>
+<span class="o">&gt;</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="ss">&quot;Mikolaj&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="ss">&quot;kwiecień&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">.</span><span class="mi">04</span><span class="p">.</span> <span class="ss">&quot;ostatnia&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+
 <p>Źródła:</p>
-<p>https://www.youtube.com/watch?v=qS79OIceQ7k&amp;feature=youtu.be</p>
+<p>https://www.youtube.com/watch?v=8FmBEN0XZyI</p>
+<p>http://kursjs.pl/kurs/super-podstawy/tablice.php</p>
 <p>https://launchschool.com/books/javascript/read/arrays#whatisanarray</p>
   </div>
   <div class="tag-cloud">
@@ -142,11 +181,19 @@
       <a href="./tag/javascript.html">javascript</a>
       <a href="./tag/js.html">js</a>
       <a href="./tag/array.html">array</a>
+      <a href="./tag/tablica.html">tablica</a>
     </p>
   </div>
 
 
 
+  <div class="related-posts">
+    <h4>Zobacz także</h4>
+    <ul class="related-posts">
+      <li><a href="./js-obiekty.html">JavaScript - obiekty</a></li>
+      <li><a href="./js-podstawowe-typy.html">JavaScript - składnia, deklaracje i podstawowe typy danych oraz ich operatory</a></li>
+    </ul>
+  </div>
 
 
 <!-- Disqus -->

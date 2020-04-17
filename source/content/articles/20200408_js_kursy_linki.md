@@ -1,6 +1,6 @@
 Title: JavaScript - przydatne strony (darmowe kursy, wyzwania)
 Author: mkostyrko
-Date: 2020-04-10 10:00
+Date: 2020-04-08 10:00
 Updated:
 Category: javascript
 Tags: javascript, js, linki, kursy, newslettery, wyzwania, ćwiczenia, aplikacje, android
@@ -24,8 +24,8 @@ related_posts:
 | Nazwa | główna cecha
 |---|---|
 |[JavaScript30](https://javascript30.com/) | Pseudonewsletter - 30 mini projektów na 30 dni |
+|[bedeprogramistka.pl/](https://bedeprogramistka.pl/wyzwanie-javascript30/) | Polska odpowiedź na JavaScript30 /blog/społeczność|
 | [justjavascript](https://justjavascript.com/) | W trakcie tworzenia/ klarowne tłumaczenie poruszanych problemów |
-
 
 ---
 
@@ -35,6 +35,7 @@ related_posts:
 |---|---|
 | [CodeTriage](https://www.codetriage.com/) | Praca z faktycznymi projektami |
 | [edabit](https://edabit.com/) | Ćwiczenia oraz rozwiązania zgłaszane przez społeczność |
+| [CodeWars.js](codewars.js)| do przetestowania|
 
 
 
@@ -45,7 +46,8 @@ related_posts:
 | Nazwa | główna cecha
 |---|---|
 | [developer.mozilla.org - JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) | Komentarz zbędny |
-| [Introduction to Programming with JavaScript](https://launchschool.com/books/javascript) | Książka - darmowa |
+| [Introduction to Programming with JavaScript](https://launchschool.com/books/javascript) | Książka - darmowa + ćwiczenia |
+|[Eloquent JavaScript](https://eloquentjavascript.net/)| Darmowa książka w wersji elektronicznej|
 
 ---
 
@@ -74,6 +76,7 @@ related_posts:
 | [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q) | JS + inne / projekty |
 | [Florian Pop](https://www.youtube.com/channel/UCeU-1X402kT-JlLdAitxSMA) | krótkie filmy tłumaczące podstawy JS (tablice) + newsletter|
 |[Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) | W przystępnej i klarownej formie przedstawiony JS + udemy |
+|[Samuraj Programowania - Java Script w miesiąc](https://www.youtube.com/watch?v=JFDScHg6Dws&list=PLTs20Q-BTEMPRSzhrlAuu7yus1BuOLVrS)| Warto polecenia choć chyba nie jako pierwsze a kolejne źródło|
 
 
 

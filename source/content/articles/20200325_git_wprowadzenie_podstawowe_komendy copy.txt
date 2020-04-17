@@ -9,3 +9,7 @@ related_posts: linux-komendy
 
 
 Planowane
+
+Źródła:
+
+https://launchschool.com/books/git

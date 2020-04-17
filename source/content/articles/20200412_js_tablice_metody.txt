@@ -1,0 +1,25 @@
+Title: JavaScript - metody tablic (array methods)
+Author: mkostyrko
+Date: 2020-04-12 10:00
+Updated:
+Category: javascript
+Tags: javascript, js, array, tablica
+Slug: js-tablice-metody
+related_posts: 
+
+
+
+
+Ćwiczenia:
+
+https://launchschool.com/books/javascript/read/arrays#exercises
+
+Źródła:
+
+https://www.youtube.com/watch?v=qS79OIceQ7k&feature=youtu.be
+
+http://kursjs.pl/kurs/super-podstawy/tablice.php
+
+https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/from#
+
+https://launchschool.com/books/javascript/read/arrays#exercises

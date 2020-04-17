@@ -49,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Do podstawowych (tzw. prymitywnych) typów danych zaliczyć można: string - ciągi znaków number undefined null boolean Deklaracje Źródła: https://launchschool.com/books/javascript/read/basics#datatypes" />
-<meta name="keywords" content="javascript, js, typy, dane, data types">
+<meta name="description" content="Postawy i deklaracje w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem ; składnia komentarza // jednoliniowy */ wielo - liniowy */ Istnieją trzy typy deklaracji zmiennych const - podstawowa deklaracja, zmienna nie ulega zmianie, tylko do odczytu let - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku …" />
+<meta name="keywords" content="javascript, js, typy, dane, data types, operatory">
 
 
 <meta property="og:site_name" content="...z frontu"/>
-<meta property="og:title" content="JavaScript - podstawowe typy danych"/>
-<meta property="og:description" content="Do podstawowych (tzw. prymitywnych) typów danych zaliczyć można: string - ciągi znaków number undefined null boolean Deklaracje Źródła: https://launchschool.com/books/javascript/read/basics#datatypes"/>
+<meta property="og:title" content="JavaScript - składnia, deklaracje i podstawowe typy danych oraz ich operatory"/>
+<meta property="og:description" content="Postawy i deklaracje w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem ; składnia komentarza // jednoliniowy */ wielo - liniowy */ Istnieją trzy typy deklaracji zmiennych const - podstawowa deklaracja, zmienna nie ulega zmianie, tylko do odczytu let - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-podstawowe-typy.html"/>
 <meta property="og:type" content="article"/>
@@ -68,9 +68,10 @@
 <meta property="article:tag" content="typy"/>
 <meta property="article:tag" content="dane"/>
 <meta property="article:tag" content="data types"/>
+<meta property="article:tag" content="operatory"/>
 <meta property="og:image" content="">
 
-  <title>...z frontu &ndash; JavaScript - podstawowe typy danych</title>
+  <title>...z frontu &ndash; JavaScript - składnia, deklaracje i podstawowe typy danych oraz ich operatory</title>
 
 </head>
 <body>
@@ -124,29 +125,144 @@
 <article class="single">
   <header>
       
-    <h1 id="js-podstawowe-typy">JavaScript - podstawowe typy danych</h1>
+    <h1 id="js-podstawowe-typy">JavaScript - składnia, deklaracje i podstawowe typy danych oraz ich operatory</h1>
     <p>
       Opublikowano czw 09 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
 
-        &#8226; 1 min read
+        &#8226; 3 min read
     </p>
   </header>
 
 
   <div>
-    <p>Do podstawowych (tzw. prymitywnych) typów danych zaliczyć można:</p>
+    <hr>
+<h3>Postawy i deklaracje</h3>
+<p>w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem <code>;</code></p>
+<p>składnia komentarza</p>
+<div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="n">jednoliniowy</span>
+
+<span class="o">*/</span> <span class="n">wielo</span> <span class="o">-</span> 
+  <span class="n">liniowy</span>
+<span class="o">*/</span>
+</code></pre></div>
+
+
+<p>Istnieją trzy typy deklaracji zmiennych</p>
+<p><img alt="starWars_zmienne" src="https://miro.medium.com/max/640/0*2Iz9vcaOtPNivfen.png"></p>
 <ul>
-<li>string - ciągi znaków</li>
-<li>number</li>
-<li>undefined</li>
-<li>null</li>
-<li>boolean</li>
+<li><code>const</code> - podstawowa deklaracja, zmienna nie ulega zmianie, tylko do odczytu</li>
+<li><code>let</code> - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku, w którym jest zawarta</li>
+<li><code>var</code> - wcześniej podstawowa zmienna (przed ES6), obecnie rzadziej stosowana (po wprowadzeniu const i let) więcej na ten temat <a href="https://medium.com/@larry.sassainsworth/let-vs-var-vs-const-in-javascript-8b898f868394">tutaj</a> lub poniżej.</li>
 </ul>
 <hr>
-<h3>Deklaracje</h3>
+<p><code>var</code> vs <code>let</code> -&gt; 4 istotne różnice w:
+1) <strong>zakresie</strong> (scope) 
+2) <strong>podnoszeniu</strong> (hoisting) 
+3) <strong>ponownej deklaracji</strong> (redeclaration) 
+4) <strong>tworzeniu globalnego obiektu</strong> (global object property)</p>
+<p><code>let</code> w odróżnieniu od <code>var</code> nie jest globalnie dostępny a przypisany do najbliższych funkcji etc. jest dostępny w sposób skryptowy (linia po linii, podobnie jak w pythonie), wartość mu przypisana może być zmieniona ale nie może zostać ponownie zadeklarowany, nie tworzy globalnie dostępnego obiektu.</p>
+<hr>
+<p>deklaracji dokonujemy poprzez użycie słowa kluczowego (let, const) + identyfikator (nazwy zmiennej np. foo lub fu etc.), oraz poprzez opcjonalne przypisanie jej wartości (np. 'bar')</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">fu</span> <span class="o">=</span> <span class="ss">&quot;bar&quot;</span>
+</code></pre></div>
+
+
+<ul>
+<li>zmienne nie mogą zaczynać się od cyfr</li>
+<li>wielkość liter na znaczenie <code>fu</code> to nie to samo co <code>Fu</code></li>
+<li>nazwa zmiennej nie może zawierać spacji, myślników, kropek - stosowany natomiast jest podkreślnik np. _fu</li>
+<li>nazwa zmiennej nie może być <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">słowem kluczowym</a></li>
+</ul>
+<hr>
+<h3>Podstawowe typy danych</h3>
+<p>Do podstawowych (tzw. prymitywnych) typów danych wykorzystywanych w JS zaliczyć można:</p>
+<ul>
+<li><strong>string</strong> - ciągi znaków tzw łańcuchowy (np. "ab2c ala" - wymaga cudzysłowu lub apostrofu)</li>
+<li><strong>number</strong> - typ liczbowy (np. 123 - brak cudzysłowu)</li>
+<li><strong>undefined</strong> - typ specjalny, niezainicjowana zmienna/nieistniejąca właściwość obiektu</li>
+<li><strong>null</strong> - type specjalny, określa pustą wartość (wykorzystywany przy obiektach)</li>
+<li><strong>boolean</strong> - typ logiczny (Prawda/Fałsz - True/False)</li>
+</ul>
+<hr>
+<h3>Typ łańcuchowy</h3>
+<p>Przydatne kolokacje znaków wykorzystanych w typie łańcuchowym</p>
+<p><code>\n</code> - nowy wiersz</p>
+<p><code>\r</code>- reset pozycji kursora i powrót na nową linię</p>
+<p><code>\t</code> - tabulacja</p>
+<p><code>\</code> - lewy ukośnik jest również wymagany przed <code>\</code> , <code>"</code> lub <strong>`</strong> z racji tego, że są znakami specjalnymi dla JS -&gt; np. </p>
+<div class="highlight"><pre><span></span><code><span class="err">\&quot;</span>
+</code></pre></div>
+
+
+<ul>
+<li>pozwala na łączenie ze sobą ciągów znaków przy pomocy operatora <code>+</code></li>
+</ul>
+<p>:::Napisy szablonowe - osadzenie do w ramach łańcucha zmiennej wymaga zastosowanie znaku dolara nawiasów klamrowych oraz tylniego apostrofu <code>String ${variable}</code> więcej na ten temat <a href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/template_strings">tutaj</a>:::</p>
+<div class="highlight"><pre><span></span><code>const cat = &quot;Deedee&quot;
+console.log(`kot <span class="cp">${</span><span class="n">cat</span><span class="cp">}</span>`)
+&gt; kot Deedee
+</code></pre></div>
+
+
+<hr>
+<h3>Typ liczbowy</h3>
+<ul>
+<li>
+<p>jeśli zaczyna się od zera tj traktowany jako wartość ósemkowa a od 0x jako szesnastkowa</p>
+</li>
+<li>
+<p>może być zapisywana wartość w notacji wykładniczej "X.YeZ, gdzie X to część całkowita, Y część dziesiętna, natomiast Z to wykładnik potęgi liczby 10. Zapis taki oznacza to samo, co X.Y * 10Z" (<a href="http://webmaster.helion.pl/index.php/kjs-cechy-jezyka/kjs-typy-danych">źródło</a>)</p>
+</li>
+</ul>
+<p>Przykładowe zastosowanie: 123, -123, 1.1, -1.1, 0.1E2, -0x0f</p>
+<ul>
+<li>
+<p>pozwala na przeprowadzanie stosowanie operatorów arytmetycznych -&gt; <code>* + - /</code></p>
+</li>
+<li>
+<p>operator <code>%</code> modulo dzieli z resztą</p>
+</li>
+<li>
+<p>operator <code>--</code> oraz <code>++</code> dokonuje dekrementacji oraz inkrementacji/ zmniejszenia lub zwiększenia wartości o 1 (<code>x--</code> lub <code>--x</code> tj to samo co <code>x = x -1</code>)</p>
+</li>
+<li>
+<p>pozwala również na stosowanie <em>operatorów porównania (relacyjnych)</em> np <code>&lt;= &lt; &gt; &gt;= !== === !=</code> oraz <em>bitowych</em></p>
+</li>
+<li>
+<p><code>==</code> równy?</p>
+</li>
+<li>
+<p><code>===</code> równy tego samego typu?</p>
+</li>
+<li>
+<p><code>!==</code> nierówny?</p>
+</li>
+</ul>
+<hr>
+<h3>Typ logiczny</h3>
+<ul>
+<li>pozwala na stosowanie operatorów logicznych <code>&amp;&amp;</code> - and/i, <code>||</code> - or/albo, <code>!</code> - not/nie</li>
+</ul>
+<hr>
+<h3>typeof</h3>
+<p>w przypadku niepewności jakiego typ danych przechowuje dana zmienna istniej możliwość zastosowania operatora <code>typeof</code>, który zwraca łańcuch zwierający typ tzw. operandu (argument operatora)</p>
+<div class="highlight"><pre><span></span><code><span class="n">schemat</span><span class="o">:</span> <span class="k">typeof</span> <span class="n">operand</span>
+<span class="n">przykład</span> <span class="o">&gt;</span> <span class="k">typeof</span> <span class="mi">1</span>
+<span class="n">wynik</span> <span class="o">=</span> <span class="s1">&#39;number&#39;</span>
+</code></pre></div>
+
+
 <hr>
 <p>Źródła:</p>
 <p>https://launchschool.com/books/javascript/read/basics#datatypes</p>
+<p>https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Sk%C5%82adnia_i_typy</p>
+<p>http://webmaster.helion.pl/index.php/kjs-cechy-jezyka/kjs-typy-danych</p>
+<p>http://webmaster.helion.pl/index.php/kjs-cechy-jezyka/kjs-operatory/kjs-operatory-arytmeyczne</p>
+<p>http://webmaster.helion.pl/index.php/kjs-cechy-jezyka/kjs-operatory/kjs-operatory-logiczne</p>
+<p>http://kursjs.pl/kurs/super-podstawy/zmienne.php</p>
+<p>https://medium.com/@larry.sassainsworth/let-vs-var-vs-const-in-javascript-8b898f868394</p>
+<p>https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var</p>
+<p>https://www.youtube.com/watch?v=JFDScHg6Dws</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -155,11 +271,19 @@
       <a href="./tag/typy.html">typy</a>
       <a href="./tag/dane.html">dane</a>
       <a href="./tag/data-types.html">data types</a>
+      <a href="./tag/operatory.html">operatory</a>
     </p>
   </div>
 
 
 
+  <div class="related-posts">
+    <h4>Zobacz także</h4>
+    <ul class="related-posts">
+      <li><a href="./js-obiekty.html">JavaScript - obiekty</a></li>
+      <li><a href="./js-tablice.html">JavaScript - tablice (obiekt array)</a></li>
+    </ul>
+  </div>
 
 
 <!-- Disqus -->

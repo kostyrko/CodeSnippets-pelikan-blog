@@ -219,7 +219,7 @@ Ta deklaracja pozwala na przedefiniowanie układu zdefiniowane z pozycji rodzica
 
 ---
 
-### flew po raz kolejny
+### flex po raz kolejny
 
 `flex-grow/shrink + flex-basis = flex`
 
@@ -232,6 +232,16 @@ Przykładowe zastosowanie:
 
     .obiekt:nth-of-type(3) {
       flex: 2 200px;
+    }
+
+---
+
+### inline-flex / inline flex-block
+
+Display `inline-flex` lub `inline flex-box` odnosi się do kontenera a nie jego elementów - kolejno do wyświetlania w linii lub w formie blokowej
+
+    .kontener {
+      display: inline-flex;
     }
 
 ---
