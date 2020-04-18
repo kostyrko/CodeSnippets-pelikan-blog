@@ -48,6 +48,7 @@ related_posts:
 | [developer.mozilla.org - JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide) | Komentarz zbędny |
 | [Introduction to Programming with JavaScript](https://launchschool.com/books/javascript) | Książka - darmowa + ćwiczenia |
 |[Eloquent JavaScript](https://eloquentjavascript.net/)| Darmowa książka w wersji elektronicznej|
+|[devdocs.io/javascript/](devdocs.io/javascript/)| Dokumentacja wieluuuu języków programowani, w tym JS (alfabetycznie) |
 
 ---
 
@@ -57,14 +58,6 @@ related_posts:
 |---|---|
 | [Enki](https://play.google.com/store/apps/details?id=com.enki.insights&hl=en) | Przetestowana i warta polecenia |
 | [SoloLearn](https://play.google.com/store/apps/details?id=com.sololearn.javascript&hl=en) | Dobra na początek, przyjemna w użytkowaniu |
-
----
-
-### Dzielenie się kodem
-
-| Nazwa | główna cecha 
-|---|---|
-|[codepen](https://codepen.io/) | Darmowe "hostowanie" w celach pokazowych html/css/js - opcja free i premium|
 
 ---
 
@@ -79,4 +72,11 @@ related_posts:
 |[Samuraj Programowania - Java Script w miesiąc](https://www.youtube.com/watch?v=JFDScHg6Dws&list=PLTs20Q-BTEMPRSzhrlAuu7yus1BuOLVrS)| Warto polecenia choć chyba nie jako pierwsze a kolejne źródło|
 
 
+### Dzielenie się kodem
+
+| Nazwa | główna cecha
+|---|---|
+| [playcode.io](playcode.io) | dla mnie nr 1|
+| [JS Bin]{jsbin.com}| nr 2 |
+|[codepen.io](https://codepen.io/mkostyrko/pen/yLYJJVV)| pozwala na embeding|
 

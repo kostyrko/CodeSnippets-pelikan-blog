@@ -1,4 +1,4 @@
-Title: JavaScript - właściwości i metody łańcuch znaków
+Title: JavaScript - właściwości i metody łańcucha znaków
 Author: mkostyrko
 Date: 2020-04-10 10:00
 Updated:

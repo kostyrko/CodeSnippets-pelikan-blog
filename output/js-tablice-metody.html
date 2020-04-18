@@ -49,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Źródła: https://www.youtube.com/watch?v=qS79OIceQ7k&amp;feature=youtu.be http://kursjs.pl/kurs/super-podstawy/tablice.php https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/from#" />
+<meta name="description" content="Tablice Tablica wyjściowa const arr = [1,2,3,4] Dodawanie elementów push i unshift - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę) arr.push(1,null,&#39;push&#39;) arr.unshift(0) concat - [od concatenate] zwraca nową tablicę, która zawiera wszystkie …" />
 <meta name="keywords" content="javascript, js, array, tablica">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="JavaScript - metody tablic (array methods)"/>
-<meta property="og:description" content="Źródła: https://www.youtube.com/watch?v=qS79OIceQ7k&amp;feature=youtu.be http://kursjs.pl/kurs/super-podstawy/tablice.php https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/from#"/>
+<meta property="og:description" content="Tablice Tablica wyjściowa const arr = [1,2,3,4] Dodawanie elementów push i unshift - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę) arr.push(1,null,&#39;push&#39;) arr.unshift(0) concat - [od concatenate] zwraca nową tablicę, która zawiera wszystkie …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-tablice-metody.html"/>
 <meta property="og:type" content="article"/>
@@ -127,16 +127,101 @@
     <p>
       Opublikowano nie 12 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
 
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
 
 
   <div>
-    <p>Źródła:</p>
-<p>https://www.youtube.com/watch?v=qS79OIceQ7k&amp;feature=youtu.be</p>
+    <h3>Tablice</h3>
+<p>Tablica wyjściowa</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+
+
+<h4>Dodawanie elementów</h4>
+<p><strong><code>push</code></strong> i <strong><code>unshift</code></strong> - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę)</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">&#39;push&#39;</span><span class="p">)</span>
+<span class="n">arr</span><span class="p">.</span><span class="n">unshift</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><strong><code>concat</code></strong> - [od concatenate] zwraca nową tablicę, która zawiera wszystkie elementy tablicy, na której zostałą zastosowana metoda oraz podanych argumentów</p>
+<p>::: tablica nie jest modyfikowana :::</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;concatenate&#39;</span><span class="p">)</span>
+
+<span class="n">brak</span> <span class="n">modyfikacji</span> <span class="o">-&gt;</span> <span class="n">stąd</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="ss">&quot;push&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+
+<p><strong><code>pop</code></strong> i <strong><code>shift</code></strong> - usuwa i zwraca ostatni/pierwszy element tablicy</p>
+<p>:::tablica ulega modyfikacji:::</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="o">&gt;&gt;</span> <span class="n">push</span>
+</code></pre></div>
+
+
+<p><strong><code>indexOf</code></strong> - znajduje nr porządkowy (indeks) wybranego elementu</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="mi">1</span>
+</code></pre></div>
+
+
+<p><strong><code>splice</code></strong> - usuwa obiekt z tablicy na podstawie pozycji/indeksu tworząc z niego nową tablicę (może przyjąć więcej niż jeden argument, tworząc ich zakres)</p>
+<p>:::tablica ulega modyfikacji:::</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">let</span> <span class="n">removedItems</span> <span class="o">=</span> <span class="n">arr1</span><span class="p">.</span><span class="n">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">//</span> <span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">//</span> <span class="n">removedItems</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+
+
+<p><strong><code>slice</code></strong> - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - włącznie</p>
+<p><strong><code>sort</code></strong> - zwraca posortowaną tablicę, gdzie sortowanie jest oparte na pierwszej cyfrze składającej się na liczbę, podobnie sprawa wygląda w przypadku alfabetu gdzie 1. litera ma wpływ na kolejność pozycji i a potem następna etc.</p>
+<p>:::tablica ulega modyfikacji:::</p>
+<p><strong><code>reverse</code></strong> - odwraca kolejność elementów znajdujących się w tablicy</p>
+<p><strong><code>includes</code></strong> - sprawdza czy tablica zawiera wpisany argument stosuje <code>===</code> i nie można szukać zagnieżdżonych list</p>
+<hr>
+<p><strong><code>forEach</code></strong> - tworzy pętlę przechodzącą przez zawartość tablicy - wymaga funkcji wywołania zwrotnego (callback), która tworzy akcję na każdym z elementów tablicy -&gt; zwraca <code>undefined</code>, ale po drodze wywołuje wynik akcji</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">arrEach</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="n">arrEach</span><span class="p">.</span><span class="n">forEach</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="err">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="err">}</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="mi">2</span>
+<span class="o">&gt;</span> <span class="mi">3</span>
+<span class="p">...</span>
+</code></pre></div>
+
+
+<p><strong><code>map</code></strong> - podobny do forEach ale zmienia elementy tablicy i zwraca nową tablicę ze zmienionymi wartościami</p>
+<p><strong><code>filter</code></strong> - zwraca nową tablicę, która zawiera dla, którego wskazany argument jest prawdziwy (= True)</p>
+<p>:::tablica NIE ulega modyfikacji:::</p>
+<p><strong><code>reduce</code></strong> - przyjmuje dwa argumenty 1) wartość inicjalizującą tzw akumulator 2) funkcję wywołania zwrotnego (callback function) // ad 1) funkcja wywołania zwrotnego również przyjmuje 2 argumenty - element tablicy oraz aktualną wartość akumulatora i zwraca wartość, która zostanie przypisana do akumulatora i będzie jako taki użyty w kolejnej iteracji</p>
+<div class="highlight"><pre><span></span><code>  <span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+  <span class="n">arr</span><span class="p">.</span><span class="n">reduce</span><span class="p">((</span><span class="n">accumulator</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="n">element</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">//</span><span class="mi">17</span>
+</code></pre></div>
+
+
+<hr>
+<p class="codepen" data-height="450" data-theme-id="dark" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="abvZZBE" style="height: 450px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="tablice-metody">
+  <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/abvZZBE">
+  tablice-metody</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+<p>Ćwiczenia:</p>
+<p>https://launchschool.com/books/javascript/read/arrays#exercises</p>
+<p>Źródła:</p>
+<p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</p>
 <p>http://kursjs.pl/kurs/super-podstawy/tablice.php</p>
 <p>https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/from#</p>
+<p>https://launchschool.com/books/javascript/read/arrays#exercises</p>
   </div>
   <div class="tag-cloud">
     <p>

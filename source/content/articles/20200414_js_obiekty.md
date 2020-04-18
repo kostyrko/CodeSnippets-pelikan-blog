@@ -75,6 +75,7 @@ Obiekty mogą dziedziczyć elementy z innych obiektów. Prototypem nazywany wów
 
 ---
 
+
 Źródła:
 
 https://launchschool.com/books/javascript/read/objects#whatareobjects
