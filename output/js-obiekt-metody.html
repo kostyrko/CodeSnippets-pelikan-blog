@@ -154,26 +154,42 @@
 
 <p>:::Właściwości nieprzeliczalne oraz te z łańcucha prototypów nie są kopiowane :::</p>
 <hr>
-<p>Object.create()</p>
-<p>Object.defineProperty()</p>
-<p>Object.defineProperties()</p>
-<p>Object.entries()</p>
-<p>Object.freeze()</p>
-<p>Object.fromEntries()</p>
-<p>Object.getOwnPropertyDescriptor()</p>
-<p>Object.getOwnPropertyDescriptors()</p>
-<p>Object.getOwnPropertyNames()</p>
-<p>Object.getOwnPropertySymbols()</p>
-<p>Object.getPrototypeOf()</p>
-<p>Object.is()</p>
-<p>Object.isExtensible()</p>
-<p>Object.isFrozen()</p>
-<p>Object.isSealed()</p>
-<p>Object.keys()</p>
-<p>Object.preventExtensions()</p>
-<p>Object.seal()</p>
-<p>Object.setPrototypeOf()</p>
-<p>Object.values()</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create"><strong><code>Object.create()</code></strong></a> - tworzy nowy obiekt, wykorzystując istniejący obiekt jako prototyp tworzonego obiektu</p>
+<p><strong><code>Object.defineProperty()</code></strong> - tworzy nowy właściwość bezpośrednio na obiekcie albo modyfikuje istniejącą wartość wewnątrz obiektu</p>
+<p><strong><code>Object.defineProperties()</code></strong> - definiuje nowe lub modyfikuje istniejące właściwości</p>
+<p><strong><code>Object.entries()</code></strong> - zwraca tablicę zawierającą par klucza-wartości w postaci stringa</p>
+<p><strong><code>Object.freeze()</code></strong> - zamraża obiekt, obiekt zamrożony nie może być zmieniany (nie można dodawać nowych właściwości/"elementów", zmieniać ich ani usuwać)</p>
+<p><strong><code>Object.fromEntries()</code></strong> - zmienia listę kluczy-wartości w obiekt</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">entries</span> <span class="o">=</span> <span class="k">new</span> <span class="k">Map</span><span class="p">([</span>
+    <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span>
+<span class="p">]);</span>
+
+<span class="n">const</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">Object</span><span class="p">.</span><span class="n">fromEntries</span><span class="p">(</span><span class="n">entries</span><span class="p">);</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
+<span class="o">//</span> <span class="n">expected</span> <span class="k">output</span><span class="p">:</span> <span class="k">Object</span> <span class="err">{</span> <span class="n">foo</span><span class="p">:</span> <span class="ss">&quot;bar&quot;</span><span class="p">,</span> <span class="n">baz</span><span class="p">:</span> <span class="mi">42</span> <span class="err">}</span>
+</code></pre></div>
+
+
+<p><code>Object.getOwnPropertyDescriptor()</code></p>
+<p><code>Object.getOwnPropertyDescriptors()</code></p>
+<p><code>Object.getOwnPropertyNames()</code></p>
+<p><code>Object.getOwnPropertySymbols()</code></p>
+<p><code>Object.getPrototypeOf()</code></p>
+<p><code>Object.is()</code></p>
+<p><code>Object.isExtensible()</code></p>
+<p><code>Object.isFrozen()</code></p>
+<p><code>Object.isSealed()</code></p>
+<p><strong><code>Object.keys()</code></strong> - zwraca tablicę kluczy danego obiektu</p>
+<div class="highlight"><pre><span></span><code><span class="k">Object</span><span class="p">.</span><span class="n">keys</span><span class="p">(</span><span class="n">object1</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><code>Object.preventExtensions()</code></p>
+<p><code>Object.seal()</code></p>
+<p><code>Object.setPrototypeOf()</code></p>
+<p><strong><code>Object.values()</code></strong> - zwraca wartości danego obiektu w postaci tablicy</p>
 <p>Źródła:</p>
 <p>https://launchschool.com/books/javascript/read/objects#whatareobjects</p>
 <p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object</p>

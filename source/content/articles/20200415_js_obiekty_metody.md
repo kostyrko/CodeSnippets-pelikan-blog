@@ -30,45 +30,57 @@ Przykłady
 
 ---
 
-Object.create()
+[**`Object.create()`**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) - tworzy nowy obiekt, wykorzystując istniejący obiekt jako prototyp tworzonego obiektu
 
-Object.defineProperty()
+**`Object.defineProperty()`** - tworzy nowy właściwość bezpośrednio na obiekcie albo modyfikuje istniejącą wartość wewnątrz obiektu
 
-Object.defineProperties()
+**`Object.defineProperties()`** - definiuje nowe lub modyfikuje istniejące właściwości
 
-Object.entries()
+**`Object.entries()`** - zwraca tablicę zawierającą par klucza-wartości w postaci stringa
 
-Object.freeze()
+**`Object.freeze()`** - zamraża obiekt, obiekt zamrożony nie może być zmieniany (nie można dodawać nowych właściwości/"elementów", zmieniać ich ani usuwać)
 
-Object.fromEntries()
+**`Object.fromEntries()`** - zmienia listę kluczy-wartości w obiekt
 
-Object.getOwnPropertyDescriptor()
+    const entries = new Map([
+        ['foo', 'bar'],
+        ['baz', 42]
+    ]);
 
-Object.getOwnPropertyDescriptors()
+    const obj = Object.fromEntries(entries);
 
-Object.getOwnPropertyNames()
+    console.log(obj);
+    // expected output: Object { foo: "bar", baz: 42 }
 
-Object.getOwnPropertySymbols()
+`Object.getOwnPropertyDescriptor()`
 
-Object.getPrototypeOf()
+`Object.getOwnPropertyDescriptors()`
 
-Object.is()
+`Object.getOwnPropertyNames()`
 
-Object.isExtensible()
+`Object.getOwnPropertySymbols()`
 
-Object.isFrozen()
+`Object.getPrototypeOf()`
 
-Object.isSealed()
+`Object.is()`
 
-Object.keys()
+`Object.isExtensible()`
 
-Object.preventExtensions()
+`Object.isFrozen()`
 
-Object.seal()
+`Object.isSealed()`
 
-Object.setPrototypeOf()
+**`Object.keys()`** - zwraca tablicę kluczy danego obiektu
 
-Object.values()
+    Object.keys(object1)
+
+`Object.preventExtensions()`
+
+`Object.seal()`
+
+`Object.setPrototypeOf()`
+
+**`Object.values()`** - zwraca wartości danego obiektu w postaci tablicy
 
 
 Źródła:

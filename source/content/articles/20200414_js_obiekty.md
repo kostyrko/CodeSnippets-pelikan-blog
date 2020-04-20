@@ -9,7 +9,7 @@ Slug: js-obiekty
 related_posts: js-podstawowe-typy, js-tablice
 
 
-Programowani obiektowego uczyłem się na podstawie Pythona i początkowo miałem problem z uchwyceniem konceptu, zrozumienie obiektu w JavaScript okazało się być czymś prostszym (przypomina pythonowy słownik na sterydach - choć faktycznie bliżej mu do obiektu znanego mi z tego języka, sam jednak zapis jest mniej skomplikowany - tam tworzy się tzw klasy).
+Programowani obiektowego uczyłem się na podstawie Pythona i początkowo miałem problem z uchwyceniem konceptu, zrozumienie obiektu w JavaScript (porównanie tych 2 rzeczy ze sobą nie jest wskazane,ale najbliższe tego co znam) okazało się być czymś prostszym (przypomina pythonowy słownik na sterydach - choć faktycznie bliżej mu do obiektu znanego mi z tego języka, sam jednak zapis jest mniej skomplikowany - tam tworzy się tzw klasy).
 
 Obiekty zawierają właściwości, którymi są pary składające się z klucza i przypisanych im wartości, owymi wartościami mogą być wszystkie prymitywne typy, jak i tablice czy funkcje - te rozdzielone są przecinkami. Kolokacje te (key-value pairs) są rozdzielone dwukropkiem. Obiekt zadeklarowany jest poprzez użycie słowa kluczowego jak przy innych zmiennych `let` lub `const` oraz poprzez zastosowanie nawiasów klamrowych.
 
@@ -71,7 +71,7 @@ W wewnętrznej funkcji obiektu można odwołać się do wartości przypisanych d
 
 ### Prototypy
 
-Obiekty mogą dziedziczyć elementy z innych obiektów. Prototypem nazywany wówczas jest obiekt, który jest "dawcą"
+Obiekty mogą dziedziczyć elementy z innych obiektów. Prototypem nazywany wówczas jest obiekt, który jest "dawcą"/rodzicem.
 
 ---
 

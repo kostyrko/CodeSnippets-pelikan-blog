@@ -87,6 +87,8 @@ Przydatne kolokacje znaków wykorzystanych w typie łańcuchowym
     console.log(`kot ${cat}`)
     > kot Deedee
 
+::: metody łańcucha znaków String.formCharCode() - "Zwraca łańcuch znaków stworzony przez podaną sekwencję kodów Unicode.", String.fromCodePoint() - zwraca  łąńcuch stworzony na podstawie specyficznej sekwencji punktów kodu, String.raw() :::
+
 
 ---
 

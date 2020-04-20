@@ -1,6 +1,6 @@
-Title: JavaScript - prototypy
+Title: JavaScript - dziedziczenie i prototypy
 Author: mkostyrko
-Date: 2020-04-18 10:00
+Date: 2020-04-22 10:00
 Updated:
 Category: javascript
 Tags: javascript, js, array
@@ -10,6 +10,8 @@ related_posts: js-podstawowe-typy, js-tablice
 
 
 Źródła:
+
+https://www.nafrontendzie.pl/dziedziczenie-javascript-wersja-klasyczna
 
 https://launchschool.com/books/javascript/read/objects#whatareobjects
 
