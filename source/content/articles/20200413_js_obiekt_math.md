@@ -1,4 +1,4 @@
-Title: JavaScript - tablice (obiekt array)
+Title: JavaScript - obiekt Math
 Author: mkostyrko
 Date: 2020-04-13 10:00
 Updated:
