@@ -78,7 +78,25 @@ Tablica wyjściowa
 
 **`map`** - podobny do forEach ale zmienia elementy tablicy i zwraca nową tablicę ze zmienionymi wartościami
 
-**`filter`** - zwraca nową tablicę, która zawiera dla, którego wskazany argument jest prawdziwy (= True)
+**`filter`** - zwraca **nową tablicę**, z elementami dla którego wskazany argument jest prawdziwy (= True)
+
+    const newArr = array.filter(function(item){
+        return condition;
+    });
+
+    function getNumber (num,arr) {
+    const newArr = arr.filter(function(item) {
+        return item === num;
+    });
+    return (newArr[0] === num ? true : false)
+    };
+
+    // zapis przy pomocy funkcji strzałkowej
+    
+    function getNumber (num,arr) {
+    const newArr = arr.filter((item)=> {return item === num});
+    return (newArr[0] === num ? true : false);
+    }
 
 :::tablica NIE ulega modyfikacji:::
 
@@ -111,3 +129,5 @@ http://kursjs.pl/kurs/super-podstawy/tablice.php
 https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/from#
 
 https://launchschool.com/books/javascript/read/arrays#exercises
+
+https://alligator.io/js/filter-array-method/

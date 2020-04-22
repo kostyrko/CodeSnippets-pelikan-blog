@@ -43,6 +43,28 @@ schemat:
         const retObject = () => ({ team : "Kasztany", score : 0 })
 
 
+Przykłady:
+
+        function getNumber (num,arr) {
+        const newArr = arr.filter((item)=> {return item === num});
+        return (newArr[0] === num ? true : false);
+        }
+        
+        zamiast
+
+        function getNumber (num,arr) {
+                const newArr = arr.filter(function(item) {
+                return item === num;
+                });
+                if (newArr[0] === num) {
+                        return true
+                }
+                else {
+                        return false
+                }
+        };
+
+
 Źródła:
 
 http://kursjs.pl/kurs/es6/funkcja-strzalkowa.php
