@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
   <script src="./tipuesearch_content.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
   
   <link
     rel="stylesheet"
@@ -73,6 +73,9 @@
 
 </head>
 <body>
+
+  <!-- ASIDE -->
+  
   <aside>
     <div>
       <a href=".">
@@ -109,16 +112,19 @@
 
 
   </aside>
+
+  <!-- MAIN -->
   <main>
+    <div class="container">
 
-    <nav>
-      <a href=".">Strona główna</a>
+      <nav>
+        <a href=".">Strona główna</a>
 
-      <a href="categories.html">Kategorie</a>
-      <a href="tags.html">Tagi</a>
+        <a href="categories.html">Kategorie</a>
+        <a href="tags.html">Tagi</a>
 
 
-    </nav>
+      </nav>
 
 <article class="single">
   <header>
@@ -180,6 +186,28 @@
 
 </li>
 </ul>
+<p>Przykłady:</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">function</span> <span class="nv">getNumber</span> <span class="ss">(</span><span class="nv">num</span>,<span class="nv">arr</span><span class="ss">)</span> {
+    <span class="nv">const</span> <span class="nv">newArr</span> <span class="o">=</span> <span class="nv">arr</span>.<span class="nv">filter</span><span class="ss">((</span><span class="nv">item</span><span class="ss">)</span><span class="o">=&gt;</span> {<span class="k">return</span> <span class="nv">item</span> <span class="o">===</span> <span class="nv">num</span>}<span class="ss">)</span><span class="c1">;</span>
+    <span class="k">return</span> <span class="ss">(</span><span class="nv">newArr</span>[<span class="mi">0</span>] <span class="o">===</span> <span class="nv">num</span> ? <span class="nv">true</span> : <span class="nv">false</span><span class="ss">)</span><span class="c1">;</span>
+    }
+
+    <span class="nv">zamiast</span>
+
+    <span class="nv">function</span> <span class="nv">getNumber</span> <span class="ss">(</span><span class="nv">num</span>,<span class="nv">arr</span><span class="ss">)</span> {
+            <span class="nv">const</span> <span class="nv">newArr</span> <span class="o">=</span> <span class="nv">arr</span>.<span class="nv">filter</span><span class="ss">(</span><span class="nv">function</span><span class="ss">(</span><span class="nv">item</span><span class="ss">)</span> {
+            <span class="k">return</span> <span class="nv">item</span> <span class="o">===</span> <span class="nv">num</span><span class="c1">;</span>
+            }<span class="ss">)</span><span class="c1">;</span>
+            <span class="k">if</span> <span class="ss">(</span><span class="nv">newArr</span>[<span class="mi">0</span>] <span class="o">===</span> <span class="nv">num</span><span class="ss">)</span> {
+                    <span class="k">return</span> <span class="nv">true</span>
+            }
+            <span class="k">else</span> {
+                    <span class="k">return</span> <span class="nv">false</span>
+            }
+    }<span class="c1">;</span>
+</code></pre></div>
+
+
 <p>Źródła:</p>
 <p>http://kursjs.pl/kurs/es6/funkcja-strzalkowa.php</p>
 <p>https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html</p>
@@ -196,6 +224,12 @@
 
 
 
+  <div class="related-posts">
+    <h4>Zobacz także</h4>
+    <ul class="related-posts">
+      <li><a href="./js-funkcja.html">JavaScript - funkcje</a></li>
+    </ul>
+  </div>
 
 
 <!-- Disqus -->
@@ -214,7 +248,7 @@
 <!-- End Disqus -->
 </article>
 
-    <footer>
+      <footer>
 <p>
   &copy;  2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
@@ -229,7 +263,8 @@
          width="80"
          height="15"/>
   </a>
-</p>    </footer>
+</p>      </footer>
+    </div>
   </main>
 
 

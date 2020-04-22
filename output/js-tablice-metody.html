@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
   <script src="./tipuesearch_content.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
   
   <link
     rel="stylesheet"
@@ -73,6 +73,9 @@
 
 </head>
 <body>
+
+  <!-- ASIDE -->
+  
   <aside>
     <div>
       <a href=".">
@@ -109,16 +112,19 @@
 
 
   </aside>
+
+  <!-- MAIN -->
   <main>
+    <div class="container">
 
-    <nav>
-      <a href=".">Strona główna</a>
+      <nav>
+        <a href=".">Strona główna</a>
 
-      <a href="categories.html">Kategorie</a>
-      <a href="tags.html">Tagi</a>
+        <a href="categories.html">Kategorie</a>
+        <a href="tags.html">Tagi</a>
 
 
-    </nav>
+      </nav>
 
 <article class="single">
   <header>
@@ -197,7 +203,27 @@
 
 
 <p><strong><code>map</code></strong> - podobny do forEach ale zmienia elementy tablicy i zwraca nową tablicę ze zmienionymi wartościami</p>
-<p><strong><code>filter</code></strong> - zwraca nową tablicę, która zawiera dla, którego wskazany argument jest prawdziwy (= True)</p>
+<p><strong><code>filter</code></strong> - zwraca <strong>nową tablicę</strong>, z elementami dla którego wskazany argument jest prawdziwy (= True)</p>
+<div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">newArr</span> <span class="o">=</span> <span class="nv">array</span>.<span class="nv">filter</span><span class="ss">(</span><span class="nv">function</span><span class="ss">(</span><span class="nv">item</span><span class="ss">)</span>{
+    <span class="k">return</span> <span class="nv">condition</span><span class="c1">;</span>
+}<span class="ss">)</span><span class="c1">;</span>
+
+<span class="nv">function</span> <span class="nv">getNumber</span> <span class="ss">(</span><span class="nv">num</span>,<span class="nv">arr</span><span class="ss">)</span> {
+<span class="nv">const</span> <span class="nv">newArr</span> <span class="o">=</span> <span class="nv">arr</span>.<span class="nv">filter</span><span class="ss">(</span><span class="nv">function</span><span class="ss">(</span><span class="nv">item</span><span class="ss">)</span> {
+    <span class="k">return</span> <span class="nv">item</span> <span class="o">===</span> <span class="nv">num</span><span class="c1">;</span>
+}<span class="ss">)</span><span class="c1">;</span>
+<span class="k">return</span> <span class="ss">(</span><span class="nv">newArr</span>[<span class="mi">0</span>] <span class="o">===</span> <span class="nv">num</span> ? <span class="nv">true</span> : <span class="nv">false</span><span class="ss">)</span>
+}<span class="c1">;</span>
+
+<span class="o">//</span> <span class="nv">zapis</span> <span class="nv">przy</span> <span class="nv">pomocy</span> <span class="nv">funkcji</span> <span class="nv">strza</span>ł<span class="nv">kowej</span>
+
+<span class="nv">function</span> <span class="nv">getNumber</span> <span class="ss">(</span><span class="nv">num</span>,<span class="nv">arr</span><span class="ss">)</span> {
+<span class="nv">const</span> <span class="nv">newArr</span> <span class="o">=</span> <span class="nv">arr</span>.<span class="nv">filter</span><span class="ss">((</span><span class="nv">item</span><span class="ss">)</span><span class="o">=&gt;</span> {<span class="k">return</span> <span class="nv">item</span> <span class="o">===</span> <span class="nv">num</span>}<span class="ss">)</span><span class="c1">;</span>
+<span class="k">return</span> <span class="ss">(</span><span class="nv">newArr</span>[<span class="mi">0</span>] <span class="o">===</span> <span class="nv">num</span> ? <span class="nv">true</span> : <span class="nv">false</span><span class="ss">)</span><span class="c1">;</span>
+}
+</code></pre></div>
+
+
 <p>:::tablica NIE ulega modyfikacji:::</p>
 <p><strong><code>reduce</code></strong> - przyjmuje dwa argumenty 1) wartość inicjalizującą tzw akumulator 2) funkcję wywołania zwrotnego (callback function) // ad 1) funkcja wywołania zwrotnego również przyjmuje 2 argumenty - element tablicy oraz aktualną wartość akumulatora i zwraca wartość, która zostanie przypisana do akumulatora i będzie jako taki użyty w kolejnej iteracji</p>
 <div class="highlight"><pre><span></span><code>  <span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
@@ -222,6 +248,7 @@
 <p>http://kursjs.pl/kurs/super-podstawy/tablice.php</p>
 <p>https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/from#</p>
 <p>https://launchschool.com/books/javascript/read/arrays#exercises</p>
+<p>https://alligator.io/js/filter-array-method/</p>
   </div>
   <div class="tag-cloud">
     <p>
@@ -252,7 +279,7 @@
 <!-- End Disqus -->
 </article>
 
-    <footer>
+      <footer>
 <p>
   &copy;  2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
 </p>
@@ -267,7 +294,8 @@
          width="80"
          height="15"/>
   </a>
-</p>    </footer>
+</p>      </footer>
+    </div>
   </main>
 
 

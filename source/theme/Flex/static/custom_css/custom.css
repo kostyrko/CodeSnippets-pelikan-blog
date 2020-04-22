@@ -1,6 +1,6 @@
 main {
-  display: flex;
-  justify-content: center;
+  width: 80vw;
+  left: 20vw;
 }
 
 .container {
@@ -16,9 +16,16 @@ aside {
   background-color: #44151a;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   aside {
     width: 16vw;
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 80vw;
+    left: 25vw;
   }
 }
 
