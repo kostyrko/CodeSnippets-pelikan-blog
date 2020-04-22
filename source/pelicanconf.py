@@ -112,7 +112,7 @@ COMBINED_CSS = True
 
 # setting Pygments code highlighter
 # from source/theme/static/css/pygments
-PYGMENTS_STYLE = 'github'
+PYGMENTS_STYLE = 'sas'
 
 # few ideas taken from https://github.com/pzelnip/www.codependentcodr.com/blob/master/pelicanconf.py
 # set copyright year

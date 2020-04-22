@@ -1,3 +1,11 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1100px;
+}
 
 article header h2 a {
   color: #a82a37;
@@ -10,12 +18,12 @@ aside {
 
 @media (min-width: 900px) {
   aside {
-    width: 18vw;
+    width: 16vw;
   }
 }
 
 #tipue_search_input {
-  max-width: 300px;
+  max-width: 200px;
   width: 90%;
   margin-top: 25px;
   border-radius: 25px;
@@ -24,7 +32,7 @@ aside {
 }
 a.btn {
   background-color: #a82a37;
-  box-shadow: rgb(77, 77, 77) 0px 1px 6px;
+  box-shadow: 0 0.25rem 0.375rem -0.0625rem rgba(0,1,0,.1), 0 0.125rem 0.25rem -0.0625rem rgba(0,1,0,.06);
 }
 
 a.btn:hover {
@@ -35,7 +43,7 @@ a.btn:hover {
   font-size: 1rem;
   background-color: #a82a37;
   transition: transform 0.15s ease;
-  box-shadow: rgb(77, 77, 77) 0px 3px 9px;
+  box-shadow: rgb(77, 77, 77) 0px 1px 2px;
 
 }
 
@@ -44,7 +52,3 @@ a.btn:hover {
   transform: translateY(3px); 
 }
 
-hr {
-  background-color: #44151abd;
-  height: 1px;
-}
