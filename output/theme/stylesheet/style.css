@@ -423,7 +423,7 @@ ul.social a.sc-lastfm {
   }
   main {
     width: 75vw;
-    height: 100vh;
+    /* height: 100vh; */
     position: absolute;
     top: 0;
     left: 25vw;
