@@ -66,6 +66,8 @@ Tablica wyjściowa
 
 ---
 
+`callback` - funkcja wywołująca się na każdym elemencie
+
 **`forEach`** - tworzy pętlę przechodzącą przez zawartość tablicy - wymaga funkcji wywołania zwrotnego (callback), która tworzy akcję na każdym z elementów tablicy -> zwraca `undefined`, ale po drodze wywołuje wynik akcji
 
     let arrEach = [1, 2, 3, 4];
@@ -100,10 +102,24 @@ Tablica wyjściowa
 
 :::tablica NIE ulega modyfikacji:::
 
-**`reduce`** - przyjmuje dwa argumenty 1) wartość inicjalizującą tzw akumulator 2) funkcję wywołania zwrotnego (callback function) // ad 1) funkcja wywołania zwrotnego również przyjmuje 2 argumenty - element tablicy oraz aktualną wartość akumulatora i zwraca wartość, która zostanie przypisana do akumulatora i będzie jako taki użyty w kolejnej iteracji
+**`reduce`** - funkcja przyjmuje cztery argumenty 1) wartość inicjalizującą tzw akumulator 2) obecną wartość Opcjonalnie: 3) obecny indeks 4) źródłową tablicę na której, reduce jest stosowane
+
+Funkcja wywołania zwrotnego przyjmuje np. 2 argumenty - element tablicy oraz aktualną wartość akumulatora i zwraca wartość, która zostanie przypisana do akumulatora i będzie jako taki użyty w kolejnej iteracji.
+
+Redukuję tablicę do pojedynczej wartości
+
+:::tablica NIE ulega modyfikacji:::
+
 
       let arr = [2, 3, 5, 7]
+
       arr.reduce((accumulator, element) => accumulator + element, 0) //17
+    
+    // inny zapis
+
+      arr.reduce(function(acc,element){
+          return acc + element
+      }, 0) // wartość początkowa akumulatora
 
 ---
 
