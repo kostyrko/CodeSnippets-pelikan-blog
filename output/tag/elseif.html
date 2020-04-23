@@ -10,16 +10,16 @@
 
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
 
-  <script src="./theme/tipuesearch/jquery.min.js"></script>
-  <script src="./theme/tipuesearch/tipuesearch.min.js"></script>
-  <script src="./theme/tipuesearch/tipuesearch.js"></script>
-  <script src="./theme/tipuesearch/tipuesearch_set.js"></script>
-  <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
-  <script src="./tipuesearch_content.js"></script>
+  <script src="../theme/tipuesearch/jquery.min.js"></script>
+  <script src="../theme/tipuesearch/tipuesearch.min.js"></script>
+  <script src="../theme/tipuesearch/tipuesearch.js"></script>
+  <script src="../theme/tipuesearch/tipuesearch_set.js"></script>
+  <link rel="stylesheet" href="../theme/tipuesearch/tipuesearch.css" />
+  <script src="../tipuesearch_content.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/sas.min.css">
   
   <link
     rel="stylesheet"
@@ -29,7 +29,7 @@
   />
 
 
-    <link href="./theme/custom_css/custom.css" rel="stylesheet">
+    <link href="../theme/custom_css/custom.css" rel="stylesheet">
 
 
 
@@ -55,9 +55,9 @@
 <meta property="og:title" content="...z frontu"/>
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="pl_PL"/>
-<meta property="og:url" content="."/>
+<meta property="og:url" content=".."/>
 
-  <title>...z frontu &ndash; Kategorie</title>
+  <title>...z frontu &ndash; Tag else...if</title>
 
 </head>
 <body>
@@ -66,15 +66,15 @@
   
   <aside>
     <div>
-      <a href=".">
-        <img src="./theme/img/profile.png" alt="Notatki z frontu" title="Notatki z frontu">
+      <a href="..">
+        <img src="../theme/img/profile.png" alt="Notatki z frontu" title="Notatki z frontu">
       </a>
-      <h1><a href=".">Notatki z frontu</a></h1>
+      <h1><a href="..">Notatki z frontu</a></h1>
 
 <p>JS/CSS/PY</p>      <nav>
         <ul class="list">
 
-            <li><a target="_blank" href="./pages/o-blogu.html">O blogu</a></li>
+            <li><a target="_blank" href="../pages/o-blogu.html">O blogu</a></li>
 
         </ul>
       </nav>
@@ -92,7 +92,7 @@
           </a></li>
       </ul>
       
-        <form class="navbar-search" action="./search.html" role="search">
+        <form class="navbar-search" action="../search.html" role="search">
             <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
         </form>
 
@@ -106,7 +106,7 @@
     <div class="container">
 
       <nav>
-        <a href=".">Strona główna</a>
+        <a href="..">Strona główna</a>
 
         <a href="categories.html">Kategorie</a>
         <a href="tags.html">Tagi</a>
@@ -114,20 +114,34 @@
 
       </nav>
 
-<article class="single">
+
+
+<article>
   <header>
-    <h1 id="categories">Kategorie</h1>
+    <h2><a href="../js-kontorla-przeplywu.html">JavaScript - kontrola przepływu (if...else/switch/operator warunkowy)</a></h2>
+    <p>
+      Opublikowano czw 09 kwietnia 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/ifelse.html">if...else</a>,              <a href="../tag/switch.html">switch</a>,              <a href="../tag/elseif.html">else...if</a>
+        &#8226; 2 min read
+    </p>
   </header>
   <div>
-    <ul class="list">
-      <li><a href="./category/css.html">css</a> (14)</li>
-      <li><a href="./category/javascript.html">javascript</a> (15)</li>
-      <li><a href="./category/pelican-blog.html">pelican-blog</a> (4)</li>
-      <li><a href="./category/ubuntu.html">ubuntu</a> (3)</li>
-      <li><a href="./category/vsc.html">VSC</a> (4)</li>
-    </ul>
+      <p>Polecenie <code>if...else</code> pozwala na kontrolę przepływu kodu -&gt; gdy pewien warunek jest spełniony (<code>if</code>) kod jest wykonywany a jeśli nie to może sprawdzić kolejny warunek (<code>else if</code>) lub wykonać określony kod (<code>else</code>)</p>
+<div class="highlight"><pre><span></span><code>  <span class="k">if</span> <span class="ss">(</span><span class="nv">warunek</span><span class="ss">)</span> {
+        <span class="nv">kod</span> <span class="k">do</span> <span class="nv">wywo</span>ł<span class="nv">ania</span> <span class="nv">je</span>ś<span class="nv">li</span> <span class="nv">warunek</span> <span class="nv">spe</span>ł<span class="nv">niony</span>
+  } <span class="k">else</span> <span class="k">if</span> <span class="ss">(</span><span class="nv">inny</span> <span class="nv">warunek …</span></code></pre></div>
+        <br>
+        <a class="btn" href="../js-kontorla-przeplywu.html">Czytaj dalej</a>
   </div>
 </article>
+
+  <div class="pagination">
+  </div>
+
+
+
 
       <footer>
 <p>
@@ -156,7 +170,7 @@
   "@context" : "http://schema.org",
   "@type" : "Blog",
   "name": " ...z frontu ",
-  "url" : ".",
+  "url" : "..",
   "image": "",
   "description": ""
 }

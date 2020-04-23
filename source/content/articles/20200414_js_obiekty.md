@@ -1,4 +1,4 @@
-Title: JavaScript - obiekty
+Title: JavaScript - obiekty (Objects)
 Author: mkostyrko
 Date: 2020-04-14
  10:00

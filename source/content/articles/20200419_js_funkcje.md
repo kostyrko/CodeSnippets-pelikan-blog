@@ -27,6 +27,18 @@ Schemat
 
 ::: wynoszenie odbywa się przed wykonaniem kodu :::
 
+
+Istnieje możliwość zdefiniowania domyślnego parametru w funkcji, który zostaje użyty w przypadku gdy ten nie zostanie podany
+
+    function droidSeeker (name= 'droid') {
+      console.log(`This is not the ${name} you are looking for`)
+    }
+
+    droidSeeker('Mike')
+    >> This is not the Mike you are looking for
+    droidSeeker()
+    >> This is not the droid you are looking for
+
 ----
 
 ### Wyrażenia funkcyjne
@@ -53,12 +65,13 @@ Funkcja w domyśle zwraca wartość `undefined` - stąd aby zwróciła jakąś w
 ---
 ### Funkcje anonimowe 
 
-Nie posiada nazwy (identyfikatora), może ale nie musi być przypisana do zmiennej, może ale nie musi posiadać agrumentu // występuje często jako funkcja występująca jako parametr w innej
+Nie posiada nazwy (identyfikatora), może ale nie musi być przypisana do zmiennej, może ale nie musi posiadać argumentu // występuje często jako funkcja występująca jako parametr w innej
 Gdy przypisana do zmiennej wywołuje się poprzez jej przywołanie w innym przypadku należy zamknąć ją w nawiasach -> funkcja zostanie od razu wywołana w trakcie wykonywania kodu.
 
     (function(arg){
       console.log(arg)
     })("Argument");
+
 
 ---
 

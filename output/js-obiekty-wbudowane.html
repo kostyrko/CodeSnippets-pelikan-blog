@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <script src="./theme/tipuesearch/jquery.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch_set.js"></script>
+  <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
+  <script src="./tipuesearch_content.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
+  
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+
+
+    <link href="./theme/custom_css/custom.css" rel="stylesheet">
+
+
+
+    <link rel="shortcut icon" href="/theme/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/theme/img/favicon.png" type="image/x-icon">
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-162203128-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<meta name="author" content="mkostyrko" />
+<meta name="description" content="Wartości Infinity NaN undefined null Funkcje eval() - ocenia kod który jest stringiem (użycie tego nie jest bezpieczne jeśli ogólnodostępne) console.log(eval(&#39;2 + 2&#39;) === eval(&#39;4&#39;)); // expected output: true console.log(eval(&#39;2 + 2&#39;) === eval(new String(&#39;2 + 2&#39;))); // expected output: false uneval() - tworzy string reprezentujący kod źródłowy obiektu uneval …" />
+<meta name="keywords" content="javascript, js, obiekty wbudowane">
+
+
+<meta property="og:site_name" content="...z frontu"/>
+<meta property="og:title" content="JavaScript - obiekty wbudowane"/>
+<meta property="og:description" content="Wartości Infinity NaN undefined null Funkcje eval() - ocenia kod który jest stringiem (użycie tego nie jest bezpieczne jeśli ogólnodostępne) console.log(eval(&#39;2 + 2&#39;) === eval(&#39;4&#39;)); // expected output: true console.log(eval(&#39;2 + 2&#39;) === eval(new String(&#39;2 + 2&#39;))); // expected output: false uneval() - tworzy string reprezentujący kod źródłowy obiektu uneval …"/>
+<meta property="og:locale" content="pl_PL"/>
+<meta property="og:url" content="./js-obiekty-wbudowane.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-04-13 08:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/mkostyrko.html">
+<meta property="article:section" content="javascript"/>
+<meta property="article:tag" content="javascript"/>
+<meta property="article:tag" content="js"/>
+<meta property="article:tag" content="obiekty wbudowane"/>
+<meta property="og:image" content="">
+
+  <title>...z frontu &ndash; JavaScript - obiekty wbudowane</title>
+
+</head>
+<body>
+
+  <!-- ASIDE -->
+  
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="Notatki z frontu" title="Notatki z frontu">
+      </a>
+      <h1><a href=".">Notatki z frontu</a></h1>
+
+<p>JS/CSS/PY</p>      <nav>
+        <ul class="list">
+
+            <li><a target="_blank" href="./pages/o-blogu.html">O blogu</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/m_kostyrko" target="_blank">
+            <i class="fab fa-twitter">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-github" href="https://github.com/kostyrko" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+      </ul>
+      
+        <form class="navbar-search" action="./search.html" role="search">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
+        </form>
+
+    </div>
+
+
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="container">
+
+      <nav>
+        <a href=".">Strona główna</a>
+
+        <a href="categories.html">Kategorie</a>
+        <a href="tags.html">Tagi</a>
+
+
+      </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="js-obiekty-wbudowane">JavaScript - obiekty wbudowane</h1>
+    <p>
+      Opublikowano pon 13 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
+
+        &#8226; 2 min read
+    </p>
+  </header>
+
+
+  <div>
+    <h3>Wartości</h3>
+<p><code>Infinity</code></p>
+<p><code>NaN</code></p>
+<p><code>undefined</code></p>
+<p><code>null</code></p>
+<hr>
+<h3>Funkcje</h3>
+<p><code>eval()</code> - ocenia kod który jest stringiem (użycie tego nie jest bezpieczne jeśli ogólnodostępne)</p>
+<div class="highlight"><pre><span></span><code><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;2 + 2&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="n">eval</span><span class="p">(</span><span class="s1">&#39;4&#39;</span><span class="p">));</span>
+<span class="o">//</span> <span class="n">expected</span> <span class="k">output</span><span class="p">:</span> <span class="k">true</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">eval</span><span class="p">(</span><span class="s1">&#39;2 + 2&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="n">eval</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s1">&#39;2 + 2&#39;</span><span class="p">)));</span>
+<span class="o">//</span> <span class="n">expected</span> <span class="k">output</span><span class="p">:</span> <span class="k">false</span>
+</code></pre></div>
+
+
+<p><code>uneval()</code> - tworzy string reprezentujący kod źródłowy obiektu</p>
+<div class="highlight"><pre><span></span><code><span class="n">uneval</span><span class="p">(</span><span class="k">function</span> <span class="n">foo</span><span class="p">()</span> <span class="err">{}</span><span class="p">);</span> <span class="o">//</span> <span class="k">returns</span> <span class="ss">&quot;(function foo(){})&quot;</span>
+</code></pre></div>
+
+
+<p><code>isFinite()</code> - sprawdza czy liczba podana (argument) jest liczbą skończoną</p>
+<p><code>isNaN()</code> - sprawdza czy podany argument jest liczbą</p>
+<div class="highlight"><pre><span></span><code><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">milliseconds</span><span class="p">(</span><span class="s1">&#39;100F&#39;</span><span class="p">));</span>
+<span class="o">//</span> <span class="n">expected</span> <span class="k">output</span><span class="p">:</span> <span class="ss">&quot;Not a Number!&quot;</span>
+</code></pre></div>
+
+
+<p><code>parseFloat()</code> - analizuje argument (string?) i zwraca go jako float</p>
+<div class="highlight"><pre><span></span><code><span class="nv">function</span> <span class="nv">circumference</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span> {
+<span class="k">return</span> <span class="nv">parseFloat</span><span class="ss">(</span><span class="nv">r</span><span class="ss">)</span> <span class="o">*</span> <span class="mi">2</span>.<span class="mi">0</span> <span class="o">*</span> <span class="nv">Math</span>.<span class="nv">PI</span><span class="c1">;</span>
+</code></pre></div>
+
+
+<p>}</p>
+<p><code>parseInt()</code> - analizuje argument (string) i zwraca go jako integer</p>
+<p><code>decodeURI()</code> - dekoduje Uniform Resource Identifier wcześniej stworzony przez <code>encodeURI()</code></p>
+<p><code>decodeURIComponent()</code>  - dekoduje Uniform Resource Identifier wcześniej stworzony przez <code>encodeURIComponent()</code></p>
+<p><code>encodeURI()</code> - koduje URI poprzez zamianę każdej instancji na 1-4 wyjściowych sekwencji reprezentowanych przez symbol z UTF-8</p>
+<p><code>encodeURIComponent()</code> - jw</p>
+<hr>
+<h3>Obiekty podstawowe</h3>
+<p>Object</p>
+<p>Function</p>
+<p>Boolean</p>
+<p>Symbol</p>
+<p>Error</p>
+<p>EvalError</p>
+<p>RangeError</p>
+<p>ReferenceError</p>
+<p>SyntaxError</p>
+<p>URIError</p>
+<hr>
+<h3>Liczby i daty</h3>
+<p><code>Number</code> - pozwala pracować z wartościami liczbowymi, stosowany przy uzyskiwaniu dostępu do stałych właściwości. Posiada <em>właściwości</em></p>
+<p><strong> Metody (wybrane) </strong></p>
+<p><code>Number.isInteger()</code> - jest integer?</p>
+<p><code>Number.toExponential()</code> - liczba w postaci wykładniczej</p>
+<p><code>Number.toFixed()</code> - zwraca liczbę stałoprzecinkową</p>
+<p><code>Number.isNaN()</code> - sprawdź czy podana wartość jest liczbą</p>
+<p><a href="https://kostyrko.github.io/zfrontu/js-math.html">Math</a></p>
+<p><code>Date</code> - reprezentuje moment w czasie -&gt; odowłując się do 1 January 1970 UTC</p>
+<p><strong>Metody</strong></p>
+<p><code>Date.now()</code> - wartość liczbowa aktualnego czasu</p>
+<p><code>Date.pars()</code> - "Zwraca liczbę milisekund, które upłynęły od 1 stycznia 1970, 00:00:00 czasu lokalnego do daty podanej jako argument string."</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Date</span><span class="p">.</span><span class="nc">parse</span><span class="o">(</span><span class="s2">&quot;Wed, 09 Aug 1995 00:00:00&quot;</span><span class="o">);</span>
+<span class="o">//</span> <span class="nt">Zwraca</span> <span class="nt">807937200000</span> <span class="nt">w</span> <span class="nt">strefie</span> <span class="nt">czasowej</span> <span class="nt">GMT-0300</span><span class="o">,</span> <span class="nt">a</span> <span class="nt">inne</span> <span class="nt">wartości</span> <span class="nt">w</span> <span class="nt">innych</span>
+</code></pre></div>
+
+
+<p><code>Date.UTC()</code> - "Zwraca liczbę milisekund, które upłynęły od 1 stycznia 1970, 00:00:00 czasu uniwersalnego do daty podanej jako zestaw liczb"</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">utcDate1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="n">UTC</span><span class="p">(</span><span class="mi">96</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">utcDate1</span><span class="p">.</span><span class="n">toUTCString</span><span class="p">());</span>
+<span class="o">//</span> <span class="n">expected</span> <span class="k">output</span><span class="p">:</span> <span class="n">Fri</span><span class="p">,</span> <span class="mi">02</span> <span class="n">Feb</span> <span class="mi">1996</span> <span class="mi">03</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">05</span> <span class="n">GMT</span>
+</code></pre></div>
+
+
+<p><strong>Instancje obiektu Date (wybrane)</strong></p>
+<p><strong>Metody</strong></p>
+<p><code>Date.prototype.getDate()</code> - zwraca dzień miesiąca podanej daty</p>
+<div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">birthday</span> <span class="o">=</span> <span class="nv">new</span> <span class="nv">Date</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">August 19, 1975 23:15:30</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="nv">const</span> <span class="nv">date1</span> <span class="o">=</span> <span class="nv">birthday</span>.<span class="k">getDate</span><span class="ss">()</span><span class="c1">;</span>
+</code></pre></div>
+
+
+<p><code>.getDay()</code> - zwraca dzień tygodnia</p>
+<p><code>.getFullYear()</code> - rok</p>
+<p><code>.getHours()</code> - godzinę</p>
+<p><code>.getMinutes()</code> - minuty</p>
+<p><code>.getMonth()</code> - miesiąc</p>
+<p><code>.getTime()</code> - zwraca czas w milisekundach</p>
+<p><em>Setters - pozwalają na zdefiniowanie czasu</em></p>
+<p><code>.setTime()</code>, <code>setMinutes()</code> etc</p>
+<hr>
+<h3>Przetwarzanie tekstu</h3>
+<p><code>String</code> - łańcuch znaków</p>
+<p><code>RegExp</code> - obiekt wyrażeń regularnych, zawiera wzór regularnego wyrażenia -&gt; znalezienie lub zmianę ciągu znaków w innym ciągu znaków</p>
+<h3>Indeksowanie kolekcji</h3>
+<p>Array</p>
+<p>Int8Array</p>
+<p>Uint8Array</p>
+<p>Uint8ClampedArray</p>
+<p>Int16Array</p>
+<p>Uint16Array</p>
+<p>Int32Array</p>
+<p>Uint32Array</p>
+<p>Float32Array</p>
+<p>Float64Array</p>
+<h3>Kolekcje z kluczami</h3>
+<p>Map</p>
+<p>Set</p>
+<p>WeakMap</p>
+<p>WeakSet</p>
+<hr>
+<h3>Kolekcje wektorowe</h3>
+<hr>
+<h3>Dane strukturalne</h3>
+<p>ArrayBuffer</p>
+<p>SharedArrayBuffer </p>
+<p>Atomics </p>
+<p>DataView</p>
+<p>JSON</p>
+<hr>
+<h3>Kontrola obiektów abstrakcyjnych</h3>
+<p>Promise</p>
+<p>Generator</p>
+<p>GeneratorFunction</p>
+<p>AsyncFunction</p>
+<hr>
+<h3>Refleksy</h3>
+<h3>Internacjonalizacja</h3>
+<h3>WebAssembly</h3>
+<hr>
+<h3>Pozostał</h3>
+<p>arguments</p>
+<p>Źródła:</p>
+<p>https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/javascript.html">javascript</a>
+      <a href="./tag/js.html">js</a>
+      <a href="./tag/obiekty-wbudowane.html">obiekty wbudowane</a>
+    </p>
+  </div>
+
+
+
+
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'zfrontu';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Włącz obsługę JavaScript, żeby zobaczyć komentarze.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+      <footer>
+<p>
+  &copy;  2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme with few modifications by mkostyrko </p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>      </footer>
+    </div>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ...z frontu ",
+  "url" : ".",
+  "image": "",
+  "description": ""
+}
+</script>
+
+
+  <script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+    });
+  </script>
+</body>
+</html>

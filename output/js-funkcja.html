@@ -132,7 +132,7 @@
     <p>
       Opublikowano nie 19 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
 
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
 
@@ -153,6 +153,18 @@
 <p>::: Funkcje posiadają własne właściwości np. .name -&gt; identyfikator.name = identyfikator (może być użyty w funkcji) :::</p>
 <p><strong>Hoisting/wynoszenie</strong> - funkcje tak samo jak i deklaracje zmiennych w trakcie analizowania/parsowania kodu przez przeglądarkę są wynoszone na górę aktualnego zasięgu i tam pojawiają się w zapisanej kolejności (ma to wpływ na nadpisywanie) -&gt;&gt; <code>Można wywoływać funkcje zanim zostaną zadeklarowane</code>. </p>
 <p>::: wynoszenie odbywa się przed wykonaniem kodu :::</p>
+<p>Istnieje możliwość zdefiniowania domyślnego parametru w funkcji, który zostaje użyty w przypadku gdy ten nie zostanie podany</p>
+<div class="highlight"><pre><span></span><code><span class="nv">function</span> <span class="nv">droidSeeker</span> <span class="ss">(</span><span class="nv">name</span><span class="o">=</span> <span class="s1">&#39;</span><span class="s">droid</span><span class="s1">&#39;</span><span class="ss">)</span> {
+  <span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span>`<span class="nv">This</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">the</span> ${<span class="nv">name</span>} <span class="nv">you</span> <span class="nv">are</span> <span class="nv">looking</span> <span class="k">for</span>`<span class="ss">)</span>
+}
+
+<span class="nv">droidSeeker</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">Mike</span><span class="s1">&#39;</span><span class="ss">)</span>
+<span class="o">&gt;&gt;</span> <span class="nv">This</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">the</span> <span class="nv">Mike</span> <span class="nv">you</span> <span class="nv">are</span> <span class="nv">looking</span> <span class="k">for</span>
+<span class="nv">droidSeeker</span><span class="ss">()</span>
+<span class="o">&gt;&gt;</span> <span class="nv">This</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">the</span> <span class="nv">droid</span> <span class="nv">you</span> <span class="nv">are</span> <span class="nv">looking</span> <span class="k">for</span>
+</code></pre></div>
+
+
 <hr>
 <h3>Wyrażenia funkcyjne</h3>
 <p>Funkcje można przypisać do zmiennych  - wówczas: </p>
@@ -176,7 +188,7 @@
 <p>Funkcja w domyśle zwraca wartość <code>undefined</code> - stąd aby zwróciła jakąś wartość należy zastosować instrukcję <code>return</code> ::: <strong>przerywa również działanie funcji</strong> :::</p>
 <h2>---</h2>
 <h3>Funkcje anonimowe</h3>
-<p>Nie posiada nazwy (identyfikatora), może ale nie musi być przypisana do zmiennej, może ale nie musi posiadać agrumentu // występuje często jako funkcja występująca jako parametr w innej
+<p>Nie posiada nazwy (identyfikatora), może ale nie musi być przypisana do zmiennej, może ale nie musi posiadać argumentu // występuje często jako funkcja występująca jako parametr w innej
 Gdy przypisana do zmiennej wywołuje się poprzez jej przywołanie w innym przypadku należy zamknąć ją w nawiasach -&gt; funkcja zostanie od razu wywołana w trakcie wykonywania kodu.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span><span class="err">{</span>
   <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>

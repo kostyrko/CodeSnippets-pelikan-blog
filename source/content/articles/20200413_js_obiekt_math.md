@@ -1,11 +1,11 @@
 Title: JavaScript - obiekt Math
 Author: mkostyrko
-Date: 2020-04-13 10:00
+Date: 2020-04-13 09:00
 Updated:
 Category: javascript
 Tags: javascript, js, math, obiekt math, object
 Slug: js-math
-related_posts: 
+related_posts: js-obiekty-wbudowane
 
 Math jest wbudowanym obiektem (najwyższego poziomu), który posiada właściwości i metody związane z metodami stałymi i matematycznymi.
 
@@ -87,5 +87,4 @@ Math jest wbudowanym obiektem (najwyższego poziomu), który posiada właściwo�
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
 
-https://mathjs.org/
-
+h
