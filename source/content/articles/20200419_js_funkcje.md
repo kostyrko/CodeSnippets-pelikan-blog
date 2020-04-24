@@ -39,11 +39,30 @@ Istnieje możliwość zdefiniowania domyślnego parametru w funkcji, który zost
     droidSeeker()
     >> This is not the droid you are looking for
 
+---
+
+### Funkcje pomocnicze
+
+Funkcje pomocnicze pozwalają na rozbicie kodu na jego poszczególne części tak aby był czytelniejszy i prostszy w utrzymaniu
+
+w tym celu można stworzyć jedną funkcję cząstkową a następnie odwołać się do niej w kolejnej
+
+    function multipNineFifth (num) {
+      return num * (9/5); 
+    }
+
+    function getFarenheit(celc) {
+      return multipNineFifth(celc) + 32;
+    }
+
+    getFarenheit(10) // = >50
+
+
 ----
 
 ### Wyrażenia funkcyjne
 
-Funkcje można przypisać do zmiennych  - wówczas: 
+Funkcje (zwykle anonimowa) można przypisać do zmiennych  - wówczas: 
 
     const zmienna = function(arg1,arg2) {
       return arg1 + arg2;
@@ -53,15 +72,17 @@ Funkcje można przypisać do zmiennych  - wówczas:
 
 W ten sposób zadeklarowana funkcja nie jest **jest wynoszona** za to deklaracja ich zmiennych jest
 
-    const zmienna = function zmienna2(x,y) {
+Przypadek z nazwaną funkcją
+
+    const zmienna = function nazwa(x,y) {
       return x+y;
     }
 
-    console.log(zmienna.name); // = zmienna2 -> pozwala na odwołanie się do f(x) w jej wnętrzu
+    console.log(zmienna.name); // = nazwa -> pozwala na odwołanie się do f(x) w jej wnętrzu
 
-Funkcja w domyśle zwraca wartość `undefined` - stąd aby zwróciła jakąś wartość należy zastosować instrukcję `return` ::: **przerywa również działanie funcji** :::
+Funkcja w domyśle zwraca wartość `undefined` - stąd aby zwróciła jakąś wartość należy zastosować instrukcję `return` ::: **przerywa również działanie funkcji** :::
 
----
+
 ---
 ### Funkcje anonimowe 
 
@@ -72,8 +93,9 @@ Gdy przypisana do zmiennej wywołuje się poprzez jej przywołanie w innym przyp
       console.log(arg)
     })("Argument");
 
-
 ---
+
+
 
 Źródła:
 

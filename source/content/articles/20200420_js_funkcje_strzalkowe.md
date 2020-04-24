@@ -18,13 +18,18 @@ schemat:
         const show = () => {...};
 
 * w przypadku **tylko** jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1
-* jeśli funkcja jedynie zwraca to można pominąć instrukcję `return`
+
+::: jeśli funkcja jedynie zwraca to można pominąć instrukcję `return` - tzw. domniemany zwrot/return :::
+
+::: można również pominąć `{}` w przypadku gdy istnieje tylko jedna linia kodu :::
 
         const multiply = function(a) {
             return a * a;
         }
         
         const multiply = a => a * a;
+
+        const waterPlant = day => day === 'Tuesday' ? true : false;
 
 * jeżeli funkcja zwraca jedną instrukcję można pominąć klamry
 
