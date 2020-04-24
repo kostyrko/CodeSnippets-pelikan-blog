@@ -4,7 +4,7 @@ Date: 2020-04-22 10:00
 Updated:
 Category: javascript
 Tags: javascript, blocks, scopes, zakres, blok
-Slug: js-this
+Slug: js-blok-zakres
 related_posts: js-funkcja
 
 Instrukcja blokowa (ang. blocks) - blok służy do grupowania wyrażeń i jest kodem zamkniętym w nawiasach klamrowych. Przykładem bloku kodu jest funkcja lub instrukcja if.
@@ -63,8 +63,4 @@ Deklarowanie zmiennej w ramach bloku pozwala na tworzeni czystszego kodu, łatwi
 
 Źródła:
 
-https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
-
-
-
-
+https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Control_flow_and_error_handli
