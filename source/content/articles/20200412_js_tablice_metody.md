@@ -39,6 +39,7 @@ Tablica wyjściowa
     >> push
 
 **`indexOf`** - znajduje nr porządkowy (indeks) wybranego elementu
+::: jeśli dany element nie jest obecny w tablicy to wówczas zwraca **`-1`** :::
 
     arr.indexOf(1)
     > 1
@@ -54,7 +55,7 @@ Tablica wyjściowa
     // removedItems = [2,3,4]
 
 
-**`slice`** - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - włącznie
+**`slice`** - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - wyłącznie (argument końcowy nie będzie częścią)
 
 **`sort`** - zwraca posortowaną tablicę, gdzie sortowanie jest oparte na pierwszej cyfrze składającej się na liczbę, podobnie sprawa wygląda w przypadku alfabetu gdzie 1. litera ma wpływ na kolejność pozycji i a potem następna etc.
 
