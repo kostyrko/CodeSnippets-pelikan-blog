@@ -1,0 +1,16 @@
+Title: JavaScript - bloki i zakres
+Author: mkostyrko
+Date: 2020-XX-XX 10:00
+Updated:
+Category: javascript
+Tags: 
+Slug: 
+related_posts: 
+
+
+
+
+---
+
+Źródła:
+

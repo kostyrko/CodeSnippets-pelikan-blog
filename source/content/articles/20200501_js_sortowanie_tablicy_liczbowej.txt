@@ -1,0 +1,26 @@
+Title: JavaScript - sortowanie tablicy zawierającej liczby
+Author: mkostyrko
+Date: 2020-XX-XX 10:00
+Updated:
+Category: javascript
+Tags: javascript, array, tablica, sort, sorotwanie
+Slug: js-blok-zakres
+related_posts: 
+
+
+
+
+
+---
+
+Źródła:
+
+https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
+
+https://alligator.io/js/array-sort-numbers/
+
+https://www.freecodecamp.org/forum/t/arr-sort-a-b-a-b-explanation/167677/7
+
+https://dev.to/banesag/sorting-arrays-of-strings-in-javascript-2g11
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort

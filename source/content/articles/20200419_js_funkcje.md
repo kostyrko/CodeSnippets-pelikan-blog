@@ -70,7 +70,9 @@ Funkcje (zwykle anonimowa) można przypisać do zmiennych  - wówczas:
     // wywołanie
     console.log(zmienna(1,2));
 
-W ten sposób zadeklarowana funkcja nie jest **jest wynoszona** za to deklaracja ich zmiennych jest
+W ten sposób zadeklarowana funkcja nie jest **wynoszona** 
+
+::: wynoszona jest deklaracja funkcja jeśli jest poprzedzona  słowem kluczowego **`var`**:::
 
 Przypadek z nazwaną funkcją
 
@@ -80,7 +82,7 @@ Przypadek z nazwaną funkcją
 
     console.log(zmienna.name); // = nazwa -> pozwala na odwołanie się do f(x) w jej wnętrzu
 
-Funkcja w domyśle zwraca wartość `undefined` - stąd aby zwróciła jakąś wartość należy zastosować instrukcję `return` ::: **przerywa również działanie funkcji** :::
+Funkcja w domyśle zwraca wartość `undefined` - stąd aby zwróciła jakąś wartość należy zastosować instrukcję `return` ::: **, który przerywa również działanie funkcji** :::
 
 
 ---

@@ -8,6 +8,8 @@ Slug: js-podstawowe-typy
 related_posts: js-obiekty, js-tablice
 
 
+W JavaScript istnieją dwa typy danych - proste/prymitywne i referencyjne, poniżej zostaną przedstawione te pierwsze. Typy referencyjne przechowywane są w pamięci podręcznej a zmienna jest do nich referencją.
+
 ---
 ### Postawy i deklaracje
 
@@ -127,8 +129,25 @@ Przykładowe zastosowanie: 123, -123, 1.1, -1.1, 0.1E2, -0x0f
 w przypadku niepewności jakiego typ danych przechowuje dana zmienna istniej możliwość zastosowania operatora `typeof`, który zwraca łańcuch zwierający typ tzw. operandu (argument operatora)
 
     schemat: typeof operand
-    przykład > typeof 1
-    wynik = 'number'
+    
+przykład1: 
+    
+    typeof 1
+    >> 'number'
+
+przykład2:
+
+    const robot = 'r2d2'
+    typeof robot
+    >> 'string'
+
+Zastosowanie z innymi typami danych:
+
+    typeof [1,2,3,4]              // "object"
+    typeof {name:'John', age:34}  // "object"
+    typeof new Date()             // "object"
+    typeof function () {}         // "function"
+    typeof myCar                  // "undefined"
 
 ---
 

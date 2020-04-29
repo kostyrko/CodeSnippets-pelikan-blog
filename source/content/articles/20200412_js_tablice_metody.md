@@ -133,6 +133,10 @@ Redukuję tablicę do pojedynczej wartości
 
 ---
 
+![sort_method](https://i.stack.imgur.com/81miP.png)
+
+---
+
 Ćwiczenia:
 
 https://launchschool.com/books/javascript/read/arrays#exercises
@@ -148,3 +152,5 @@ https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/fr
 https://launchschool.com/books/javascript/read/arrays#exercises
 
 https://alligator.io/js/filter-array-method/
+
+https://www.freecodecamp.org/forum/t/arr-sort-a-b-a-b-explanation/167677
