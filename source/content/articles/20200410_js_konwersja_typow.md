@@ -45,7 +45,8 @@ W ten sposób można przekształcić **boolean lub string w number** -> `Number(
     Number(123)                    // 123
     Number("")                     // 0
     Number("99 88")                // NaN
-
+    Number(new Date("2020-09-30"));    // 1601424000000
+    
 Zmienia string w integer
 
     parseInt('123.32') // 123
