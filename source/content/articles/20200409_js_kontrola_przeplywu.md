@@ -31,9 +31,16 @@ Polecenie `if...else` pozwala na kontrolę przepływu kodu -> gdy pewien warunek
       greeting = "Good day";
       }
 
+
+      if (typeof droid !== 'undefined') {
+            console log(`this is ${droid}`)
+      } else {
+            console.log('droid variable was not defined')
+      }
+
 ---
 
-### Operator warunkowy
+### Operator warunkowy/ Ternary operator
 
 W przypadku prostej kontroli przepływu opierającej się na sprawdzaniu dwóch warunków można oprzeć się na operatorze warunkowym
 

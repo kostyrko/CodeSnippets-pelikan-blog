@@ -88,18 +88,14 @@ URIError
 
 `Number` - pozwala pracować z wartościami liczbowymi, stosowany przy uzyskiwaniu dostępu do stałych właściwości. Posiada *właściwości*
 
-   ** Metody (wybrane) **
+Metody Numbers został przedstawione tutaj [tutaj](https://kostyrko.github.io/zfrontu/js-metody-liczb.html)
 
-  `Number.isInteger()` - jest integer?
+---
+Obiekt Math został opisany [tutaj](https://kostyrko.github.io/zfrontu/js-math.html)
 
-  `Number.toExponential()` - liczba w postaci wykładniczej
+---
 
-  `Number.toFixed()` - zwraca liczbę stałoprzecinkową
-
-  `Number.isNaN()` - sprawdź czy podana wartość jest liczbą
-
-
-[Math](https://kostyrko.github.io/zfrontu/js-math.html)
+#### Date
 
 `Date` - reprezentuje moment w czasie -> odowłując się do 1 January 1970 UTC
 
@@ -138,12 +134,11 @@ URIError
 
 `.getMonth()` - miesiąc
 
-`.getTime()` - zwraca czas w milisekundach
+`.getTime()` - zwraca aktualny czas w milisekundach
 
 *Setters - pozwalają na zdefiniowanie czasu*
 
 `.setTime()`, `setMinutes()` etc
-
 
 ---
 

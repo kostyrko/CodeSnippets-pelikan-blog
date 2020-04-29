@@ -69,7 +69,32 @@ ____
 
 ### Typ łańcuchowy
 
-Przydatne kolokacje znaków wykorzystanych w typie łańcuchowym
+Operator `+` pozwala na dodanie treści do zadeklarowanego wcześniej łańcucha znaków
+
+    let droid = 'r2d2'
+    droid += '&c3po'
+    droid // r2d2&c3po
+
+Można uzyskać wybrany znak z łańcuch po indeksie
+
+    let droid = 'r2d2'
+    droid[2] // d
+
+    droid.indexOf('r') // 0
+
+::: (Template literals) istnieje również możliwość włączania wartości zmiennej w ciąg łańcucha znaków poprzez zamknięcie treście w `` + zastosowaniu $ i nawiasów klamrowych - w ten sposób można wstawiać również równania( zwraca wynik), jak i funkcje etc. :::
+
+    const droid = 'r2d2'
+
+    console.log(`to nie jest %{droid}, którego szukamy`)
+lub:
+
+    console.log("to nie jest" + " " + droid + " którego szukamy")
+wynik będzie ten sam:
+
+    >> `to nie jest r2d2, którego szukamy`
+
+Przydatne kolokacje znaków (tzw. escaping) wykorzystanych w typie łańcuchowym
 
 `\n` - nowy wiersz
 
@@ -89,7 +114,7 @@ Przydatne kolokacje znaków wykorzystanych w typie łańcuchowym
     console.log(`kot ${cat}`)
     > kot Deedee
 
-::: metody łańcucha znaków String.formCharCode() - "Zwraca łańcuch znaków stworzony przez podaną sekwencję kodów Unicode.", String.fromCodePoint() - zwraca  łąńcuch stworzony na podstawie specyficznej sekwencji punktów kodu, String.raw() :::
+::: metody łańcucha znaków String.formCharCode() - "Zwraca łańcuch znaków stworzony przez podaną sekwencję kodów Unicode.", String.fromCodePoint() - zwraca łańcuch stworzony na podstawie specyficznej sekwencji punktów kodu, String.raw() :::
 
 
 ---

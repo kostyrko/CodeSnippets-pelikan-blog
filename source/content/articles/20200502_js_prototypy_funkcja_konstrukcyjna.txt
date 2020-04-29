@@ -7,7 +7,10 @@ Tags: javascript, js
 Slug: 
 related_posts: 
 
+Wbudowana funkcja konstrukcyjna dla tablic
 
+      const arr = new Array(22,33,44)
+      console.log(arr) // [22,33,44]
 
 Źródła:
 

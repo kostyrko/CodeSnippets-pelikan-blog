@@ -9,14 +9,26 @@ related_posts:
 
 ### Tablice
 
-Tablica wyjściowa
+Tworzenie tablicy
 
     const arr = [1,2,3,4]
 
-#### Dodawanie elementów
+::: istnieje możliwość również przez funkcję konstruktora `new Array()`
+
+Sprawdzanie czy obiekt, do którego się odwołujemy jest tablicą
+
+    Array.isArray(arr) // true (/false)
+
+Dodawanie wartości do tablicy
+
+    arr[2] = 20
+    arr // [1,2,20,3,4]
+
+#### Metody()
 
 **`push`** i **`unshift`** - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę)
 
+    const arr = [1,2,3,4]
     arr.push(1,null,'push')
     arr.unshift(0)
 
@@ -57,13 +69,38 @@ Tablica wyjściowa
 
 **`slice`** - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - wyłącznie (argument końcowy nie będzie częścią)
 
-**`sort`** - zwraca posortowaną tablicę, gdzie sortowanie jest oparte na pierwszej cyfrze składającej się na liczbę, podobnie sprawa wygląda w przypadku alfabetu gdzie 1. litera ma wpływ na kolejność pozycji i a potem następna etc.
+**`sort`** - zwraca posortowaną tablicę w sposób leksykograficzny (słownikowo), gdzie sortowanie jest oparte na pierwszej cyfrze/literze składającej się na liczbę/wyraz,  gdzie 1. litera/cyfra ma wpływ na kolejność pozycji i a potem następna etc.
+
+aby posortować ze sobą liczby w tablicy należy jest ze sobą porównać i do tego stosuje się funkcji porównawczej
+
+    function compareNumbers(a,b) {
+        return a-b
+    }
+
+::: jeśli wynik -1 to sortuje do lewej, jeśli 1 to do prawej w przypadku 0 pozostawia na miejscu :::
+
+Przykładowe zastosowanie
+
+    let arr1 = [7,1,2,3,4,5]
+    arr1 = arr1.sort((a,b)=>a-b) // od najmniejszej
+    arr1 = arr1.sort((a,b)=>b-a) // od największej
 
 :::tablica ulega modyfikacji:::
 
 **`reverse`** - odwraca kolejność elementów znajdujących się w tablicy
 
 **`includes`** - sprawdza czy tablica zawiera wpisany argument stosuje `===` i nie można szukać zagnieżdżonych list
+
+**`find`** jako argument można wpisać wyrażenie na podstawie, którego będzie wyszukiwać
+
+    const arr = [50,51,7,1,2,3,4,5]
+
+    // zwracaj wynik poniżej 50
+    function under50(num) {
+        return num < 50;
+    }
+    // zwraca pierwszy wynik
+    let find = arr.find(under50);
 
 ---
 

@@ -16,6 +16,10 @@ Math jest wbudowanym obiektem (najwyższego poziomu), który posiada właściwo�
 
 `Math.random()` - zwraca liczbę pseudolosową z przedziału [0,1)
 
+::: aby uzyskać liczbę pomiędzy 1-20 należy pomnożyć wynik Math.random() * 20 i dodać do tego 1 :::
+
+      let val = Math.floor(Math.random() * 20 +1) // Math.floor aby uzyskać całkowitą zaokrągloną do dołu
+
 
 `Math.ceil()` - zwraca najmniejszą liczbę całkowitą większą do lub równą danej
 

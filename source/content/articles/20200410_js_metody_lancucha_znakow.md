@@ -7,7 +7,7 @@ Tags: javascript, js, string, łańcuch znaków, metody
 Slug: js-metody-lancucha-znakow
 related_posts: 
 
-Jedną z podstawowych i często stosowanych właściwości stringów jest `length` który zwraca długość łańcucha znaków
+Jedną z podstawowych i często stosowanych właściwości stringów jest **`length`** który zwraca długość łańcucha znaków
 
     const fu = "bar"
     console.log(fu.length)
@@ -18,17 +18,31 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 
 `charAt()` - zwraca znak znajdujący się na wskazanym indeksie
 
-`concat()` - łączy ze sobą ciągi znaków
+    let droid = 'r2d2'
+    droid.charAt(2) // d
+
+`concat()` - łączy ze sobą ciągi znaków, pozwala na wprowadzenie więcej niż jednego argumentu
+
+    let droid = 'r2d2'
+    droid = droid.concat('&', 'c3po')
+    droid // r2d2&c3po
 
 `endsWith()` - sprawdza czy ciąg znaków kończy się wskazanym znakiem
 
-`includes()` - sprawdza czy ciąg znaków zawiera wskazany znak
+`includes()` - sprawdza czy ciąg znaków zawiera wskazany znak // zwraca true albo flase
 
 `indexOf()` - zwraca pozycję indeksową (pierwszego) wskazanego znaku
 
+    let droid = 'r2d2'
+    droid[2] // d
+
+    droid.indexOf('r') // 0
+
 `lastIndexOf()` - zwraca pozycję indeksową (ostatniego) wskazanego znaku
 
-`match()` - sprawa ciąg znaków w poszukiwaniu wskazanego wyrażenia
+    droid.lastIndexOf('2') // 3
+
+`match()` - sprawdza ciąg znaków w poszukiwaniu wskazanego wyrażenia
 
 `repeat()` - zwraca ciąg znaków który jest wielokrotnym powtórzeniem danego ciągu
 
@@ -40,17 +54,24 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 
 `search()` - przeszukuje ciąg znaków w poszukiwaniu znaku lub wyrażenia i zwraca ich indeks
 
-`slice()` - wyciąga część łańcucha znaków i zwraca nowy na tej podstawie
+`split()` - tnie łańcuch znaków i tworzy z niego tablicę (jako argument przyjmuje separator)
 
-`split()` - tnie łańcuch znaków i tworzy z niego tablicę
+    let droid = 'r2d2, c3po'
+    console.log(droid.split(",")) // [ "r2d2"," c3po"]
 
-    const str = "How are you doing today?";
-    let res = str.split(" ");
-    >> res = ["How","are","you","doing","today?"]
+`slice()` - wyciąga część łańcucha znaków i zwraca nowy na tej podstawie / przyjmuje również liczbę ujemną (zaczyna od końca)
+
+    let droid = 'r2d2'
+    console.log(droid.substring(-3,3)) // 2d
+
+`substring() ` - przyjmuje dwa argumenty (indeks - 1. łącznie, 2. wyłącznie) i zwraca części łańcucha zawarte pomiędzy nimi 
+
+    let droid = 'r2d2'
+    console.log(droid.substring(1,3)) // 2d
 
 `toLowerCase()`/`toUpperCase()` - zwraca łańcuch zmieniając wszystkie litery na małe/duże
 
-`trim()` - pozbywa się spacji z końca i początku łąńcucha znaków
+`trim()` - pozbywa się spacji z końca i początku łańcucha znaków
 
 
 Źródła:
