@@ -55,13 +55,45 @@ Przykładowe zastosowanie
 
 ### Selektory wielu elementów
 
-Zwracają kolekcję HTML albo node-list
+Zwracają kolekcję HTML (HTML Collection) albo node-list
 
 
 | selektor | funkcja | przykładowe zastosowanie
 |---|---|---|
-| `document.getElementById()` | zwraca element w podanym Id | `document.getElementById('button-4')` |
-| `document.querySelector()`| zwraca pierwszy element spełniający podany warunek/ wpisany składnią znaną z CSS | `document.getElementById('#button-4')` |
+| `document.getElementsByClassName()` | zwraca wiele elementów na podstawie podanej nazwy klasy w postaci kolekcji html | `document.getElementsByClassName('buttons')` |
+| `document.getElementsByTagName()` | zwraca wiele elementów na podstawie podanego tagu w postaci kolekcji html | `document.getElementsTagName('li')` |
+| `document.querySelectorAll()` | zwraca wszystkie element spełniający podany warunek/składnia CSS jako NodeList | `document.querySelectorAll('ul.list li.list-item')` |
+
+**::: Konwersja HTML collection :::**
+
+    let arr = Array.from(document.getElementsTagName('li'))
+
+    arr.forEach(function(elem, index){
+      console.log(index, elem.className);
+    });
+
+**::: NodeList nie wymaga konwersji ponieważ ma metodę forEach() :::**
+
+`document.querySelectorAll('li:nth-child(odd)')` - co 2. element listy, każde parzyste dziecko będące li - aby nadać styl należy użyć pętli `for` lub `forEach`
+
+    const oddItem = document.querySelectorAll('li:nth-child(odd)')
+
+    oddItem.forEach(function(elem){
+      elem.style.background = 'red'
+    });
+
+Lub (działa również dla kolekcji html)
+  
+    for(let i = 0; i < oddItem.length; i++ ) {
+      oddItem[i].style.background = 'red'
+    }
+
+Przykładowe zastosowanie
+
+`document.getElementsByClassName('buttons')[3].style.color= 'red'` - zmieni 4 zwrócony element na czerwono
+
+'document.querySelector('ul').getElementsByClassName('list-item') - zwróć wszystkie elementy mające klasę *list-item* będące się w elemencie *ul*
+
 
 
 ### Przechodzenie pomiędzy elementami DOM
@@ -79,3 +111,4 @@ Zwracają kolekcję HTML albo node-list
 
 Źródła:
 
+https://developer.mozilla.org/en-US/docs/Web/API/NodeList
