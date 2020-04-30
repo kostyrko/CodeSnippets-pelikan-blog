@@ -55,7 +55,7 @@ Deklarowanie zmiennej w ramach bloku pozwala na tworzeni czystszego kodu, łatwi
 
 *Global namespace* - odnosi się do przestrzeni, w której przechowywane są nazwy zmiennych o globalnym zasięgu.
 
-### Zasięg bloku
+
 
 
 

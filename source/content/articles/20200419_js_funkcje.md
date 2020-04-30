@@ -28,9 +28,9 @@ Schemat
 ::: wynoszenie odbywa się przed wykonaniem kodu :::
 
 
-Istnieje możliwość zdefiniowania domyślnego parametru w funkcji, który zostaje użyty w przypadku gdy ten nie zostanie podany
+Istnieje możliwość zdefiniowania domyślnego parametru w funkcji, który zostaje użyty w przypadku gdy ten nie zostanie podany (przy pomocy operatora `=` po którym wpisujemy domyślną wartość)
 
-    function droidSeeker (name= 'droid') {
+    function droidSeeker (name = 'droid') {
       console.log(`This is not the ${name} you are looking for`)
     }
 
@@ -97,8 +97,24 @@ Gdy przypisana do zmiennej wywołuje się poprzez jej przywołanie w innym przyp
 
 ---
 
+### Funkcja natychmiastowa Tzw IIFE (Immediately-Invoked Function Expression)
 
+Funkcja, która jest deklarowana i przeprowadzana "w tym samym czasie" - taka funkcja zamknięta jest w nawias (często jest anonimowa) i jest natychmiast wywoływana. Często wykorzystywana w metodach tablic.
 
+    (function(droid){
+      console.log('this is ' + droid);
+    })('r2d2');
+    >> this is r2d2
+
+    for(let i = 0; i < 12; i++) {
+          setTimeout(function() {
+          console.log(i);
+          }, 500); 
+    }
+
+Pozwala na uniknięcie zdublowania nazw zmiennych. Nie trzeba osobno wywoływać funkcji. 
+
+---
 Źródła:
 
 http://kursjs.pl/kurs/super-podstawy/funkcje.php
@@ -110,3 +126,5 @@ http://jsdn.pl/samowywolujace-sie-anonimowe-funkcje/
 http://jsdn.pl/funkcje-tworzenie-funkcji-w-javascripcie/
 
 https://www.modestprogrammer.pl/wyrazenia-funkcyjne-oraz-funkcje-anonimowe-w-javascript
+
+http://papoldesign.pl/edukacja/javascript-funkcja-natychmiastowa-iife/

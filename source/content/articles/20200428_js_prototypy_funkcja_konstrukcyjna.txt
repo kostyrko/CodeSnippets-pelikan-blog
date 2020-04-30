@@ -1,6 +1,6 @@
 Title: JavaScript - dziedziczenie, prototypy i funkcje konstrukcyjna
 Author: mkostyrko
-Date: 2020-XX-XX 10:00
+Date: 2020-04-28 10:00
 Updated:
 Category: javascript
 Tags: javascript, js

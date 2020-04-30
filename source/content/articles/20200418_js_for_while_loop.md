@@ -12,7 +12,6 @@ Pętle `for` lub `while` pozwalają na wielokrotne wykonywanie się tego samego 
 
 schemat pętli **`for`**:
 
-    
     const y = 5 // zmienna będąca wyznacznikiem granicznym wykonywania pętli
  
     // wykonaj pętlę do momentu w którym i jest nadal mniejsze niż y 
@@ -47,9 +46,13 @@ Przykład pętli dekrementacyjnej (wykonuj pętlę w przypadku gdy i jest więks
 
     const object = {a: 1, b: 2, c: 3};
 
-    for (const property in object) {
+    for (let property in object) {
       console.log(`${property}: ${object[property]}`);
     }
+
+    >> a: 1
+    >> b: 2
+    >> c: 3
 
 **`for...of`** - tworzy pętlę przechodząc przez iteracyjne obiekty (string,tablica/array)
 

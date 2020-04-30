@@ -8,7 +8,6 @@ Slug: css-pozycjonowanie
 related_posts: flexbox-wprowadzenie, css
 
 
-
 Podstawowe właściwości **`position`**
 
 **`static`** - wartość domyślna, pozycja zgodna z układem strony
