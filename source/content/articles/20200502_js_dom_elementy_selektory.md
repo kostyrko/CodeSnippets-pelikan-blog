@@ -151,7 +151,93 @@ Przykładowe zastosowanie
 
 ### Tworzenie elementów
 
+`.createElement()` - stwórz element
+
+    const li = document.createElement('li')
+
+Dodawanie klas, id i atrybutów
+
+    li.className = 'list-item' // można również dodać id w podobny sposób
+
+    li.setAttribute('title', 'New Item')
+
+`.appendChild()` - dodanie elementu jako dziecka dziecka
+
+    li.appendChild(document.createTextNode('Hello World')) // dodanie węzła tekstowego zamkniętego pomiędzy tagami *li*
+
+Przykładowy łańcuch zdarzeń
+
+    const link = document.createElement('a')
+
+    link.className = 'nav-link'
+
+    link.innerHTML = '<i class=fa fa-remove></i>'
+
+    li.appendChild(link)
+
+
+Dodanie wygenerowanego elementu do innego
+
+    document.querySelector('ul').appendChild(li)
+
 ### Usuwanie i wymiana elementów
+
+Zmiana elementu odbywa się na rodzicu
+
+`.replaceChild(nowyElement, staryElement)` - wymiana elementu
+
+Przykładowy ciąg zdarzeń
+
+    const newTitle = document.createElement('h2'); //tworzymy element
+
+    newTitle.id = 'title-id' // nadajemu mu id
+
+    newTitle.appendChild(document.createTextNode('Nowy tytuł')) // dodajemy do niego tekst
+
+    const oldTitle = document.getElementById('title-id'); // "złapanie" elementu podlegającego wymianie
+
+    const parentDiv = document.querySelector('div.nav-bar') // "złapanie rodzica"
+
+    parentDiv.replaceChild(newTitle,oldTitle)
+
+`.remove()` - usuwa podany element
+`.removeChild()` - usuwa dziecko podanego elementu
+
+    const listItems = document.querySelectorAll('li')
+
+    listItems[0].remove() // usuwa pierwszy element
+
+    list = document.querySelectorAll('ul')
+
+    list.removeChild(listItems[0]) // usuwa pierwsze dziecko mające tag *li*
+
+Zmiana klasy i atrybutu
+
+`.add()` - dodaje klasę
+`.remove()` - usuwa klasę
+
+    const link = document.querySelector('li:first-child').children[0]
+
+    let classLink = link.className //zwraca klasy w postaci stringu
+
+    let listOfClasses = link.classList // zwracam listę klas w postaci DOMTokenList - zbliżone do tablicy - posiada indeksy
+
+    link.classList.add('second-class') // dodaje klasę
+
+    link.classList.remove('second-class') // usuwa klasę
+
+`.setAttribute(atrybut, jego właściwość)` - pozwala na zdefiniowanego atrybutu
+
+    link.getAttribute('href') //złap atrybutem
+
+    link.setAttribute('href','http://google.com') // dodaj atrybut i jego właściwość
+
+    link.hassAttribute('title') // zwraca true albo false jeśli taki posiada lub nie
+
+`.removeAttribute()` - usuwa atrybut
+
+    link.removeAttribute('title')
+
 
 
 ### Ćwiczenia
