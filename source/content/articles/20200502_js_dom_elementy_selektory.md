@@ -7,8 +7,10 @@ Tags: js, javascript, selektory, dom, elementy dom,
 Slug: js-dom-elementy-selektory
 related_posts: js-obiekt-window-document
 
-### Selektory pojedynczych elementów
 
+DOM - document object model
+
+### Selektory pojedynczych elementów
 
 
 | selektor | funkcja | przykładowe zastosowanie
@@ -95,8 +97,57 @@ Przykładowe zastosowanie
 'document.querySelector('ul').getElementsByClassName('list-item') - zwróć wszystkie elementy mające klasę *list-item* będące się w elemencie *ul*
 
 
-
 ### Przechodzenie pomiędzy elementami DOM
+
+`.childNodes` - nodeList wszystkich węzłów "dzieci" wybranego elementu
+
+Przykładowe zastosowanie
+
+    document.querySelector('ul').childNodes // wszystkie węzły dzieci elementu ul (np. li oraz text)
+    document.querySelector('ul').childNodes[0].nodeName // >> #text
+    document.querySelector('ul').childNodes[0].nodeType // >> 3 
+    document.querySelector('ul').childNodes[1].nodeType // >> 1
+
+1 - Element
+3 - Text node
+8 - Comment
+9 - Document itself
+10 - Doctype
+
+::: text nodes - składają się na nie przejścia do kolejnej linii :::
+
+`.children` - zwraca wszystkie węzły reprezentujące elementy które są dziećmi - zwraca *kolekcję HTML*
+
+    cont liElem = document.querySelector('ul').children[1] // zwraca 2. element
+    liElem.textContent = "hello" // wpisuje w 2. dziecko pierwszego elementu z tagiem ul "hello"
+
+    document.querySelector('ul').children[1].children.id // zwraca id dziecka będącego dzieckiem elementu ul
+
+`.firstChild` - zwraca pierwsze dziecko wybranego elementu będący węzłem
+
+    document.querySelector('ul').firstChild //text
+
+`.firstElementChild` - zwraca pierwszy element będący dzieckiem
+
+`.lastChild` - zwraca ostatni węzeł
+
+`.lastElementChild` - zwraca ostatni element będący dzieckiem
+
+`.childElementCount` - zwraca liczbę reprezentującą wielkość zbioru dzieci
+
+`.childParentNode` - zwraca węzeł będący rodzicem
+
+`.parentElement`
+
+    document.querySelector('li').perentElement.parentElement - zwraca dziadka (rodzica będącego rodzicem rodzica) elementu li np. div
+
+`.nextSibling` - kolejne rodzeństwo będące węzłem
+
+`.nextSiblingElement` - kolejne rodzeństwo będące elementem
+
+`.perviousSibling` - poprzedzające rodzeństwo będące węzłem
+
+`.previousSiblingElement` - poprzedzające rodzeństwo będące elementem // jak w innych przypadkach zwraca `null` w przypadku braku
 
 ### Tworzenie elementów
 

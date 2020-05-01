@@ -81,7 +81,7 @@ Obiekt `document` zawiera całą zawartość przeglądanego pliku HTML
 
 Część właściwości zwraca w postaci tzw node-list przypominającej tablicę, choć nią nie są [wymaga konwersji do tablicy by używać ich metod]
 
-`document.all` - zwraca całość w postaci node-listy wszystkie elementy DOM
+`document.all` - zwraca całość w postaci node-listy wszystkie elementy  
 `document.all.length` - zwraca liczbę 
 `document.head` - elementy z head
 `document.body` - elementy z body

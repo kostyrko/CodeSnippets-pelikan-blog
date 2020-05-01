@@ -7,7 +7,6 @@ Tags: javascript, js, funkcja
 Slug: js-for-while-loop
 related_posts: js-funkcje
 
-
 Pętle `for` lub `while` pozwalają na wielokrotne wykonywanie się tego samego kodu
 
 schemat pętli **`for`**:
