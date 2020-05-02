@@ -1,4 +1,4 @@
-Title: JavaScript - wydarzenia DOM
+Title: JavaScript - wydarzenia DOM cz. 1
 Author: mkostyrko
 Date: 2020-05-04 10:00
 Updated:
@@ -11,7 +11,7 @@ related_posts: js-dom-elementy-selektory, js-obiekt-window-document
 
 Aby dodać interakcji do strony internetowej przy pomocy JS należy do wybranego przez siebie elementu dołączyć tzw. 'nasłuchiwacz wydarzeń' (ang. event listener)
 
-**`.addEventListener(wydarzenie, funkcja)`** - ta metoda przyjmuje dwa argumenty rodzaj 1) rodzaj wydarzenia np. 'click' (kliknięcie myszy) oraz 2) funkcję jaka ma się wywołać w momencie jego zajścia/bez nawiasów.
+**`.addEventListener(wydarzenie, funkcja-przekazana-do-wywołania)`** - ta metoda przyjmuje dwa argumenty rodzaj 1) rodzaj wydarzenia np. 'click' (kliknięcie myszy) oraz 2) funkcję jaka ma się wywołać w momencie jego zajścia tzw **callback**/bez nawiasów.
 
 Przykładowe zastosowanie
 
@@ -22,7 +22,21 @@ Przykładowe zastosowanie
 
     document.querySelector('button').addEventListener('click', helloWorld)
 
-`.preventDefault()` - zapobiega domyślnemu zachowaniu się elementu, np. w przypadku linku jest to przejście na kolejną stronę etc.
+---
+
+**`this.`** - wyrażenie reprezentujące element, na którym doszło do wydarzenia // cenne w przypadku gdy jedno wydarzenie zostało nastawione na więcej niż jeden element (np. na wszystkie przyciski, a ma zmieniać się jeden, który wywołał akcję)
+
+    const buttonsList = document.querySelectorAll('.btn');
+
+    for(let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function(e){
+        this.style.backgroundColor = 'green'
+      });
+    }
+
+---
+
+**`.preventDefault()`** - zapobiega domyślnemu zachowaniu się elementu, np. w przypadku linku jest to przejście na kolejną stronę etc.
 
 funkcja wywołująca obiekt *event*
 
@@ -34,7 +48,7 @@ funkcja wywołująca obiekt *event*
 
 Obiekt event zawiera zbiór informacji na temat wydarzenia, do którego doszło np. *target* - zawierający informację, na temat obiektu, na którym doszło do danego wydarzenia
 
-**`.target`**
+**`.target`** - zwraca element, który spowodował wywołanie wydarzenia/event
 
     event.target.id  - zwraca id elementu, który był celem
      
@@ -42,11 +56,14 @@ Obiekt event zawiera zbiór informacji na temat wydarzenia, do którego doszło 
 
     event.target.innerText - zwraca tekst elementu celowego
 
+    element.target.value - zwraca wartość elementu / przydatne w formularzu
+
 **`.type`** - zwraca typ wydarzenia
 
     event.type - z  np. mouseover
 
-`.timeStamp` - czas w którym doszło do wydarzenia
+
+**`.timeStamp`** - czas w którym doszło do wydarzenia
 
 `.clientY`/`.clientX` - miejsce wydarzenia relatywnie do granic okna przeglądarki / zwraca wartość w px
 
@@ -103,15 +120,22 @@ Przykładowe zastosowanie
       input.value = ''; // czyści formularz
     }
 
-`keydown` - działa w momencie, w którym klawisz jest wciśnięty
+#### Klawiatura
 
-`.target` - pozwala na wydobycie informacji z elementu, który jest targetem
+`keydown` - działa w momencie, w którym klawisz jest wciśnięty // zwraca true
 
-    element.target.value
 
-`keyup` - działa w momencie pozostawienia klawisza
+`keyup` - działa w momencie pozostawienia klawisza // zwraca true
 
-`keypress` - działa w momencie wciśnięcia guzika
+`keypress` - działa w momencie wciśnięcia guzika // zwraca true
+
+`altKey` - działa w momencie przyciśnięcia klawisza ALT // zwraca true
+
+`ctrlKey` - działa w momencie przyciśnięcia klawisza CTRL // zwraca true
+
+`shiftKey` działa w momencie przyciśnięcia klawisza Shift // zwraca true
+
+#### Inne
 
 `focus` - focus na elemencie
 
@@ -125,7 +149,10 @@ Przykładowe zastosowanie
 
 `change` - działa na <select> list - rejestruje wybór w rozwijanej liście
 
+`resieze` - zmiana okna
 
+**touch** -> `touchstart`, `touchmove`, `touchend`,
+`touchcancel`
 
 
 ---
