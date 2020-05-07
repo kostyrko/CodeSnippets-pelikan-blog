@@ -49,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Tablice Tablica wyjściowa const arr = [1,2,3,4] Dodawanie elementów push i unshift - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę) arr.push(1,null,&#39;push&#39;) arr.unshift(0) concat - [od concatenate] zwraca nową tablicę, która zawiera wszystkie …" />
+<meta name="description" content="Tablice Tworzenie tablicy const arr = [1,2,3,4] ::: istnieje możliwość również przez funkcję konstruktora new Array() Sprawdzanie czy obiekt, do którego się odwołujemy jest tablicą Array.isArray(arr) // true (/false) Dodawanie wartości do tablicy arr[2] = 20 arr // [1,2,20,3,4] Metody() push i unshift - pozwala na …" />
 <meta name="keywords" content="javascript, js, array, tablica">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="JavaScript - metody tablic (array methods)"/>
-<meta property="og:description" content="Tablice Tablica wyjściowa const arr = [1,2,3,4] Dodawanie elementów push i unshift - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę) arr.push(1,null,&#39;push&#39;) arr.unshift(0) concat - [od concatenate] zwraca nową tablicę, która zawiera wszystkie …"/>
+<meta property="og:description" content="Tablice Tworzenie tablicy const arr = [1,2,3,4] ::: istnieje możliwość również przez funkcję konstruktora new Array() Sprawdzanie czy obiekt, do którego się odwołujemy jest tablicą Array.isArray(arr) // true (/false) Dodawanie wartości do tablicy arr[2] = 20 arr // [1,2,20,3,4] Metody() push i unshift - pozwala na …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-tablice-metody.html"/>
 <meta property="og:type" content="article"/>
@@ -133,21 +133,34 @@
     <p>
       Opublikowano nie 12 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
 
-        &#8226; 2 min read
+        &#8226; 3 min read
     </p>
   </header>
 
 
   <div>
     <h3>Tablice</h3>
-<p>Tablica wyjściowa</p>
+<p>Tworzenie tablicy</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 </code></pre></div>
 
 
-<h4>Dodawanie elementów</h4>
+<p>::: istnieje możliwość również przez funkcję konstruktora <code>new Array()</code></p>
+<p>Sprawdzanie czy obiekt, do którego się odwołujemy jest tablicą</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Array</span><span class="p">.</span><span class="n">isArray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="k">true</span> <span class="p">(</span><span class="o">/</span><span class="k">false</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Dodawanie wartości do tablicy</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">arr</span> <span class="o">//</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+
+
+<h4>Metody()</h4>
 <p><strong><code>push</code></strong> i <strong><code>unshift</code></strong> - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę)</p>
-<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">&#39;push&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">arr</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">&#39;push&#39;</span><span class="p">)</span>
 <span class="n">arr</span><span class="p">.</span><span class="n">unshift</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
 
@@ -170,7 +183,8 @@
 </code></pre></div>
 
 
-<p><strong><code>indexOf</code></strong> - znajduje nr porządkowy (indeks) wybranego elementu</p>
+<p><strong><code>indexOf</code></strong> - znajduje nr porządkowy (indeks) wybranego elementu
+::: jeśli dany element nie jest obecny w tablicy to wówczas zwraca <strong><code>-1</code></strong> :::</p>
 <div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="mi">1</span>
 </code></pre></div>
@@ -185,11 +199,38 @@
 </code></pre></div>
 
 
-<p><strong><code>slice</code></strong> - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - włącznie</p>
-<p><strong><code>sort</code></strong> - zwraca posortowaną tablicę, gdzie sortowanie jest oparte na pierwszej cyfrze składającej się na liczbę, podobnie sprawa wygląda w przypadku alfabetu gdzie 1. litera ma wpływ na kolejność pozycji i a potem następna etc.</p>
+<p><strong><code>slice</code></strong> - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - wyłącznie (argument końcowy nie będzie częścią)</p>
+<p><strong><code>sort</code></strong> - zwraca posortowaną tablicę w sposób leksykograficzny (słownikowo), gdzie sortowanie jest oparte na pierwszej cyfrze/literze składającej się na liczbę/wyraz,  gdzie 1. litera/cyfra ma wpływ na kolejność pozycji i a potem następna etc.</p>
+<p>aby posortować ze sobą liczby w tablicy należy jest ze sobą porównać i do tego stosuje się funkcji porównawczej</p>
+<div class="highlight"><pre><span></span><code><span class="nv">function</span> <span class="nv">compareNumbers</span><span class="ss">(</span><span class="nv">a</span>,<span class="nv">b</span><span class="ss">)</span> {
+    <span class="k">return</span> <span class="nv">a</span><span class="o">-</span><span class="nv">b</span>
+}
+</code></pre></div>
+
+
+<p>::: jeśli wynik -1 to sortuje do lewej, jeśli 1 to do prawej w przypadku 0 pozostawia na miejscu :::</p>
+<p>Przykładowe zastosowanie</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">arr1</span><span class="p">.</span><span class="n">sort</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">//</span> <span class="n">od</span> <span class="n">najmniejszej</span>
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">arr1</span><span class="p">.</span><span class="n">sort</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="o">=&gt;</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">//</span> <span class="n">od</span> <span class="n">największej</span>
+</code></pre></div>
+
+
 <p>:::tablica ulega modyfikacji:::</p>
 <p><strong><code>reverse</code></strong> - odwraca kolejność elementów znajdujących się w tablicy</p>
 <p><strong><code>includes</code></strong> - sprawdza czy tablica zawiera wpisany argument stosuje <code>===</code> i nie można szukać zagnieżdżonych list</p>
+<p><strong><code>find</code></strong> jako argument można wpisać wyrażenie na podstawie, którego będzie wyszukiwać</p>
+<div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">arr</span> <span class="o">=</span> [<span class="mi">50</span>,<span class="mi">51</span>,<span class="mi">7</span>,<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>,<span class="mi">4</span>,<span class="mi">5</span>]
+
+<span class="o">//</span> <span class="nv">zwracaj</span> <span class="nv">wynik</span> <span class="nv">poni</span>ż<span class="nv">ej</span> <span class="mi">50</span>
+<span class="nv">function</span> <span class="nv">under50</span><span class="ss">(</span><span class="nv">num</span><span class="ss">)</span> {
+    <span class="k">return</span> <span class="nv">num</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="c1">;</span>
+}
+<span class="o">//</span> <span class="nv">zwraca</span> <span class="nv">pierwszy</span> <span class="nv">wynik</span>
+<span class="nv">let</span> <span class="nv">find</span> <span class="o">=</span> <span class="nv">arr</span>.<span class="nv">find</span><span class="ss">(</span><span class="nv">under50</span><span class="ss">)</span><span class="c1">;</span>
+</code></pre></div>
+
+
 <hr>
 <p><code>callback</code> - funkcja wywołująca się na każdym elemencie</p>
 <p><strong><code>forEach</code></strong> - tworzy pętlę przechodzącą przez zawartość tablicy - wymaga funkcji wywołania zwrotnego (callback), która tworzy akcję na każdym z elementów tablicy -&gt; zwraca <code>undefined</code>, ale po drodze wywołuje wynik akcji</p>
@@ -252,6 +293,8 @@
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <hr>
+<p><img alt="sort_method" src="https://i.stack.imgur.com/81miP.png"></p>
+<hr>
 <p>Ćwiczenia:</p>
 <p>https://launchschool.com/books/javascript/read/arrays#exercises</p>
 <p>Źródła:</p>
@@ -260,6 +303,7 @@
 <p>https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/from#</p>
 <p>https://launchschool.com/books/javascript/read/arrays#exercises</p>
 <p>https://alligator.io/js/filter-array-method/</p>
+<p>https://www.freecodecamp.org/forum/t/arr-sort-a-b-a-b-explanation/167677</p>
   </div>
   <div class="tag-cloud">
     <p>

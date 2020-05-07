@@ -176,9 +176,13 @@
 <p><strong><code>for...in</code></strong> - - przechodzi przez wszystkie policzalne właściwości obiektu, których kluczem jest string / ignoruje te, których kluczem jest symbol</p>
 <div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">object</span> <span class="o">=</span> {<span class="nv">a</span>: <span class="mi">1</span>, <span class="nv">b</span>: <span class="mi">2</span>, <span class="nv">c</span>: <span class="mi">3</span>}<span class="c1">;</span>
 
-<span class="k">for</span> <span class="ss">(</span><span class="nv">const</span> <span class="nv">property</span> <span class="nv">in</span> <span class="nv">object</span><span class="ss">)</span> {
+<span class="k">for</span> <span class="ss">(</span><span class="nv">let</span> <span class="nv">property</span> <span class="nv">in</span> <span class="nv">object</span><span class="ss">)</span> {
   <span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span>`${<span class="nv">property</span>}: ${<span class="nv">object</span>[<span class="nv">property</span>]}`<span class="ss">)</span><span class="c1">;</span>
 }
+
+<span class="o">&gt;&gt;</span> <span class="nv">a</span>: <span class="mi">1</span>
+<span class="o">&gt;&gt;</span> <span class="nv">b</span>: <span class="mi">2</span>
+<span class="o">&gt;&gt;</span> <span class="nv">c</span>: <span class="mi">3</span>
 </code></pre></div>
 
 

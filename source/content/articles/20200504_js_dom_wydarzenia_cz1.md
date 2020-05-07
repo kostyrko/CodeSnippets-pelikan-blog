@@ -4,7 +4,7 @@ Date: 2020-05-04 10:00
 Updated:
 Category: javascript
 Tags: dom, js, javascript, dom, events, wydarzenia, selectors
-Slug: js-wydarzenia-dom
+Slug: js-wydarzenia-dom-1
 related_posts: js-dom-elementy-selektory, js-obiekt-window-document
 
 ### Nasłuchiwacz wydarzeń ;)

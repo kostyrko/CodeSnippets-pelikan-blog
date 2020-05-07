@@ -1,10 +1,10 @@
 Title: JavaScript - wydarzenia DOM cz. 2 - propagacja
 Author: mkostyrko
-Date: 2020-05-04 10:00
+Date: 2020-05-04 11:00
 Updated:
 Category: javascript
 Tags: dom, js, javascript, dom, events, propagacja wydarzenia, selectors
-Slug: js-wydarzenia-dom
+Slug: js-wydarzenia-dom-2
 related_posts: js-dom-elementy-selektory, js-obiekt-window-document
 
 ### Propagacja wydarzeń (w górę) - event bubbling

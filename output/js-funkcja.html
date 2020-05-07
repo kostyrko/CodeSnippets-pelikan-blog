@@ -153,8 +153,8 @@
 <p>::: Funkcje posiadają własne właściwości np. .name -&gt; identyfikator.name = identyfikator (może być użyty w funkcji) :::</p>
 <p><strong>Hoisting/wynoszenie</strong> - funkcje tak samo jak i deklaracje zmiennych w trakcie analizowania/parsowania kodu przez przeglądarkę są wynoszone na górę aktualnego zasięgu i tam pojawiają się w zapisanej kolejności (ma to wpływ na nadpisywanie) -&gt;&gt; <code>Można wywoływać funkcje zanim zostaną zadeklarowane</code>. </p>
 <p>::: wynoszenie odbywa się przed wykonaniem kodu :::</p>
-<p>Istnieje możliwość zdefiniowania domyślnego parametru w funkcji, który zostaje użyty w przypadku gdy ten nie zostanie podany</p>
-<div class="highlight"><pre><span></span><code><span class="nv">function</span> <span class="nv">droidSeeker</span> <span class="ss">(</span><span class="nv">name</span><span class="o">=</span> <span class="s1">&#39;</span><span class="s">droid</span><span class="s1">&#39;</span><span class="ss">)</span> {
+<p>Istnieje możliwość zdefiniowania domyślnego parametru w funkcji, który zostaje użyty w przypadku gdy ten nie zostanie podany (przy pomocy operatora <code>=</code> po którym wpisujemy domyślną wartość)</p>
+<div class="highlight"><pre><span></span><code><span class="nv">function</span> <span class="nv">droidSeeker</span> <span class="ss">(</span><span class="nv">name</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">droid</span><span class="s1">&#39;</span><span class="ss">)</span> {
   <span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span>`<span class="nv">This</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">the</span> ${<span class="nv">name</span>} <span class="nv">you</span> <span class="nv">are</span> <span class="nv">looking</span> <span class="k">for</span>`<span class="ss">)</span>
 }
 
@@ -166,8 +166,24 @@
 
 
 <hr>
+<h3>Funkcje pomocnicze</h3>
+<p>Funkcje pomocnicze pozwalają na rozbicie kodu na jego poszczególne części tak aby był czytelniejszy i prostszy w utrzymaniu</p>
+<p>w tym celu można stworzyć jedną funkcję cząstkową a następnie odwołać się do niej w kolejnej</p>
+<div class="highlight"><pre><span></span><code><span class="nv">function</span> <span class="nv">multipNineFifth</span> <span class="ss">(</span><span class="nv">num</span><span class="ss">)</span> {
+  <span class="k">return</span> <span class="nv">num</span> <span class="o">*</span> <span class="ss">(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="ss">)</span><span class="c1">; </span>
+}
+
+<span class="nv">function</span> <span class="nv">getFarenheit</span><span class="ss">(</span><span class="nv">celc</span><span class="ss">)</span> {
+  <span class="k">return</span> <span class="nv">multipNineFifth</span><span class="ss">(</span><span class="nv">celc</span><span class="ss">)</span> <span class="o">+</span> <span class="mi">32</span><span class="c1">;</span>
+}
+
+<span class="nv">getFarenheit</span><span class="ss">(</span><span class="mi">10</span><span class="ss">)</span> <span class="o">//</span> <span class="o">=</span> <span class="o">&gt;</span><span class="mi">50</span>
+</code></pre></div>
+
+
+<hr>
 <h3>Wyrażenia funkcyjne</h3>
-<p>Funkcje można przypisać do zmiennych  - wówczas: </p>
+<p>Funkcje (zwykle anonimowa) można przypisać do zmiennych  - wówczas: </p>
 <div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">zmienna</span> <span class="o">=</span> <span class="nv">function</span><span class="ss">(</span><span class="nv">arg1</span>,<span class="nv">arg2</span><span class="ss">)</span> {
   <span class="k">return</span> <span class="nv">arg1</span> <span class="o">+</span> <span class="nv">arg2</span><span class="c1">;</span>
 }
@@ -176,17 +192,19 @@
 </code></pre></div>
 
 
-<p>W ten sposób zadeklarowana funkcja nie jest <strong>jest wynoszona</strong> za to deklaracja ich zmiennych jest</p>
-<div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">zmienna</span> <span class="o">=</span> <span class="nv">function</span> <span class="nv">zmienna2</span><span class="ss">(</span><span class="nv">x</span>,<span class="nv">y</span><span class="ss">)</span> {
+<p>W ten sposób zadeklarowana funkcja nie jest <strong>wynoszona</strong> </p>
+<p>::: wynoszona jest deklaracja funkcja jeśli jest poprzedzona  słowem kluczowego <strong><code>var</code></strong>:::</p>
+<p>Przypadek z nazwaną funkcją</p>
+<div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">zmienna</span> <span class="o">=</span> <span class="nv">function</span> <span class="nv">nazwa</span><span class="ss">(</span><span class="nv">x</span>,<span class="nv">y</span><span class="ss">)</span> {
   <span class="k">return</span> <span class="nv">x</span><span class="o">+</span><span class="nv">y</span><span class="c1">;</span>
 }
 
-<span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">zmienna</span>.<span class="nv">name</span><span class="ss">)</span><span class="c1">; // = zmienna2 -&gt; pozwala na odwołanie się do f(x) w jej wnętrzu</span>
+<span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">zmienna</span>.<span class="nv">name</span><span class="ss">)</span><span class="c1">; // = nazwa -&gt; pozwala na odwołanie się do f(x) w jej wnętrzu</span>
 </code></pre></div>
 
 
-<p>Funkcja w domyśle zwraca wartość <code>undefined</code> - stąd aby zwróciła jakąś wartość należy zastosować instrukcję <code>return</code> ::: <strong>przerywa również działanie funcji</strong> :::</p>
-<h2>---</h2>
+<p>Funkcja w domyśle zwraca wartość <code>undefined</code> - stąd aby zwróciła jakąś wartość należy zastosować instrukcję <code>return</code> ::: <strong>, który przerywa również działanie funkcji</strong> :::</p>
+<hr>
 <h3>Funkcje anonimowe</h3>
 <p>Nie posiada nazwy (identyfikatora), może ale nie musi być przypisana do zmiennej, może ale nie musi posiadać argumentu // występuje często jako funkcja występująca jako parametr w innej
 Gdy przypisana do zmiennej wywołuje się poprzez jej przywołanie w innym przypadku należy zamknąć ją w nawiasach -&gt; funkcja zostanie od razu wywołana w trakcie wykonywania kodu.</p>
@@ -197,12 +215,30 @@ Gdy przypisana do zmiennej wywołuje się poprzez jej przywołanie w innym przyp
 
 
 <hr>
+<h3>Funkcja natychmiastowa Tzw IIFE (Immediately-Invoked Function Expression)</h3>
+<p>Funkcja, która jest deklarowana i przeprowadzana "w tym samym czasie" - taka funkcja zamknięta jest w nawias (często jest anonimowa) i jest natychmiast wywoływana. Często wykorzystywana w metodach tablic.</p>
+<div class="highlight"><pre><span></span><code><span class="ss">(</span><span class="nv">function</span><span class="ss">(</span><span class="nv">droid</span><span class="ss">)</span>{
+  <span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">this is </span><span class="s1">&#39;</span> <span class="o">+</span> <span class="nv">droid</span><span class="ss">)</span><span class="c1">;</span>
+}<span class="ss">)(</span><span class="s1">&#39;</span><span class="s">r2d2</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+<span class="o">&gt;&gt;</span> <span class="nv">this</span> <span class="nv">is</span> <span class="nv">r2d2</span>
+
+<span class="k">for</span><span class="ss">(</span><span class="nv">let</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="c1">; i &lt; 12; i++) {</span>
+      <span class="nv">setTimeout</span><span class="ss">(</span><span class="nv">function</span><span class="ss">()</span> {
+      <span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span><span class="c1">;</span>
+      }, <span class="mi">500</span><span class="ss">)</span><span class="c1">; </span>
+}
+</code></pre></div>
+
+
+<p>Pozwala na uniknięcie zdublowania nazw zmiennych. Nie trzeba osobno wywoływać funkcji. </p>
+<hr>
 <p>Źródła:</p>
 <p>http://kursjs.pl/kurs/super-podstawy/funkcje.php</p>
 <p>http://kursjs.pl/kurs/super-podstawy/funkcje-tematy-dodatkowe.php#callback</p>
 <p>http://jsdn.pl/samowywolujace-sie-anonimowe-funkcje/</p>
 <p>http://jsdn.pl/funkcje-tworzenie-funkcji-w-javascripcie/</p>
 <p>https://www.modestprogrammer.pl/wyrazenia-funkcyjne-oraz-funkcje-anonimowe-w-javascript</p>
+<p>http://papoldesign.pl/edukacja/javascript-funkcja-natychmiastowa-iife/</p>
   </div>
   <div class="tag-cloud">
     <p>

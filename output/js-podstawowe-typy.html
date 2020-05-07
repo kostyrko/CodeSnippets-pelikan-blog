@@ -49,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Postawy i deklaracje w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem ; składnia komentarza // jednoliniowy */ wielo - liniowy */ Istnieją trzy typy deklaracji zmiennych const - podstawowa deklaracja, zmienna nie ulega zmianie, tylko do odczytu let - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku …" />
+<meta name="description" content="W JavaScript istnieją dwa typy danych - proste/prymitywne i referencyjne, poniżej zostaną przedstawione te pierwsze. Typy referencyjne przechowywane są w pamięci podręcznej a zmienna jest do nich referencją. Postawy i deklaracje w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem ; składnia komentarza // jednoliniowy */ wielo - liniowy */ Istnieją trzy typy deklaracji …" />
 <meta name="keywords" content="javascript, js, typy, dane, data types, operatory">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="JavaScript - składnia, deklaracje i podstawowe typy danych oraz ich operatory"/>
-<meta property="og:description" content="Postawy i deklaracje w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem ; składnia komentarza // jednoliniowy */ wielo - liniowy */ Istnieją trzy typy deklaracji zmiennych const - podstawowa deklaracja, zmienna nie ulega zmianie, tylko do odczytu let - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku …"/>
+<meta property="og:description" content="W JavaScript istnieją dwa typy danych - proste/prymitywne i referencyjne, poniżej zostaną przedstawione te pierwsze. Typy referencyjne przechowywane są w pamięci podręcznej a zmienna jest do nich referencją. Postawy i deklaracje w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem ; składnia komentarza // jednoliniowy */ wielo - liniowy */ Istnieją trzy typy deklaracji …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-podstawowe-typy.html"/>
 <meta property="og:type" content="article"/>
@@ -141,7 +141,8 @@
 
 
   <div>
-    <hr>
+    <p>W JavaScript istnieją dwa typy danych - proste/prymitywne i referencyjne, poniżej zostaną przedstawione te pierwsze. Typy referencyjne przechowywane są w pamięci podręcznej a zmienna jest do nich referencją.</p>
+<hr>
 <h3>Postawy i deklaracje</h3>
 <p>w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem <code>;</code></p>
 <p>składnia komentarza</p>
@@ -191,7 +192,39 @@
 </ul>
 <hr>
 <h3>Typ łańcuchowy</h3>
-<p>Przydatne kolokacje znaków wykorzystanych w typie łańcuchowym</p>
+<p>Operator <code>+</code> pozwala na dodanie treści do zadeklarowanego wcześniej łańcucha znaków</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">droid</span> <span class="o">+=</span> <span class="s1">&#39;&amp;c3po&#39;</span>
+<span class="n">droid</span> <span class="o">//</span> <span class="n">r2d2</span><span class="o">&amp;</span><span class="n">c3po</span>
+</code></pre></div>
+
+
+<p>Można uzyskać wybrany znak z łańcuch po indeksie</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">droid</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="n">d</span>
+
+<span class="n">droid</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="mi">0</span>
+</code></pre></div>
+
+
+<p>::: (Template literals) istnieje również możliwość włączania wartości zmiennej w ciąg łańcucha znaków poprzez zamknięcie treście w `` + zastosowaniu $ i nawiasów klamrowych - w ten sposób można wstawiać również równania( zwraca wynik), jak i funkcje etc. :::</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="o">`</span><span class="k">to</span> <span class="n">nie</span> <span class="n">jest</span> <span class="o">%</span><span class="err">{</span><span class="n">droid</span><span class="err">}</span><span class="p">,</span> <span class="n">którego</span> <span class="n">szukamy</span><span class="o">`</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>lub:</p>
+<div class="highlight"><pre><span></span><code><span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="ss">&quot;to nie jest&quot;</span> <span class="o">+</span> <span class="ss">&quot; &quot;</span> <span class="o">+</span> <span class="n">droid</span> <span class="o">+</span> <span class="ss">&quot; którego szukamy&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>wynik będzie ten sam:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;</span> <span class="o">`</span><span class="k">to</span> <span class="n">nie</span> <span class="n">jest</span> <span class="n">r2d2</span><span class="p">,</span> <span class="n">którego</span> <span class="n">szukamy</span><span class="o">`</span>
+</code></pre></div>
+
+
+<p>Przydatne kolokacje znaków (tzw. escaping) wykorzystanych w typie łańcuchowym</p>
 <p><code>\n</code> - nowy wiersz</p>
 <p><code>\r</code>- reset pozycji kursora i powrót na nową linię</p>
 <p><code>\t</code> - tabulacja</p>
@@ -210,7 +243,7 @@ console.log(`kot <span class="cp">${</span><span class="n">cat</span><span class
 </code></pre></div>
 
 
-<p>::: metody łańcucha znaków String.formCharCode() - "Zwraca łańcuch znaków stworzony przez podaną sekwencję kodów Unicode.", String.fromCodePoint() - zwraca  łąńcuch stworzony na podstawie specyficznej sekwencji punktów kodu, String.raw() :::</p>
+<p>::: metody łańcucha znaków String.formCharCode() - "Zwraca łańcuch znaków stworzony przez podaną sekwencję kodów Unicode.", String.fromCodePoint() - zwraca łańcuch stworzony na podstawie specyficznej sekwencji punktów kodu, String.raw() :::</p>
 <hr>
 <h3>Typ liczbowy</h3>
 <ul>
@@ -254,8 +287,28 @@ console.log(`kot <span class="cp">${</span><span class="n">cat</span><span class
 <h3>typeof</h3>
 <p>w przypadku niepewności jakiego typ danych przechowuje dana zmienna istniej możliwość zastosowania operatora <code>typeof</code>, który zwraca łańcuch zwierający typ tzw. operandu (argument operatora)</p>
 <div class="highlight"><pre><span></span><code><span class="n">schemat</span><span class="o">:</span> <span class="k">typeof</span> <span class="n">operand</span>
-<span class="n">przykład</span> <span class="o">&gt;</span> <span class="k">typeof</span> <span class="mi">1</span>
-<span class="n">wynik</span> <span class="o">=</span> <span class="s1">&#39;number&#39;</span>
+</code></pre></div>
+
+
+<p>przykład1: </p>
+<div class="highlight"><pre><span></span><code><span class="n">typeof</span> <span class="mi">1</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;number&#39;</span>
+</code></pre></div>
+
+
+<p>przykład2:</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">robot</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">typeof</span> <span class="n">robot</span>
+<span class="o">&gt;&gt;</span> <span class="s1">&#39;string&#39;</span>
+</code></pre></div>
+
+
+<p>Zastosowanie z innymi typami danych:</p>
+<div class="highlight"><pre><span></span><code><span class="n">typeof</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>              <span class="o">//</span> <span class="ss">&quot;object&quot;</span>
+<span class="n">typeof</span> <span class="err">{</span><span class="n">name</span><span class="p">:</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span><span class="mi">34</span><span class="err">}</span>  <span class="o">//</span> <span class="ss">&quot;object&quot;</span>
+<span class="n">typeof</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>             <span class="o">//</span> <span class="ss">&quot;object&quot;</span>
+<span class="n">typeof</span> <span class="k">function</span> <span class="p">()</span> <span class="err">{}</span>         <span class="o">//</span> <span class="ss">&quot;function&quot;</span>
+<span class="n">typeof</span> <span class="n">myCar</span>                  <span class="o">//</span> <span class="ss">&quot;undefined&quot;</span>
 </code></pre></div>
 
 

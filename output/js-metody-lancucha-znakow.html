@@ -134,13 +134,13 @@
     <p>
       Opublikowano pią 10 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
 
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
 
 
   <div>
-    <p>Jedną z podstawowych i często stosowanych właściwości stringów jest <code>length</code> który zwraca długość łańcucha znaków</p>
+    <p>Jedną z podstawowych i często stosowanych właściwości stringów jest <strong><code>length</code></strong> który zwraca długość łańcucha znaków</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">fu</span> <span class="o">=</span> <span class="ss">&quot;bar&quot;</span>
 <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">fu</span><span class="p">.</span><span class="k">length</span><span class="p">)</span>
 <span class="o">&gt;&gt;</span> <span class="mi">3</span>
@@ -150,12 +150,34 @@
 <p>Metod, które można zastosować wobec stringów jest o wiele więcej - poniżej przedstawię tylko część z nich.
 Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalnej</p>
 <p><code>charAt()</code> - zwraca znak znajdujący się na wskazanym indeksie</p>
-<p><code>concat()</code> - łączy ze sobą ciągi znaków</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">droid</span><span class="p">.</span><span class="n">charAt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">//</span> <span class="n">d</span>
+</code></pre></div>
+
+
+<p><code>concat()</code> - łączy ze sobą ciągi znaków, pozwala na wprowadzenie więcej niż jednego argumentu</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">droid</span> <span class="o">=</span> <span class="n">droid</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">,</span> <span class="s1">&#39;c3po&#39;</span><span class="p">)</span>
+<span class="n">droid</span> <span class="o">//</span> <span class="n">r2d2</span><span class="o">&amp;</span><span class="n">c3po</span>
+</code></pre></div>
+
+
 <p><code>endsWith()</code> - sprawdza czy ciąg znaków kończy się wskazanym znakiem</p>
-<p><code>includes()</code> - sprawdza czy ciąg znaków zawiera wskazany znak</p>
+<p><code>includes()</code> - sprawdza czy ciąg znaków zawiera wskazany znak // zwraca true albo flase</p>
 <p><code>indexOf()</code> - zwraca pozycję indeksową (pierwszego) wskazanego znaku</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">droid</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">//</span> <span class="n">d</span>
+
+<span class="n">droid</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="mi">0</span>
+</code></pre></div>
+
+
 <p><code>lastIndexOf()</code> - zwraca pozycję indeksową (ostatniego) wskazanego znaku</p>
-<p><code>match()</code> - sprawa ciąg znaków w poszukiwaniu wskazanego wyrażenia</p>
+<div class="highlight"><pre><span></span><code><span class="n">droid</span><span class="p">.</span><span class="n">lastIndexOf</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="mi">3</span>
+</code></pre></div>
+
+
+<p><code>match()</code> - sprawdza ciąg znaków w poszukiwaniu wskazanego wyrażenia</p>
 <p><code>repeat()</code> - zwraca ciąg znaków który jest wielokrotnym powtórzeniem danego ciągu</p>
 <p><code>replace()</code>  - przeszukuje ciąg znaków w poszukiwaniu znaku lub wyrażenia i zwraca nowy string gdzie wskazany wcześniej ciąg lub znak jest zmieniony</p>
 <div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">str</span> <span class="o">=</span> <span class="ss">&quot;Visit Microsoft!&quot;</span><span class="p">;</span>
@@ -165,16 +187,26 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 
 
 <p><code>search()</code> - przeszukuje ciąg znaków w poszukiwaniu znaku lub wyrażenia i zwraca ich indeks</p>
-<p><code>slice()</code> - wyciąga część łańcucha znaków i zwraca nowy na tej podstawie</p>
-<p><code>split()</code> - tnie łańcuch znaków i tworzy z niego tablicę</p>
-<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">str</span> <span class="o">=</span> <span class="ss">&quot;How are you doing today?&quot;</span><span class="p">;</span>
-<span class="n">let</span> <span class="n">res</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="ss">&quot; &quot;</span><span class="p">);</span>
-<span class="o">&gt;&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="ss">&quot;How&quot;</span><span class="p">,</span><span class="ss">&quot;are&quot;</span><span class="p">,</span><span class="ss">&quot;you&quot;</span><span class="p">,</span><span class="ss">&quot;doing&quot;</span><span class="p">,</span><span class="ss">&quot;today?&quot;</span><span class="p">]</span>
+<p><code>split()</code> - tnie łańcuch znaków i tworzy z niego tablicę (jako argument przyjmuje separator)</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2, c3po&#39;</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">droid</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="ss">&quot;,&quot;</span><span class="p">))</span> <span class="o">//</span> <span class="p">[</span> <span class="ss">&quot;r2d2&quot;</span><span class="p">,</span><span class="ss">&quot; c3po&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+
+<p><code>slice()</code> - wyciąga część łańcucha znaków i zwraca nowy na tej podstawie / przyjmuje również liczbę ujemną (zaczyna od końca)</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">droid</span><span class="p">.</span><span class="k">substring</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">//</span> <span class="mi">2</span><span class="n">d</span>
+</code></pre></div>
+
+
+<p><code>substring()</code> - przyjmuje dwa argumenty (indeks - 1. łącznie, 2. wyłącznie) i zwraca części łańcucha zawarte pomiędzy nimi </p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">droid</span> <span class="o">=</span> <span class="s1">&#39;r2d2&#39;</span>
+<span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">droid</span><span class="p">.</span><span class="k">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="o">//</span> <span class="mi">2</span><span class="n">d</span>
 </code></pre></div>
 
 
 <p><code>toLowerCase()</code>/<code>toUpperCase()</code> - zwraca łańcuch zmieniając wszystkie litery na małe/duże</p>
-<p><code>trim()</code> - pozbywa się spacji z końca i początku łąńcucha znaków</p>
+<p><code>trim()</code> - pozbywa się spacji z końca i początku łańcucha znaków</p>
 <p>Źródła:</p>
 <p>https://www.w3schools.com/jsref/jsref_obj_string.asp</p>
   </div>

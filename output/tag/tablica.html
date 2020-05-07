@@ -124,24 +124,30 @@
 
           &#8226; Tagi: 
               <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/array.html">array</a>,              <a href="../tag/tablica.html">tablica</a>
-        &#8226; 2 min read
+        &#8226; 3 min read
     </p>
   </header>
   <div>
       <h3>Tablice</h3>
-<p>Tablica wyjściowa</p>
+<p>Tworzenie tablicy</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 </code></pre></div>
 
 
-<h4>Dodawanie elementów</h4>
-<p><strong><code>push</code></strong> i <strong><code>unshift</code></strong> - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę)</p>
-<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">&#39;push&#39;</span><span class="p">)</span>
-<span class="n">arr</span><span class="p">.</span><span class="n">unshift</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<p>::: istnieje możliwość również przez funkcję konstruktora <code>new Array()</code></p>
+<p>Sprawdzanie czy obiekt, do którego się odwołujemy jest tablicą</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Array</span><span class="p">.</span><span class="n">isArray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="k">true</span> <span class="p">(</span><span class="o">/</span><span class="k">false</span><span class="p">)</span>
 </code></pre></div>
 
 
-<p><strong><code>concat</code></strong> - [od concatenate] zwraca nową tablicę, która zawiera wszystkie …</p>
+<p>Dodawanie wartości do tablicy</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">arr</span> <span class="o">//</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+
+
+<h4>Metody()</h4>
+<p><strong><code>push</code></strong> i <strong><code>unshift</code></strong> - pozwala na …</p>
         <br>
         <a class="btn" href="../js-tablice-metody.html">Czytaj dalej</a>
   </div>
@@ -159,13 +165,13 @@
     </p>
   </header>
   <div>
-      <p>Tablica (array) jest uporządkowaną listą zawierająca elementy, gdzie każdy z elementów ma dowolną wartość (są heterogeniczne). Tablica jest definiowana poprzez umieszczenie wartości pomiędzy kwadratowymi nawiasami</p>
+      <p>Tablica (array) jest uporządkowaną listą zawierająca elementy, gdzie każdy z elementów ma dowolną wartość (są heterogeniczne). Tablica jest definiowana poprzez umieszczenie wartości pomiędzy kwadratowymi nawiasami (literałami tablicy), które nazywają się jej elementami.</p>
 <div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">Arr</span> <span class="o">=</span> <span class="p">[];</span> <span class="o">//</span> <span class="n">pusta</span> <span class="n">tablica</span>
 <span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="ss">&quot;Mikolaj&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="ss">&quot;kwiecień&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">.</span><span class="mi">04</span><span class="p">];</span>
 </code></pre></div>
 
 
-<p>Zadeklarowanie tablicy słowem kluczowym <strong><code>const</code></strong> pozwala na modyfikację jej zawartości ale nie na zmianę …</p>
+<p>Zadeklarowanie tablicy słowem kluczowym <strong><code>const</code></strong> pozwala na …</p>
         <br>
         <a class="btn" href="../js-tablice.html">Czytaj dalej</a>
   </div>

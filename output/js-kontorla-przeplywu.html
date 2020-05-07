@@ -163,11 +163,18 @@
 <div class="highlight"><pre><span></span><code>  <span class="k">if</span> <span class="ss">(</span><span class="nv">hour</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="ss">)</span> {
   <span class="nv">greeting</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="s">Good day</span><span class="s2">&quot;</span><span class="c1">;</span>
   }
+
+
+  <span class="k">if</span> <span class="ss">(</span><span class="nv">typeof</span> <span class="nv">droid</span> <span class="o">!==</span> <span class="s1">&#39;</span><span class="s">undefined</span><span class="s1">&#39;</span><span class="ss">)</span> {
+        <span class="nv">console</span> <span class="nv">log</span><span class="ss">(</span>`<span class="nv">this</span> <span class="nv">is</span> ${<span class="nv">droid</span>}`<span class="ss">)</span>
+  } <span class="k">else</span> {
+        <span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">droid variable was not defined</span><span class="s1">&#39;</span><span class="ss">)</span>
+  }
 </code></pre></div>
 
 
 <hr>
-<h3>Operator warunkowy</h3>
+<h3>Operator warunkowy/ Ternary operator</h3>
 <p>W przypadku prostej kontroli przepływu opierającej się na sprawdzaniu dwóch warunków można oprzeć się na operatorze warunkowym</p>
 <p>Gdzie po spisaniu warunku stawia się znak zapytania a następnie rozdziela się wyrażenie1 od wyrażenie2 dwukropkiem</p>
 <div class="highlight"><pre><span></span><code>  <span class="nv">warunek</span> ? <span class="nv">wyra</span>ż<span class="nv">enie1</span> : <span class="nv">wyra</span>ż<span class="nv">enie2</span>

@@ -118,6 +118,118 @@
 
 <article>
   <header>
+    <h2><a href="../js-wydarzenia-dom-1.html">JavaScript - wydarzenia DOM cz. 1</a></h2>
+    <p>
+      Opublikowano pon 04 maja 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/dom.html">dom</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/events.html">events</a>,              <a href="../tag/wydarzenia.html">wydarzenia</a>,              <a href="../tag/selectors.html">selectors</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <h3>Nasłuchiwacz wydarzeń ;)</h3>
+<p>Aby dodać interakcji do strony internetowej przy pomocy JS należy do wybranego przez siebie elementu dołączyć tzw. 'nasłuchiwacz wydarzeń' (ang. event listener)</p>
+<p><strong><code>.addEventListener(wydarzenie, funkcja-przekazana-do-wywołania)</code></strong> - ta metoda przyjmuje dwa argumenty rodzaj 1) rodzaj wydarzenia np. 'click' (kliknięcie myszy) oraz 2) funkcję jaka ma się wywołać w momencie jego …</p>
+        <br>
+        <a class="btn" href="../js-wydarzenia-dom-1.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../js-wydarzenia-dom-2.html">JavaScript - wydarzenia DOM cz. 2 - propagacja</a></h2>
+    <p>
+      Opublikowano pon 04 maja 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/dom.html">dom</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/events.html">events</a>,              <a href="../tag/propagacja-wydarzenia.html">propagacja wydarzenia</a>,              <a href="../tag/selectors.html">selectors</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <h3>Propagacja wydarzeń (w górę) - event bubbling</h3>
+<p>W DOM domyślnie wydarzenia są przenoszone od dziecka lub rodzeństwa do rodzica lub rodzeństwa - oznacza to, że jeśli rodzic oraz dziecko mają nastawioną ten sam rodzaj akcji wywołującej (np. click) oraz różne lub tą samą wydarzenie wywołane, oba z nich dojdą do skutku chyba …</p>
+        <br>
+        <a class="btn" href="../js-wydarzenia-dom-2.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../js-dom-elementy-selektory.html">JavaScript - selektory DOM</a></h2>
+    <p>
+      Opublikowano sob 02 maja 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/js.html">js</a>,              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/selektory.html">selektory</a>,              <a href="../tag/dom.html">dom</a>,              <a href="../tag/elementy-dom.html">elementy dom</a>
+        &#8226; 3 min read
+    </p>
+  </header>
+  <div>
+      <p>DOM - document object model</p>
+<h3>Selektory pojedynczych elementów</h3>
+<table>
+<thead>
+<tr>
+<th>selektor</th>
+<th>funkcja</th>
+<th>przykładowe zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>document.getElementById()</code></td>
+<td>zwraca element w podanym Id</td>
+<td><code>document.getElementById('button-4')</code></td>
+</tr>
+<tr>
+<td><code>document.querySelector()</code></td>
+<td>zwraca pierwszy element spełniający podany warunek/ wpisany składnią znaną z CSS</td>
+<td><code>document.getElementById('#button-4')</code></td>
+</tr>
+</tbody>
+</table>
+<p>:::Istnieje możliwość łączenia selektorów z atrybutami :::</p>
+<p>Przykładowe zastosowanie</p>
+<p><code>document.getElementById('button-4').className</code> // zwraca …</p>
+        <br>
+        <a class="btn" href="../js-dom-elementy-selektory.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../js-obiekt-window-document.html">JavaScript - obiekt window i document</a></h2>
+    <p>
+      Opublikowano czw 30 kwietnia 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/js.html">js</a>,              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/window.html">window</a>,              <a href="../tag/document.html">document</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>Obiekt <em>document</em> jest częścią obiektu <em>window</em> i został opisany poniżej. Na początek poniżej przedstawię wybrane metody obiektu window (globalny)</p>
+<h3>Window</h3>
+<p><code>alert()</code> - pokazuje się okienko z ostrzeżeniem</p>
+<div class="highlight"><pre><span></span><code><span class="n">window</span><span class="p">.</span><span class="n">alert</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>lub po prostu</p>
+<p>alert('Hello world')</p>
+<p><code>prompt()</code> - wyskakuje okienko z informacją</p>
+<p><code>confirm()</code> - przyjmuje parametr</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="ss">(</span><span class="nv">confirm</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">Are you sure?</span><span class="s1">&#39;</span><span class="ss">))</span> {
+  <span class="nv">console …</span></code></pre></div>
+        <br>
+        <a class="btn" href="../js-obiekt-window-document.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="../js-this.html">JavaScript "this"</a></h2>
     <p>
       Opublikowano nie 26 kwietnia 2020 w <a href="../category/javascript.html">javascript</a>
@@ -162,8 +274,8 @@
 
 <ul>
 <li>w przypadku <strong>tylko</strong> jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1</li>
-<li>
-<p>jeśli funkcja jedynie zwraca to można pominąć instrukcję <code>return …</code></p></li></ul>
+</ul>
+<p>::: jeśli funkcja jedynie zwraca to można pominąć instrukcję <code>return …</code></p>
         <br>
         <a class="btn" href="../js-funckja-starzalkowa.html">Czytaj dalej</a>
   </div>
@@ -290,7 +402,7 @@
 <p><code>Math.Pi</code> - właściwość (jedna z wielu) - pozwala odwołać się do wartości Pi (ok. 3.14159)</p>
 <h3>Metody (wybrane):</h3>
 <p><code>Math.random()</code> - zwraca liczbę pseudolosową z przedziału [0,1)</p>
-<p><code>Math.ceil()</code> - zwraca najmniejszą liczbę całkowitą większą …</p>
+<p>::: aby uzyskać liczbę pomiędzy 1-20 należy pomnożyć …</p>
         <br>
         <a class="btn" href="../js-math.html">Czytaj dalej</a>
   </div>
@@ -339,24 +451,30 @@
 
           &#8226; Tagi: 
               <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/array.html">array</a>,              <a href="../tag/tablica.html">tablica</a>
-        &#8226; 2 min read
+        &#8226; 3 min read
     </p>
   </header>
   <div>
       <h3>Tablice</h3>
-<p>Tablica wyjściowa</p>
+<p>Tworzenie tablicy</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 </code></pre></div>
 
 
-<h4>Dodawanie elementów</h4>
-<p><strong><code>push</code></strong> i <strong><code>unshift</code></strong> - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę)</p>
-<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="k">null</span><span class="p">,</span><span class="s1">&#39;push&#39;</span><span class="p">)</span>
-<span class="n">arr</span><span class="p">.</span><span class="n">unshift</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<p>::: istnieje możliwość również przez funkcję konstruktora <code>new Array()</code></p>
+<p>Sprawdzanie czy obiekt, do którego się odwołujemy jest tablicą</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Array</span><span class="p">.</span><span class="n">isArray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">//</span> <span class="k">true</span> <span class="p">(</span><span class="o">/</span><span class="k">false</span><span class="p">)</span>
 </code></pre></div>
 
 
-<p><strong><code>concat</code></strong> - [od concatenate] zwraca nową tablicę, która zawiera wszystkie …</p>
+<p>Dodawanie wartości do tablicy</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">arr</span> <span class="o">//</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+
+
+<h4>Metody()</h4>
+<p><strong><code>push</code></strong> i <strong><code>unshift</code></strong> - pozwala na …</p>
         <br>
         <a class="btn" href="../js-tablice-metody.html">Czytaj dalej</a>
   </div>
@@ -374,15 +492,43 @@
     </p>
   </header>
   <div>
-      <p>Tablica (array) jest uporządkowaną listą zawierająca elementy, gdzie każdy z elementów ma dowolną wartość (są heterogeniczne). Tablica jest definiowana poprzez umieszczenie wartości pomiędzy kwadratowymi nawiasami</p>
+      <p>Tablica (array) jest uporządkowaną listą zawierająca elementy, gdzie każdy z elementów ma dowolną wartość (są heterogeniczne). Tablica jest definiowana poprzez umieszczenie wartości pomiędzy kwadratowymi nawiasami (literałami tablicy), które nazywają się jej elementami.</p>
 <div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">Arr</span> <span class="o">=</span> <span class="p">[];</span> <span class="o">//</span> <span class="n">pusta</span> <span class="n">tablica</span>
 <span class="n">let</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="ss">&quot;Mikolaj&quot;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="ss">&quot;kwiecień&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">.</span><span class="mi">04</span><span class="p">];</span>
 </code></pre></div>
 
 
-<p>Zadeklarowanie tablicy słowem kluczowym <strong><code>const</code></strong> pozwala na modyfikację jej zawartości ale nie na zmianę …</p>
+<p>Zadeklarowanie tablicy słowem kluczowym <strong><code>const</code></strong> pozwala na …</p>
         <br>
         <a class="btn" href="../js-tablice.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../js-metody-liczb.html">JavaScript - metody liczb</a></h2>
+    <p>
+      Opublikowano pią 10 kwietnia 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/liczby.html">liczby</a>,              <a href="../tag/numbers.html">numbers</a>
+        &#8226; 1 min read
+    </p>
+  </header>
+  <div>
+      <p>Typ liczbowy (Numbers) posiada przypisane sobie metody - poniżej przedstawiona została część z nich</p>
+<p><code>toString()</code> - dokonuje konwersji na string</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="mi">100</span> <span class="o">+</span> <span class="mi">20</span><span class="p">).</span><span class="n">toString</span><span class="p">();</span>   <span class="o">//</span> <span class="s1">&#39;120&#39;</span> <span class="o">-</span> <span class="n">zwraca</span> <span class="n">sumę</span>
+</code></pre></div>
+
+
+<p><code>toFixed()</code> - pozwala na określenie ilości znajków liczbowych po kropce</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">9</span><span class="p">.</span><span class="mi">656</span><span class="p">;</span>
+<span class="n">x</span><span class="p">.</span><span class="n">toFixed</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>           <span class="o">//</span> <span class="mi">10</span>
+<span class="n">x</span><span class="p">.</span><span class="n">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>           <span class="o">//</span> <span class="mi">9</span><span class="p">.</span><span class="mi">66</span>
+<span class="n">x</span><span class="p">.</span><span class="n">toFixed</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>           <span class="o">//</span> <span class="mi">9 …</span></code></pre></div>
+        <br>
+        <a class="btn" href="../js-metody-liczb.html">Czytaj dalej</a>
   </div>
   <hr />
 </article>
@@ -394,11 +540,11 @@
 
           &#8226; Tagi: 
               <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/string.html">string</a>,              <a href="../tag/lancuch-znakow.html">łańcuch znaków</a>,              <a href="../tag/metody.html">metody</a>
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
   <div>
-      <p>Jedną z podstawowych i często stosowanych właściwości stringów jest <code>length</code> który zwraca długość łańcucha znaków</p>
+      <p>Jedną z podstawowych i często stosowanych właściwości stringów jest <strong><code>length</code></strong> który zwraca długość łańcucha znaków</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">fu</span> <span class="o">=</span> <span class="ss">&quot;bar&quot;</span>
 <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">fu</span><span class="p">.</span><span class="k">length</span><span class="p">)</span>
 <span class="o">&gt;&gt;</span> <span class="mi">3</span>
@@ -410,6 +556,32 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 <p><code>charAt()</code> - zwraca …</p>
         <br>
         <a class="btn" href="../js-metody-lancucha-znakow.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../js-konwersja-typow.html">JavaScript - konwersja/translacja pomiędzy numbers i string</a></h2>
+    <p>
+      Opublikowano pią 10 kwietnia 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/string.html">string</a>,              <a href="../tag/lancuch-znakow.html">łańcuch znaków</a>,              <a href="../tag/metody.html">metody</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>W przy pomocy metod istnieje możliwość wymuszenia konwersji różnego typu danych (boolean, string, numbers)</p>
+<p>W ten sposób można przekształcić <strong>boolean lub number w string</strong></p>
+<p><strong> Konwersja na string</strong> <code>String()</code>, <code>x.toString()</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>        <span class="o">//</span> <span class="s1">&#39;123&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="p">)</span>      <span class="o">//</span> <span class="s1">&#39;-12.3&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="k">null</span><span class="p">)</span>       <span class="o">//</span> <span class="s1">&#39;null&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="n">undefined</span><span class="p">)</span>  <span class="o">//</span> <span class="s1">&#39;undefined&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>       <span class="o">//</span> <span class="s1">&#39;true&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>      <span class="o">//</span> <span class="s1">&#39;false …</span></code></pre></div>
+        <br>
+        <a class="btn" href="../js-konwersja-typow.html">Czytaj dalej</a>
   </div>
   <hr />
 </article>
@@ -446,7 +618,8 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
     </p>
   </header>
   <div>
-      <hr>
+      <p>W JavaScript istnieją dwa typy danych - proste/prymitywne i referencyjne, poniżej zostaną przedstawione te pierwsze. Typy referencyjne przechowywane są w pamięci podręcznej a zmienna jest do nich referencją.</p>
+<hr>
 <h3>Postawy i deklaracje</h3>
 <p>w JS instrukcje nazywane są wyrażeniami i rozdzielone są średnikiem <code>;</code></p>
 <p>składnia komentarza</p>
@@ -458,11 +631,7 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 </code></pre></div>
 
 
-<p>Istnieją trzy typy deklaracji zmiennych</p>
-<p><img alt="starWars_zmienne" src="https://miro.medium.com/max/640/0*2Iz9vcaOtPNivfen.png"></p>
-<ul>
-<li><code>const</code> - podstawowa deklaracja, zmienna nie ulega zmianie, tylko do odczytu</li>
-<li><code>let</code> - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku …</li></ul>
+<p>Istnieją trzy typy deklaracji …</p>
         <br>
         <a class="btn" href="../js-podstawowe-typy.html">Czytaj dalej</a>
   </div>
@@ -515,70 +684,12 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 <p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</p>
 <p>https://mathjs.org/</p>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="../js-kursy-linki.html">JavaScript - przydatne strony (darmowe kursy, wyzwania)</a></h2>
-    <p>
-      Opublikowano śro 08 kwietnia 2020 w <a href="../category/javascript.html">javascript</a>
-
-          &#8226; Tagi: 
-              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/linki.html">linki</a>,              <a href="../tag/kursy.html">kursy</a>,              <a href="../tag/newslettery.html">newslettery</a>,              <a href="../tag/wyzwania.html">wyzwania</a>,              <a href="../tag/cwiczenia.html">ćwiczenia</a>,              <a href="../tag/aplikacje.html">aplikacje</a>,              <a href="../tag/android.html">android</a>
-        &#8226; 1 min read
-    </p>
-  </header>
-  <div>
-      <h3>Kursy online</h3>
-<table>
-<thead>
-<tr>
-<th>Nazwa</th>
-<th>główna cecha</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://www.codecademy.com/learn/introduction-to-javascript">codecademy</a></td>
-<td>Interaktywny/Wersja darmowa i płatna</td>
-</tr>
-<tr>
-<td><a href="https://www.freecodecamp.org/learn">freeCodeCamp</a></td>
-<td>Interaktywny/ Za darmo + społeczność</td>
-</tr>
-<tr>
-<td><a href="https://javascript.info/">javascript.info</a></td>
-<td>Oddolna inicjatywa(?), w pełni darmowe, repo dostępne na GitHub</td>
-</tr>
-<tr>
-<td><a href="http://kursjs.pl/index.php">kursjs.pl</a></td>
-<td>Tylko wersja polska - oddolna inicjatywa :)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3>Newslettery</h3>
-<table>
-<thead>
-<tr>
-<th>Nazwa</th>
-<th>główna cecha</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://javascript30.com/">JavaScript30</a></td>
-<td>Pseudonewsletter - 30 mini projektów na 30 dni</td>
-</tr>
-<tr>
-<td><a href="https://bedeprogramistka.pl/wyzwanie-javascript30/">bedeprogramistka.pl/</a></td>
-<td>Polska odpowiedź …</td></tr></tbody></table>
-        <br>
-        <a class="btn" href="../js-kursy-linki.html">Czytaj dalej</a>
-  </div>
 </article>
 
   <div class="pagination">
+    <a class="btn float-left" href="../tag/js2.html">
+      <i class="fa fa-angle-left"></i> Starsze wpisy
+    </a>
   </div>
 
 

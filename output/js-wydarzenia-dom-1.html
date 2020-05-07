@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <script src="./theme/tipuesearch/jquery.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.min.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch.js"></script>
+  <script src="./theme/tipuesearch/tipuesearch_set.js"></script>
+  <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
+  <script src="./tipuesearch_content.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
+  
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+
+
+    <link href="./theme/custom_css/custom.css" rel="stylesheet">
+
+
+
+    <link rel="shortcut icon" href="/theme/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/theme/img/favicon.png" type="image/x-icon">
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-162203128-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+<meta name="author" content="mkostyrko" />
+<meta name="description" content="Nasłuchiwacz wydarzeń ;) Aby dodać interakcji do strony internetowej przy pomocy JS należy do wybranego przez siebie elementu dołączyć tzw. &#39;nasłuchiwacz wydarzeń&#39; (ang. event listener) .addEventListener(wydarzenie, funkcja-przekazana-do-wywołania) - ta metoda przyjmuje dwa argumenty rodzaj 1) rodzaj wydarzenia np. &#39;click&#39; (kliknięcie myszy) oraz 2) funkcję jaka ma się wywołać w momencie jego …" />
+<meta name="keywords" content="dom, js, javascript, events, wydarzenia, selectors">
+
+
+<meta property="og:site_name" content="...z frontu"/>
+<meta property="og:title" content="JavaScript - wydarzenia DOM cz. 1"/>
+<meta property="og:description" content="Nasłuchiwacz wydarzeń ;) Aby dodać interakcji do strony internetowej przy pomocy JS należy do wybranego przez siebie elementu dołączyć tzw. &#39;nasłuchiwacz wydarzeń&#39; (ang. event listener) .addEventListener(wydarzenie, funkcja-przekazana-do-wywołania) - ta metoda przyjmuje dwa argumenty rodzaj 1) rodzaj wydarzenia np. &#39;click&#39; (kliknięcie myszy) oraz 2) funkcję jaka ma się wywołać w momencie jego …"/>
+<meta property="og:locale" content="pl_PL"/>
+<meta property="og:url" content="./js-wydarzenia-dom-1.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-05-04 10:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/mkostyrko.html">
+<meta property="article:section" content="javascript"/>
+<meta property="article:tag" content="dom"/>
+<meta property="article:tag" content="js"/>
+<meta property="article:tag" content="javascript"/>
+<meta property="article:tag" content="events"/>
+<meta property="article:tag" content="wydarzenia"/>
+<meta property="article:tag" content="selectors"/>
+<meta property="og:image" content="">
+
+  <title>...z frontu &ndash; JavaScript - wydarzenia DOM cz. 1</title>
+
+</head>
+<body>
+
+  <!-- ASIDE -->
+  
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="Notatki z frontu" title="Notatki z frontu">
+      </a>
+      <h1><a href=".">Notatki z frontu</a></h1>
+
+<p>JS/CSS/PY</p>      <nav>
+        <ul class="list">
+
+            <li><a target="_blank" href="./pages/o-blogu.html">O blogu</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/m_kostyrko" target="_blank">
+            <i class="fab fa-twitter">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-github" href="https://github.com/kostyrko" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+      </ul>
+      
+        <form class="navbar-search" action="./search.html" role="search">
+            <input type="text" name="q" id="tipue_search_input" placeholder="Szukaj..">
+        </form>
+
+    </div>
+
+
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="container">
+
+      <nav>
+        <a href=".">Strona główna</a>
+
+        <a href="categories.html">Kategorie</a>
+        <a href="tags.html">Tagi</a>
+
+
+      </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="js-wydarzenia-dom-1">JavaScript - wydarzenia DOM cz. 1</h1>
+    <p>
+      Opublikowano pon 04 maja 2020 w <a href="./category/javascript.html">javascript</a>
+
+        &#8226; 2 min read
+    </p>
+  </header>
+
+
+  <div>
+    <h3>Nasłuchiwacz wydarzeń ;)</h3>
+<p>Aby dodać interakcji do strony internetowej przy pomocy JS należy do wybranego przez siebie elementu dołączyć tzw. 'nasłuchiwacz wydarzeń' (ang. event listener)</p>
+<p><strong><code>.addEventListener(wydarzenie, funkcja-przekazana-do-wywołania)</code></strong> - ta metoda przyjmuje dwa argumenty rodzaj 1) rodzaj wydarzenia np. 'click' (kliknięcie myszy) oraz 2) funkcję jaka ma się wywołać w momencie jego zajścia tzw <strong>callback</strong>/bez nawiasów.</p>
+<p>Przykładowe zastosowanie</p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">helloWorld</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="err">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span>
+  <span class="n">e</span><span class="p">.</span><span class="n">preventDefault</span><span class="p">();</span>
+<span class="err">}</span>
+
+<span class="n">document</span><span class="p">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="n">helloWorld</span><span class="p">)</span>
+</code></pre></div>
+
+
+<hr>
+<p><strong><code>this.</code></strong> - wyrażenie reprezentujące element, na którym doszło do wydarzenia // cenne w przypadku gdy jedno wydarzenie zostało nastawione na więcej niż jeden element (np. na wszystkie przyciski, a ma zmieniać się jeden, który wywołał akcję)</p>
+<div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">buttonsList</span> <span class="o">=</span> <span class="nv">document</span>.<span class="nv">querySelectorAll</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">.btn</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">;</span>
+
+<span class="k">for</span><span class="ss">(</span><span class="nv">let</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="c1">; i &lt; buttons.length; i++) {</span>
+  <span class="nv">buttons</span>[<span class="nv">i</span>].<span class="nv">addEventListener</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">click</span><span class="s1">&#39;</span>, <span class="nv">function</span><span class="ss">(</span><span class="nv">e</span><span class="ss">)</span>{
+    <span class="nv">this</span>.<span class="nv">style</span>.<span class="nv">backgroundColor</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">green</span><span class="s1">&#39;</span>
+  }<span class="ss">)</span><span class="c1">;</span>
+}
+</code></pre></div>
+
+
+<hr>
+<p><strong><code>.preventDefault()</code></strong> - zapobiega domyślnemu zachowaniu się elementu, np. w przypadku linku jest to przejście na kolejną stronę etc.</p>
+<p>funkcja wywołująca obiekt <em>event</em></p>
+<div class="highlight"><pre><span></span><code><span class="k">function</span> <span class="n">onClick</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="err">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<span class="err">}</span>
+
+<span class="n">document</span><span class="p">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Obiekt event zawiera zbiór informacji na temat wydarzenia, do którego doszło np. <em>target</em> - zawierający informację, na temat obiektu, na którym doszło do danego wydarzenia</p>
+<p><strong><code>.target</code></strong> - zwraca element, który spowodował wywołanie wydarzenia/event</p>
+<div class="highlight"><pre><span></span><code><span class="n">event</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">id</span>  <span class="o">-</span> <span class="n">zwraca</span> <span class="n">id</span> <span class="n">elementu</span><span class="p">,</span> <span class="n">który</span> <span class="n">był</span> <span class="n">celem</span>
+
+<span class="n">event</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">className</span><span class="o">/</span><span class="p">.</span><span class="n">classList</span> <span class="o">-</span> <span class="n">zwraca</span> <span class="n">nazwę</span> <span class="n">klasy</span><span class="o">/</span><span class="n">listę</span> <span class="n">klas</span> <span class="n">elementu</span><span class="p">,</span> <span class="n">który</span> <span class="n">jest</span> <span class="n">targetem</span>
+
+<span class="n">event</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">innerText</span> <span class="o">-</span> <span class="n">zwraca</span> <span class="n">tekst</span> <span class="n">elementu</span> <span class="n">celowego</span>
+
+<span class="n">element</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">value</span> <span class="o">-</span> <span class="n">zwraca</span> <span class="n">wartość</span> <span class="n">elementu</span> <span class="o">/</span> <span class="n">przydatne</span> <span class="n">w</span> <span class="n">formularzu</span>
+</code></pre></div>
+
+
+<p><strong><code>.type</code></strong> - zwraca typ wydarzenia</p>
+<div class="highlight"><pre><span></span><code><span class="n">event</span><span class="p">.</span><span class="k">type</span> <span class="o">-</span> <span class="n">z</span>  <span class="n">np</span><span class="p">.</span> <span class="n">mouseover</span>
+</code></pre></div>
+
+
+<p><strong><code>.timeStamp</code></strong> - czas w którym doszło do wydarzenia</p>
+<p><code>.clientY</code>/<code>.clientX</code> - miejsce wydarzenia relatywnie do granic okna przeglądarki / zwraca wartość w px</p>
+<p><code>.offsetY</code>/<code>.offsetX</code> - miejsce wydarzenia relatywne wobec elementu, na którym dochodzi do danego wydarzenia, gdzie punktem wyjściowym jest lewy górny róg / zwraca wartość w px</p>
+<hr>
+<h3>Typy wydarzeń</h3>
+<h4>Mysz</h4>
+<p><code>click</code> - pojedyncze kliknięcie</p>
+<p><code>dblclick</code> - podwójne kliknięcie</p>
+<p><code>mousedown</code> - kliknięcie i przytrzymanie</p>
+<p><code>mouseup</code> - puszczenie po mousedown</p>
+<p><code>mouseenter</code> - najechanie kursorem na obiekt / dotyczy jedynie obiektu ale nie jego dzieci</p>
+<p><code>mouseleave</code> - opuszczenie kursorem obszaru obiektu</p>
+<p><code>mouseover</code> - takie samo jak <code>mouseenter</code> ale dotyczy również elementów zawartych w danym elemencie/całości</p>
+<p><code>mouseout</code>- takie samo jak <code>mouseout</code> ale dotyczy również elementów zawartych w danym elemencie/całości</p>
+<p><code>mousemove</code> - ruch wewnątrz obiektu, zwraca koordynaty w px znajdowania się myszki (offsetX,offsetY)</p>
+<h4>Input i formularze</h4>
+<p><code>.type</code> - zwraca typ wydarzenia</p>
+<p>Przykładowe zastosowanie</p>
+<div class="highlight"><pre><span></span><code>const form = document.querySelector(&#39;form&#39;)
+
+const input = document.querySelector(&#39;input&#39;)
+
+form.addEventListener(&#39;submit&#39;, runEvent);
+
+function runEvent(e){
+  console.log(`typ wydarzenia:` <span class="cp">${</span><span class="n">e</span><span class="o">.</span><span class="n">type</span><span class="cp">}</span>)
+}
+</code></pre></div>
+
+
+<p><code>submit</code> - nasłuchuje wysłania formularza // często używany z preventDefault() - aby powstrzymać przed domyślną akcją wywołaną przez dany element</p>
+<p><code>.value</code> - zwraca wartość wpisaną w formularz, pozwala również nadać wartość domyślną formularzowi np. po wykonanym przesłaniu</p>
+<div class="highlight"><pre><span></span><code><span class="n">let</span> <span class="n">inputContent</span> <span class="o">=</span> <span class="k">input</span><span class="p">.</span><span class="n">value</span>
+
+<span class="k">function</span> <span class="n">runEvent</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="err">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="k">input</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+  <span class="k">input</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="o">//</span> <span class="n">czyści</span> <span class="n">formularz</span>
+<span class="err">}</span>
+</code></pre></div>
+
+
+<h4>Klawiatura</h4>
+<p><code>keydown</code> - działa w momencie, w którym klawisz jest wciśnięty // zwraca true</p>
+<p><code>keyup</code> - działa w momencie pozostawienia klawisza // zwraca true</p>
+<p><code>keypress</code> - działa w momencie wciśnięcia guzika // zwraca true</p>
+<p><code>altKey</code> - działa w momencie przyciśnięcia klawisza ALT // zwraca true</p>
+<p><code>ctrlKey</code> - działa w momencie przyciśnięcia klawisza CTRL // zwraca true</p>
+<p><code>shiftKey</code> działa w momencie przyciśnięcia klawisza Shift // zwraca true</p>
+<h4>Inne</h4>
+<p><code>focus</code> - focus na elemencie</p>
+<p><code>blur</code> - kliknięcie po za element (eliminacja focusa)</p>
+<p><code>cut</code> - rejestruje wycięcie treści</p>
+<p><code>paste</code> - rejestruje wklejenie</p>
+<p><code>input</code> - rejestruje każdy element związany z inputem (cut,paste,type)</p>
+<p><code>change</code> - działa na <select> list - rejestruje wybór w rozwijanej liście</p>
+<p><code>resieze</code> - zmiana okna</p>
+<p><strong>touch</strong> -&gt; <code>touchstart</code>, <code>touchmove</code>, <code>touchend</code>,
+<code>touchcancel</code></p>
+<hr>
+<p>Źródła:</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/dom.html">dom</a>
+      <a href="./tag/js.html">js</a>
+      <a href="./tag/javascript.html">javascript</a>
+      <a href="./tag/events.html">events</a>
+      <a href="./tag/wydarzenia.html">wydarzenia</a>
+      <a href="./tag/selectors.html">selectors</a>
+    </p>
+  </div>
+
+
+
+  <div class="related-posts">
+    <h4>Zobacz także</h4>
+    <ul class="related-posts">
+      <li><a href="./js-dom-elementy-selektory.html">JavaScript - selektory DOM</a></li>
+      <li><a href="./js-obiekt-window-document.html">JavaScript - obiekt window i document</a></li>
+    </ul>
+  </div>
+
+
+<!-- Disqus -->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'zfrontu';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Włącz obsługę JavaScript, żeby zobaczyć komentarze.
+</noscript>
+<!-- End Disqus -->
+</article>
+
+      <footer>
+<p>
+  &copy;  2020 - This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+</p>
+<p>Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme with few modifications by mkostyrko </p><p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>      </footer>
+    </div>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " ...z frontu ",
+  "url" : ".",
+  "image": "",
+  "description": ""
+}
+</script>
+
+
+  <script>
+    $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+    });
+  </script>
+</body>
+</html>

@@ -124,11 +124,11 @@
 
           &#8226; Tagi: 
               <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/string.html">string</a>,              <a href="../tag/lancuch-znakow.html">łańcuch znaków</a>,              <a href="../tag/metody.html">metody</a>
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
   <div>
-      <p>Jedną z podstawowych i często stosowanych właściwości stringów jest <code>length</code> który zwraca długość łańcucha znaków</p>
+      <p>Jedną z podstawowych i często stosowanych właściwości stringów jest <strong><code>length</code></strong> który zwraca długość łańcucha znaków</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">fu</span> <span class="o">=</span> <span class="ss">&quot;bar&quot;</span>
 <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">fu</span><span class="p">.</span><span class="k">length</span><span class="p">)</span>
 <span class="o">&gt;&gt;</span> <span class="mi">3</span>
@@ -140,6 +140,32 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 <p><code>charAt()</code> - zwraca …</p>
         <br>
         <a class="btn" href="../js-metody-lancucha-znakow.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../js-konwersja-typow.html">JavaScript - konwersja/translacja pomiędzy numbers i string</a></h2>
+    <p>
+      Opublikowano pią 10 kwietnia 2020 w <a href="../category/javascript.html">javascript</a>
+
+          &#8226; Tagi: 
+              <a href="../tag/javascript.html">javascript</a>,              <a href="../tag/js.html">js</a>,              <a href="../tag/string.html">string</a>,              <a href="../tag/lancuch-znakow.html">łańcuch znaków</a>,              <a href="../tag/metody.html">metody</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p>W przy pomocy metod istnieje możliwość wymuszenia konwersji różnego typu danych (boolean, string, numbers)</p>
+<p>W ten sposób można przekształcić <strong>boolean lub number w string</strong></p>
+<p><strong> Konwersja na string</strong> <code>String()</code>, <code>x.toString()</code></p>
+<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>        <span class="o">//</span> <span class="s1">&#39;123&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="p">)</span>      <span class="o">//</span> <span class="s1">&#39;-12.3&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="k">null</span><span class="p">)</span>       <span class="o">//</span> <span class="s1">&#39;null&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="n">undefined</span><span class="p">)</span>  <span class="o">//</span> <span class="s1">&#39;undefined&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>       <span class="o">//</span> <span class="s1">&#39;true&#39;</span>
+<span class="n">String</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>      <span class="o">//</span> <span class="s1">&#39;false …</span></code></pre></div>
+        <br>
+        <a class="btn" href="../js-konwersja-typow.html">Czytaj dalej</a>
   </div>
 </article>
 

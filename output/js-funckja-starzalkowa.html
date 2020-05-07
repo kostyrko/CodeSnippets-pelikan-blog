@@ -49,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Funkcja starzałkowa skaraca zapis i.. nie zmienia kontekstu this słowo kluczowe function zmienia się w strzałkę =&gt; schemat: const show = function () {...}; const show = () =&gt; {...}; w przypadku tylko jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1 jeśli funkcja jedynie zwraca to można pominąć instrukcję return …" />
+<meta name="description" content="Funkcja starzałkowa skaraca zapis i.. nie zmienia kontekstu this słowo kluczowe function zmienia się w strzałkę =&gt; schemat: const show = function () {...}; const show = () =&gt; {...}; w przypadku tylko jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1 ::: jeśli funkcja jedynie zwraca to można pominąć instrukcję return …" />
 <meta name="keywords" content="javascript, js, arrow functions, funkcja strzałkowa">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="JavaScript -&gt; funkcje strzałkowe"/>
-<meta property="og:description" content="Funkcja starzałkowa skaraca zapis i.. nie zmienia kontekstu this słowo kluczowe function zmienia się w strzałkę =&gt; schemat: const show = function () {...}; const show = () =&gt; {...}; w przypadku tylko jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1 jeśli funkcja jedynie zwraca to można pominąć instrukcję return …"/>
+<meta property="og:description" content="Funkcja starzałkowa skaraca zapis i.. nie zmienia kontekstu this słowo kluczowe function zmienia się w strzałkę =&gt; schemat: const show = function () {...}; const show = () =&gt; {...}; w przypadku tylko jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1 ::: jeśli funkcja jedynie zwraca to można pominąć instrukcję return …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-funckja-starzalkowa.html"/>
 <meta property="og:type" content="article"/>
@@ -152,17 +152,20 @@
 
 <ul>
 <li>w przypadku <strong>tylko</strong> jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1</li>
-<li>
-<p>jeśli funkcja jedynie zwraca to można pominąć instrukcję <code>return</code></p>
-<div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">multiply</span> <span class="o">=</span> <span class="nv">function</span><span class="ss">(</span><span class="nv">a</span><span class="ss">)</span> {
-    <span class="k">return</span> <span class="nv">a</span> <span class="o">*</span> <span class="nv">a</span><span class="c1">;</span>
-}
+</ul>
+<p>::: jeśli funkcja jedynie zwraca to można pominąć instrukcję <code>return</code> - tzw. domniemany zwrot/return :::</p>
+<p>::: można również pominąć <code>{}</code> w przypadku gdy istnieje tylko jedna linia kodu :::</p>
+<div class="highlight"><pre><span></span><code>    <span class="nv">const</span> <span class="nv">multiply</span> <span class="o">=</span> <span class="nv">function</span><span class="ss">(</span><span class="nv">a</span><span class="ss">)</span> {
+        <span class="k">return</span> <span class="nv">a</span> <span class="o">*</span> <span class="nv">a</span><span class="c1">;</span>
+    }
 
-<span class="nv">const</span> <span class="nv">multiply</span> <span class="o">=</span> <span class="nv">a</span> <span class="o">=&gt;</span> <span class="nv">a</span> <span class="o">*</span> <span class="nv">a</span><span class="c1">;</span>
+    <span class="nv">const</span> <span class="nv">multiply</span> <span class="o">=</span> <span class="nv">a</span> <span class="o">=&gt;</span> <span class="nv">a</span> <span class="o">*</span> <span class="nv">a</span><span class="c1">;</span>
+
+    <span class="nv">const</span> <span class="nv">waterPlant</span> <span class="o">=</span> <span class="nv">day</span> <span class="o">=&gt;</span> <span class="nv">day</span> <span class="o">===</span> <span class="s1">&#39;</span><span class="s">Tuesday</span><span class="s1">&#39;</span> ? <span class="nv">true</span> : <span class="nv">false</span><span class="c1">;</span>
 </code></pre></div>
 
 
-</li>
+<ul>
 <li>
 <p>jeżeli funkcja zwraca jedną instrukcję można pominąć klamry</p>
 <div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">multiply</span> <span class="o">=</span> <span class="ss">(</span><span class="nv">a</span>,<span class="nv">b</span><span class="ss">)</span> <span class="o">=&gt;</span> {

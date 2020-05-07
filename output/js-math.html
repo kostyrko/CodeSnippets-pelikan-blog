@@ -49,13 +49,13 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Math jest wbudowanym obiektem (najwyższego poziomu), który posiada właściwości i metody związane z metodami stałymi i matematycznymi. Math.Pi - właściwość (jedna z wielu) - pozwala odwołać się do wartości Pi (ok. 3.14159) Metody (wybrane): Math.random() - zwraca liczbę pseudolosową z przedziału [0,1) Math.ceil() - zwraca najmniejszą liczbę całkowitą większą …" />
+<meta name="description" content="Math jest wbudowanym obiektem (najwyższego poziomu), który posiada właściwości i metody związane z metodami stałymi i matematycznymi. Math.Pi - właściwość (jedna z wielu) - pozwala odwołać się do wartości Pi (ok. 3.14159) Metody (wybrane): Math.random() - zwraca liczbę pseudolosową z przedziału [0,1) ::: aby uzyskać liczbę pomiędzy 1-20 należy pomnożyć …" />
 <meta name="keywords" content="javascript, js, math, obiekt math, object">
 
 
 <meta property="og:site_name" content="...z frontu"/>
 <meta property="og:title" content="JavaScript - obiekt Math"/>
-<meta property="og:description" content="Math jest wbudowanym obiektem (najwyższego poziomu), który posiada właściwości i metody związane z metodami stałymi i matematycznymi. Math.Pi - właściwość (jedna z wielu) - pozwala odwołać się do wartości Pi (ok. 3.14159) Metody (wybrane): Math.random() - zwraca liczbę pseudolosową z przedziału [0,1) Math.ceil() - zwraca najmniejszą liczbę całkowitą większą …"/>
+<meta property="og:description" content="Math jest wbudowanym obiektem (najwyższego poziomu), który posiada właściwości i metody związane z metodami stałymi i matematycznymi. Math.Pi - właściwość (jedna z wielu) - pozwala odwołać się do wartości Pi (ok. 3.14159) Metody (wybrane): Math.random() - zwraca liczbę pseudolosową z przedziału [0,1) ::: aby uzyskać liczbę pomiędzy 1-20 należy pomnożyć …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-math.html"/>
 <meta property="og:type" content="article"/>
@@ -144,6 +144,11 @@
 <p><code>Math.Pi</code> - właściwość (jedna z wielu) - pozwala odwołać się do wartości Pi (ok. 3.14159)</p>
 <h3>Metody (wybrane):</h3>
 <p><code>Math.random()</code> - zwraca liczbę pseudolosową z przedziału [0,1)</p>
+<p>::: aby uzyskać liczbę pomiędzy 1-20 należy pomnożyć wynik Math.random() * 20 i dodać do tego 1 :::</p>
+<div class="highlight"><pre><span></span><code>  <span class="nv">let</span> <span class="nv">val</span> <span class="o">=</span> <span class="nv">Math</span>.<span class="nv">floor</span><span class="ss">(</span><span class="nv">Math</span>.<span class="k">random</span><span class="ss">()</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">+</span><span class="mi">1</span><span class="ss">)</span> <span class="o">//</span> <span class="nv">Math</span>.<span class="nv">floor</span> <span class="nv">aby</span> <span class="nv">uzyska</span>ć <span class="nv">ca</span>ł<span class="nv">kowit</span>ą <span class="nv">zaokr</span>ą<span class="nv">glon</span>ą <span class="k">do</span> <span class="nv">do</span>ł<span class="nv">u</span>
+</code></pre></div>
+
+
 <p><code>Math.ceil()</code> - zwraca najmniejszą liczbę całkowitą większą do lub równą danej</p>
 <div class="highlight"><pre><span></span><code>  <span class="n">Math</span><span class="p">.</span><span class="n">ceil</span><span class="p">(.</span><span class="mi">95</span><span class="p">);</span>   <span class="o">//</span> <span class="mi">1</span>
   <span class="n">Math</span><span class="p">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>     <span class="o">//</span> <span class="mi">4</span>
