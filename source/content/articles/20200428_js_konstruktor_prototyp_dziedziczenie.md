@@ -175,6 +175,31 @@ aby tego uniknąć można zadeklarować funkcję po za konstruktorem, wówczas z
             return Math.abs(ageDate.getUTCFullYear() - 1970);
       }
 
+Standard ES6 wprowadza również możliwość zadeklarowania klasy, której skutek będzie zbliżony
+
+      class Droid {
+            constructor(name, constDate) {
+                  this.name = name;
+                  this.constDate = constDate
+            }
+
+            showName() {
+                  return `Hello ${this.name}`
+            }
+      }
+
+      const c3po = new Droid('c3po', '2222')
+
+      console.log(c3po)
+
+      >> Droid {name: "c3po", constDate: "2222"}
+            constDate: "2222"
+            name: "c3po"
+                  __proto__:
+                  constructor: class Droid
+                  showName: ƒ showName()
+                  __proto__: Object
+
 ---
 
 ### Dziedziczenie
@@ -204,9 +229,10 @@ aby zapewnić dziedziczenie prototypie należy to zaznaczyć w innym przypadku n
 
       Droid.prototype = Object.create(Robot.prototype)
 
-**Object.create - metoda, która pozwala na przekazanie dziedziczenia prototypu, ta może być nadpisana nową metodą o tej samej nazwie**
+**Object.create - metoda, która pozwala na przekazanie dziedziczenia prototypu, te mogą być nadpisana nową metodą o tej samej nazwie.**
+**Ta metoda tworzy nowy obiekt, korzystając z istniejących obiektów jako jej prototypu stąd:**
 
-Definiuje używanie konstruktora z Droida a nie dziedziczonego
+Należy zdefiniować używanie konstruktora z Droida, w innym przypadku zostanie on odziedziczony
 
       Droid.prototype.constructor = Droid;
 

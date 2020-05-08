@@ -184,17 +184,15 @@ Dodanie wygenerowanego elementu do innego
 
     document.querySelector('ul').appendChild(li)
 
-`.insertBefore(nowyElement, dziecko)` - wstawienie nowego elementu przed wybranym dzieckiem
+.insertBefore(nowyElement, dziecko)
 
-
+.replace(nowyElement, dziecko)
 
 ### Usuwanie i wymiana elementów
 
 Zmiana elementu odbywa się na rodzicu
 
-`.replaceChild(nowyElement, staryElementDziecko)` - wymiana elementu
-
-`.replace(nowyElement, dziecko)` - zamiana wybranego dziecka na inny element
+`.replaceChild(nowyElement, staryElement)` - wymiana elementu
 
 Przykładowy ciąg zdarzeń
 
@@ -211,7 +209,6 @@ Przykładowy ciąg zdarzeń
     parentDiv.replaceChild(newTitle,oldTitle)
 
 `.remove()` - usuwa podany element
-
 `.removeChild()` - usuwa dziecko podanego elementu
 
     const listItems = document.querySelectorAll('li')
@@ -259,4 +256,4 @@ Zmiana klasy i atrybutu
 
 Źródła:
 
-https://developer.mozilla.org/en-US/do
+https://developer.mozilla.org/en-US/docs/Web/API/NodeList
