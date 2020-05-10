@@ -143,11 +143,11 @@ Przykładowe zastosowanie
 
 `.nextSibling` - kolejne rodzeństwo będące węzłem
 
-`.nextSiblingElement` - kolejne rodzeństwo będące elementem
+`.nextElementSibling` - kolejne rodzeństwo będące elementem
 
 `.perviousSibling` - poprzedzające rodzeństwo będące węzłem
 
-`.previousSiblingElement` - poprzedzające rodzeństwo będące elementem // jak w innych przypadkach zwraca `null` w przypadku braku
+`.previousElementSibling` - poprzedzające rodzeństwo będące elementem // jak w innych przypadkach zwraca `null` w przypadku braku
 
 ### Tworzenie elementów
 
