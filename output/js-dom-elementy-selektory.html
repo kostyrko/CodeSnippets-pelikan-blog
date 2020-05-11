@@ -287,6 +287,11 @@
 </code></pre></div>
 
 
+<p><code>.cloneNode(true)</code> lub <code>.cloneNode(deep)</code> - klonowanie elementu</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">div2</span> <span class="o">=</span> <span class="n">div1</span><span class="p">.</span><span class="n">cloneNode</span><span class="p">(</span><span class="n">deep</span><span class="p">)</span>
+</code></pre></div>
+
+
 <p>Dodawanie klas, id i atrybutów</p>
 <div class="highlight"><pre><span></span><code><span class="n">li</span><span class="p">.</span><span class="n">className</span> <span class="o">=</span> <span class="s1">&#39;list-item&#39;</span> <span class="o">//</span> <span class="n">można</span> <span class="n">również</span> <span class="n">dodać</span> <span class="n">id</span> <span class="n">w</span> <span class="n">podobny</span> <span class="n">sposób</span>
 
@@ -315,9 +320,11 @@ li.appendChild(link)
 </code></pre></div>
 
 
+<p><code>.insertBefore(nowyElement, dziecko)</code> - wstawienie nowego elementu przed wybranym dzieckiem</p>
 <h3>Usuwanie i wymiana elementów</h3>
 <p>Zmiana elementu odbywa się na rodzicu</p>
-<p><code>.replaceChild(nowyElement, staryElement)</code> - wymiana elementu</p>
+<p><code>.replaceChild(nowyElement, staryElementDziecko)</code> - wymiana elementu</p>
+<p><code>.replace(nowyElement, dziecko)</code> - zamiana wybranego dziecka na inny element</p>
 <p>Przykładowy ciąg zdarzeń</p>
 <div class="highlight"><pre><span></span><code><span class="nv">const</span> <span class="nv">newTitle</span> <span class="o">=</span> <span class="nv">document</span>.<span class="nv">createElement</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">h2</span><span class="s1">&#39;</span><span class="ss">)</span><span class="c1">; //tworzymy element</span>
 
@@ -333,8 +340,8 @@ li.appendChild(link)
 </code></pre></div>
 
 
-<p><code>.remove()</code> - usuwa podany element
-<code>.removeChild()</code> - usuwa dziecko podanego elementu</p>
+<p><code>.remove()</code> - usuwa podany element</p>
+<p><code>.removeChild()</code> - usuwa dziecko podanego elementu</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">listItems</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)</span>
 
 <span class="n">listItems</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">remove</span><span class="p">()</span> <span class="o">//</span> <span class="n">usuwa</span> <span class="n">pierwszy</span> <span class="n">element</span>
@@ -378,7 +385,7 @@ li.appendChild(link)
 <p><a href="ttps://mtomchuck.github.io/monster-village/dist/">GRA</a></p>
 <hr>
 <p>Źródła:</p>
-<p>https://developer.mozilla.org/en-US/docs/Web/API/NodeList</p>
+<p>https://developer.mozilla.org/en-US/do</p>
   </div>
   <div class="tag-cloud">
     <p>

@@ -7,7 +7,7 @@ Tags: js, javascript, window, document
 Slug: js-obiekt-window-document
 related_posts: 
 
-Obiekt *document* jest częścią obiektu *window* i został opisany poniżej. Na początek poniżej przedstawię wybrane metody obiektu window (globalny)
+Obiekt *document* jest częścią obiektu *window* i został opisany poniżej. Wybrane metody obiektu window (globalny) ->
 
 ### Window
 
