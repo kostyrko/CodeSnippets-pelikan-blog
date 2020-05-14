@@ -4,12 +4,13 @@
 :root {
   --gray: #7e7e7e;
   --gray-darker: #6b6b6b;
-  --gray-darkset: #272727;
+  --gray-darkest: #272727;
   --dar-red: #a82a37;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  line-height: 1.8em;
 }
 
 main {
