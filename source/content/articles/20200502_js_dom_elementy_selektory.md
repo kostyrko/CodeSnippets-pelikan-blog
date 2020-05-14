@@ -149,11 +149,15 @@ Przykładowe zastosowanie
 
 `.previousSiblingElement` - poprzedzające rodzeństwo będące elementem // jak w innych przypadkach zwraca `null` w przypadku braku
 
+---
+
 ### Tworzenie elementów
 
 `.createElement()` - stwórz element
 
     const li = document.createElement('li')
+    li.innerText = `To jest tekst dodanego elementu`
+
 
 `.cloneNode(true)` lub `.cloneNode(deep)` - klonowanie elementu
 
@@ -168,6 +172,8 @@ Dodawanie klas, id i atrybutów
 `.appendChild()` - dodanie elementu jako dziecka dziecka
 
     li.appendChild(document.createTextNode('Hello World')) // dodanie węzła tekstowego zamkniętego pomiędzy tagami *li*
+
+    e.target.nextElementSibling.appendChild(li) // dodanie dziecka li następnego rodzeństwa elementu na którym wykonał się dany event/wydarzenie
 
 Przykładowy łańcuch zdarzeń
 
@@ -186,7 +192,7 @@ Dodanie wygenerowanego elementu do innego
 
 `.insertBefore(nowyElement, dziecko)` - wstawienie nowego elementu przed wybranym dzieckiem
 
-
+---
 
 ### Usuwanie i wymiana elementów
 
@@ -222,6 +228,12 @@ Przykładowy ciąg zdarzeń
 
     list.removeChild(listItems[0]) // usuwa pierwsze dziecko mające tag *li*
 
+Usuwanie elementu poprzez odwołanie się do rodzica
+
+    const deleteDroid = document.querySelector('#c3po')
+
+    deleteDroid.parentElement.removeChild(deleteDroid)
+
 Zmiana klasy i atrybutu
 
 `.add()` - dodaje klasę
@@ -249,6 +261,21 @@ Zmiana klasy i atrybutu
 
     link.removeAttribute('title')
 
+
+### Wydobywanie informacji
+
+`.tagName` - zwraca informację o tagu/etykiecie w formie stringa (wszystkie litery duże)
+
+    element.tagName
+
+    document.getElementById("IdOfLink").tagName;
+    >> "A"
+
+`.id` - zwraca id danego elementu
+
+    document.querySelectorAll("a")[10].id // id 11. elementu będący linkiem
+
+ w podobny sposób można uzyskać `.innerHTML` `.innerText`
 
 
 ### Ćwiczenia

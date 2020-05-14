@@ -9,7 +9,7 @@ related_posts: ubuntu-skroty-klawiszowe, ubuntu-aktualizacja-gronostaj
 
 Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) następnie Eonicznum Gronostaju (19.10) i gdy przyszedł czas na Skupioną Fossę (20.04) postanowiłem skorzystać z możliwości aktualizowania systemu - niestety w trakcie dokonywania się aktualizacji została ona przerwana w nieoczekiwany sposób, w wyniku czego system przestał się uruchamiać.
 
----
+![focal fossa](https://cdn.benchmark.pl/thumbs/uploads/article/75474/MODERNICON/5004efa885bbab2ef39843c390f113c69f5bafc4.jpg/780x0x1.jpg)
 
 ### Przerwana aktualizacja Ubuntu 20.04
 
