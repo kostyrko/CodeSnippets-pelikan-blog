@@ -145,7 +145,13 @@ Przykładowe zastosowanie
 
 `paste` - rejestruje wklejenie
 
-`input` - rejestruje każdy element związany z inputem (cut,paste,type)
+`input` - rejestruje każdy element związany z inputem (np. cut,paste,type, a także dopisanie treści)
+
+Przykładowo:
+
+    HTMLInputElementObject.addEventListener('input', function (evt) {
+      console.log(this.value);
+    });
 
 `change` - działa na <select> list - rejestruje wybór w rozwijanej liście
 
