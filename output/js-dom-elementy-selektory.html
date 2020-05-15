@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
   <script src="./tipuesearch_content.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/tango.min.css">
   
   <link
     rel="stylesheet"
@@ -281,9 +281,11 @@
 <p><code>.nextSiblingElement</code> - kolejne rodzeństwo będące elementem</p>
 <p><code>.perviousSibling</code> - poprzedzające rodzeństwo będące węzłem</p>
 <p><code>.previousSiblingElement</code> - poprzedzające rodzeństwo będące elementem // jak w innych przypadkach zwraca <code>null</code> w przypadku braku</p>
+<hr>
 <h3>Tworzenie elementów</h3>
 <p><code>.createElement()</code> - stwórz element</p>
 <div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">li</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)</span>
+<span class="n">li</span><span class="p">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="o">`</span><span class="k">To</span> <span class="n">jest</span> <span class="n">tekst</span> <span class="n">dodanego</span> <span class="n">elementu</span><span class="o">`</span>
 </code></pre></div>
 
 
@@ -301,6 +303,8 @@
 
 <p><code>.appendChild()</code> - dodanie elementu jako dziecka dziecka</p>
 <div class="highlight"><pre><span></span><code><span class="n">li</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">document</span><span class="p">.</span><span class="n">createTextNode</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">))</span> <span class="o">//</span> <span class="n">dodanie</span> <span class="n">węzła</span> <span class="n">tekstowego</span> <span class="n">zamkniętego</span> <span class="n">pomiędzy</span> <span class="n">tagami</span> <span class="o">*</span><span class="n">li</span><span class="o">*</span>
+
+<span class="n">e</span><span class="p">.</span><span class="n">target</span><span class="p">.</span><span class="n">nextElementSibling</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">li</span><span class="p">)</span> <span class="o">//</span> <span class="n">dodanie</span> <span class="n">dziecka</span> <span class="n">li</span> <span class="n">następnego</span> <span class="n">rodzeństwa</span> <span class="n">elementu</span> <span class="n">na</span> <span class="n">którym</span> <span class="n">wykonał</span> <span class="n">się</span> <span class="n">dany</span> <span class="n">event</span><span class="o">/</span><span class="n">wydarzenie</span>
 </code></pre></div>
 
 
@@ -321,6 +325,7 @@ li.appendChild(link)
 
 
 <p><code>.insertBefore(nowyElement, dziecko)</code> - wstawienie nowego elementu przed wybranym dzieckiem</p>
+<hr>
 <h3>Usuwanie i wymiana elementów</h3>
 <p>Zmiana elementu odbywa się na rodzicu</p>
 <p><code>.replaceChild(nowyElement, staryElementDziecko)</code> - wymiana elementu</p>
@@ -349,6 +354,13 @@ li.appendChild(link)
 <span class="n">list</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">)</span>
 
 <span class="n">list</span><span class="p">.</span><span class="n">removeChild</span><span class="p">(</span><span class="n">listItems</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">//</span> <span class="n">usuwa</span> <span class="n">pierwsze</span> <span class="n">dziecko</span> <span class="n">mające</span> <span class="n">tag</span> <span class="o">*</span><span class="n">li</span><span class="o">*</span>
+</code></pre></div>
+
+
+<p>Usuwanie elementu poprzez odwołanie się do rodzica</p>
+<div class="highlight"><pre><span></span><code><span class="n">const</span> <span class="n">deleteDroid</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s1">&#39;#c3po&#39;</span><span class="p">)</span>
+
+<span class="n">deleteDroid</span><span class="p">.</span><span class="n">parentElement</span><span class="p">.</span><span class="n">removeChild</span><span class="p">(</span><span class="n">deleteDroid</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -381,6 +393,21 @@ li.appendChild(link)
 </code></pre></div>
 
 
+<h3>Wydobywanie informacji</h3>
+<p><code>.tagName</code> - zwraca informację o tagu/etykiecie w formie stringa (wszystkie litery duże)</p>
+<div class="highlight"><pre><span></span><code><span class="n">element</span><span class="p">.</span><span class="n">tagName</span>
+
+<span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="ss">&quot;IdOfLink&quot;</span><span class="p">).</span><span class="n">tagName</span><span class="p">;</span>
+<span class="o">&gt;&gt;</span> <span class="ss">&quot;A&quot;</span>
+</code></pre></div>
+
+
+<p><code>.id</code> - zwraca id danego elementu</p>
+<div class="highlight"><pre><span></span><code><span class="n">document</span><span class="p">.</span><span class="n">querySelectorAll</span><span class="p">(</span><span class="ss">&quot;a&quot;</span><span class="p">)[</span><span class="mi">10</span><span class="p">].</span><span class="n">id</span> <span class="o">//</span> <span class="n">id</span> <span class="mi">11</span><span class="p">.</span> <span class="n">elementu</span> <span class="n">będący</span> <span class="n">linkiem</span>
+</code></pre></div>
+
+
+<p>w podobny sposób można uzyskać <code>.innerHTML</code> <code>.innerText</code></p>
 <h3>Ćwiczenia</h3>
 <p><a href="ttps://mtomchuck.github.io/monster-village/dist/">GRA</a></p>
 <hr>

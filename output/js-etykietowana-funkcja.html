@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
   <script src="./tipuesearch_content.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/tango.min.css">
   
   <link
     rel="stylesheet"
@@ -49,23 +49,29 @@
 <!-- End Google Analytics -->
 
 <meta name="author" content="mkostyrko" />
-<meta name="description" content="Źródła: https://codeburst.io/javascript-what-are-tag-functions-97682f29521b" />
-<meta name="keywords" content="">
+<meta name="description" content="Template strings lub też literals zwane po polsku łańcuchami szablonowymi Łańcuchy szablonowe [wcześniej wspominałem o nich w tym miejscu] pozwalają na podstawianie zmiennych wewnątrz informacji przeznaczonymi do druku i zawartymi pomiędzy apostrofami [ warto pamiętać o tym, że stosowanie tego formatu zapisu nie wymaga używania sekwencji ucieczkowej -&gt; /n] Przykładowo: const droid …" />
+<meta name="keywords" content="javascript, tag, function, funkcja, etykietowanie, tagged function">
 
 
 <meta property="og:site_name" content="...z frontu"/>
-<meta property="og:title" content="JavaScript - etykietowana funkcja"/>
-<meta property="og:description" content="Źródła: https://codeburst.io/javascript-what-are-tag-functions-97682f29521b"/>
+<meta property="og:title" content="JavaScript - etykietowanie funkcji"/>
+<meta property="og:description" content="Template strings lub też literals zwane po polsku łańcuchami szablonowymi Łańcuchy szablonowe [wcześniej wspominałem o nich w tym miejscu] pozwalają na podstawianie zmiennych wewnątrz informacji przeznaczonymi do druku i zawartymi pomiędzy apostrofami [ warto pamiętać o tym, że stosowanie tego formatu zapisu nie wymaga używania sekwencji ucieczkowej -&gt; /n] Przykładowo: const droid …"/>
 <meta property="og:locale" content="pl_PL"/>
 <meta property="og:url" content="./js-etykietowana-funkcja.html"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="2020-05-11 10:00:00+02:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="./author/mkostyrko.html">
-<meta property="article:section" content="javascript, tag, function, funkcja, etykietowanie"/>
+<meta property="article:section" content="js"/>
+<meta property="article:tag" content="javascript"/>
+<meta property="article:tag" content="tag"/>
+<meta property="article:tag" content="function"/>
+<meta property="article:tag" content="funkcja"/>
+<meta property="article:tag" content="etykietowanie"/>
+<meta property="article:tag" content="tagged function"/>
 <meta property="og:image" content="">
 
-  <title>...z frontu &ndash; JavaScript - etykietowana funkcja</title>
+  <title>...z frontu &ndash; JavaScript - etykietowanie funkcji</title>
 
 </head>
 <body>
@@ -125,28 +131,105 @@
 <article class="single">
   <header>
       
-    <h1 id="js-etykietowana-funkcja">JavaScript - etykietowana funkcja</h1>
+    <h1 id="js-etykietowana-funkcja">JavaScript - etykietowanie funkcji</h1>
     <p>
-      Opublikowano pon 11 maja 2020 w <a href="./category/javascript-tag-function-funkcja-etykietowanie.html">javascript, tag, function, funkcja, etykietowanie</a>
+      Opublikowano pon 11 maja 2020 w <a href="./category/js.html">js</a>
 
-        &#8226; 1 min read
+        &#8226; 2 min read
     </p>
   </header>
 
 
   <div>
-    <p><img alt="image" src="https://pbs.twimg.com/media/EXpDjdDWsAE9D7D?format=jpg&amp;name=large"></p>
+    <p><em>Template strings</em> lub też <em>literals</em> zwane po polsku <em>łańcuchami szablonowymi</em></p>
+<p>Łańcuchy szablonowe [wcześniej wspominałem o nich <a href="https://kostyrko.github.io/zfrontu/js-podstawowe-typy.html">w tym miejscu</a>] pozwalają na podstawianie zmiennych wewnątrz informacji przeznaczonymi do druku i zawartymi pomiędzy apostrofami [ warto pamiętać o tym, że stosowanie tego formatu zapisu nie wymaga używania sekwencji ucieczkowej -&gt; /n]</p>
+<p>Przykładowo:</p>
+<div class="highlight"><pre><span></span><code>const droid = &quot;r2d2&quot;
+const droid2 = &quot;c3po&quot;
+
+console.log(`Hello 
+<span class="cp">${</span><span class="n">droid</span><span class="cp">}</span>, 
+<span class="cp">${</span><span class="n">droid2</span><span class="cp">}</span>`)
+
+&gt;&gt;Hello 
+&gt;&gt;r2d2, 
+&gt;&gt;c3po
+</code></pre></div>
+
+
+<p>Funkcje mogą być również wywołane poprzez zastosowania <code>łańcucha szablonów</code> tzw <code>tag functions</code> - wówczas części tego łańcucha nie odwołujące się do zmiennych mogą być traktowane jako tablica (podzielona w miejscach gdzie znajdują się zmienne), która musi być  zawarta jako argument</p>
+<div class="highlight"><pre><span></span><code><span class="nv">function</span> <span class="nv">droidGreeter</span> <span class="ss">(</span><span class="nv">strings</span>, <span class="nv">droidName</span><span class="ss">)</span> {
+<span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">strings</span>[<span class="mi">0</span>] <span class="o">+</span> <span class="nv">droidName</span> <span class="o">+</span> <span class="nv">strings</span>[<span class="mi">1</span>]<span class="ss">)</span>
+<span class="k">return</span> <span class="nv">droidName</span> <span class="o">+</span> <span class="nv">strings</span>[<span class="mi">0</span>]
+}<span class="c1">;</span>
+
+<span class="nv">const</span> <span class="nv">droid</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="s">c3po</span><span class="s1">&#39;</span><span class="c1">;</span>
+
+<span class="nv">console</span>.<span class="nv">log</span><span class="ss">(</span><span class="nv">droidGreeter</span>` <span class="nv">I</span> <span class="nv">am</span> ${<span class="nv">droid</span>} <span class="o">-</span> <span class="nv">and</span> <span class="nv">you</span>? `<span class="ss">)</span><span class="c1">; // array strings = [&#39; I am &#39;, &#39; - and you? &#39;]</span>
+
+<span class="o">&gt;&gt;</span>  <span class="nv">I</span> <span class="nv">am</span> <span class="nv">c3po</span> <span class="o">-</span> <span class="nv">and</span> <span class="nv">you</span>?
+<span class="o">&gt;&gt;</span> <span class="nv">c3po</span> <span class="nv">I</span> <span class="nv">am</span>
+</code></pre></div>
+
+
+<p>W ten sposób można tworzyć instancje różnego rodzaju informacji wynikowych przy pomocy jednej funkcji</p>
+<div class="highlight"><pre><span></span><code>const droids = [
+  {name: &#39;C3PO&#39;, height: &#39;1.71&#39;},
+  {name: &#39;R2D2&#39;, height: &#39;1.09&#39;},
+  {name: &#39;BB8&#39;, height: &#39;0.67&#39;},
+  {name: &#39;L3-37&#39;, height: &#39;1.79&#39;},
+  {name: &#39;K-2SO&#39;, height: &#39;2.16&#39;}
+]
+
+function showSpecs (arr, n, h) {
+  console.log(arr[0] + n + arr[1] + h + arr[2])
+}
+
+showSpecs`This <span class="cp">${</span><span class="n">droids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="cp">}</span> is <span class="cp">${</span><span class="n">droids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">height</span><span class="cp">}</span>`
+
+&gt;&gt; This R2D2 is 1.09
+
+showSpecs`This droid&#39;s name is <span class="cp">${</span><span class="n">droids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="cp">}</span> and he is <span class="cp">${</span><span class="n">droids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">height</span><span class="cp">}</span> m high`
+
+&gt;&gt; This droid&#39;s name is R2D2 and he is 1.09 m high
+
+droids.forEach(function(droids){
+  showSpecs`This <span class="cp">${</span><span class="n">droids</span><span class="o">.</span><span class="n">name</span><span class="cp">}</span> is <span class="cp">${</span><span class="n">droids</span><span class="o">.</span><span class="n">height</span><span class="cp">}</span> high`; 
+})
+
+&gt;&gt; This C3PO is 1.71 high
+&gt;&gt; This R2D2 is 1.09 high
+&gt;&gt; This BB8 is 0.67 high
+&gt;&gt; This L3-37 is 1.79 high
+&gt;&gt; This K-2SO is 2.16 high
+</code></pre></div>
+
+
+<p>Patrz również <a href="https://playcode.io/602318">tutaj</a> aby popracować na powyższej funkcji w edytorze i konsoli online</p>
+<p><img alt="image" src="https://pbs.twimg.com/media/EXpDjdDWsAE9D7D?format=jpg&amp;name=large"></p>
 <hr>
 <p>Źródła:
 https://codeburst.io/javascript-what-are-tag-functions-97682f29521b</p>
   </div>
   <div class="tag-cloud">
     <p>
+      <a href="./tag/javascript.html">javascript</a>
+      <a href="./tag/tag.html">tag</a>
+      <a href="./tag/function.html">function</a>
+      <a href="./tag/funkcja.html">funkcja</a>
+      <a href="./tag/etykietowanie.html">etykietowanie</a>
+      <a href="./tag/tagged-function.html">tagged function</a>
     </p>
   </div>
 
 
 
+  <div class="related-posts">
+    <h4>Zobacz także</h4>
+    <ul class="related-posts">
+      <li><a href="./js-podstawowe-typy.html">JavaScript - składnia, deklaracje i podstawowe typy danych oraz ich operatory</a></li>
+    </ul>
+  </div>
 
 
 <!-- Disqus -->

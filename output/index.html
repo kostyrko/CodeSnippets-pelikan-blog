@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
   <script src="./tipuesearch_content.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/tango.min.css">
   
   <link
     rel="stylesheet"
@@ -118,19 +118,42 @@
 
 <article>
   <header>
-    <h2><a href="./js-etykietowana-funkcja.html">JavaScript - etykietowana funkcja</a></h2>
+    <h2><a href="./ubuntu-aktualizacja-fossa.html">Ubuntu - zamiana gronostaja na fossę - przerwana aktualizacja</a></h2>
     <p>
-      Opublikowano pon 11 maja 2020 w <a href="./category/javascript-tag-function-funkcja-etykietowanie.html">javascript, tag, function, funkcja, etykietowanie</a>
+      Opublikowano wto 12 maja 2020 w <a href="./category/ubuntu.html">ubuntu</a>
 
-
+          &#8226; Tagi: 
+              <a href="./tag/linux.html">linux</a>,              <a href="./tag/ubuntu.html">ubuntu</a>,              <a href="./tag/aktualizacja.html">aktualizacja</a>,              <a href="./tag/ciemny-motyw.html">ciemny motyw</a>,              <a href="./tag/ubuntu-1910.html">ubuntu 19.10</a>,              <a href="./tag/ubuntu-2004.html">ubuntu 20.04</a>
         &#8226; 1 min read
     </p>
   </header>
   <div>
-      <p><img alt="image" src="https://pbs.twimg.com/media/EXpDjdDWsAE9D7D?format=jpg&amp;name=large"></p>
-<hr>
-<p>Źródła:
-https://codeburst.io/javascript-what-are-tag-functions-97682f29521b</p>
+      <p>Do tej pory pracowałem na Bionicznym Bobrze (Ubuntu 18.04) następnie Eonicznum Gronostaju (19.10) i gdy przyszedł czas na Skupioną Fossę (20.04) postanowiłem skorzystać z możliwości aktualizowania systemu - niestety w trakcie dokonywania się aktualizacji została ona przerwana w nieoczekiwany sposób, w wyniku czego system przestał się uruchamiać.</p>
+<p><img alt="focal fossa" src="https://cdn.benchmark.pl/thumbs/uploads/article/75474/MODERNICON/5004efa885bbab2ef39843c390f113c69f5bafc4.jpg/780x0x1.jpg"></p>
+<h3>Przerwana …</h3>
+        <br>
+        <a class="btn" href="./ubuntu-aktualizacja-fossa.html">Czytaj dalej</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./js-etykietowana-funkcja.html">JavaScript - etykietowanie funkcji</a></h2>
+    <p>
+      Opublikowano pon 11 maja 2020 w <a href="./category/js.html">js</a>
+
+          &#8226; Tagi: 
+              <a href="./tag/javascript.html">javascript</a>,              <a href="./tag/tag.html">tag</a>,              <a href="./tag/function.html">function</a>,              <a href="./tag/funkcja.html">funkcja</a>,              <a href="./tag/etykietowanie.html">etykietowanie</a>,              <a href="./tag/tagged-function.html">tagged function</a>
+        &#8226; 2 min read
+    </p>
+  </header>
+  <div>
+      <p><em>Template strings</em> lub też <em>literals</em> zwane po polsku <em>łańcuchami szablonowymi</em></p>
+<p>Łańcuchy szablonowe [wcześniej wspominałem o nich <a href="https://kostyrko.github.io/zfrontu/js-podstawowe-typy.html">w tym miejscu</a>] pozwalają na podstawianie zmiennych wewnątrz informacji przeznaczonymi do druku i zawartymi pomiędzy apostrofami [ warto pamiętać o tym, że stosowanie tego formatu zapisu nie wymaga używania sekwencji ucieczkowej -&gt; /n]</p>
+<p>Przykładowo:</p>
+<div class="highlight"><pre><span></span><code>const droid …</code></pre></div>
+        <br>
+        <a class="btn" href="./js-etykietowana-funkcja.html">Czytaj dalej</a>
   </div>
   <hr />
 </article>
@@ -624,32 +647,6 @@ Wszystkie metody łańcucha zwracają nową wartość nie zmieniając oryginalne
 <p><code>charAt()</code> - zwraca …</p>
         <br>
         <a class="btn" href="./js-metody-lancucha-znakow.html">Czytaj dalej</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./js-konwersja-typow.html">JavaScript - konwersja/translacja pomiędzy numbers i string</a></h2>
-    <p>
-      Opublikowano pią 10 kwietnia 2020 w <a href="./category/javascript.html">javascript</a>
-
-          &#8226; Tagi: 
-              <a href="./tag/javascript.html">javascript</a>,              <a href="./tag/js.html">js</a>,              <a href="./tag/string.html">string</a>,              <a href="./tag/lancuch-znakow.html">łańcuch znaków</a>,              <a href="./tag/metody.html">metody</a>
-        &#8226; 2 min read
-    </p>
-  </header>
-  <div>
-      <p>W przy pomocy metod istnieje możliwość wymuszenia konwersji różnego typu danych (boolean, string, numbers)</p>
-<p>W ten sposób można przekształcić <strong>boolean lub number w string</strong></p>
-<p><strong> Konwersja na string</strong> <code>String()</code>, <code>x.toString()</code></p>
-<div class="highlight"><pre><span></span><code><span class="n">String</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>        <span class="o">//</span> <span class="s1">&#39;123&#39;</span>
-<span class="n">String</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="p">)</span>      <span class="o">//</span> <span class="s1">&#39;-12.3&#39;</span>
-<span class="n">String</span><span class="p">(</span><span class="k">null</span><span class="p">)</span>       <span class="o">//</span> <span class="s1">&#39;null&#39;</span>
-<span class="n">String</span><span class="p">(</span><span class="n">undefined</span><span class="p">)</span>  <span class="o">//</span> <span class="s1">&#39;undefined&#39;</span>
-<span class="n">String</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>       <span class="o">//</span> <span class="s1">&#39;true&#39;</span>
-<span class="n">String</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>      <span class="o">//</span> <span class="s1">&#39;false …</span></code></pre></div>
-        <br>
-        <a class="btn" href="./js-konwersja-typow.html">Czytaj dalej</a>
   </div>
 </article>
 

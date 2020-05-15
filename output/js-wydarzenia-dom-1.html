@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./theme/tipuesearch/tipuesearch.css" />
   <script src="./tipuesearch_content.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/sas.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/tango.min.css">
   
   <link
     rel="stylesheet"
@@ -247,7 +247,14 @@ function runEvent(e){
 <p><code>blur</code> - kliknięcie po za element (eliminacja focusa)</p>
 <p><code>cut</code> - rejestruje wycięcie treści</p>
 <p><code>paste</code> - rejestruje wklejenie</p>
-<p><code>input</code> - rejestruje każdy element związany z inputem (cut,paste,type)</p>
+<p><code>input</code> - rejestruje każdy element związany z inputem (np. cut,paste,type, a także dopisanie treści)</p>
+<p>Przykładowo:</p>
+<div class="highlight"><pre><span></span><code><span class="n">HTMLInputElementObject</span><span class="p">.</span><span class="n">addEventListener</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="n">evt</span><span class="p">)</span> <span class="err">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">value</span><span class="p">);</span>
+<span class="err">}</span><span class="p">);</span>
+</code></pre></div>
+
+
 <p><code>change</code> - działa na <select> list - rejestruje wybór w rozwijanej liście</p>
 <p><code>resieze</code> - zmiana okna</p>
 <p><strong>touch</strong> -&gt; <code>touchstart</code>, <code>touchmove</code>, <code>touchend</code>,
