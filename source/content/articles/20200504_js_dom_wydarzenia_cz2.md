@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-05-04 11:00
 Updated:
 Category: javascript
-Tags: dom, js, javascript, dom, events, propagacja wydarzenia, selectors
+Tags: dom, js, javascript, dom, events, propagacja, propagacja wydarzenia, selectors
 Slug: js-wydarzenia-dom-2
 related_posts: js-dom-elementy-selektory, js-obiekt-window-document
 

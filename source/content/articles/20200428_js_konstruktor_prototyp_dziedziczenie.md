@@ -5,7 +5,7 @@ Updated:
 Category: javascript
 Tags: javascript, js
 Slug: js-konstruktor-prototyp-dziedziczenie
-related_posts: js-this
+related_posts: js-this, js-klasy
 
 Funkcja konstruktora pozwala na stworzenie wielu obiektów według zdefiniowanego schematu, który jest nazywany prototypem
 

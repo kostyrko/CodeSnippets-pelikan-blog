@@ -73,6 +73,16 @@ Obiekt event zawiera zbiór informacji na temat wydarzenia, do którego doszło 
 
 ### Typy wydarzeń
 
+#### Document
+
+`DOMContentLoaded` - nasłuchuje przeładowania przeglądarki
+
+Przykładowe zastosowanie / w momencie przeładowania przeglądarki (załadowania DOM) dodaj klasę 'd-none' do listy klas elementu input
+
+  document.addEventListener('DOMContentLoaded', function () {
+  input.classList.add('d-none');
+  });
+
 #### Mysz
 
 `click` - pojedyncze kliknięcie
@@ -110,6 +120,8 @@ Przykładowe zastosowanie
     }
 
 `submit` - nasłuchuje wysłania formularza // często używany z preventDefault() - aby powstrzymać przed domyślną akcją wywołaną przez dany element
+
+`reset` - wywoływane przy zresetowaniu formularza
 
 `.value` - zwraca wartość wpisaną w formularz, pozwala również nadać wartość domyślną formularzowi np. po wykonanym przesłaniu
 

@@ -64,17 +64,32 @@ Zwracają kolekcję HTML (HTML Collection) albo node-list
 |---|---|---|
 | `document.getElementsByClassName()` | zwraca wiele elementów na podstawie podanej nazwy klasy w postaci kolekcji html | `document.getElementsByClassName('buttons')` |
 | `document.getElementsByTagName()` | zwraca wiele elementów na podstawie podanego tagu w postaci kolekcji html | `document.getElementsTagName('li')` |
-| `document.querySelectorAll()` | zwraca wszystkie element spełniający podany warunek/składnia CSS jako NodeList | `document.querySelectorAll('ul.list li.list-item')` |
+| `document.querySelectorAll()` | zwraca wszystkie element spełniający podany warunek/składnia CSS/ **zwraca NodeList **| `document.querySelectorAll('ul.list li.list-item')` |
+
+---
+
+**`document.querySelectorAll()` zwraca NodeList a nie HTML collection**
+**::: NodeList nie wymaga konwersji ponieważ ma metodę forEach() :::**
+
+---
+
+w innym przypadku wymagana jest konwersja aby móc dokonać iteracji...
 
 **::: Konwersja HTML collection :::**
 
-    let arr = Array.from(document.getElementsTagName('li'))
+Wykorzystujące metodę przypisaną do tablic
+
+    let arr = Array.from(document.getElementsByTagName('li'))
+
+Albo poprzez użycie tzw `spread operatora`
+
+    let arr = [...document.getElementsByTagName('li')]
 
     arr.forEach(function(elem, index){
       console.log(index, elem.className);
     });
 
-**::: NodeList nie wymaga konwersji ponieważ ma metodę forEach() :::**
+
 
 `document.querySelectorAll('li:nth-child(odd)')` - co 2. element listy, każde parzyste dziecko będące li - aby nadać styl należy użyć pętli `for` lub `forEach`
 
@@ -84,7 +99,7 @@ Zwracają kolekcję HTML (HTML Collection) albo node-list
       elem.style.background = 'red'
     });
 
-Lub (działa również dla kolekcji html)
+Lub (działa również dla kolekcji html/ HTML collection)
   
     for(let i = 0; i < oddItem.length; i++ ) {
       oddItem[i].style.background = 'red'
@@ -95,6 +110,9 @@ Przykładowe zastosowanie
 `document.getElementsByClassName('buttons')[3].style.color= 'red'` - zmieni 4 zwrócony element na czerwono
 
 'document.querySelector('ul').getElementsByClassName('list-item') - zwróć wszystkie elementy mające klasę *list-item* będące się w elemencie *ul*
+
+
+---
 
 
 ### Przechodzenie pomiędzy elementami DOM
@@ -150,132 +168,6 @@ Przykładowe zastosowanie
 `.previousSiblingElement` - poprzedzające rodzeństwo będące elementem // jak w innych przypadkach zwraca `null` w przypadku braku
 
 ---
-
-### Tworzenie elementów
-
-`.createElement()` - stwórz element
-
-    const li = document.createElement('li')
-    li.innerText = `To jest tekst dodanego elementu`
-
-
-`.cloneNode(true)` lub `.cloneNode(deep)` - klonowanie elementu
-
-    const div2 = div1.cloneNode(deep)
-
-Dodawanie klas, id i atrybutów
-
-    li.className = 'list-item' // można również dodać id w podobny sposób
-
-    li.setAttribute('title', 'New Item')
-
-`.appendChild()` - dodanie elementu jako dziecka dziecka
-
-    li.appendChild(document.createTextNode('Hello World')) // dodanie węzła tekstowego zamkniętego pomiędzy tagami *li*
-
-    e.target.nextElementSibling.appendChild(li) // dodanie dziecka li następnego rodzeństwa elementu na którym wykonał się dany event/wydarzenie
-
-Przykładowy łańcuch zdarzeń
-
-    const link = document.createElement('a')
-
-    link.className = 'nav-link'
-
-    link.innerHTML = '<i class=fa fa-remove></i>'
-
-    li.appendChild(link)
-
-
-Dodanie wygenerowanego elementu do innego
-
-    document.querySelector('ul').appendChild(li)
-
-`.insertBefore(nowyElement, dziecko)` - wstawienie nowego elementu przed wybranym dzieckiem
-
----
-
-### Usuwanie i wymiana elementów
-
-Zmiana elementu odbywa się na rodzicu
-
-`.replaceChild(nowyElement, staryElementDziecko)` - wymiana elementu
-
-`.replace(nowyElement, dziecko)` - zamiana wybranego dziecka na inny element
-
-Przykładowy ciąg zdarzeń
-
-    const newTitle = document.createElement('h2'); //tworzymy element
-
-    newTitle.id = 'title-id' // nadajemu mu id
-
-    newTitle.appendChild(document.createTextNode('Nowy tytuł')) // dodajemy do niego tekst
-
-    const oldTitle = document.getElementById('title-id'); // "złapanie" elementu podlegającego wymianie
-
-    const parentDiv = document.querySelector('div.nav-bar') // "złapanie rodzica"
-
-    parentDiv.replaceChild(newTitle,oldTitle)
-
-`.remove()` - usuwa podany element
-
-`.removeChild()` - usuwa dziecko podanego elementu
-
-    const listItems = document.querySelectorAll('li')
-
-    listItems[0].remove() // usuwa pierwszy element
-
-    list = document.querySelectorAll('ul')
-
-    list.removeChild(listItems[0]) // usuwa pierwsze dziecko mające tag *li*
-
-Usuwanie elementu poprzez odwołanie się do rodzica
-
-    const deleteDroid = document.querySelector('#c3po')
-
-    deleteDroid.parentElement.removeChild(deleteDroid)
-
-Zmiana klasy i atrybutu
-
-`.add()` - dodaje klasę
-`.remove()` - usuwa klasę
-
-    const link = document.querySelector('li:first-child').children[0]
-
-    let classLink = link.className //zwraca klasy w postaci stringu
-
-    let listOfClasses = link.classList // zwracam listę klas w postaci DOMTokenList - zbliżone do tablicy - posiada indeksy
-
-    link.classList.add('second-class') // dodaje klasę
-
-    link.classList.remove('second-class') // usuwa klasę
-
-`.setAttribute(atrybut, jego właściwość)` - pozwala na zdefiniowanego atrybutu
-
-    link.getAttribute('href') //złap atrybutem
-
-    link.setAttribute('href','http://google.com') // dodaj atrybut i jego właściwość
-
-    link.hassAttribute('title') // zwraca true albo false jeśli taki posiada lub nie
-
-`.removeAttribute()` - usuwa atrybut
-
-    link.removeAttribute('title')
-
-
-### Wydobywanie informacji
-
-`.tagName` - zwraca informację o tagu/etykiecie w formie stringa (wszystkie litery duże)
-
-    element.tagName
-
-    document.getElementById("IdOfLink").tagName;
-    >> "A"
-
-`.id` - zwraca id danego elementu
-
-    document.querySelectorAll("a")[10].id // id 11. elementu będący linkiem
-
- w podobny sposób można uzyskać `.innerHTML` `.innerText`
 
 
 ### Ćwiczenia

@@ -1,18 +1,28 @@
 Title: JavaScript i trzykropek (...)
 Author: mkostyrko
-Date: 2020-04-21 10:00
+Date: 2020-05-21 10:00
 Updated:
 Category: javascript
 Tags: javascript, js, array
 Slug: js-prototypy
 related_posts: js-podstawowe-typy, js-tablice
 
+---
+**In statu nascendi**
+---
+
 Składnia rozwinięcie (ang. spread sytnax) - pozwala na rozwinięcie wyrażenia iterowalnego (wielokorotnie powtarzalnego/przejściowego)
 gdzie oczekiwane jest zero lub więcej argumentów.
 
 Ostatni wpisany parametr z listy i będzie przypisany jako domyślny dla wszystkich
 
+### Spread Operator
 
+Przykładowo pozwala na stworzenie tablicy z elementów zbliżonych do tablicy
+
+  let arr = [...HTML-collection]
+
+### Rest operator
 
 Źródła:
 
