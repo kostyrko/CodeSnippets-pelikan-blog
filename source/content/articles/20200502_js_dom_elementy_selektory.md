@@ -90,7 +90,6 @@ Albo poprzez użycie tzw `spread operatora`
     });
 
 
-
 `document.querySelectorAll('li:nth-child(odd)')` - co 2. element listy, każde parzyste dziecko będące li - aby nadać styl należy użyć pętli `for` lub `forEach`
 
     const oddItem = document.querySelectorAll('li:nth-child(odd)')
@@ -111,9 +110,7 @@ Przykładowe zastosowanie
 
 'document.querySelector('ul').getElementsByClassName('list-item') - zwróć wszystkie elementy mające klasę *list-item* będące się w elemencie *ul*
 
-
 ---
-
 
 ### Przechodzenie pomiędzy elementami DOM
 

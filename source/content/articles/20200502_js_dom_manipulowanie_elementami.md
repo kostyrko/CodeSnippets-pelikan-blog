@@ -8,6 +8,22 @@ Slug: js-dom-manipulowanie-elementami
 related_posts: js-dom-elementy-selektory
 
 
+### DOMContentLoaded
+
+Na początek warto pamiętać o wydarzeniu `DOMContentLoaded` - nasłuchuje przeładowania przeglądarki -> pozwala na wywołanie funkcji zmieniającej elementy DOM w momencie załadowania całości drzewa DOM (jest to istotne w momencie gdy plik zawierający skrypt js jest podlinkowany w <head> zamiast po </body>)
+
+Przykładowe zastosowanie "zamknięcie" zmian w bloku/funkcji -> w momencie przeładowania przeglądarki (załadowania DOM) dodaj klasę 'd-none' do listy klas elementu input
+
+    document.addEventListener('DOMContentLoaded', function () {
+    input.classList.add('d-none');
+    });
+
+Zamiast ("gołej" opcji, która nie daje gwarancji powodzenia w momencie kiedy js jest podlinkowany na początku): 
+    
+    input.classList.add('d-none');
+
+---
+
 ### Tworzenie elementów DOM
 
 `.createElement()` - stwórz element
