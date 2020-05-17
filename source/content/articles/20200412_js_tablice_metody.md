@@ -163,11 +163,11 @@ Wyliczanie sumy tablicy (dla każdego elementu dodaj go do akumulatora, który p
           return acc + element
       }, 0) // wartość początkowa akumulatora
 
-Wyliczanie średniej tablicy
+Wyliczanie średniej tablicy 
 
     let arr = [1,2,3]
 
-    const arrAvg = arr = arr.reduce((a,b) => a + b, 0) / arr.length
+    const arrAvg = arr = arr.reduce((a,b) => a + b, 0) / arr.length // ES6
 
     let arr = [1,2,3]
 
