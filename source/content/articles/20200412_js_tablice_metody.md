@@ -32,9 +32,7 @@ Dodawanie wartości do tablicy
     arr.push(1,null,'push')
     arr.unshift(0)
 
-**`concat`** - [od concatenate] zwraca nową tablicę, która zawiera wszystkie elementy tablicy, na której zostałą zastosowana metoda oraz podanych argumentów
-
-::: tablica nie jest modyfikowana :::
+**`concat`** - [od concatenate] zwraca nową tablicę, która zawiera wszystkie elementy tablicy, na której zostałą zastosowana metoda oraz podanych argumentów :::tablica wyjściowa NIE ulega modyfikacji:::
 
     arr.concat(2,'concatenate')
 
@@ -43,9 +41,15 @@ Dodawanie wartości do tablicy
     console.log(arr)
     > [0,1,2,3,4,1,null,"push"]
 
-**`pop`** i **`shift`** - usuwa i zwraca ostatni/pierwszy element tablicy
+Pozwala na łączenie ze sobą 2 tablic
 
-:::tablica ulega modyfikacji:::
+    const arr1 = [1,2,3]
+    const arr2 = [4,5,6]
+    let arr3 = arr1.concat(arr1)
+    console.log(arr3)
+    >> Array [1,2,3,4,5,6]
+
+**`pop`** i **`shift`** - usuwa i zwraca ostatni/pierwszy element tablicy :::tablica ulega modyfikacji:::
 
     arr.pop()
     >> push
@@ -57,9 +61,7 @@ Dodawanie wartości do tablicy
     > 1
 
 
-**`splice`** - usuwa obiekt z tablicy na podstawie pozycji/indeksu tworząc z niego nową tablicę (może przyjąć więcej niż jeden argument, tworząc ich zakres)
-
-:::tablica ulega modyfikacji:::
+**`splice`** - zwraca "wycięte" obiekt z tablicy na podstawie pozycji/indeksu tworząc z niego nową tablicę (może przyjąć więcej niż jeden argument, tworząc ich zakres):::tablica wyjściowa ULEGA modyfikacji:::
 
     const arr1 = [1,2,3,4,5]
     let removedItems = arr1.splice(1,3)
@@ -67,7 +69,7 @@ Dodawanie wartości do tablicy
     // removedItems = [2,3,4]
 
 
-**`slice`** - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - wyłącznie (argument końcowy nie będzie częścią)
+**`slice`** - przyjmuje zero, 1 lub 2 argumenty / 0 - kopiuję tablicę, 1- tnie ją od wskazanego argumentu (indeks), 2 - w zakresie wskazanym przez argumenty (indeksy) - wyłącznie (argument końcowy nie będzie częścią) :::tablica wyjściowa NIE ulega modyfikacji:::
 
 **`sort`** - zwraca posortowaną tablicę w sposób leksykograficzny (słownikowo), gdzie sortowanie jest oparte na pierwszej cyfrze/literze składającej się na liczbę/wyraz,  gdzie 1. litera/cyfra ma wpływ na kolejność pozycji i a potem następna etc.
 
@@ -85,7 +87,7 @@ Przykładowe zastosowanie
     arr1 = arr1.sort((a,b)=>a-b) // od najmniejszej
     arr1 = arr1.sort((a,b)=>b-a) // od największej
 
-:::tablica ulega modyfikacji:::
+:::tablica ULEGA modyfikacji:::
 
 **`reverse`** - odwraca kolejność elementów znajdujących się w tablicy
 
@@ -118,7 +120,9 @@ Przykładowe zastosowanie
 
 **`map`** - podobny do forEach ale zmienia elementy tablicy i zwraca nową tablicę ze zmienionymi wartościami
 
+
 **`filter`** - zwraca **nową tablicę**, z elementami dla którego wskazany argument jest prawdziwy (= True)
+:::tablica wyjściowa NIE ulega modyfikacji:::
 
     const newArr = array.filter(function(item){
         return condition;
@@ -138,16 +142,16 @@ Przykładowe zastosowanie
     return (newArr[0] === num ? true : false);
     }
 
-:::tablica NIE ulega modyfikacji:::
+
 
 **`reduce`** - funkcja przyjmuje cztery argumenty 1) wartość inicjalizującą tzw akumulator 2) obecną wartość Opcjonalnie: 3) obecny indeks 4) źródłową tablicę na której, reduce jest stosowane
 
 Funkcja wywołania zwrotnego przyjmuje np. 2 argumenty - element tablicy oraz aktualną wartość akumulatora i zwraca wartość, która zostanie przypisana do akumulatora i będzie jako taki użyty w kolejnej iteracji.
 
 Redukuję tablicę do pojedynczej wartości
-
 :::tablica NIE ulega modyfikacji:::
 
+Wyliczanie sumy tablicy (dla każdego elementu dodaj go do akumulatora, który przyjmuje wartość poprzedniej iteracji, akumulator zaczyna od 0)
 
       let arr = [2, 3, 5, 7]
 
@@ -158,6 +162,24 @@ Redukuję tablicę do pojedynczej wartości
       arr.reduce(function(acc,element){
           return acc + element
       }, 0) // wartość początkowa akumulatora
+
+Wyliczanie średniej tablicy
+
+    let arr = [1,2,3]
+
+    const arrAvg = arr = arr.reduce((a,b) => a + b, 0) / arr.length
+
+    let arr = [1,2,3]
+
+
+    function arrAvg(arr){
+    let sum = arr.reduce(function(acc,element){
+            return acc + element
+        }, 0);
+    return sum / arr.length
+    }
+
+    console.log(arrAvg(arr))
 
 ---
 
@@ -191,3 +213,5 @@ https://launchschool.com/books/javascript/read/arrays#exercises
 https://alligator.io/js/filter-array-method/
 
 https://www.freecodecamp.org/forum/t/arr-sort-a-b-a-b-explanation/167677
+
+https://stackoverflow.com/questions/10359907/how-to-compute-the-sum-and-average-of-elements-in-an-array

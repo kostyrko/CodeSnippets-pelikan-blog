@@ -8,7 +8,7 @@ Slug: js-prototypy
 related_posts: js-podstawowe-typy, js-tablice
 
 ---
-**In statu nascendi**
+In statu nascendi
 ---
 
 Składnia rozwinięcie (ang. spread sytnax) - pozwala na rozwinięcie wyrażenia iterowalnego (wielokorotnie powtarzalnego/przejściowego)
