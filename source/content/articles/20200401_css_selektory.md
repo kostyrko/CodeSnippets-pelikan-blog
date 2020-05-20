@@ -43,6 +43,14 @@ Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę,
 
 **`e ~ p`** - element "e" poprzedzany przez element "p"
 
+Przykładowe zastosowanie
+
+  li .taskBtn ~ .taskBtn {
+  color: white;
+  background-color: green;
+  }
+
+::: wszystkie elementy będące dzieckiem elementu li poprzedzone elementem z klasą .taskBtn
 ---
 
 ### Selektory atrybutów
