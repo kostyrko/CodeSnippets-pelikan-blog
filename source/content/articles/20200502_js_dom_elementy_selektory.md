@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-05-02 10:00
 Updated:
 Category: javascript
-Tags: js, javascript, selektory, dom, elementy dom, 
+Tags: js, javascript, selektory, dom, elementy dom, sibling
 Slug: js-dom-elementy-selektory
 related_posts: js-obiekt-window-document
 
@@ -156,7 +156,7 @@ Przykładowe zastosowanie
 
     document.querySelector('li').perentElement.parentElement - zwraca dziadka (rodzica będącego rodzicem rodzica) elementu li np. div
 
-`.nextSibling` - kolejne rodzeństwo będące węzłem
+`.nextSibling` - kolejne rodzeństwo (sibling) będące węzłem
 
 `.nextSiblingElement` - kolejne rodzeństwo będące elementem
 
