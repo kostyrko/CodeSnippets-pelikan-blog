@@ -9,7 +9,7 @@ related_posts: css-reset-normalizer
 
 Neoumorphism jest sposobem stylizacji elementów stron nawiązujący swoją estetyką znaną z środowiska różnego rodzaju smartfonów, choć w duże mierze przymina mi głównie te z nadgryzionym jabłkiem. Poprzez grę cieni ten styl stara się wywołać efekt estetycznej trójwymiarowości gdzie poszczególne elementy są wypukłe lub wklęsłe a ich kształty są obłe lub też zaokrąglone. Neoumorphism wywodzi się z skeuromorfizmu (gr. skeúos "naczynie, przedmiot" + morphé "postać, kształt") stylistyki, ktra miałą nawiązać do istniejących w świecie realnym przedmiotów.
 
-Polecam [generator tego stylu](https://neumorphism.io/#55b9f3) do zapoznania się z tym w jaki sposób można uzyskać wyżej opisany efekt
+Polecam **[generator tego stylu](https://neumorphism.io/#55b9f3)** do zapoznania się z tym w jaki sposób można uzyskać wyżej opisany efekt
 
 Zwróć uwagę, że również ja ten styl zastosowałem na tej stronie. Używając poniższej deklaracji wystylizowałem pasek wyszukiwania
 
