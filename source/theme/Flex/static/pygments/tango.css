@@ -53,7 +53,7 @@
 .highlight .mb { color: #0000cf; font-weight: bold } /* Literal.Number.Bin */
 .highlight .mf { color: #0000cf; font-weight: bold } /* Literal.Number.Float */
 .highlight .mh { color: #0000cf; font-weight: bold } /* Literal.Number.Hex */
-.highlight .mi { color: #0000cf; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mi { font-weight: bold } /* Literal.Number.Integer /color: #0000cf; */
 .highlight .mo { color: #0000cf; font-weight: bold } /* Literal.Number.Oct */
 .highlight .sa { color: #4e9a06 } /* Literal.String.Affix */
 .highlight .sb { color: #4e9a06 } /* Literal.String.Backtick */
