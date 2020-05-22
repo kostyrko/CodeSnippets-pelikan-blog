@@ -102,7 +102,21 @@ Przykładowe zastosowanie
         return num < 50;
     }
     // zwraca pierwszy wynik
-    let find = arr.find(under50);
+    const find = arr.find(under50);
+
+    console.log(find)
+    >> 7
+
+alternatywny zapis (zwracaj pierwszy wynik poniżej 50)
+
+    const find = arr.find(e => e < 50)
+
+Przykładowe zastosowanie z projektu `To Do App`[z tablicy wszystkich zadań (allTasks) znajdź to, którego data-priority jest niższe od nowo tworzonego zadania(newTask)]
+
+    const element = allTasks.find(e => 
+      Number(newTask.dataset.priority) > Number(e.dataset.priority))
+
+[Repo całego kodu projektu](https://github.com/kostyrko/JS-apps/tree/master/1_task_list_app/2_task_app)
 
 ---
 
