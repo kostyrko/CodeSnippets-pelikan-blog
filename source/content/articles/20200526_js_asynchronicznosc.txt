@@ -1,0 +1,27 @@
+Title: JavaScript i asynchroniczność
+Author: mkostyrko
+Date: 2020-05-26 10:00
+Updated:
+Category: javascript
+Tags: javascript, js, asynchroniczność
+Slug: js-asynchroniczność
+related_posts: 
+
+
+
+
+
+---
+
+Źródła:
+
+https://jcubic.pl/2018/05/asynchronicznosc-javascript-obietnice.html
+
+https://fsgeek.pl/post/asynchronicznosc-w-javascript/
+
+http://jsdn.pl/asynchronicznosc-javascript-dla-poczatkujacych/
+
+http://www.infected.pl/programowanie/javascript/756-co-to-znaczy-ze-javascript-jest-asynchroniczny.html
+
+https://bulldogjob.pl/news/1046-przeksztalcanie-kodu-synchronicznego-w-asynchroniczny-w-javascript-dzieki-promise
+
