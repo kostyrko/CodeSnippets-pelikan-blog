@@ -1,0 +1,48 @@
+Title: JavaScript: XHMLHttpRequest()
+Author: mkostyrko
+Date: 2020-05-26 10:00
+Updated:
+Category: javascript
+Tags: javascript, js
+Slug: js-prototypy
+related_posts: 
+
+const xhr = new XMLHttpRequest
+
+.open() - get data 
+
+onload - info w trakcie logowania, jeśli 200 to ok
+
+  // HTTP Statuses
+  // 200: "OK"
+  // 403: "Forbidden"
+  // 404: "Not Found"
+
+
+.status
+
+.responseText - zwraca lub zwracana zawartość
+
+send() - wysłanie
+
+.onerror - jeśli error
+
+readyState Values
+
+
+// 0: request not initialized 
+// 1: server connection established
+// 2: request received 
+// 3: processing request 
+// 4: request finished and response is ready
+
+
+
+
+---
+
+Źródła:
+
+http://kursjs.pl/kurs/ajax/xmlhttprequest.php
+
+http://kursjs.pl/kurs/ajax/ajax.php

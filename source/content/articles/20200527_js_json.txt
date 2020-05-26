@@ -1,0 +1,20 @@
+Title: JavaScript: JSON
+Author: mkostyrko
+Date: 2020-05-27 10:00
+Updated:
+Category: javascript
+Tags: javascript, js
+Slug: js-prototypy
+related_posts: 
+
+JSON - JavaScript Object Notation
+
+
+
+---
+
+Źródła:
+
+http://kursjs.pl/kurs/ajax/server-lokalny.php
+
+http://kursjs.pl/kurs/ajax/ajax.php

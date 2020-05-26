@@ -1,0 +1,20 @@
+Title: JavaScript: funkcje zwrotne i obietnice
+Author: mkostyrko
+Date: 2020-05-26 10:00
+Updated:
+Category: javascript
+Tags: javascript, js, asynchroniczność
+Slug: js-callback-promise
+related_posts: js-asynchroniczność
+
+
+
+
+
+---
+
+Źródła:
+
+https://www.nafrontendzie.pl/javascript-metody-obiektu-jako-callback
+
+http://kursjs.pl/kurs/ajax/promise.php

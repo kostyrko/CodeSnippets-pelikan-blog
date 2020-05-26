@@ -4,7 +4,7 @@ Date: 2020-05-21 10:00
 Updated:
 Category: javascript
 Tags: javascript, js, array, tablica, ES6, ES2015
-Slug: js-prototypy
+Slug: js-trzykropek
 related_posts: js-podstawowe-typy, js-tablice
 
 
