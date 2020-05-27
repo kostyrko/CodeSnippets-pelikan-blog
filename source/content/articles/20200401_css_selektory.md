@@ -35,11 +35,11 @@ Selektor id nadaje priorytet regule ważniejszy od niż ten posiadający klasę,
 
 **`*`** - każdy element/ selektor uniwersalny
 
-**`e p`** - element "p" będący **potomkie**m elementu "e"
+**`e p`** - element "p" będący **potomkiem** elementu "e"
 
-**`e > p`** - element "p" będący **dzieckiem** elementu "e"
+**`e > p`** - element "p" będący bezpośrednim **dzieckiem** elementu "e" (wnuki i pra etc. wyłączone)
 
-**`e + p`** - element "e" bezpośrednio poprzedzony elementem "e"
+**`e + p`** - element "p" bezpośrednio poprzedzony elementem "e" (rodzeństwo)
 
 **`e ~ p`** - element "e" poprzedzany przez element "p"
 
@@ -50,7 +50,8 @@ Przykładowe zastosowanie
   background-color: green;
   }
 
-::: wszystkie elementy będące dzieckiem elementu li poprzedzone elementem z klasą .taskBtn
+::: wszystkie elementy będące dzieckiem elementu li poprzedzone elementem z klasą .taskBtn :::
+
 ---
 
 ### Selektory atrybutów
