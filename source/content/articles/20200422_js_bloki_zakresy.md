@@ -55,8 +55,12 @@ Deklarowanie zmiennej w ramach bloku pozwala na tworzeni czystszego kodu, łatwi
 
 *Global namespace* - odnosi się do przestrzeni, w której przechowywane są nazwy zmiennych o globalnym zasięgu.
 
+<!-- Domknięcia/Closures -->
+
 ---
 
 Źródła:
 
 https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Control_flow_and_error_handli
+
+http://blog.nebula.us/13-javascript-closures-czyli-zrozumiec-i-wykorzystac-domkniecia

@@ -71,6 +71,10 @@ Przykłady:
 
 **::: warto pamiętać żę funkcja strzałkowa jest zadeklarowana poprzez wyrażenie funkcyjne i oznacza, to że zmienia kontekst `this` co może być szczególnie istotne w kontekście manipulowania elementami DOM (wówczas `this` jest obiektem `window`) :::**
 
+
+
+---
+
 Źródła:
 
 http://kursjs.pl/kurs/es6/funkcja-strzalkowa.php

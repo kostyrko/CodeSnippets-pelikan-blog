@@ -7,6 +7,9 @@ Tags: javascript, js
 Slug: js-prototypy
 related_posts: 
 
+
+HTTP (Hypertext Transfer Protocol) 
+
 const xhr = new XMLHttpRequest
 
 .open() - get data 

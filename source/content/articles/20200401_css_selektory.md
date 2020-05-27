@@ -90,9 +90,7 @@ http://flukeout.github.io/
 
 ---
 
-### Moce selektorów
 
-![Star Wars Selectors](https://stuffandnonsense.co.uk/archives/images/css-specificity-wars.png)
 
 
 
