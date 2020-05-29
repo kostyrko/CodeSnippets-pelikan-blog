@@ -1,4 +1,4 @@
-Title: JavaScript i asynchroniczność
+Title: JavaScript: asynchroniczność i XML -> AJAX
 Author: mkostyrko
 Date: 2020-05-26 10:00
 Updated:
@@ -8,12 +8,19 @@ Slug: js-asynchroniczność
 related_posts: 
 
 
+AJAX
 
+
+#### Biblioteki
+
+axios
 
 
 ---
 
 Źródła:
+
+https://en.wikipedia.org/wiki/Ajax_(programming)
 
 https://jcubic.pl/2018/05/asynchronicznosc-javascript-obietnice.html
 
@@ -25,3 +32,4 @@ http://www.infected.pl/programowanie/javascript/756-co-to-znaczy-ze-javascript-j
 
 https://bulldogjob.pl/news/1046-przeksztalcanie-kodu-synchronicznego-w-asynchroniczny-w-javascript-dzieki-promise
 
+https://www.youtube.com/watch?v=aISMFLKUC8o
