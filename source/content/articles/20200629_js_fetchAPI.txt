@@ -16,3 +16,5 @@ JSON - JavaScript Object Notation
 Źródła:
 
 http://kursjs.pl/kurs/ajax/fetch.php
+
+https://www.youtube.com/watch?v=cuEtnrL9-H0
