@@ -8,8 +8,13 @@ Slug: git-wprowadzenie
 related_posts: linux-komendy
 
 
-Planowane
+
+
+
+---
 
 Źródła:
+
+https://git-scm.com/docs/git
 
 https://launchschool.com/books/git
