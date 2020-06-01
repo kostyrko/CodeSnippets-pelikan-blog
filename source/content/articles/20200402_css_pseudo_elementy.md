@@ -34,7 +34,7 @@ Przykładowe zastosowanie
 `::first-line` - pozwala na zadeklarowanie konkretnych cech dla pierwszej linii wybranego tekstu
 [na marginesie przykładowo do identacji tekstu nie trzeba stosować pseudo-elementów, wystarczy np `text-indent` ]
 
-Do pseudo-selektorów można dodać odpowiednio np. - `font`, `color`, `word-spacing`, `background`, t`ext-decoration`, `line-height`
+Do pseudo-selektorów można dodać odpowiednio np. - `font`, `color`, `word-spacing`, `background`, `text-decoration`, `line-height`
 
 `::first-letter` - zadeklarowanie konkretnej cechy dla pierwszej litery
 
@@ -81,9 +81,10 @@ Przykładowe zastosowanie
 
 Pełna lista (łącznie z jeszcze nie w pełni wdrożonymi pseudoelementeami) znajduje się [tutaj](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
-
+---
 
 Źródło i polecane linki:
+
 https://blog.logrocket.com/a-guide-to-css-pseudo-elements/
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
@@ -93,4 +94,3 @@ https://www.w3schools.com/css/css_pseudo_elements.asp
 https://css-tricks.com/almanac/selectors/a/after-and-before/
 
 https://css-tricks.com/pseudo-element-roundup/
-
