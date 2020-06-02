@@ -460,6 +460,8 @@ Funkcja wyznacza i zwraca zdefiniowaną wartość
 
 https://sass-lang.com/
 
+https://sass-lang.com/documentation
+
 VSC:
 
 https://github.com/ritwickdey/vscode-live-sass-com
