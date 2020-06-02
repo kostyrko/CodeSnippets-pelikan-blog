@@ -1,0 +1,24 @@
+Title: CSS - Responsive Web Design cz.2
+Author: mkostyrko
+Date: 2020-04-06 11:00
+Updated:
+Category: html
+Tags: 
+Slug: html-rwd
+related_posts: js-rwd
+
+
+Gotowe wzory: bootstrap, skeleton, materialize, w3.css, material-UI
+
+---
+Źródła:
+
+https://www.w3schools.com/css/css_rwd_templates.asp
+
+https://www.w3schools.com/css/css_rwd_images.asp
+
+https://www.w3schools.com/css/css_rwd_frameworks.asp
+
+https://materializecss.com/getting-started.html
+
+https://material-ui.com/

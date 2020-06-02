@@ -23,21 +23,21 @@ Bez jakiejkolwiek ingerencji w deklaracje przypisaną do rodzica możemy skorzys
 
 lub można również wykorzystać pozycjonować przy pomocy absolute
 
-  .centered_text {
-    position: absolutne;
-    top: 50vh; // ew. 50% jeśli do rodzica
-    left: 50vw; // ew. 50% jeśli do rodzica
-    transform: translate(-50%, -50%); // zmień pozycję o połowę rozmiaru wysokość i szerokość
-  }
+    .centered_text {
+      position: absolutne;
+      top: 50vh; // ew. 50% jeśli do rodzica
+      left: 50vw; // ew. 50% jeśli do rodzica
+      transform: translate(-50%, -50%); // zmień pozycję o połowę rozmiaru wysokość i szerokość
+    }
 
 W obu przypadkach wymagana jest transformacja pozycjonowanego elementu w taki sposób aby znajdował się on na środku ponieważ powyższymi deklaracjami wskazujemy na lewy górny róg danego elementu - stąd należy od odpowiednio wyrównać aby znalazł się na środku a nie był przesunięty w prawo i w dół o własną wysokość i szerokość.
 
-Być może lepszy rozwiązaniem jest zatem, ustawienie marginesu na auto i jedynie kontrola marginesu od góry:
+Być może lepszy rozwiązaniem jest zatem ustawienie marginesu na auto i jedynie kontrola marginesu od góry:
 
-  .centered_text {
-    margin: auto;
-    margin-top: 50%;
-  }
+    .centered_text {
+      margin: auto;
+      margin-top: 50%;
+    }
 
 ---
 

@@ -21,7 +21,7 @@ https://cssgridgarden.com/#pl
 
 ---
 
-### Moce selektorów
+### May the force be with yoy
 
 [Star Wars Selectors](https://stuffandnonsense.co.uk/archives/images/css-specificity-wars.png)
 
