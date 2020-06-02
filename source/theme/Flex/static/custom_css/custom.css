@@ -154,7 +154,7 @@ aside div > a:hover {
 
 
 /* Media queries */
-@media (min-width: 1440px) {
+@media (min-width: 1500px) {
   main {
     left: 25vw;
   }
