@@ -155,6 +155,9 @@ aside div > a:hover {
 
 /* Media queries */
 @media (min-width: 1440px) {
+  main {
+    left: 25vw;
+  }
   body {
     font-size: 1rem;
     line-height: 1.6rem;
@@ -164,6 +167,7 @@ aside div > a:hover {
     font-weight: 400;
   }
 }
+
 
 
 @media (min-width: 1000px) {
