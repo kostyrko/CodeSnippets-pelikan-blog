@@ -2,8 +2,8 @@ Title: JavaScript - etykietowanie funkcji
 Author: mkostyrko
 Date: 2020-05-11 10:00
 Updated:
-Category: js
-Tags: javascript, tag, function, funkcja, etykietowanie, tagged function
+Category: javascript
+Tags: javascript, js, tag, function, funkcja, etykietowanie, tagged function
 Slug: js-etykietowana-funkcja
 related_posts: js-podstawowe-typy
 

@@ -172,7 +172,7 @@ Float64Array
 
 ### Kolekcje z kluczami
 
-Map
+Map - by: [overment](https://www.youtube.com/watch?v=NV54JW_PaeA)
 
 Set
 

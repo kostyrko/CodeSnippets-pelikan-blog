@@ -1,4 +1,4 @@
-Title: JavaScript: funkcje zwrotne i obietnice
+Title: JavaScript: funkcje zwrotne i obietnice (Promise)
 Author: mkostyrko
 Date: 2020-05-26 10:00
 Updated:
@@ -22,3 +22,7 @@ http://kursjs.pl/kurs/ajax/promise.php
 https://www.youtube.com/watch?v=DHvZLI7Db8E
 
 https://www.youtube.com/watch?v=V_Kr9OSfDeU
+
+https://www.youtube.com/watch?v=FtdM3LIUXx4
+
+https://www.youtube.com/playlist?list=PLjHmWifVUNMLOfSdeSSEGgSXebPXL7Z3Q

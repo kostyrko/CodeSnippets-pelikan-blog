@@ -26,9 +26,20 @@ related_posts:
 |[JavaScript30](https://javascript30.com/) | Pseudonewsletter - 30 mini projektów na 30 dni |
 |[bedeprogramistka.pl/](https://bedeprogramistka.pl/wyzwanie-javascript30/) | Polska odpowiedź na JavaScript30 /blog/społeczność|
 | [justjavascript](https://justjavascript.com/) | W trakcie tworzenia/ klarowne tłumaczenie poruszanych problemów |
+| [JavaScript Weekly](https://javascriptweekly.com/) | -- |
+| [Frontend Focus](https://frontendfoc.us/) | -- |
+| [overment](https://overment.com/newsletter) | PL |
 
 ---
 
+### Strony internetowe & blogi
+
+| Nazwa | główna cecha
+|---|---|
+|[przeprogramowani](https://przeprogramowani.pl/) | PL |
+|[overment](https://socialshub.net/overment)| PL |
+
+---
 ### Wyzwania/ Ćwiczenia
 
 | Nazwa | główna cecha
@@ -36,7 +47,6 @@ related_posts:
 | [CodeTriage](https://www.codetriage.com/) | Praca z faktycznymi projektami |
 | [edabit](https://edabit.com/) | Ćwiczenia oraz rozwiązania zgłaszane przez społeczność |
 | [CodeWars.js](codewars.js)| do przetestowania|
-
 
 
 ---
@@ -69,7 +79,15 @@ related_posts:
 | [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q) | JS + inne / projekty |
 | [Florian Pop](https://www.youtube.com/channel/UCeU-1X402kT-JlLdAitxSMA) | krótkie filmy tłumaczące podstawy JS (tablice) + newsletter|
 |[Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) | W przystępnej i klarownej formie przedstawiony JS + udemy |
+
+*PL*
+
+| Nazwa | główna cecha
+|---|---|
+|[hello roman](https://www.youtube.com/helloroman)| Warto polecenia choć chyba nie jako pierwsze a kolejne źródło|
+|[overment](https://www.youtube.com/channel/UC_MIaHmSkt9JHNZfQ_gUmrg)| Duży zakres informacji strona [www](https://socialshub.net/overment)|
 |[Samuraj Programowania - Java Script w miesiąc](https://www.youtube.com/watch?v=JFDScHg6Dws&list=PLTs20Q-BTEMPRSzhrlAuu7yus1BuOLVrS)| Warto polecenia choć chyba nie jako pierwsze a kolejne źródło|
+
 
 
 ### Dzielenie się kodem
@@ -77,6 +95,13 @@ related_posts:
 | Nazwa | główna cecha
 |---|---|
 | [playcode.io](playcode.io) | dla mnie nr 1|
-| [JS Bin]{jsbin.com}| nr 2 |
+| [JS Bin](jsbin.com)| nr 2 |
+| [CodeSandbox](https://codesandbox.io/)| nr 3 |
 |[codepen.io](https://codepen.io/mkostyrko/pen/yLYJJVV)| pozwala na embeding|
 
+
+### Historia
+
+| Nazwa | główna cecha
+|---|---|
+| Java a JavaScript|filmy [przeprogramowani](https://www.youtube.com/watch?v=X1nGEaaQdbs) oraz [Dziwne, u mnie działa](https://www.youtube.com/watch?v=gd2w8hrlmsc&feature=youtu.be)|

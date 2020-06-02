@@ -18,3 +18,5 @@ related_posts: linux-komendy
 https://git-scm.com/docs/git
 
 https://launchschool.com/books/git
+
+https://www.youtube.com/playlist?list=PLjHmWifVUNMKIGHmaGPVqSD-L6i1Zw-MH
