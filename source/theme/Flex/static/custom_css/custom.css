@@ -170,16 +170,22 @@ aside div > a:hover {
 
 
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
   aside {
     width: 16vw;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   main {
-    width: 100vw;
+    width: 80vw;
     /* left: 25vw; */
+  }
+  aside {
+    width: 20vw;
+  }
+  aside div {
+    padding: 25px 2px;
   }
 }
 
