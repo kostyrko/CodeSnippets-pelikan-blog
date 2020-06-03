@@ -11,9 +11,33 @@ CSS na sterydach - czyli **Syntactically Awesome Style Sheets**
 
 ![Sass](https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg)
 
-Sass jest językiem skryptowym rozszerzającym możliwości CSS i wymaga kompilacji na CSS tak aby mógł być interpretowany przez przeglądarki w tym celu można wykorzystać Gulpa (odpowiedniej wtyczki) lun wtyczki VSC
+Sass jest językiem skryptowym rozszerzającym możliwości CSS i wymaga kompilacji na CSS tak aby mógł być interpretowany przez przeglądarki w tym celu można wykorzystać Gulpa (odpowiedniej wtyczki) lun wtyczki VSC.
 
-pliki sassowe mają rozszerzenie `.sass` lub `.scss`. Starsza wersja Sass nie zwierała nawiasów klamrowych i nie posiadała średników te wprowadzono od v. 3
+Sass pozwala na:
+
+    * definiowanie zmiennych
+
+    * pisanie składni opartej na zagnieżdżaniu selektorów w selektorach
+
+    * organizację projektu w sposób modułowy (przechowywanie deklaracji w wielu plikach)
+
+    * umożliwia tworzenie @mixins - grupowanie deklaracji oraz ich wielokrotne użytkowanie
+
+    * pozwala na dziedziczenie deklaracji @extend
+
+    * umożliwia tworzenie obiektów typu map i list
+
+    * stosowanie operatorów "matematycznych"
+
+    * stosowanie pętli warunkowych if
+
+    * stosowanie pętli for i each
+
+    * definiowanie i użytkowanie funkcji
+
+    * stosowanie wbudowanych modułów oraz ich metod
+
+Pliki sassowe mają rozszerzenie `.sass` lub `.scss`. Starsza wersja Sass nie zwierała nawiasów klamrowych i nie posiadała średników te wprowadzono od v. 3
 
 Sass
 
@@ -35,6 +59,7 @@ wersja Scss
     }
 
 W wyniku kompilacji z Sass na CSS kod może być przedstawiony w 4 następujących formatach
+
 * nested - styl domyślny, bliski do Sassa gdzie CSS odzwierciedla strukturę obiektów HTML poprzez wcięcia
 
 * expanded - najbliższy CSS, wcięte są jedynie właściwości
@@ -220,9 +245,11 @@ Wszystkie pliki cząstkowe powinny być poprzedzone podkreślaniem np. `_buttons
 
 ---
 
-#### Moduły
+#### Modułowość - wprowadzenie
 
-Sass pozwala na odwołanie się do zmiennych z zawartych w innych modułach/plikach (`@use ` + np. nazwa_zmiennej- pozwala na importowanie pojedynczych deklaracji/zmiennych albo `@import` + nazwa pliku)
+Sass pozwala na odwołanie się do zmiennych z zawartych w innych modułach/plikach (`@import` + nazwa pliku/ dąży się do zastąpienia @import przez `@use` i `@forward`)
+
+Różnice pomiędzy `@use` a `@import` -> 1) use zapewnia pojedyncze importowanie w projekcie, 2) mixiny i funkcje (członkowie) zaczynające się na `_` lub `-` są postrzegane jako prywatne wyjątki i nie są importowane 3) import członków odbywa się jedynie lokalnie i nie jest przekazywany do dalszych importów 4) `@extends` - pozwoli na aplikację dalszą importów w kolejnych etapach łańcuch łączników 5) tworzy `namespace `(przestrzeń nazwy)
 
 Zwykle stosuje się main.scss do scalania (importowania) zawartości innych plików scss (mogą się znajdować w folderach tematycznych)
 
@@ -334,6 +361,8 @@ Pozwala na wytworzenie stylu do replikacji bez powielania klas w CSS (różnica 
         @extend %a; // color: red;
     }
 
+https://sass-lang.com/documentation/at-rules/extend
+
 ---
 
 #### Listy
@@ -349,6 +378,8 @@ nth() - wyciąga n-ty element z listy
     nth($colors, 1)
 
 ---
+
+!!!!!!!!!!!
 
 #### Mapa
 
