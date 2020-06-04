@@ -15,27 +15,27 @@ Sass jest językiem skryptowym rozszerzającym możliwości CSS i wymaga kompila
 
 Sass pozwala na:
 
-[* definiowanie zmiennych](#zmienne)
+[* definiowanie **zmiennych**](#zmienne)
 
-    * pisanie składni opartej na zagnieżdżaniu selektorów w selektorach
+[* pisanie składni opartej na **zagnieżdżaniu** selektorów w selektorach](#zagnieżdżanie)
 
-    * organizację projektu w sposób modułowy (przechowywanie deklaracji w wielu plikach)
+[* organizację projektu w sposób **modułowy** (przechowywanie deklaracji w wielu plikach)](#moduły)
 
-    * umożliwia tworzenie @mixins - grupowanie deklaracji oraz ich wielokrotne użytkowanie
+[* umożliwia tworzenie **@mixins** - grupowanie deklaracji oraz ich wielokrotne użytkowanie](#mixins)
 
-    * pozwala na dziedziczenie deklaracji @extend
+[* pozwala na **dziedziczenie** deklaracji @extend](#dziedziczenie)
 
-    * umożliwia tworzenie obiektów typu map i list
+[* umożliwia tworzenie obiektów typu **map**](#obiekt-map) i [**list**](#obiekt-list)
 
-    * stosowanie operatorów "matematycznych"
+[* stosowanie **operatorów** matematycznych/stingów/relacji/logicznych](#operatory)
 
-    * stosowanie pętli warunkowych if
+[* stosowanie pętli warunkowych **if**](#if)
 
-    * stosowanie pętli for i each
+[* stosowanie pętli **for** i **each**](#for)
 
-    * definiowanie i użytkowanie funkcji
+[* definiowanie i użytkowanie **funkcji**](#funkcje)
 
-    * stosowanie wbudowanych modułów oraz ich metod
+[* stosowanie wbudowanych modułów oraz ich **metod**](https://kostyrko.github.io/zfrontu/saas-moduly-metody.html)
 
 Pliki sassowe mają rozszerzenie `.sass` lub `.scss`. Starsza wersja Sass nie zwierała nawiasów klamrowych i nie posiadała średników te wprowadzono od v. 3
 
@@ -60,13 +60,13 @@ wersja Scss
 
 W wyniku kompilacji z Sass na CSS kod może być przedstawiony w 4 następujących formatach
 
-* nested - styl domyślny, bliski do Sassa gdzie CSS odzwierciedla strukturę obiektów HTML poprzez wcięcia
+* `nested` - styl domyślny, bliski do Sassa gdzie CSS odzwierciedla strukturę obiektów HTML poprzez wcięcia
 
-* expanded - najbliższy CSS, wcięte są jedynie właściwości
+* `expanded` - najbliższy CSS, wcięte są jedynie właściwości
 
-* compact - właściwości w miarę możliwości kompresowaną, tak aby *deklaracja* (np. właściwości z z fontem) zajmowała pojedynczą linię
+* `compact` - właściwości w miarę możliwości kompresowaną, tak aby *deklaracja* (np. właściwości z z fontem) zajmowała pojedynczą linię
 
-* compressed - wszystko jest kompresowane do poszczególnych linii, kolejne elementy oddziela spacja - jakiekolwiek komentarze zawarte w scss NIE będą kompilowane do css
+* `compressed` - wszystko jest kompresowane do poszczególnych linii, kolejne elementy oddziela spacja - jakiekolwiek komentarze zawarte w scss NIE będą kompilowane do css -> najlżejsza forma zapisu deklaracji, która ma pozytywny wpływ na prędkość ładowania strony
 
 Style definiuje się poprze użycie parametru `outputStyle` lub parametr `style`
 
@@ -110,6 +110,10 @@ CSS (compressed)
 
         /* line 1, scss/main.scss */body{background-color:#ce4242}
 
+=============================
+
+#### Mapowanie SCSS
+
 Proces *mapowania* pozwala na wskazanie przeglądarce interpretującej css z którego miejsca w pliku sass pochodzi dana deklaracja. Wymaga to dodania pakietu oraz dodania odpowiedniej komendy `init` i `write`
 
 Przykładowe zastosowanie
@@ -142,13 +146,30 @@ Mapa źródłowa jest wytworzona przy pomocy zakodowanego komentarza poprzedzone
 
     /*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5jc3MiLCJzb3VyY2VzIjpbIm1haW4uc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyJib2R5e1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMTUzLCA3OSwgNzkpO1xufVxuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxBQUFBLElBQUksQ0FBQTtFQUNGLGdCQUFnQixFQUFFLE9BQWdCO0NBQ25DIn0= */
 
----
+================
 
 `Komentarze`
 
 `/* */` - komentarz znajdzie się w pliku wynikowym CSS
 
 `//` ten komentarz znajdzie się jedynie w pliku Sass
+
+================
+
+#### @debug 
+
+Sassowy console.log ;) - pozwala na proste debuggowanie -> wypisuje w terminalu podaną frazę
+
+    $colors: red, blue
+
+    @debug "colors', $colors;
+
+#### @error i @warn
+
+użycie @warn ma za zadanie informowaniu o zajściu pewnego warunku granicznego jednak nie przerywa wykonywania się kodu jak to powinno nastąpić w przypadku @error
+
+    @warn "Unknown prefix #{$prefix}.";
+
 
 ---
 #### Zmienne {#zmienne}
@@ -176,6 +197,8 @@ Zmienne można przechowywać w odmiennym pliku np "variables" i wówczas stosuje
     @import "variables"
 
 ---
+
+#### Zagnieżdżanie {#zagnieżdżanie}
 
 `Zagnieżdżenie` - Sass pozwala na odwzorowanie hierarchii znanej z HTML przy pisaniu styli
 ::: stosowanie zagnieżdżeń do 3-4 poziomów
@@ -246,7 +269,7 @@ Wszystkie pliki cząstkowe powinny być poprzedzone podkreślaniem np. `_buttons
 
 ---
 
-#### Modułowość - wprowadzenie
+#### Modułowość - wprowadzenie {#moduły}
 
 Sass pozwala na odwołanie się do zmiennych z zawartych w innych modułach/plikach (`@import` + nazwa pliku/ dąży się do zastąpienia @import przez `@use` i `@forward`)
 
@@ -290,7 +313,7 @@ CSS wygląda następująco
 
 ---
 
-#### Mixins
+#### Mixins {#mixins}
 
 Pozwalają na użycie kodu, który jest powtarzany (może ale nie musi przyjmować jeden lub więcej argumentów - argumenty oddzielone są przecinkami) - argument może odnosić się zarówno do właściwości (np. display/padding) jak i przypisanej do niej wartości (np. flex/40px) danego obiektu - jest to tzw. **interpolacja**. W przypadku właściwości stosuje się zapis `#{$nazwa_właściwości}` w przypadku wartości `$wartość`. Istnieje również możliwość deklaracji tzw. argumentów opcjonalnych - bez ich podania danej właściwości zostanie przypisana domyślna wartość (domyślną wartość wpisuje się po dwukropku! --> `$y: 50%`)
 
@@ -325,7 +348,7 @@ https://sass-lang.com/documentation/at-rules/mixin
 
 ---
 
-#### Dziedziczenie
+#### Dziedziczenie {#dziedziczenie}
 
 Dziedziczenie pozwala na stworzenie stylu, który przejmuje deklaracje innego stylu - selektory będą miały te same właściwości
 
@@ -366,7 +389,7 @@ https://sass-lang.com/documentation/at-rules/extend
 
 ---
 
-#### Listy
+#### Listy {#obiekt-list}
 
 Zbiór elementów wykorzystywanych wyłącznie wewnątrz Saas [ nawiązują do tablic z JS - jednak sposób ich rozdzielenia nie jest zdefiniowany - może być spacja, przecinek] - jej numeracja zaczyna się od 1!
 
@@ -380,9 +403,7 @@ nth() - wyciąga n-ty element z listy
 
 ---
 
-!!!!!!!!!!!
-
-#### Mapa
+#### Mapa {#obiekt-map}
 
 Przypomina obiekt z JS - posiada klucze oraz wartości - również nie jest kompilowana do CSS
 
@@ -395,42 +416,49 @@ map-get($mapa, klucz1) -> zwraca wartość1
 
 `map-values()` - metoda zmieniająca wartości znajdujące się w mapie w listę
 
-
 ---
+#### Operatory {#operatory}
 
-##### Wtyczka do VSC - Live Sass Complier !
+Sass pozwala i przyjmuje klasyczne operatory kontekście **liczb/wyrażeń matematycznych** (+,/,-...) łącznie z modulo `%`
 
-Wtyczka Live Sass Complier dokonuje translację z Sass na CSS automatycznie
+Należy pamiętać, że jednostki wprowadzają pewne ograniczenia wynikające z ich logiki.
 
-strona projektu: https://github.com/ritwickdey/vscode-live-sass-compiler
-
-
-#### @debug 
-
-Sassowy console.log ;) wypisuje w terminalu podaną frazę
-
-    $colors: red, blue
-
-    @debug "colors', $colors;
-
-
----
-#### Operatory
-
-Sass pozwala i przyjmuje klasyczne operatory (+,/,-...) łącznie z modulo `%`
-Należy pamiętać, że jednostki wprowadzają pewne ograniczenia wynikające z ich logiki
-
-Np. dodawanie ze sobą stringów skutkuje w ich łączeniu
-
-    b + -zmien  = b-zmien
-
-W przypadku dzielenia może pojawić się problem gdy wartość dzielona może być częścią atrybutu np w przypadku fontu: 20px/10px aby temu zapbiec należy wykorzystać zmienne np font: $primary-size/10px
+W przypadku dzielenia może pojawić się problem gdy wartość dzielona może być częścią atrybutu np w przypadku fontu: 20px/10px aby temu zapobiec należy wykorzystać zmienne np font: $primary-size/10px
 
 Zastosowanie okrągłych nawiasów pozwala na wymuszenie kolejności działań
 
+Pozwala również na stosowanie operatorów w kontekście **stringów** - 
+
+np. dodawanie ze sobą stringów skutkuje w ich łączeniu
+
+    b + -zmien  = b-zmien
+
+https://sass-lang.com/documentation/operators/string
+
+Z operatorów moża korzystać również w kontekście sprawdzania **równości** oraz **relacji**
+
+ `==` jest takie samo `!=` nie jest takie samo 
+
+    @debug 1px != 1em; // true
+    @debug "Helvetica" == Helvetica; // true - w przypadku stringów zastosowanie cudzysłowu nie ma znaczenia
+    @debug hsl(34, 35%, 92.1%) == #f2ece4; // kolory również są tłumaczone
+    @debug (5px 7px 10px) != [5px 7px 10px]; // true - nawiasy są rozpoznawane
+
+    $theme: ("venus": #998099, "nebula": #d2e1dd);
+    @debug $theme != ("venus": #998099, "iron": #dadbdf); // true - zawartość zmiennych jest sprawdzana
+
+    @debug null != false; // true - null występuje jako false
+
+Operatory stosowane przypadku **wyrażeń logicznych** -> `not`, `and`, `or`
+
+    @debug not true; // false
+    @debug not false; // true
+    @debug true or false; // true
+    @debug true and true; // true
+
 ---
 
-#### Instrukcja warunkowa @if
+#### Instrukcja warunkowa @if {#if}
 
     $type: monster;
     p {
@@ -445,7 +473,7 @@ Zastosowanie okrągłych nawiasów pozwala na wymuszenie kolejności działań
         }
     }
 
-#### Pętla @for i @each
+#### Pętla @for i @each {#for}
 
 Generacja selektorów z powtarzalną wartością
 
@@ -472,7 +500,7 @@ Pętla @each pracuje na zbiorze danych - iteruje po liście wartości
 
 Istnieje pętla `@while` wykorzystywana jest wtedy gdy nie mamy pewności kiedy dany warunek się skończy
 
-#### @funkcje
+#### @funkcje {#funkcje}
 
 Funkcje wbudowane i zdefiniowane
 
@@ -485,6 +513,14 @@ Funkcja wyznacza i zwraca zdefiniowaną wartość
     @funkcja nazwa_funkcji($parametr) {
         @return $parametr/2;
     }
+
+---
+
+##### Wtyczka do VSC - Live Sass Complier !
+
+Wtyczka Live Sass Complier dokonuje translację z Sass na CSS automatycznie
+
+strona projektu: https://github.com/ritwickdey/vscode-live-sass-compiler
 
 
 ---
