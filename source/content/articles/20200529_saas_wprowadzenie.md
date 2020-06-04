@@ -15,7 +15,7 @@ Sass jest językiem skryptowym rozszerzającym możliwości CSS i wymaga kompila
 
 Sass pozwala na:
 
-    * definiowanie zmiennych
+[* definiowanie zmiennych](#zmienne)
 
     * pisanie składni opartej na zagnieżdżaniu selektorów w selektorach
 
@@ -151,6 +151,7 @@ Mapa źródłowa jest wytworzona przy pomocy zakodowanego komentarza poprzedzone
 `//` ten komentarz znajdzie się jedynie w pliku Sass
 
 ---
+#### Zmienne {#zmienne}
 
 `Zmienne` są poprzedzone znakiem dolara $ (pozwala na szeroki zakres przetrzymywanych danych). Zmienne należy nazywać ze względu na semantykę (opis do czego ona służy) i wg jednej zasady np. main-color lub color-main
 

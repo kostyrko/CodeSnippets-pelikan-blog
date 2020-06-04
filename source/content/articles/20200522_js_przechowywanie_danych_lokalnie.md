@@ -1,11 +1,11 @@
-Title: JavaScript - przechowywanie danych lokalnie i w sesji
+Title: JavaScript - przechowywanie danych lokalnie oraz w sesji
 Author: mkostyrko
-Date: 2020-06-01 10:00
-Updated:
+Date: 2020-05-22 10:00
+Updated: 2020-06-04 10:00
 Category: javascript
 Tags: js, javascript, local storage, przechowywanie danych lokalnie
 Slug: js-przechowywanie-danych-lokalnie
-related_posts: 
+related_posts: js-dom-elementy-selektory
 
 Lokalna pamięć przeglądarki pozwala na przechowywanie danych przy pomocy JavaScript bezterminowo.
 

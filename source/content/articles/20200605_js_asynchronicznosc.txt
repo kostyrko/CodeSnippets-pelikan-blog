@@ -1,6 +1,7 @@
 Title: JavaScript: asynchroniczność i XML -> AJAX
 Author: mkostyrko
-Date: 2020-05-26 10:00
+Date: 2020-06-05
+ 10:00
 Updated:
 Category: javascript
 Tags: javascript, js, asynchroniczność

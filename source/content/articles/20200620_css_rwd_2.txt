@@ -4,8 +4,8 @@ Date: 2020-04-06 11:00
 Updated:
 Category: html
 Tags: 
-Slug: html-rwd
-related_posts: js-rwd
+Slug: css-rwd-2
+related_posts: css-rwd, html-css-bem
 
 
 Gotowe wzory: bootstrap, skeleton, materialize, w3.css, material-UI
