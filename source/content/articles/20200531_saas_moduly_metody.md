@@ -44,6 +44,7 @@ Wybrane
 |**saturate($color, $amount)**| zmienia nasilenie barwy koloru|
 |**transparentize($color, $amount)**/fade-out($color, $amount)| wpływa na przezroczystość koloru|
 
+---
 
 ### List {#list}
 
