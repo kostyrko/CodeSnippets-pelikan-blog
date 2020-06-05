@@ -16,7 +16,8 @@ BEM - https://css-tricks.com/bem-101/
 
 Destrukturyzacja w JS http://kursjs.pl/kurs/es6/destructuring.php
 
-Semantyczny html
+Semantyczny i dostępność html
+https://blog.comandeer.pl/o-semantyce-slow-kilka.html
 
 Asynchroniczność w JS
 
