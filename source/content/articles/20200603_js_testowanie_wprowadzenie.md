@@ -1,13 +1,15 @@
-Title: JavaScript - testowanie kodu: wprowadzenie
+Title: JavaScript - krótkie wprowadzenie do testowania kodu
 Author: mkostyrko
 Date: 2020-06-03 10:00
 Updated:
 Category: javascript
 Tags: 
-Slug: js-testowanie
+Slug: js-testowanie-wprowadzenie
 related_posts: 
 
+Dlaczego warto stosować testy/Do czego służą testy?
 
+[..........]
 
 TDD - test driven development - testowanie aplikacji na bieżąco, podczas realizacji kolejnych kroków, może to być związane z tworzeniem testu jeszcze przed napisaniem danego bloku kodu
 
