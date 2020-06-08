@@ -21,6 +21,8 @@ axios
 
 Źródła:
 
+https://www.youtube.com/watch?v=MD1euJQQkLQ - PL
+
 https://en.wikipedia.org/wiki/Ajax_(programming)
 
 https://jcubic.pl/2018/05/asynchronicznosc-javascript-obietnice.html
