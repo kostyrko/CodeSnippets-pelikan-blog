@@ -7,7 +7,7 @@ Tags:
 Slug: js-testowanie
 related_posts: 
 
-![mocha-chai-nodejs-logo](https://camo.githubusercontent.com/c14c2f174870d15a031245b3d3cd57f648e50fb2/68747470733a2f2f7777772e706172616469676d616469676974616c2e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031372f30322f312e706e67)
+
 
 TDD - test driven development - testowanie aplikacji na bieżąco, podczas realizacji kolejnych kroków, może to być związane z tworzeniem testu jeszcze przed napisaniem danego bloku kodu
 
@@ -18,6 +18,9 @@ International - testowanie modułów, a nawet całych aplikacji oraz przepływu 
 Functional - testowanie całych aplikacji z wykorzystaniem przeglądarki
 
 ---
+
+Istotne wyrażenia:
+
 
 Dummy - obiekt zastępujący obiekt nad którym się pracuje
 
@@ -33,9 +36,11 @@ FAKE - podobne do STUB ale może posiadać funkcjonalność
 
 Wymagania: NODEJS, NPM
 
-![nodejs&npm-logo](https://miro.medium.com/max/1400/1*hj-_anuWthYZs0x22hE9lA.png)
+![nodejs&npm-logo](https://miro.medium.com/max/1400/1*hj-_anuWthYZs0x22hE9lA.png){width:"75px"}
 
-Frameworki: 
+---
+
+### Frameworki: 
 
 ![mocha](https://camo.githubusercontent.com/af4bf83ab2ca125346740f9961345a24ec43b3a9/68747470733a2f2f636c6475702e636f6d2f78465646784f696f41552e737667)
 
@@ -48,25 +53,62 @@ CHAI - assertion library
 SINON - tworzy test doubles (MOCK,FAKE etc.)
 
 
-https://github.com/flawgical/Mocha-Chai-TTD
+Źródło-tutorial: https://github.com/flawgical/Mocha-Chai-TTD
+
+http://jsdn.pl/nowoczesne-testowanie-kodu-w-javascript-czesc-pierwsza-setup/
+
+http://jsdn.pl/testy-jednostkowe-javascript/
+
+https://blog.piotrnalepa.pl/2016/01/10/js-testowanie-kodu-javascript-za-pomoca-gulp-js-karma-i-mocha-js/
+
+https://www.youtube.com/watch?v=pnQVrUePcu8
+
+https://www.youtube.com/watch?v=MLTRHc5dk6s
+
+https://www.youtube.com/watch?v=MLTRHc5dk6s
+
+- Behavior-driven development (BDD)
 
 ---
+
+![Jasmine](https://www.nafrontendzie.pl/assets/images/jasmine_small.png)
 
 Jasmine
 
-https://www.nafrontendzie.pl/jasmine-podstawy-testowania
+Źródło-tutorial: https://www.nafrontendzie.pl/jasmine-podstawy-testowania
+
+- nie jest uzależniony od elementów DOM 
+
+- skupiony na testowaniu zachowania
 
 ---
 
+![Jest](https://miro.medium.com/max/956/1*Ov3_LfV1tNqb0PMioxvpaw.png)
+
 Jest
 
-https://www.youtube.com/watch?v=gX440uva4NU
+Źródło-tutorial: https://devenv.pl/testowanie-w-node-js-jest-alternatywa/
+
+https://www.youtube.com/watch?v=gX440uva4NU - PL
+
+https://www.youtube.com/watch?v=_zEX9sHzqS4 - PL
+
+https://www.youtube.com/watch?v=FgnxcUQ5vho
+
+
 
 ---
 
 QUnit
 
+![QUnit](https://www.nafrontendzie.pl/assets/images/qunit.png)
+
+Źródło-tutorial: ---
+
+
 ---
+
+![podsumowanie](https://3fxtqy18kygf3on3bu39kh93-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/TOP-5-JS-700x1513.png)
 
 
 ---
@@ -74,21 +116,10 @@ QUnit
 Źródła:
 
 
+https://jestjs.io/
 
-http://jsdn.pl/nowoczesne-testowanie-kodu-w-javascript-czesc-pierwsza-setup/
 
-http://jsdn.pl/testy-jednostkowe-javascript/
-
-https://www.youtube.com/watch?v=_zEX9sHzqS4
-
-https://www.youtube.com/watch?v=pMmXJcDLUFA
-
-https://www.youtube.com/watch?v=MLTRHc5dk6s
+https://jestjs.io/docs/en/mock-functions.html
 
 
 
-https://www.youtube.com/watch?v=FgnxcUQ5vho
-
-https://www.youtube.com/watch?v=pnQVrUePcu8
-
-https://blog.piotrnalepa.pl/2016/01/10/js-testowanie-kodu-javascript-za-pomoca-gulp-js-karma-i-mocha-js/
