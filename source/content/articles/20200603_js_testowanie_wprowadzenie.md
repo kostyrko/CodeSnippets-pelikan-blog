@@ -110,7 +110,18 @@ QUnit
 
 ---
 
+Zestawienie
+
 ![podsumowanie](https://3fxtqy18kygf3on3bu39kh93-wpengine.netdna-ssl.com/wp-content/uploads/2019/10/TOP-5-JS-700x1513.png)
+
+#### Wtyczki
+
+Wallaby.js - wtyczka do IDE stworzona do testowania JS - współpracuje z frameworkami wyżej wymienionymi
+
+https://wallabyjs.com/
+
+Źródło-tutorial: https://www.youtube.com/watch?v=P4UQ-jTTJJ4
+
 
 
 ---
@@ -122,6 +133,5 @@ https://jestjs.io/
 
 
 https://jestjs.io/docs/en/mock-functions.html
-
 
 
