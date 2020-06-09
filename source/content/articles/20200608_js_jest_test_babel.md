@@ -4,8 +4,8 @@ Date: 2020-06-08 10:00
 Updated:
 Category: javascript
 Tags: test, jest, tdd, node, npm, babel, transpilacja, transpilator, babel.js, babeljs
-Slug: js-jest-test
-related_posts:
+Slug: js-jest-test-babel
+related_posts: js-babel, js-jest-test-2
 
 Do stworzenia pierwszego testu posłużyłem się [dokumentacją JEST](https://jestjs.io/docs/en/getting-started#generate-a-basic-configuration-file) oraz [tym materiałem](https://www.youtube.com/watch?v=_zEX9sHzqS4) (autorstwa Kacpra Kozaka)
 
@@ -130,13 +130,13 @@ W następnym kroku należy stworzyć plik `babel.config.js` w którym należy sk
 
 ==================================
 
-Alternatywnie należy zainstalować `babel-cli` oraz również `@babel/preset-env` (patrz [tutaj](https://babeljs.io/setup#installation))
+Alternatywnie należy zainstalować `babel-cli` oraz również `@babel/preset-env` (patrz [tutaj](https://babeljs.io/setup#installation)) w ten sposób babel zainstaluje potrzebne mu wtyczki
 
     npm install --save-dev babel-cli
 
     npm install @babel/preset-env --save-dev
 
-plik konfiguracyjny dla `babel` może nosić nazwę `.babelrc`
+plik konfiguracyjny powinien nosić nazwę `.babelrc` i zawierać:
 
   {
     "presets": ["@babel/preset-env"]
