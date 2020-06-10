@@ -7,6 +7,9 @@ Tags:
 Slug: js-testowanie-wprowadzenie
 related_posts: 
 
+
+![TDD](https://i.pinimg.com/originals/6a/74/6c/6a746c70228203d1cbd8835bf63840b1.jpg)
+
 Dlaczego warto stosować testy/Do czego służą testy?
 
 [..........]

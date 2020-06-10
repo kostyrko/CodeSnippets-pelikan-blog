@@ -5,7 +5,7 @@ Updated:
 Category: saas
 Tags: sass, scss, css, javascript, gulp, gulpfile
 Slug: saas-wprowadzenie
-related_posts: js-gulp
+related_posts: js-gulp, css-rwd
 
 CSS na sterydach - czyli **Syntactically Awesome Style Sheets**
 
@@ -460,13 +460,13 @@ Operatory stosowane przypadku **wyrażeń logicznych** -> `not`, `and`, `or`
 
 #### Instrukcja warunkowa @if {#if}
 
-    $type: monster;
+    $type: droid;
     p {
-        @if $type == ocean {
+        @if $type == c3po {
+            color: gold;
+        } @else if $type == r2d2 {
             color: blue;
-        } @else if $type == matador {
-            color: red;
-        } @else if $type == monster {
+        } @else if $type == d-o {
             color: green;
         } @else {
             color: black;
@@ -481,8 +481,46 @@ Generacja selektorów z powtarzalną wartością
 
     @for $var from <start> to <end> // wartość końcowa jest pomijana
 
+    Przykład 1:
+
+    @for $i from 1 through 3 {
+        h#{$i} {
+            font-size: 120px;
+        }
+    }
+
+        WYNIK CSS:
+
+            h1 {
+            font-size: 100px;
+            }
+
+            h2 {
+            font-size: 100px;
+            }
+
+            h3 {
+            font-size: 100px;
+            }
+
+    Przykład 2
+
     @for $i from 1 through 3 {
         .item-#{$i} { width: 2em * $i; }
+    }
+
+    Przykład 3
+
+    $font-color: (
+        color1: red,
+        color2: green,
+        color3: blue
+    );
+
+    @for $i from 1 through 3 {
+        h#{$i} {
+            color: nth(map-values($font-color), $i);
+        }
     }
 
 
@@ -491,12 +529,39 @@ Pętla @each pracuje na zbiorze danych - iteruje po liście wartości
     @each $var in <lista> {
     }
 
+    // PRZYKŁAD 1
+
+    @each $num in 1,2,3 {
+    h#{$num} {
+        font-size: 100px;
+    }
+    };
+
+        // WYNIK CSS:
+
+            h1 {
+            font-size: 100px;
+            }
+
+            h2 {
+            font-size: 100px;
+            }
+
+            h3 {
+            font-size: 100px;
+            }
+
+
+
+    // PRZYKŁAD 2
+
     @each $animal in puma, sea-slug, egret, salamander {
         .#{$animal}-icon {
             background-image: url('/images/#{$animal}.png');}
     }
 
-    .puma-icon { background-image: url("/images/puma.png");}
+        // WYNIK-1 CSS:
+        .puma-icon { background-image: url("/images/puma.png");}
 
 Istnieje pętla `@while` wykorzystywana jest wtedy gdy nie mamy pewności kiedy dany warunek się skończy
 
