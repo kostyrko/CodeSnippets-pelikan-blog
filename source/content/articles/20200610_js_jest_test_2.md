@@ -25,23 +25,47 @@ Zadanie stwórz funkcję spełniającą następujące warunki
     5. He answers 'Whatever.' to anything else.
 
 
-Test 1
+#### Test 1
 
 `talkToBob.test.js`
 
-    import talkToBob from './talkToBob'
+  const talkToBob = require('./talkToBob');
 
-    it("answers Sure, if ask him a question", () => {
-      expect(talkToBob("How are You?").toBe('Sure.'))
-    })
+  test("answers Sure, if ask him a question", () => {
+    expect(talkToBob("How are You?")).toBe("Sure")
+  });
 
 `talkToBob.js`
 
-    const talkToBob = (msg = "") => {
-      if(msg.endsWidth("?")) return "Sure"
+    function talkToBob(info = "") {
+      if(info.endsWith("?")) return "Sure";
     };
 
-    export default talkToBob
+    module.exports = talkToBob;
+
+#### Test 2
+
+`talkToBob.test.js`
+
+    const talkToBob = require('./talkToBob');
+
+    describe('Function - talkToBob', () => {
+      test("answers Sure, if ask him a question", () => {
+        expect(talkToBob("How are You?")).toBe("Sure")
+      });
+      test("Answers 'Whoa, chill out!' if you yell at him", () => {
+        expect(talkToBob("WHAT?")).toBe("Whoa, chill out!")
+      });
+    });
+
+`talkToBob.js`
+
+    function talkToBob(info = "") {
+      if(info.endsWith("?") && info !== info.toUpperCase()) return "Sure";
+      if(info === info.toUpperCase()) return "Whoa, chill out!";
+    };
+
+    module.exports = talkToBob;
 
 ----
 
