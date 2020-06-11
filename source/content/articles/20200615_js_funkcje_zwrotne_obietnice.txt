@@ -15,6 +15,10 @@ related_posts: js-asynchroniczność
 
 Źródła:
 
+[Po co są callbacki i jak ich używać?](https://www.youtube.com/watch?v=HMfJNMOf9Bc)
+
+[Asynchroniczność w JavaScript cz. 1: Obietnice(https://jcubic.pl/2018/05/asynchronicznosc-javascript-obietnice.html)
+
 https://www.nafrontendzie.pl/javascript-metody-obiektu-jako-callback
 
 http://kursjs.pl/kurs/ajax/promise.php

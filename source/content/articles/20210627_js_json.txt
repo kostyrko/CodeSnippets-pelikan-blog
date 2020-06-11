@@ -17,4 +17,8 @@ JSON - JavaScript Object Notation
 
 http://kursjs.pl/kurs/ajax/server-lokalny.php
 
-http://kursjs.pl/kurs/ajax/ajax.php
+https://blog.codingblocks.com/2018/reading-json-files-in-nodejs-require-vs-fs-readfile/
+
+Rauschmayer, A. (2014). Speaking JavaScript: an in-depth guide for programmers. " O'Reilly Media, Inc.".
+
+Duckett, Jon. Javascript and jquery: Interactive front-end web development. Wiley Publishing, 2014.

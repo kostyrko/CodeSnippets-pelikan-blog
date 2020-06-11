@@ -8,6 +8,7 @@ Slug: css-masonry-layout
 related_posts: frontend-rekrutacja
 
 
+
 Paradygmaty programowania w JS -> obiektowy vs. funkcyjny
 
 Konteksty this w JS https://ksmigiel.com/2016/03/js-this/
@@ -26,3 +27,5 @@ Asynchroniczność w JS
 Źródła
 
 https://www.youtube.com/watch?v=944OGLqBU5c
+
+https://rwbit.pl/pytania-js/

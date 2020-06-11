@@ -1,10 +1,10 @@
-Title: JavaScript: XHMLHttpRequest()
+Title: JavaScript: AJAX, REST i XHMLHttpRequest() - wprowadzenie
 Author: mkostyrko
-Date: 2020-06-06 10:00
+Date: 2020-06-12 10:00
 Updated:
 Category: javascript
-Tags: javascript, js
-Slug: js-prototypy
+Tags: javascript, js, ajax, rest, XHMLHttpRequest
+Slug: js-ajax-rest-xhmlhttp
 related_posts: 
 
 
@@ -45,6 +45,8 @@ readyState Values
 ---
 
 Źródła:
+
+Duckett, Jon. Javascript and jquery: Interactive front-end web development. Wiley Publishing, 2014.
 
 http://kursjs.pl/kurs/ajax/xmlhttprequest.php
 

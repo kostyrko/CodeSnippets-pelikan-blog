@@ -1,4 +1,4 @@
-Title: JavaScript ES10
+Title: JavaScript ES09/10
 Author: mkostyrko
 Date: 2020-07-03 10:00
 Updated:
@@ -20,6 +20,8 @@ https://www.youtube.com/watch?v=8Ie7hHxVbA8
 https://www.youtube.com/watch?v=y-Bfgellcog
 
 https://www.youtube.com/watch?v=giuE9p8_7ks
+
+https://rwbit.pl/od-es6-do-esnext-nowosci-w-es9/
 
 
 

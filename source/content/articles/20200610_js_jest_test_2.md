@@ -29,11 +29,11 @@ Zadanie stwórz funkcję spełniającą następujące warunki
 
 `talkToBob.test.js`
 
-  const talkToBob = require('./talkToBob');
+    const talkToBob = require('./talkToBob');
 
-  test("answers Sure, if ask him a question", () => {
-    expect(talkToBob("How are You?")).toBe("Sure")
-  });
+    test("answers Sure, if ask him a question", () => {
+      expect(talkToBob("How are You?")).toBe("Sure")
+    });
 
 `talkToBob.js`
 
