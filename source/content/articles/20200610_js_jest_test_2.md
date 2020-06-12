@@ -67,13 +67,73 @@ Zadanie stwórz funkcję spełniającą następujące warunki
 
     module.exports = talkToBob;
 
-----
+#### Test 3
 
-Test 2...
+`talkToBob.test.js`
 
-![TBC](https://steveworkingthroughtheword.files.wordpress.com/2016/03/tobecontinued.jpg)
+    const talkToBob = require('./talkToBob');
 
+    describe('Function - talkToBob', () => {
+      test("answers Sure, if ask him a question", () => {
+        expect(talkToBob("How are You?")).toBe("Sure")
+      });
+      test("Answers 'Whoa, chill out!' if you yell at him", () => {
+        expect(talkToBob("DON'T")).toBe("Whoa, chill out!")
+      });
+      test("He retorts 'Calm down, I know what I'm doing!' if you yell a question at him.", () => {
+        expect(talkToBob("WHAT?")).toBe("Calm down, I know what I'm doing!")
+      });
+    });
 
+`talkToBob.js`
+
+    function talkToBob(info = "") {
+      if(info.endsWith("?") && info !== info.toUpperCase()) return "Sure";
+      if(info === info.toUpperCase() && !info.endsWith("?")) return "Whoa, chill out!";
+      if(info.endsWith("?")) return "Calm down, I know what I'm doing!";
+      if(info === "") return "Fine. Be that way!";
+      else return 'Whatever.'
+    };
+
+    module.exports = talkToBob;
+
+#### Test 4-5
+
+`talkToBob.test.js`
+
+    const talkToBob = require('./talkToBob');
+
+    describe('Function - talkToBob', () => {
+      test("answers Sure, if ask him a question", () => {
+        expect(talkToBob("How are You?")).toBe("Sure")
+      });
+      test("Answers 'Whoa, chill out!' if you yell at him", () => {
+        expect(talkToBob("DON'T")).toBe("Whoa, chill out!")
+      });
+      test("He retorts 'Calm down, I know what I'm doing!' if you yell a question at him.", () => {
+        expect(talkToBob("WHAT?")).toBe("Calm down, I know what I'm doing!")
+      });
+      test("He says 'Fine. Be that way!' if you address him without actually saying anything.", () => {
+        expect(talkToBob("")).toBe('Fine. Be that way!')
+      });
+      test("He answers 'Whatever.' to anything else.", () => {
+        expect(talkToBob("whatever")).toBe('Whatever.')
+      });
+    });
+
+`talkToBob.js`
+
+    function talkToBob(info = "") {
+      if(info.endsWith("?") && info !== info.toUpperCase()) return "Sure";
+      if(info === info.toUpperCase() && !info.endsWith("?") && info.length !== 0 ) return "Whoa, chill out!";
+      if(info.endsWith("?")) return "Calm down, I know what I'm doing!";
+      if(info === "") return "Fine. Be that way!";
+      else return 'Whatever.'
+    };
+
+    module.exports = talkToBob;
+
+::: Niezastosowanie przy drugim warunku  `&& info.length !== 0` a wprowadzenie dowolnej wartości jako domyślnej wprowadzanego, który stanie się wywołaniem czwartego warunku nie spełni wymogu założonego przez piąty test:::
 
 ---
 
