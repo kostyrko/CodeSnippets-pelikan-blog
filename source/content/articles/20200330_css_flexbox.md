@@ -150,21 +150,6 @@ Więcej na ten temat znajdziesz [tutaj](https://developer.mozilla.org/en-US/docs
 
 ---
 
-### flex
-Przy pomocy deklaracji `flex` istnieje możliwość zdefiniowania minimalnej wielkości dziecka np. 
-
-    div {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        flex: 200px
-      }
-
-Ta **deklaracja** może być użyta również w ramach deklaracji **dziecka** - patrz niżej
-
-
----
-
 ### flex-flow
   flex-direction + flex-wrap = flex-flow np.
 
@@ -232,6 +217,16 @@ Przykładowe zastosowanie:
 
     .obiekt:nth-of-type(3) {
       flex: 2 200px;
+    }
+
+
+Skrótu `flex` można wykorzystać w następujący sposób
+
+  .div1 {
+      flex: 0 0 200px; // flex grow, shrink, basis
+    }
+  .div2 {
+      flex: 1; // 0 grow; 1 shrink, basis: auto (całość)
     }
 
 ---
