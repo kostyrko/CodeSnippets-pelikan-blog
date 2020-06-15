@@ -44,6 +44,8 @@ Wybrane
 |**saturate($color, $amount)**| zmienia nasilenie barwy koloru|
 |**transparentize($color, $amount)**| wpływa na przezroczystość koloru|
 
+[A visual guide to Sass & Compass Color Functions](http://jackiebalzer.com/color)
+
 ---
 
 ### List {#list}
@@ -181,6 +183,11 @@ Przykłady zastosowania:
 
     @debug insert("Roboto", " Bold", 100); // "Roboto Bold" - wstawia na końcu
     @debug insert("Bold", "Roboto ", -100); // "Roboto Bold" - wstawia na sam początek
+
+
+---
+
+
 
 ---
 
