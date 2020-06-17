@@ -59,6 +59,9 @@ related_posts:
 | [Introduction to Programming with JavaScript](https://launchschool.com/books/javascript) | Książka - darmowa + ćwiczenia |
 |[Eloquent JavaScript](https://eloquentjavascript.net/)| Darmowa książka w wersji elektronicznej|
 |[devdocs.io/javascript/](devdocs.io/javascript/)| Dokumentacja wieluuuu języków programowani, w tym JS (alfabetycznie) |
+|[Speaking JavaScript](http://speakingjs.com/es5/index.html)| Książka wydana przez o'reilly |
+|[JavaScript for impatient programmers](https://exploringjs.com/impatient-js/toc.html)| kolejna książka autorstwa A. Rauschmayer'a |
+
 
 ---
 
