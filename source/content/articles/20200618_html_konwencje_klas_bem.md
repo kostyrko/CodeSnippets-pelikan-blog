@@ -1,4 +1,4 @@
-Title: CSS konwencje nazewnictwa klas i BEM
+Title: CSS konwencje nazewnictwa klas -> OOCSS, BEM i BEMIT
 Author: mkostyrko
 Date: 2020-06-18 10:00
 Updated:
@@ -7,6 +7,7 @@ Tags: css, html, klasy, bem, bemit, oocss
 Slug: html-konwencje-klas
 related_posts: 
 
+![BEM](https://www.e-accent.com/images/blog/bem.png){: height="300px"}
 
 
 ### Podstawowe zasady nazewnictwa
@@ -35,6 +36,8 @@ Podstawowe zasady:
 
 * **separacja kontenerów i zawartości** (wygląd obiektu nie powinien być zależny od elementu, w którym się znajduje - jego ewentualna modyfikacja powinna być uzależniona od osobnej klasy przypisanej tej danej modyfikacji `.article-header` zamist `.article h1`)
 
+![others-css](https://ach-te-internety.pl/wp-content/uploads/2016/07/bem-css-768x432.png){: height="250px"}
+
 ---
 
 #### Podstawowe zasady, o których warto pamiętać
@@ -58,6 +61,8 @@ Podstawowe zasady:
 **Zasada 8** - można używać przedrostków is- lub has- dla klas opisujących dany stan np `.activate` -> `.is-activate`
 
 ---
+
+![BEM-batman](https://res.cloudinary.com/indysigner/image/fetch/f_auto,q_auto/w_1600/https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/3a93b95e-3e4e-4367-86cb-0606ace15af3/sign-theme-batman.png){: height="300px"}
 
 ### [BEM](http://getbem.com/)
 
@@ -111,16 +116,16 @@ tu można przeczytać na temat 7 warstw projektu (Saas) -> [The Inverted Triangl
 
 ---
 
-#### Znaczeniowe przedrostki - akroni,y (Namespaces)
+#### Znaczeniowe przedrostki - akronimy (Namespaces)
 
 | litera | znaczenie
 |---|---|
-|`c`| Components |
-|`o`| Objects |
-|`u`| Utilities |
+|`c`| Components/element |
+|`o`| Objects/obiekt |
+|`u`| Utilities/narzędzie |
 |`is/has`| stan bycia/posiadania |
-|`t`| theme |
-|`s`| styling |
+|`t`| theme/skórka |
+|`s`| styling/stylizacja |
 |`js`| powiązanie z JS |
 
 
