@@ -37,9 +37,13 @@ Krótka instrukcja hostowania bloga przy pomocy GitHub-Pages
 
 * Tworzenie plików do wgrania do repozytorium (gdzie output - miejsce zapisu plików może być np. '.' jeśli w danym folderze) ale tego do gałęzi `master`
 
+Przykład zapisu komendy
+
         ghp-import -m "Generate Pelican site" --no-jekyll -b master output
 
-    tłumacząc
+        ghp-import -m "Generate Pelican site" --no-jekyll -b master .
+
+Schemat:
 
         ghp-import -m "wiadomość" --no-jekyll -b [nazwa_gałęzi] [folder_zapisu_danych]
 
