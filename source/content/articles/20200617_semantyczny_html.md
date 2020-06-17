@@ -39,6 +39,7 @@ Znaczniki semantyczne określają znaczenie treści, która jest w ramach nich z
 |`<em>`| emphasis/podkreślenie|
 |`<ins>`| insertion/ treść wstawiona|
 |`<progress>`| oznaczenie postępu |
+|`<rel>`| relation- ma na celu wskazanie na relacje pomiędzy elementami |
 
 ---
 
