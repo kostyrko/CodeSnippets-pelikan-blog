@@ -40,7 +40,10 @@ Przykładowe zastosowanie
 
 `input[type="checkbox"]:checked` - zaznaczenie checkboxa
 
-Ta pseudo klasa często może być wykorzystana również w celu dodanie jakiegoś rodzaju funkcjonalności do strony - np. poprzez ustawienie deklaracji `display` oraz nadanie jej odpowiedniej wartości w momencie gdy `checked = true`. Należy pamiętać wówczas o dwóch ważnych warunkach. 1) checkbox musi znajdować się na poziomie wyżej niż obiekt, na który planujemy mieć wpływ 2) zależność należy oznaczyć znakiem "poprzedzony" -> `~`
+Ta pseudo klasa często może być wykorzystana również w celu dodanie jakiegoś rodzaju funkcjonalności do strony - np. poprzez ustawienie deklaracji `display` oraz nadanie jej odpowiedniej wartości w momencie gdy `checked = true`. Należy pamiętać wówczas o dwóch ważnych warunkach:
+  1) checkbox musi znajdować się na poziomie wyżej niż obiekt, na który planujemy mieć wpływ
+  
+  2) zależność należy oznaczyć znakiem "poprzedzony" -> `~`
 
 CSS
 
