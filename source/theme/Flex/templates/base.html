@@ -193,6 +193,8 @@
 
   <!-- MAIN -->
   <main>
+
+
     <div class="container">
       {% if GOOGLE_ADSENSE and GOOGLE_ADSENSE.ads.main_menu %}
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -205,6 +207,15 @@
       {% endif %}
 
       {% if MAIN_MENU %}
+
+      <!-- intrusion by MK - ADD CHECKBOX-THEME -->
+      <!-- <input type="checkbox" name="theme" id="theme-checkbox" class="theme-checkbox">
+      <label class="theme-label" for="theme-checkbox">
+        <i class="fa fa-moon"> Ciemny motyw</i>
+        <i class="fa fa-sun"> Jasny motyw</i>
+      </label> -->
+    <!-- END of intrusion -->
+
       <nav>
         <a href="{{ SITEURL }}">{{ _('Home') }}</a>
 
@@ -220,13 +231,6 @@
         <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">{{ _('RSS') }}</a>
         {% endif %}
 
-        <!-- intrusion by MK - ADD CHECKBOX-THEME -->
-        <input type="checkbox" name="theme" id="theme-checkbox" class="theme-checkbox">
-        <label class="theme-label" for="theme-checkbox">
-          <i class="fa fa-moon"> Ciemny motyw</i>
-          <i class="fa fa-sun"> Jasny motyw</i>
-        </label>
-        <!-- END of intrusion -->
       </nav>
       {% endif %}
 

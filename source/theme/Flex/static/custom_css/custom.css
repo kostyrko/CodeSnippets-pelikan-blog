@@ -206,5 +206,40 @@ aside div > a:hover {
   }
 }
 
+/* DARK THEME to implement */
 
+/* nav {
+  padding: 0 0 10px 0;
+}
 
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container label {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.theme-checkbox {
+  display: none;
+}
+
+label .fa-sun {
+  display: none;
+}
+
+#theme-checkbox:checked ~label .fa-moon {
+  display: none;
+}
+
+#theme-checkbox:checked ~label .fa-sun {
+  display: inline;
+}
+
+#theme-checkbox:checked ~article {
+  background-color: var(--gray-darker);
+} */
