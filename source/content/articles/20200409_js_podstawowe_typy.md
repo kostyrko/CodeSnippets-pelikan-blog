@@ -45,13 +45,15 @@ Istnieją trzy typy deklaracji zmiennych
 | słowo kluczowe | Zakres | Windowanie | Czy może być jej ponownie przypisana wartość | Czy może być ponownie zadeklarowana?
 |---|---|---|---|---| 
 | `var` | Zakres funkcji | Tak | Tak | Tak |
-| `let` | Zakres bloku | nie | Tak | nie |
-| `const` | Zakres bloku| nie | nie | nie |
+| `let` | Zakres bloku | "nie" | Tak | nie |
+| `const` | Zakres bloku| "nie" | nie | nie |
 
 więcej na ten temat [tutaj](https://www.taniarascia.com/es6-syntax-and-feature-overview/)
 
-
 *Hoisting* - "przenoszenie" zmiennych na sam początek kodu, do globalnego zasięgu lub zasięgu funkcji ([więcej tutaj na ten temat](http://blog.pjuskiewicz.com/2017/11/11/hoisting-windowanie-javascript/))
+
+Windowanie w przypadku `let` i `const` odbywa się, ale nie są one osiągalne do momentu, w którym ich deklaracja jest zewaluowana w trakcie uruchamiania programu (więcej na ten temat [tutaj](http://stackoverflow.com/questions/31219420/are-variables-declared-with-let-or-const-not-hoisted-in-es6))
+
 
 ---
 
