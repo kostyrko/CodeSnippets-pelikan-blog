@@ -41,7 +41,6 @@ Istnieją trzy typy deklaracji zmiennych
 
 `let` w odróżnieniu od `var` nie jest globalnie dostępny a przypisany do najbliższych funkcji etc. jest dostępny w sposób skryptowy (linia po linii, podobnie jak w pythonie), wartość mu przypisana może być zmieniona ale nie może zostać ponownie zadeklarowany, nie tworzy globalnie dostępnego obiektu.
 
-
 | słowo kluczowe | Zakres | Windowanie | Czy może być jej ponownie przypisana wartość | Czy może być ponownie zadeklarowana?
 |---|---|---|---|---| 
 | `var` | Zakres funkcji | Tak | Tak | Tak |
