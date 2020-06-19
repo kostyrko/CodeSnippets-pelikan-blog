@@ -9,7 +9,9 @@ SITEURL = 'https://kostyrko.github.io/zfrontu/'
 SITETITLE = "Notatki z frontu"
 SITESUBTITLE = "JS/CSS/PY"
 # FAVICON = SITEURL + '/theme/img/favicon.png'
-FAVICON = '/theme/img/favicon.png'
+# FAVICON = '/theme/img/favicon.png'
+FAVICON = 'https://github.com/kostyrko/zfrontu/blob/master/theme/img/favicon.png?raw=true'
+
 # BROWSER_COLOR = "#44151a"
 
 
