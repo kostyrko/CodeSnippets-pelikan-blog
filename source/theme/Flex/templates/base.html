@@ -109,7 +109,7 @@
   <!-- ASIDE -->
   
   <aside>
-    <!-- intrusion by MK -->
+    <!-- intrusion by MK - not implemented -->
     <!-- <div>
       <input type="checkbox" class="check-box">
       <label for="check">
@@ -117,6 +117,7 @@
         <i class="fa fa-times"></i>
       </label>
     </div> -->
+    <!-- END of intrusion -->
     <div>
       <a href="{{ SITEURL }}">
         {% if SITELOGO %}
@@ -218,6 +219,14 @@
         {% if FEED_ALL_RSS %}
         <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">{{ _('RSS') }}</a>
         {% endif %}
+
+        <!-- intrusion by MK - ADD CHECKBOX-THEME -->
+        <input type="checkbox" name="theme" id="theme-checkbox" class="theme-checkbox">
+        <label class="theme-label" for="theme-checkbox">
+          <i class="fa fa-moon"> Ciemny motyw</i>
+          <i class="fa fa-sun"> Jasny motyw</i>
+        </label>
+        <!-- END of intrusion -->
       </nav>
       {% endif %}
 
