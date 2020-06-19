@@ -46,7 +46,7 @@ Istnieją trzy typy deklaracji zmiennych
 |---|---|---|---|---| 
 | `var` | Zakres funkcji | Tak | Tak | Tak |
 | `let` | Zakres bloku | nie | Tak | nie |
-| `var` | Zakres bloku| nie | nie | nie |
+| `const` | Zakres bloku| nie | nie | nie |
 
 więcej na ten temat [tutaj](https://www.taniarascia.com/es6-syntax-and-feature-overview/)
 
