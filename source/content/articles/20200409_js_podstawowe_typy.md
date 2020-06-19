@@ -27,7 +27,7 @@ Istnieją trzy typy deklaracji zmiennych
 
 ![starWars_zmienne](https://miro.medium.com/max/640/0*2Iz9vcaOtPNivfen.png)
 
-  * `const` - podstawowa deklaracja, zmienna nie ulega zmianie, tylko do odczytu
+  * `const` - podstawowa deklaracja, nie ulega zmianie, tylko do odczytu
   * `let` - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku, w którym jest zawarta
   * `var` - wcześniej podstawowa zmienna (przed ES6), obecnie rzadziej stosowana (po wprowadzeniu const i let) więcej na ten temat [tutaj](https://medium.com/@larry.sassainsworth/let-vs-var-vs-const-in-javascript-8b898f868394) lub poniżej.
 
@@ -40,6 +40,18 @@ Istnieją trzy typy deklaracji zmiennych
 4) **tworzeniu globalnego obiektu** (global object property)
 
 `let` w odróżnieniu od `var` nie jest globalnie dostępny a przypisany do najbliższych funkcji etc. jest dostępny w sposób skryptowy (linia po linii, podobnie jak w pythonie), wartość mu przypisana może być zmieniona ale nie może zostać ponownie zadeklarowany, nie tworzy globalnie dostępnego obiektu.
+
+
+| słowo kluczowe | Zakres | Windowanie | Czy może być jej ponownie przypisana wartość | Czy może być ponownie zadeklarowana?
+|---|---|---|---|---| 
+| `var` | Zakres funkcji | Tak | Tak | Tak |
+| `let` | Zakres bloku | nie | Tak | nie |
+| `var` | Zakres bloku| nie | nie | nie |
+
+więcej na ten temat [tutaj](https://www.taniarascia.com/es6-syntax-and-feature-overview/)
+
+
+*Hoisting* - "przenoszenie" zmiennych na sam początek kodu, do globalnego zasięgu lub zasięgu funkcji ([więcej tutaj na ten temat](http://blog.pjuskiewicz.com/2017/11/11/hoisting-windowanie-javascript/))
 
 ---
 
