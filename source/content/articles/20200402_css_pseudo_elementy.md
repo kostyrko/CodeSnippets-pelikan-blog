@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-04-02 07:00
 Updated:
 Category: css
-Tags: css, pseudo-elementy, first-line, ::before, ::after
+Tags: css, pseudo-elementy, first-line, ::before, ::after, before, after
 Slug: css-pseudo-elementy
 related_posts: flexbox-wprowadzenie
 
@@ -47,8 +47,12 @@ Przykładowe zastosowanie dodające określony tekst po tekście zawartym w wybr
       color: blue;
     }
 
+    .eye::after {
+    content: url(../assets/Eye.svg);
+  }
 
 `::before `- tworzy pseudo-element, który reprezentuje pierwsze dziecko wybranego selektora HTML, posiada właściwość `content` analogiczną do `::after`
+
 
 `::selection` - odwołuje się do podświetlenia wybranego tekstu znajdującego się w selekcji
 
