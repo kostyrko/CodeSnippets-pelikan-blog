@@ -239,7 +239,8 @@ Stosowanie nazewnictwa klas według jednego schematu pozawala na i późniejsze 
 
 [Metodyki CSS #2 – BEM](https://www.nafrontendzie.pl/metodyki-css-2-bem)
 
-https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/
+[css-naming-conventions-that-will-save-you-hours-of-debugging](https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
+
 
 [BEM - naming conventions](https://en.bem.info/methodology/naming-convention/)
 
