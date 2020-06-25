@@ -2,8 +2,8 @@ Title: Agile > Scrum > Lean Management > Kaban
 Author: mkostyrko
 Date: 2020-06-24 11:00
 Updated:
-Category: html
-Tags: agile, scrum, lean management, kaban, dvlpo-wnbe
+Category: dev
+Tags: agile, scrum, lean management, kaban, dvlpr-wnbe, tablica kaban, agile manifesto
 Slug: agile-scrum
 related_posts: 
 
