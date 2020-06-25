@@ -7,7 +7,7 @@ Tags: sass, scss, css, javascript, gulp, gulpfile
 Slug: saas-struktura-projektu
 related_posts: js-gulp, saas-wprowadzenie
 
-![struktura-projektu-scss](https://miro.medium.com/max/1400/1*MCiNLBzUI-LWK_PhVwq0xA.png){:height="75%" width="100%"}
+![struktura-projektu-scss](https://miro.medium.com/max/1400/1*MCiNLBzUI-LWK_PhVwq0xA.png#center){:height="75%" width="100%"}
 
 Wraz z wzrostem wielkości projektu, większą rolę odgrywać będzie odpowiedni sposób strukturyzacji oraz modularyzacji plików zdefiniowanych w ramach niego stylów. Podział na odpowiednie moduły umożliwia również ponowne wykorzystanie wybranych części kodu w innych projektach.
 

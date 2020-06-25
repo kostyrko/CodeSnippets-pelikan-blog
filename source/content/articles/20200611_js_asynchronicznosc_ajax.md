@@ -7,7 +7,7 @@ Tags: javascript, js, asynchroniczność, call stack, Web Api, obietnice, promis
 Slug: js-asynchronicznosc-ajax
 related_posts: js-xhr
 
-![ajax](https://adairtechs.com/images/ajax.jpg)
+![ajax](https://adairtechs.com/images/ajax.jpg#center)
 
 
 ### Wstęp

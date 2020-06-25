@@ -7,7 +7,7 @@ Tags: test, jest, tdd, node, npm, babel, transpilacja, transpilator, babel.js, b
 Slug: js-jest-test-2
 related_posts:
 
-![jest](https://tamalweb.com/wp-content/uploads/2019/07/jest_js-700x394.png)
+![jest](https://tamalweb.com/wp-content/uploads/2019/07/jest_js-700x394.png#center)
 
 Poniższy wpis powstał na podstawie tego [materiału](https://www.youtube.com/watch?v=gX440uva4NU), patrz również [tutaj](https://exercism.io/my/solutions/ca7b90c2164a49e5aed19f12518ac333) i jego założeniem jest próbą wprowadzenia do TDD (test driven development). W pierwszej kolejności znane są wytyczne/scenariusz funkcji następnie powstaje test a na jego podstawie funkcja
 

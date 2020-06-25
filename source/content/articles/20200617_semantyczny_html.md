@@ -7,7 +7,7 @@ Tags: css, html, semantyczny html, semantic
 Slug: html-semantyczny
 related_posts: 
 
-![semantyczny-html](https://www.jungledisk.com/blog/content/images/blog/div-soup-vs-semantic-html.png){: height="300px"}
+![semantyczny-html](https://www.jungledisk.com/blog/content/images/blog/div-soup-vs-semantic-html.png#center){: height="300px"}
 
 
 Znaczniki semantyczne określają znaczenie treści, która jest w ramach nich zamknięta. Nie powinny być wykorzystywane do pozycjonowania (od tego `div`) a do określania treści.

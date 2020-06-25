@@ -9,7 +9,7 @@ related_posts: js-gulp, css-rwd
 
 CSS na sterydach - czyli **Syntactically Awesome Style Sheets**
 
-![Sass](https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg)
+![Sass](https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg#center)
 
 Sass jest językiem skryptowym rozszerzającym możliwości CSS i wymaga kompilacji na CSS tak aby mógł być interpretowany przez przeglądarki w tym celu można wykorzystać Gulpa (odpowiedniej wtyczki) lun wtyczki VSC.
 

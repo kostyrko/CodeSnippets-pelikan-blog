@@ -7,7 +7,7 @@ Tags: node.js, node, nvm, aktualizacja, linux, ubuntu, bash, curl, npm
 Slug: js-nodejs-aktualizacja
 related_posts:
 
-![node](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1024px-Node.js_logo.svg.png){:height="50%" width="50%"}
+![node](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1024px-Node.js_logo.svg.png#center){:height="50%" width="50%"}
 
 Moja pierwsza instalacja node.js na Ubuntu odbyła się poprzez pobranie paczki i instalację zawartości paczki [Linux Binaries](https://nodejs.org/en/download/) 
     node -v

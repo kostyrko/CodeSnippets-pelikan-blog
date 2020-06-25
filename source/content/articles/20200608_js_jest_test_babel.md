@@ -7,7 +7,7 @@ Tags: test, jest, tdd, node, npm, babel, transpilacja, transpilator, babel.js, b
 Slug: js-jest-test-babel
 related_posts: js-babel, js-jest-test-2
 
-![Jest](https://miro.medium.com/max/956/1*Ov3_LfV1tNqb0PMioxvpaw.png)
+![Jest](https://miro.medium.com/max/956/1*Ov3_LfV1tNqb0PMioxvpaw.png#center)
 
 Do stworzenia pierwszego testu posłużyłem się [dokumentacją JEST](https://jestjs.io/docs/en/getting-started#generate-a-basic-configuration-file) oraz [tym materiałem](https://www.youtube.com/watch?v=_zEX9sHzqS4) (autorstwa Kacpra Kozaka)
 

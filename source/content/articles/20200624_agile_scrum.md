@@ -7,6 +7,9 @@ Tags: agile, scrum, lean management, kaban, dvlpr-wnbe, tablica kaban, agile man
 Slug: agile-scrum
 related_posts: 
 
+[![agile](http://www.pmpp.pl/wp-content/uploads/2019/02/agile-project-management-1200x850.jpg#center){: height="300px"}](http://www.pmpp.pl/hello-world/)
+
+
 ### Wstęp
 
 W pierwszej kolejności polecam podcast **DVLPR-WNBE #14** -> [Scrum Master i odpowiedzi na pytania Developer Wannabe podcast #14](https://codeboy.pl/dw14/), który stał się przyczynkiem do moich dalszych poszukiwań związanych z poruszonymi poniżej kwestiami i pozwolił mi na uporządkowanie wcześniej zasłyszanych pojęć, których zakres nie był mi znany - dodam, że nadal czuję się w nich zagubiony i wraz z upływem czasu mam nadzieję wracać do poniższej treści i ją edytować (głównie wzbogacać ją o tekst - moją własną interpretację niżej przedstawionych pojęć). 
