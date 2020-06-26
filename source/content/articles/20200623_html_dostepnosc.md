@@ -1,4 +1,4 @@
-Title: HTML -> zasady dostępności (ang. Accessibility)
+Title: HTML -> wstęp do budowy dostępnych stron (ang. Accessibility)
 Author: mkostyrko
 Date: 2020-06-23 11:00
 Updated:
