@@ -75,7 +75,7 @@ Strona winna posiadać odpowiedni `title` oraz oznaczenie języka `lang`, powinn
 
 Bardzo ważne jest stosowanie odpowiedniego kontrastu pomiędzy wykorzystanymi barwami tak aby miały odpowiedni kontarast
 
-patrz na narzędzie -> [Contrast Checker](https://webaim.org/resources/contrastchecker/)
+patrz na narzędzie -> [Contrast Checker](https://webaim.org/resources/contrastchecker/) albo [tanguru contrasst finder](https://contrast-finder.tanaguru.com/)
 
 #### Treść
 
@@ -112,7 +112,7 @@ Stany kontrolowane są przy pomocy JS - jednak istnieją atrybuty, które w przy
 
 | atrybut | znaczenie |
 |---|---|
-| `<div role="banner">` | przypisanie znaczenia np. banneru/dialogu/prezentacji/navigacji |
+| `<div role="banner">` | przypisanie znaczenia np. banneru/dialogu/prezentacji/nawigacji |
 | `aria-hidden="true"`| ukrycie elementu | 
 | `aria-haspopup="true"` | posiada okno wyskakujące | 
 | `aria-haspopup="true"` | posiada okno wyskakujące | 
