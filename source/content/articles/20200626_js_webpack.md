@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-06-26 11:00
 Updated:
 Category: javascript
-Tags: webpack
+Tags: webpack, webpack@4, javascript, task runner, transpilacja
 Slug: js-webpack
 related_posts: js-babel
 
@@ -11,7 +11,7 @@ related_posts: js-babel
 
 ### Wstęp
 
-*Webpack* generuje tzw. pakiety (ang. bundles -> bundle.js) na podstawie wytworzonego tzw. drzewa zależności oraz dostosowanie ich do formatu czytelnego dla możliwie jak najszerszego zakresu przeglądarek internetowych - jest swego rodzaju kompilatorem powstałej treści na podstawie różnych formatów do takiego, który przyjmuje przeglądarka internetowa (js,html,css). W  tym sensie działą podobnie do innych tzw. *tusk runnerów* (narzędzie do automatyzacji działań dokonywanych na plikach) jak Gulp
+*Webpack* generuje tzw. pakiety (ang. bundles -> bundle.js) na podstawie wytworzonego tzw. drzewa zależności oraz dostosowanie ich do formatu czytelnego dla możliwie jak najszerszego zakresu przeglądarek internetowych - jest swego rodzaju kompilatorem powstałej treści na podstawie różnych formatów do takiego, który przyjmuje przeglądarka internetowa (js,html,css). W  tym sensie działą podobnie do innych tzw. *task runnerów* (narzędzie do automatyzacji działań dokonywanych na plikach) jak Gulp
 
 Istotną zaletą korzystania z *Webpacka* jest to, że każdy plik jest traktowany jako moduł (obraz, css, font, js etc). ([CommonJS](https://flaviocopes.com/commonjs/) -> po stronie node.js i moduły z ES (klient) nie są dostępne dla wszystkich przeglądarek stąd potrzeba ich transpilacji)
 
@@ -29,7 +29,7 @@ Inicjalizajca porojektu (stworzenie package.json)
 
     npm init -y
 
-Instalacja wepacka w v.4 oraz cli v.4 jako developerska zależność
+Instalacja *Wepacka* w v.4 oraz cli v.4 jako developerska zależność
 
     npm i webpack@4 --save-dev
     npm i webpack-cli@3 --save-dev
