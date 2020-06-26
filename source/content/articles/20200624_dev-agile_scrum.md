@@ -4,7 +4,7 @@ Date: 2020-06-24 11:00
 Updated:
 Category: dev
 Tags: agile, scrum, lean management, kaban, dvlpr-wnbe, tablica kaban, agile manifesto
-Slug: agile-scrum
+Slug: dev-agile-scrum
 related_posts: 
 
 [![agile](http://www.pmpp.pl/wp-content/uploads/2019/02/agile-project-management-1200x850.jpg#center){: height="300px"}](http://www.pmpp.pl/hello-world/)
