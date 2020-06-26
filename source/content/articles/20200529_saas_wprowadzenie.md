@@ -407,8 +407,12 @@ nth() - wyciąga n-ty element z listy
 
 Przypomina obiekt z JS - posiada klucze oraz wartości - również nie jest kompilowana do CSS
 
+
 $mapa-kolorow: (klucz1: wartość1, klucz2: wartość2);
-map-get($mapa, klucz1) -> zwraca wartość1
+
+map-get($mapa-kolorow, klucz1) -> zwraca wartość1
+
+Przykładowe zastosowanie:
 
     .footer {
         background-color: map-get($mapa-kolorow, klucz1); // zwraca wartość1
