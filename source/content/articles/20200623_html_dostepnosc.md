@@ -3,12 +3,12 @@ Author: mkostyrko
 Date: 2020-06-23 11:00
 Updated:
 Category: html
-Tags: 
+Tags: vsc, accessibility, dostępność, semantyczny html, html
 Slug: html-dostepnosc
-related_posts: 
+related_posts: html-semantyczny
 
 
-  ![accessibility](https://miro.medium.com/max/1400/1*kxPPtGoUuY2EX41DbQMLOw.jpeg#center){: height="300px"}
+![accessibility](https://miro.medium.com/max/1400/1*kxPPtGoUuY2EX41DbQMLOw.jpeg#center){: height="300px"}
 
 Kwestia *dostępności* (ang. accessibility) jest związana z takim tworzeniem stron internetowych (w tym w dużej mierze odpowiedniej struktury HTML) aby osoby posiadające różnego rodzaju zaburzenia (np. widzenia) lub problemami z motoryką ciała w możliwie jak najprostszy sposób mogły z nich korzystać.
 
@@ -100,6 +100,12 @@ patrz na narzędzie -> [Contrast Checker](https://webaim.org/resources/contrastc
 `<s>` - strike-through/przekreślenie - oznaczenie już niekatulanej informacji
 
 `u` - underline/podkreślenie - imiona lub specjalnie wstawione w tekst błędy językowe
+
+---
+
+Wtyczka do VSC działa jak ESLint ale pod kątem dostępności sprawdzając html
+
+[Web Accessibility](https://marketplace.visualstudio.com/items?itemName=MaxvanderSchee.web-accessibility)
 
 ---
 ### Atrybuty WAI-ARIA -> Accessible Rich Internet Applications.
