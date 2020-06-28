@@ -7,7 +7,10 @@ Tags: javascript, js, arrow functions, funkcja strzałkowa
 Slug: js-funckja-starzalkowa
 related_posts: js-funkcja
 
-Funkcja starzałkowa skaraca zapis i.. nie zmienia kontekstu `this`
+
+Funkcja starzałkowa skaraca zapis i zmienia kontekst `this` (jest połączony w sposób leksykalny/odowłuje się do kodu, w którym kod jest zawarty), przykładowo jest niezmienny i nie dostosowuje się do obiektu w funkcji a odwołuje się do zewnętrznego this (stąd dla DOM jest to najczęściej obiekt **Window**) 
+
+**::: Warto pamiętać, że funkcja w ramach JS jest obiektem ! (function(){}).constructor === Function) :::**
 
 * słowo kluczowe `function` zmienia się w strzałkę `=>`
 
@@ -19,7 +22,7 @@ schemat:
 
 * w przypadku **tylko** jednego parametru można pominąć nawiasy / nawis pozostaje gdy funkcja nie ma parametru lub więcej niż 1
 
-::: jeśli funkcja jedynie zwraca to można pominąć instrukcję `return` - tzw. domniemany zwrot/return :::
+::: jeśli funkcja jedynie zwraca to można pominąć instrukcję `return` - tzw. **domniemany zwrot/return** :::
 
 ::: można również pominąć `{}` w przypadku gdy istnieje tylko jedna linia kodu :::
 
@@ -74,6 +77,16 @@ Przykłady:
 
 W takim przypadku wewnątrz funkcji zamiast `this` można stosować [event.target/event.currentTarget](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) patrz [dyskusja na ten temat na StackOverflow](https://stackoverflow.com/questions/36915875/javascript-arrow-functions-this-in-event-handler)
 
+Ten problem można również rozwiązać poprzez zachowanie `this` w stworzonej zmiennej np. nazwanej `self` (ta nazwa przyjęła się historycznie)
+
+        droid.prototype.calculateNum = function() {
+                this.sum = 0;
+                const self = this;
+                this.droid.forEach(function(element) {
+                        console.log(self);
+                });
+        }
+
 
 
 ---
@@ -87,3 +100,5 @@ https://zendev.com/2018/10/01/javascript-arrow-functions-how-why-when.html
 
 http://www.algosmart.pl/powtorka-przed-reactjs-1-funkcje-strzalkowe
 
+
+https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/
