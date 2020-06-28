@@ -68,8 +68,11 @@ Przykłady:
                         return false
                 }
         };
+---
 
-**::: warto pamiętać żę funkcja strzałkowa jest zadeklarowana poprzez wyrażenie funkcyjne i oznacza, to że zmienia kontekst `this` co może być szczególnie istotne w kontekście manipulowania elementami DOM (wówczas `this` jest obiektem `window`) :::**
+**Warto pamiętać żę funkcja strzałkowa jest zadeklarowana poprzez wyrażenie funkcyjne i oznacza, to że zmienia kontekst `this` co może być szczególnie istotne w kontekście manipulowania elementami DOM (wówczas `this` jest obiektem `window`)**
+
+W takim przypadku wewnątrz funkcji zamiast `this` można stosować [event.target/event.currentTarget](https://developer.mozilla.org/en-US/docs/Web/API/Event/target) patrz [dyskusja na ten temat na StackOverflow](https://stackoverflow.com/questions/36915875/javascript-arrow-functions-this-in-event-handler)
 
 
 
