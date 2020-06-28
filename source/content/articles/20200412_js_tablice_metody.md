@@ -116,7 +116,11 @@ Przykładowe zastosowanie z projektu `To Do App`[z tablicy wszystkich zadań (al
     const element = allTasks.find(e => 
       Number(newTask.dataset.priority) > Number(e.dataset.priority))
 
-[Repo całego kodu projektu](https://github.com/kostyrko/JS-apps/tree/master/1_task_list_app/2_task_app)
+`.some()` - sprawdza czy w tablicy znajdują się wartość spełniające przypisany warunek (np. `console.log(array.some(even))`)
+
+`.every()` - - sprawdza czy w tablicy wszystkie wartości spełniające przypisany warunek (np. `console.log(array.every(even))`)
+
+<!-- [Repo całego kodu projektu](https://github.com/kostyrko/JS-apps/tree/master/1_task_list_app/2_task_app) -->
 
 ---
 
