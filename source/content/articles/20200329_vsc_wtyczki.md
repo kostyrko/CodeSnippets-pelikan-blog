@@ -13,7 +13,7 @@ Auto Close Tag
 
 Auto Rename Tag
 
-Beautify (HookQR) - szuka małych błędów w kodzie oraz poprawia ich wygląd (identacje) [podobnie działająca wtyczka Prettier - Code formatter (Esban Pereren)]
+
 
 **Bracket Pair Colorizer** (CoenraadS) - koloruje nawiasy należące do tej samej pary odpowiednim kolorem [podobnie działająca wtyczka Rainbow Brackets (2gua)]
 
@@ -41,6 +41,8 @@ Paste and Indent - zamiast tego można również `shift+alt+F` -> format documen
 
 **Polish - Code Spell Checker** (Street Side Software) - sprawdza błędy ortograficzne w języku polskim
 
+Prettier - Code formatter (Esban Pereren) [warto dodać w `settings.json` "editor.formatOnSave": true - do listy wyjątków/polecań aby Prettier uruchamiał się w trakcie zapisu pliku]
+
 **Project Manager** (Alessandro Fragnani) - na bocznym pasku pojawia się nowa ikona folderu i dzięki niej mamy szybki dostęp do wybranych projektów
 
 scss intellisense
@@ -53,7 +55,7 @@ Wallaby.js/Dingo
 **==> Quokka.js <==** (Wallaby.js) - wymaga instalacji node.js a dzięki niej w głównym oknie VSC będzie wywoływany JS - Gorąco polecam!!!
  - sprawdź również Quokka Statusbar Buttons (Skethcbuch)
 
-vs live share
+VSC Live Share - pozwala na współdzielenie/edytowanie kodu w czasie rzeczywistym 
 
 ---
 
