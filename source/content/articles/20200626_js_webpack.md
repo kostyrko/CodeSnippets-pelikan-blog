@@ -1,4 +1,4 @@
-Title: JavaScript: Webpack - szybkie wprowadzenie
+Title: JavaScript: Webpack - krótkie wprowadzenie
 Author: mkostyrko
 Date: 2020-06-26 11:00
 Updated:
@@ -15,9 +15,14 @@ related_posts: js-babel
 
 Istotną zaletą korzystania z *Webpacka* jest to, że każdy plik jest traktowany jako moduł (obraz, css, font, js etc). ([CommonJS](https://flaviocopes.com/commonjs/) -> po stronie node.js i moduły z ES (klient) nie są dostępne dla wszystkich przeglądarek stąd potrzeba ich transpilacji)
 
-Loader - przetwarza plik (nie-js) w ten sposób by mógł być dodane do drzewa zależności (np. css loader) -  etap transpilacji
+Loader - przetwarza plik (nie-js) w ten sposób by mógł być dodane do drzewa zależności (np. css-loader, babel-loader, html-loader) -  etap transpilacji
+
+np. **html-loader** pozwala na modułowe tworzenie plików HTML (więcej na ten temat:[SO - How can I provide parameters for webpack html-loader interpolation?](https://stackoverflow.com/questions/39374187/how-can-i-provide-parameters-for-webpack-html-loader-interpolation) )
 
 Wtyczki - różnego rodzaju wtyczki pozwalają na osiągnięcie oczekiwanego efektu np. zapisanie reguł css do osobnego pliku css/po za plik bundle.js poprzez pracę na gotowych pakietach (np. extract text plugin [wydobywa css], webpack-uglify-js-plugin[miniaturyzuje js])
+
+np. wtyczka **purge-css** pozbywa się nieużywanych klas CSS (więcej na ten temat: [GH-repo purgecss-webpack-plugin](https://github.com/FullHuman/purgecss/tree/master/packages/purgecss-webpack-plugin))
+
 
 [![webpack w akcji](https://webmastah.pl/wp-content/uploads/2017/05/what-is-webpack-1024x512.png)](https://webmastah.pl/kurs-vue-js-krok-po-kroku-vue-loader/)
 
@@ -84,6 +89,135 @@ Przykładowe użycie
     >> You: Is this R2D2?
       Obi Wan: This is not the droid you are looking for
 
+---
+
+### Tworzenie pliku konfiguracyjnego dla Webpacka
+
+Istnieje możliwość konfiguracji `Webpacka` przy pomocy odpowiedniego do tego utworzonego pliku = `webpack.config.js` w którym należy zawrzeć informacje na temat wtyczek oraz zadań jakie powinny zostać przez to narzędzie wykonane
+
+Prosta konfiguracja
+
+Instalacja
+
+    npm i webpack@4 --save-dev
+    npm i webpack-cli@3 --save-dev
+
+
+    // webpack.config.js
+    const path = require('path');     // moduł node.js, który pozwala na pracę z module.exports
+
+    module.exports = {    // konfiguracja eksportu
+      entry: './src/index.js',    // wskazanie wejścia
+      output: {     // wskazanie wyjścia
+        filename: 'main.js',    // podanie nazwy pliku wyjściowego
+        path: path.resolve(__dirname, 'dist'), // moduł node.js wskazujący na ścieżkę pliku wyjściowego
+      },
+    };
+
+więcej info na [temat path.resolve()](https://nodejs.org/docs/latest/api/path.html#path_path_resolve_paths)
+
+---
+
+Tworzymy własną konfigurację w `webpack.config.js`
+
+    // package.json
+    >> wersja 1 <<
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --hot -d",     // flaga --hot pozwala na zmianę modułów w trakcie pracy bez konieczności odświeżania -d -> debug
+    "build": "webpack -p" // webpack production [Minification using UglifyJsPlugin/Runs the LoaderOptionsPlugin]
+    },
+    =======================================
+    >> wersja 2 <<
+    "scripts": {
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "server": "webpack-dev-server --inline --hot"
+    },
+
+    >> Zależności <<
+    "devDependencies": {
+        "@babel/core": "^7...",
+        "@babel/preset-env": "^7...",
+        "babel-loader": "^8...",
+        "webpack": "^4...",
+        "webpack-cli": "^3...",
+        "webpack-dev-server": "^3...",
+        "style-loader": "...", 
+        "css-loader": "...",
+        "saas-loader": "..."
+      }
+
+
+Umożliwia zastsowowanie komend -> **nmp start/ npm build/ npm server**
+
+
+więcej info na [webpack production](https://webpack.js.org/guides/production/)
+
+
+    //webpack.config.js
+    const path = require("path");
+    const entryPath = "sciezka/folderu/z_plikami";
+    const entryFile = "nazwa_pliku.js";
+
+    module.exports = {
+      watch: true,    // obserwuj zmiany
+      entry: `./${entryPath}/js/${entryFile}`,  // plik wejściowy
+      output: {   // plik wyjściowy
+        filename: "out.js",       // nazwa pliku wyjściowego
+        path: path.resolve(__dirname, `${entryPath}/build`) // folder wyjściowy/zapisu
+      },
+      devServer: {    // tworzenie sewera (tu użyta zależność "webpack-dev-server")
+        contentBase: path.join(__dirname, `${entryPath}`),
+        publicPath: "/build/",
+        compress: true,
+        port: 3001
+      },
+      module: { // właściwość modules z przypisanymi obiektami posiadającymi właściwość rules - te definiują sposób pracy z różnymi typami plików (tu użyta zależność "babel-loader"/"@babel/preset-env"/"@babel/core")
+        rules: [
+          {
+            test: /\.js$/,  // zawiera wyrażenie regularne wskazujące na rodzaj pliku (rozszerzenia), które ma być objęte działaniem loadera
+            exclude: /node_modules/,    // wykluczenie plików z folderu..
+            loader: "babel-loader"
+          },
+          {
+            test: /\.css$/,
+            use: [ 'style-loader', 'css-loader' ] // css-loader importuje kod css do JS a style-loader - wstrzykuje CSS do HTML
+          },
+          {
+            test: /\.scss$/,
+            use: [ 'style-loader', 'css-loader', 'sass-loader' ] // saas-loader transpiluje saas na css
+          }
+        ]
+      }
+      plugins: [      // wtyczki
+        new webpack.optimize.UglifyJsPlugin({   // wskazanie wtyczki 
+            beautify: true,     // konfiguracja
+            comments: false
+        })
+      ]
+    };
+
+
+opcjonalnie:
+
+
+    [...]
+          module: {
+              rules: [
+                  {
+                      test: /\.m?js$/,
+                      exclude: /(node_modules|bower_components)/,
+                      use: {
+                          loader: "babel-loader",
+                          options: {
+                              presets: ["@babel/preset-env"]
+                          }
+                      }
+                  }
+              ]
+          }
+    [...]
 
 
 ---
@@ -97,6 +231,18 @@ Przykładowe użycie
 
 [webpack-github repo](https://github.com/webpack/webpack)
 
-https://stackoverflow.com/questions/35932000/zsh-command-not-found-webpack
+[Zsh: command not found: webpack](https://stackoverflow.com/questions/35932000/zsh-command-not-found-webpack)
 
-https://stackoverflow.com/questions/38788166/webpack-command-not-working
+[webpack command not working](https://stackoverflow.com/questions/38788166/webpack-command-not-working)
+
+[webpack-getting started](https://webpack.js.org/guides/getting-started/)
+
+[webpack-configuration](https://webpack.js.org/configuration/)
+
+[Webpack i Babel](http://kursjs.pl/kurs/es6/webpack.php)
+
+[Konfiguracja Webpack 2+ - część #3: pluginy](https://www.nafrontendzie.pl/konfiguracja-webpack-2-czesc-3-pluginy)
+
+[Konfiguracja Webpack 2+ – część #2: loadery](https://www.nafrontendzie.pl/konfiguracja-webpack-2-czesc-2-loadery)
+
+[Webpack 4 – Jak go skonfigurować i zacząć pracę?](https://bedekodzic.pl/webpack-4/)
