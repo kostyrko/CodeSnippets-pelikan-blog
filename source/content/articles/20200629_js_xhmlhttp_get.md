@@ -93,10 +93,8 @@ Zastosowanie
         const xhr = new XMLHttpRequest();
         xhr.open('GET', `https://api.github.com/users/${inputTxt.value}`, true);
         xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
+        if (xhr.readyState === 4 && xhr.status == '200') {
                 [....]
-                }
         }
         xhr.send(null);
     }
@@ -122,7 +120,7 @@ Zastosowanie
         const xhr = new XMLHttpRequest();
         xhr.open('GET', `https://api.github.com/users/${inputTxt.value}`, true);
         xhr.onload = function() {
-            if (xhr.status === 200) {
+            if (xhr.readyState === 4 && xhr.status === 200) {
             console.log(typeof xhr.response); // >> string
             console.log(xhr.response); // <dane>
             console.log(typeof xhr.responseText); // >> string
