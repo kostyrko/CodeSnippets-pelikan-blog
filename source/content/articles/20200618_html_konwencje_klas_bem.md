@@ -7,7 +7,7 @@ Tags: css, html, klasy, bem, bemit, oocss
 Slug: html-konwencje-klas
 related_posts: 
 
-![BEM](https://www.e-accent.com/images/blog/bem.png#center){: height="300px"}
+![BEM](https://www.e-accent.com/images/blog/bem.png#center){: max-height="300px"}
 
 
 ### Podstawowe zasady nazewnictwa

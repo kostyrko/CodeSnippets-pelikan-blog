@@ -8,7 +8,7 @@ Slug: html-dostepnosc
 related_posts: html-semantyczny
 
 
-![accessibility](https://miro.medium.com/max/1400/1*kxPPtGoUuY2EX41DbQMLOw.jpeg#center){: height="300px"}
+![accessibility](https://miro.medium.com/max/1400/1*kxPPtGoUuY2EX41DbQMLOw.jpeg#center){: max-height="300px"}
 
 Kwestia *dostępności* (ang. accessibility) jest związana z takim tworzeniem stron internetowych (w tym w dużej mierze odpowiedniej struktury HTML) aby osoby posiadające różnego rodzaju zaburzenia (np. widzenia) lub problemami z motoryką ciała w możliwie jak najprostszy sposób mogły z nich korzystać.
 

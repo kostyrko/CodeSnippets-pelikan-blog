@@ -7,7 +7,7 @@ Tags: git, cofanie commita, github, git-hub, commit, github, system kontroli wer
 Slug: git-vsc-cofanie
 related_posts: git-gitignore, git-wprowadzenie
 
-![git-logo](https://buddy.works/guides/thumbnails/cover-first-steps-git.png#center){: height="300px"}
+![git-logo](https://buddy.works/guides/thumbnails/cover-first-steps-git.png#center){: max-height="300px"}
 
 Na co dzień korzystam z zestawu VSC + GitHub
 

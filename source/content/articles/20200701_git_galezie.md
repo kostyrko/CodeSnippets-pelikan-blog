@@ -7,7 +7,7 @@ Tags: git, branch, gałąź, github, git-hub, commit, github, system kontroli we
 Slug: git-galezie
 related_posts: git-gitignore, git-wprowadzenie, git-vsc-cofanie
 
-![git-branch](https://i.stack.imgur.com/F00b8.png){: height="300px"}
+![git-branch](https://i.stack.imgur.com/F00b8.png){: max-height="300px"}
 
 System kontroli wersji jakim jest GIT (nie jest to akronim, a znaczenie tego słowa w kontekście IT jest dyskusyjne - ja trzymam się tej wersji, że jest ono połączone z brytyjskim slangiem oznaczającym bękarta - [patrz wikipedia](https://en.wikipedia.org/wiki/Git_(slang))) pozwala na różne ścieżki rozwoju przygotowywanego "produktu" i najbardziej ogólnie można ująć tą kwestię stwierdzając, że może być ona liniowa (rozwój odbywa się na jedynej gałęzi (Master/**Main**)) jak i nieliniowa (oparta na równoległych gałęziach pobocznych tzw. niewolniczych(slave) lub też **secondary)**. To właśnie ta druga historia rozwoju jest przedmiotem tego wpisu
 
