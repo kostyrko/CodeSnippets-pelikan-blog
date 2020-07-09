@@ -119,6 +119,48 @@ Wizualizacja repo przy pomocy git-grafu
 
 ![DOG](https://i.stack.imgur.com/ElVkf.jpg)
 
+### Uaktualnianie projektu lokalnego do zdalnego repo
+
+        git fetch --all
+        git pull --all
+
+---
+### Uaktualnianie gałęzi
+
+Uaktualnianie gałęzi do stanu innej gałęzi można wykonać korzystając z komendy rebase (pobiera wówczas ew. zmiany np. z dałęzi głównej np. dev) lub poprzez mergowanie.
+Rebase spowoduje, że część historii zmian zostanie stracona, za to struktura będzie czytelniejsza.
+
+        git rebase <nazwa gałęzi DO której ma być uaktualniona obecna>
+        ======
+        git rebase develop
+
+Merge
+
+    git merge <nazwa gałęzi> <nazwa gałęzi DO której ma być uaktualniona obecna>
+    =======
+    git merge feature_4.1 develop
+
+---
+
+fast forward vs non fast forward
+https://stackoverflow.com/questions/6701292/git-fast-forward-vs-no-fast-forward-merge
+
+### Łączenie gałęzi
+
+--no-ff -> no fast forward
+-A - All 
+
+    git checkout <nazwa gałęzi DO której ma być dodana treść>
+
+    git merge --no-ff <nazwa gałęzi, która ma być przyłączona>
+
+    git add -A
+
+    git commit -m "treść wiadomości" 
+
+    git push origin <nazwa gałęzi DO której ma być dodana treść>
+
+
 ---
 Źródła:
 
@@ -127,6 +169,18 @@ Wizualizacja repo przy pomocy git-grafu
 [Easily rename your Git default branch from master to main](https://www.hanselman.com/blog/EasilyRenameYourGitDefaultBranchFromMasterToMain.aspx)
 
 
-https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+[Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
-https://stackoverflow.com/questions/4470523/create-a-branch-in-git-from-another-branch
+[The golden rule of rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing)
+
+#### Stack Overflow
+
+[Pretty git branch graphs](https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs)
+
+[Create a branch in Git from another branch](https://stackoverflow.com/questions/4470523/create-a-branch-in-git-from-another-branch)
+
+[Difference between “git add -A” and “git add .”](https://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add)
+
+[How to get changes from another branch](https://stackoverflow.com/questions/37709298/how-to-get-changes-from-another-branch)
+
+[Git: getting changes from another branch](https://stackoverflow.com/questions/3124601/git-getting-changes-from-another-branch)
