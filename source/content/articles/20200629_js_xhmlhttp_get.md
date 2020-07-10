@@ -12,7 +12,7 @@ related_posts: js-asynchronicznosc-ajax
 ### XMLHttpRequest
 
 XMLHttpRequest (XHR) służy do wykonywania dynamicznych (asynchronicznych) połączeń z serwerem
-i jest wykorzystywany do 1) aktualizacji informacji zawartych na stronie internetowej 2) wysłania żadania danych do serwera po załadowaniu strony 3) przyjęcia informacji przesłanej przez serwer - po załadowaniu strony 4) przesłania danych do serwera (w tle).
+i jest wykorzystywany do 1) aktualizacji informacji zawartych na stronie internetowej **UPDATE** 2) wysłania żadania danych do serwera po załadowaniu strony - **REQUEST** 3) przyjęcia informacji przesłanej przez serwer - po załadowaniu strony **RECEIVE** 4) przesłania danych do serwera (w tle) - **SEND**.
 
 Obecnie XHR został zastąpiony Fetch API.
 
