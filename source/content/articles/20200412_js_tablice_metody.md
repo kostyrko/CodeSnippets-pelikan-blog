@@ -24,7 +24,11 @@ Dodawanie wartości do tablicy
     arr[2] = 20
     arr // [1,2,20,3,4]
 
-#### Metody()
+Tablice można tworzyć również z obiektów do nich podobnych porzez wykorzystanie tzw. spread operatora [...obiektPodobnyDoArr] oraz **Array.from**(obiektPodobnyDoArr)
+
+Często stosowanymi metodami tablic są [forEach/reduce/filter/map](#iteracje)
+
+#### Podstawowe metody() tablic
 
 **`push`** i **`unshift`** - pozwala na dodanie jednego lub więcej elementów na koniec/początek tablicy (zwraca nową długość tablicy a nie zmodyfikowaną tablicę)
 
@@ -124,6 +128,8 @@ Przykładowe zastosowanie z projektu `To Do App`[z tablicy wszystkich zadań (al
 
 ---
 
+### forEach/reduce/filter/map {#iteracje}
+
 `callback` - funkcja wywołująca się na każdym elemencie
 
 **`forEach`** - tworzy pętlę przechodzącą przez zawartość tablicy - wymaga funkcji wywołania zwrotnego (callback), która tworzy akcję na każdym z elementów tablicy -> zwraca `undefined`, ale po drodze wywołuje wynik akcji
@@ -136,8 +142,23 @@ Przykładowe zastosowanie z projektu `To Do App`[z tablicy wszystkich zadań (al
     > 3
     ...
 
+---
+
 **`map`** - podobny do forEach ale zmienia elementy tablicy i zwraca nową tablicę ze zmienionymi wartościami
 
+Przedstawiona poniżej funkcja zwróci nową tablicę o nazwie *birthYear* zwierającą aktualny rok umniejszony o każdy element z tablicy *years*, nowa tablica będzie miała tyle samo elementów co tablica *years*
+
+        const years = [20,21,22]
+
+        const currYear = new Date().getFullYear()
+
+        const birthYear = years.map(function(elem){
+        return currYear - elem
+        })
+
+        >> 
+
+---
 
 **`filter`** - zwraca **nową tablicę**, z elementami dla którego wskazany argument jest prawdziwy (= True)
 :::tablica wyjściowa NIE ulega modyfikacji:::
@@ -160,7 +181,7 @@ Przykładowe zastosowanie z projektu `To Do App`[z tablicy wszystkich zadań (al
     return (newArr[0] === num ? true : false);
     }
 
-
+---
 
 **`reduce`** - funkcja przyjmuje cztery argumenty 1) wartość inicjalizującą tzw akumulator 2) obecną wartość Opcjonalnie: 3) obecny indeks 4) źródłową tablicę na której, reduce jest stosowane
 
