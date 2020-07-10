@@ -1,4 +1,4 @@
-Title: Git - tworzenie gałęzi (branch) i angaż (commit)
+Title: Git - odnajdowanie się w gałęziach projektowego drzewa
 Author: mkostyrko
 Date: 2020-07-01 10:00
 Updated:
@@ -88,7 +88,7 @@ lub jeśli jedynie lokalnie (wcześniej należy przełączyć się na inną gał
     >> Deleted branch issue_1.5 (was 9ef25f3).
 
 ---
-### Angażowanie
+### Commit
 
 Faza przejściowa => stage oraz komitowanie
 
@@ -97,11 +97,11 @@ Faza przejściowa => stage oraz komitowanie
 
 więcej wyjaśnieni skrótów można znaleźć w [explainshell](https://explainshell.com/explain/1/git-commit)
 
-    git commit -a -m 'treść wiadomości'
+        git commit -a -m 'treść wiadomości'
 
-alternatywnie można skorzystać z komendy
+alternatywnie można skorzystać z komendy -A (wymuszone all)
 
-    git add -A
+        git add -A
 
 Spowoduje, że pliki, które do tej pory były edytowane (zawierają zmiany) trafią do stadium przejściowego (ich zmiana jest zauważona i odnotowana lokalnie) i wymagają wypchnięcia do remote repo jeśli mają być widoczne dla innych. Można tego dokonać poprzez...
 
@@ -125,30 +125,32 @@ Wizualizacja repo przy pomocy git-grafu
         git pull --all
 
 ---
-### Uaktualnianie gałęzi
+### Uaktualnianie i łączenie gałęzi
 
-Uaktualnianie gałęzi do stanu innej gałęzi można wykonać korzystając z komendy rebase (pobiera wówczas ew. zmiany np. z dałęzi głównej np. dev) lub poprzez mergowanie.
-Rebase spowoduje, że część historii zmian zostanie stracona, za to struktura będzie czytelniejsza.
+Uaktualnianie gałęzi do stanu innej gałęzi można wykonać korzystając z komendy rebase (pobiera wówczas ew. zmiany np. z dałęzi głównej np. dev) lub poprzez mergowanie, dodatkowo można skorzystać z opcji --no-ff -> no fast forward.
 
-        git rebase <nazwa gałęzi DO której ma być uaktualniona obecna>
-        ======
-        git rebase develop
+Kolejność działania w przypadku wypychania zmian na gałąź rozwojową 1) uaktualniamy/łączymy gałąź na której pracujemy np. poprzez mergowanie do niej gałęzi rozwojowej 2) rozwiązujemy na niej ew. konflikty, jeśli wszystko działa możemy zgłosić ją do procesu recenzji (jeśli taka możliwość istnieje) 3) Gałąź rozwojową mergujemy z gałęzią, na której do tej pory pracowaliśmy 
 
-Merge
+#### Merge
 
     git merge <nazwa gałęzi> <nazwa gałęzi DO której ma być uaktualniona obecna>
     =======
     git merge feature_4.1 develop
 
----
+#### Rebase 
 
-fast forward vs non fast forward
-https://stackoverflow.com/questions/6701292/git-fast-forward-vs-no-fast-forward-merge
+Rebase spowoduje, że część historii zmian zostanie stracona lub inaczej rzecz ujmując gałąź przejmująca zmiany nie przejmuje historii commitów i widoczne na niej będą jedynie te, które na niej wykonano a nie innej gałęzi - plusem jest to, że struktura jest czytelniejsza.
 
-### Łączenie gałęzi
+        git rebase <nazwa gałęzi DO której ma być uaktualniona obecna>
+        ======
+        git rebase develop
+
+#### Fast forward vs non fast forward
+
+Domyślnie mergowanie jest ustawione na -ff (fast forward) co oznacza - gładkie scalanie, w przypadku wykorzystania opcji --no-ff pojawia się dodatkowy węzeł wskazujący na moment połączenia się dwóch gałęzi
 
 --no-ff -> no fast forward
--A - All 
+
 
     git checkout <nazwa gałęzi DO której ma być dodana treść>
 
@@ -160,6 +162,7 @@ https://stackoverflow.com/questions/6701292/git-fast-forward-vs-no-fast-forward-
 
     git push origin <nazwa gałęzi DO której ma być dodana treść>
 
+![Fast forward vs non fast forward](https://i.stack.imgur.com/rTxx9.png){: max-height="300px"}
 
 ---
 Źródła:
@@ -172,6 +175,8 @@ https://stackoverflow.com/questions/6701292/git-fast-forward-vs-no-fast-forward-
 [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
 [The golden rule of rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing)
+
+[3 sposoby na git merge](https://panizkomputerem.pl/3-sposoby-na-git-merge/)
 
 #### Stack Overflow
 
