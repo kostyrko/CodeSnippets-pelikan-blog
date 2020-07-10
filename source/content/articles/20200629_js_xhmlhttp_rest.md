@@ -1,0 +1,162 @@
+Title: JavaScript: XMLHttpRequest
+Author: mkostyrko
+Date: 2020-06-29 10:00
+Updated:
+Category: javascript
+Tags: javascript, js, ajax, rest, XMLHttpRequest
+Slug: js-xhr-rest
+related_posts: js-asynchronicznosc-ajax
+
+!![XMLHttpRequest](https://phpenthusiast.com/theme/assets/images/blog/what_is_rest_api.png?021019a){: max-height="300px"}
+
+### Wysyłanie danych
+
+Tym razem do prezentacji możliwości XMLHttpRequest posłużę się mock API -> [https://reqres.in/](https://reqres.in/) ("A hosted REST-API ready to respond to your AJAX requests"), które pozwala na ćwiczenie funkcjonalności REST API 
+
+Wysyłanie danych wymaga
+
+1) przygotowanie danych do wysłania 
+
+    const data = {
+      firstname = "John";
+      lastname  = "Snow";
+    };
+
+    const json = JSON.stringify(data);
+
+
+2) stworzenie nowego obiektu XMLHttpRequest 
+
+    const xhr = new XMLHttpRequest();
+
+3) Zdefiniować połączenie za pomocą metody `open()` wykorzystując słowo kluczowe POST 
+
+    const url = "http://localhost:8080/api/v1/users";
+    xhr.open("POST", url, true);
+
+4) ustalenie metadanych wysyłanej informacji - nagłówek (headera) będącego częścią teksty wysłanego do serwera, który jest informacją o przesyłanych danych 
+
+    setRequestHeader(nagłówek, wartość)
+    
+Gdzie -> `nagłówek`: określa nazwę nagłówka, `wartość`: określa wartość nagłówka, tu również może pojawić się informacja na temat formatu kodowania
+
+    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+
+5) Ustawienie nasłuchiwania z wiadomością nastawioną na tworzenie **201** - Created (Utworzono – wysłany dokument został zapisany na serwerze)
+
+    xhr.onload = function () {
+      const users = JSON.parse(xhr.responseText);
+      if (xhr.readyState == 4 && xhr.status == "201") {
+        console.table(users);
+      } else {
+        console.error(users);
+      }
+    }
+
+6) Wysłanie żądania z przekazanymi danymi
+
+    xhr.send(json);
+
+Całość zapytania może prezentować się w następujący sposób:
+
+    const url = "http://localhost:8080/api/v1/users";
+
+    const data = {};
+    data.firstname = "John";
+    data.lastname  = "Snow";
+    const json = JSON.stringify(data);
+
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+    xhr.onload = function () {
+      const users = JSON.parse(xhr.responseText);
+      if (xhr.readyState == 4 && xhr.status == "201") {
+        console.table(users);
+      } else {
+        console.error(users);
+      }
+    }
+    xhr.send(json);
+
+---
+
+### Edytowanie/Uaktualnianie istniejących danych
+
+Edytowanie danych istniejących na serwerze jest zbliżone do procesu wyżej przedstawionego związanego z wysyłaniem danych -> główne różnice zwarte są w definiowaniu połączenia (należy użyć słowo kluczowe PUT oraz zdefiniować pozycję dla której dane powinny zostać zmienione), natomiast nasłuchiwanie zwrotnej informacji (podobnie jak w przypadku pobierania danych powinno być skierowane na 200 -połączenie zakończyło się sukcesem)
+
+Przykładowo 
+
+  xhr.open("PUT", url+'/12', true);
+
+Gdzie url + 12 wyznacza konkretną część danych/obiekt zawartą na serwerze, w tym przypadku użytkownika
+
+
+Zapytanie może prezentować się w następujący sposób:
+
+    const url = "http://localhost:8080/api/v1/users";
+
+    const data = {};
+    data.firstname = "Jan";
+    data.lastname  = "Snieg";
+    const json = JSON.stringify(data);
+
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("PUT", url+'/12', true);
+    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+    xhr.onload = function () {
+      const users = JSON.parse(xhr.responseText);
+      if (xhr.readyState == 4 && xhr.status == "200") {
+        console.table(users);
+      } else {
+        console.error(users);
+      }
+    }
+    xhr.send(json);
+
+
+---
+### Usuwanie danych
+
+Usuwanie danych jest jeszcze prostsze, ponieważ wymaga jedynie wskazanie na obiekt do usunięcia oraz  poprawnego zdefiniowania połączenia, tym razem przy pomocy słowa kluczowego DELETE. Usuwanie danych nie wymaga tworzenia nagłówka.
+
+Przykładowo:
+
+    xhr.open("DELETE", url+'/12', true);
+
+Zapytanie może prezentować się w następujący sposób:
+
+    const url = "http://localhost:8080/api/v1/users";
+    const xhr = new XMLHttpRequest();
+    xhr.open("DELETE", url+'/12', true);
+    xhr.onload = function () {
+      const users = JSON.parse(xhr.responseText);
+      if (xhr.readyState == 4 && xhr.status == "200") {
+        console.table(users);
+      } else {
+        console.error(users);
+      }
+    }
+    xhr.send(bull);
+
+
+
+Przedstawiony wyżej kod znajduje się również tutaj na [GitHub - Gist](https://gist.github.com/kostyrko/d04ed2eb6aa9b9d9dc87d07e5f6e0c0a)
+
+---
+
+Źródła:
+
+
+Duckett, Jon. Javascript and jquery: Interactive front-end web development. Wiley Publishing, 2014.
+
+[kursjs.pl](http://kursjs.pl/kurs/ajax/xmlhttprequest.php)
+
+[MDN-Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+
+[The XMLHttpRequest Definitive guide](https://medium.com/@giacintocarlucci/xmlhttprquest-definitive-guide-e3a2fd7a85a4)
+
+
+
