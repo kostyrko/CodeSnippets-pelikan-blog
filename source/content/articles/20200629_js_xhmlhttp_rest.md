@@ -1,13 +1,16 @@
-Title: JavaScript: XMLHttpRequest
+Title: JavaScript: XMLHttpRequest i REST API
 Author: mkostyrko
 Date: 2020-06-29 10:00
 Updated:
 Category: javascript
-Tags: javascript, js, ajax, rest, XMLHttpRequest
+Tags: javascript, js, ajax, rest, XMLHttpRequest, delete, get, put
 Slug: js-xhr-rest
-related_posts: js-asynchronicznosc-ajax
+related_posts: js-asynchronicznosc-ajax, js-xhr
 
 !![XMLHttpRequest](https://phpenthusiast.com/theme/assets/images/blog/what_is_rest_api.png?021019a){: max-height="300px"}
+
+**REST -> Representational state transfer (pl. zmiana stanu poprzez reprezentacje)**
+
 
 ### Wysyłanie danych
 
@@ -15,34 +18,34 @@ Tym razem do prezentacji możliwości XMLHttpRequest posłużę się mock API ->
 
 Wysyłanie danych wymaga
 
-1) przygotowanie danych do wysłania 
+(1) przygotowanie danych do wysłania 
 
-    const data = {
-      firstname = "John";
-      lastname  = "Snow";
-    };
+      const data = {
+        firstname = "John";
+        lastname  = "Snow";
+      };
 
-    const json = JSON.stringify(data);
+      const json = JSON.stringify(data);
 
 
-2) stworzenie nowego obiektu XMLHttpRequest 
+(2) stworzenie nowego obiektu XMLHttpRequest 
 
-    const xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
 
-3) Zdefiniować połączenie za pomocą metody `open()` wykorzystując słowo kluczowe POST 
+(3) Zdefiniować połączenie za pomocą metody `open()` wykorzystując słowo kluczowe POST 
 
-    const url = "http://localhost:8080/api/v1/users";
-    xhr.open("POST", url, true);
+      const url = https://reqres.in/api/users';
+      xhr.open("POST", url, true);
 
-4) ustalenie metadanych wysyłanej informacji - nagłówek (headera) będącego częścią teksty wysłanego do serwera, który jest informacją o przesyłanych danych 
+(4) ustalenie metadanych wysyłanej informacji - nagłówek (headera) będącego częścią teksty wysłanego do serwera, który jest informacją o przesyłanych danych 
 
-    setRequestHeader(nagłówek, wartość)
+      setRequestHeader(nagłówek, wartość)
     
 Gdzie -> `nagłówek`: określa nazwę nagłówka, `wartość`: określa wartość nagłówka, tu również może pojawić się informacja na temat formatu kodowania
 
     xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
 
-5) Ustawienie nasłuchiwania z wiadomością nastawioną na tworzenie **201** - Created (Utworzono – wysłany dokument został zapisany na serwerze)
+(5) Ustawienie nasłuchiwania z wiadomością nastawioną na tworzenie **201** - Created (Utworzono – wysłany dokument został zapisany na serwerze)
 
     xhr.onload = function () {
       const users = JSON.parse(xhr.responseText);
@@ -53,13 +56,13 @@ Gdzie -> `nagłówek`: określa nazwę nagłówka, `wartość`: określa wartoś
       }
     }
 
-6) Wysłanie żądania z przekazanymi danymi
+(6) Wysłanie żądania z przekazanymi danymi
 
     xhr.send(json);
 
 Całość zapytania może prezentować się w następujący sposób:
 
-    const url = "http://localhost:8080/api/v1/users";
+    const url = 'https://reqres.in/api/users';
 
     const data = {};
     data.firstname = "John";
@@ -88,14 +91,14 @@ Edytowanie danych istniejących na serwerze jest zbliżone do procesu wyżej prz
 
 Przykładowo 
 
-  xhr.open("PUT", url+'/12', true);
+    xhr.open("PUT", url+'/12', true);
 
 Gdzie url + 12 wyznacza konkretną część danych/obiekt zawartą na serwerze, w tym przypadku użytkownika
 
 
 Zapytanie może prezentować się w następujący sposób:
 
-    const url = "http://localhost:8080/api/v1/users";
+    const url = https://reqres.in/api/users';
 
     const data = {};
     data.firstname = "Jan";
@@ -128,7 +131,7 @@ Przykładowo:
 
 Zapytanie może prezentować się w następujący sposób:
 
-    const url = "http://localhost:8080/api/v1/users";
+    const url = https://reqres.in/api/users';
     const xhr = new XMLHttpRequest();
     xhr.open("DELETE", url+'/12', true);
     xhr.onload = function () {
@@ -139,11 +142,15 @@ Zapytanie może prezentować się w następujący sposób:
         console.error(users);
       }
     }
-    xhr.send(bull);
+    xhr.send(null);
 
 
 
 Przedstawiony wyżej kod znajduje się również tutaj na [GitHub - Gist](https://gist.github.com/kostyrko/d04ed2eb6aa9b9d9dc87d07e5f6e0c0a)
+
+I małe podsumowanie:
+
+![REST API CHECKLIST](https://usercontent.one/wp/www.kennethlange.com/wp-content/uploads/2020/04/customer_rest_api-624x314.png)
 
 ---
 
