@@ -136,6 +136,15 @@ Zastosowanie
 
 <script src="https://gist.github.com/kostyrko/fa29df00eba1d3a044323150214c73e1.js"></script>
 
+Rezultat
+
+<p class="codepen" data-height="571" data-theme-id="light" data-default-tab="result" data-user="mkostyrko" data-slug-hash="vYLrGpm" style="height: 571px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="GitHub- User's Avatar Seeker">
+  <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/vYLrGpm">
+  GitHub- User's Avatar Seeker</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
 
 ---
 
