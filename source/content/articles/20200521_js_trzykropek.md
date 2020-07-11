@@ -1,4 +1,4 @@
-Title: JavaScript i trzykropek (...)
+Title: JavaScript i trzykropek (...) -> "rozproszenie"/"reszta"
 Author: mkostyrko
 Date: 2020-05-21 10:00
 Updated:
@@ -13,11 +13,11 @@ Zastosowanie trzech kropek wprowadzonych w ES6 - pozwala na rozwinięcie wyraże
 Trzykropek można stosować w kontekście obiektów, tablic, stringów, zbiorów (setów) i map.
 
 
-### Spread Operator
+### Spread Operator -> Rozproszenie
 
 *Dzieli kolekcję tworząc tablicę*
 
-Pozwala na rozciągnięcie (rozwinięcie) obiektu mogącego ulec iteracji wewnątrz odbiorcy (np. zamiast tworzenia zagnieżdżonej tablicy1 w tablicy2 - tablice2 przyjmuje właściwości tablicy1)
+Pozwala na rozciągnięcie (rozproszenie/rozwinięcie) obiektu mogącego ulec iteracji wewnątrz odbiorcy (np. zamiast tworzenia zagnieżdżonej tablicy1 w tablicy2 - tablice2 przyjmuje właściwości tablicy1)
 
     const arr1 = ['r4', 'c3po']
     const arr2 = [arr1, 'r2dr']
@@ -54,12 +54,45 @@ Przykładowe zastosowanie
     console.log(sum(...numbers)); // rozłożenie tablicy na pojedyncze argumentu
     >> 6
 
-### Rest parameters
+Shallow copy - tworzenie kopii tym samym tworząc osobne referencje
+
+    const arr1 = ['r4', 'c3po']
+    const arr2 = [...arr1]
+
+    >> arr1 === arr2
+    >> false
+
+W kontrze do
+
+    const arr1 = ['r4', 'c3po']
+    const arr2 = arr1
+
+    >> arr1 === arr2
+    >> true
+
+Jest to również przydatne w przypadku pracy z obiektami
+
+    const droid = {
+      isActive: false,
+      inputValue: "Droid name"
+    };
+    const droidCopy = {...state};
+    >> droidCopy
+    >> {isActive: false, inputValue: "Droid name"}
+
+    const droidCopy2 = {
+      ...state, // najpierw spread
+      isActive: true // potem podmiana
+    };
+
+    >> droidCopy2
+    >> {isActive: true, inputValue: "Droid name"}
+
+### Rest parameters / Reszta
 
 *Sumuje poszczególne parametry (w) tworząc tablicę*
 
 Pozwala na wskazanie możliwości zastosowania nieokreślonej liczby argumentów, w funkcji, które zostaną zamienione w tablicę. Pozwala również na podanie poprzedzających parametrów nazwanych (te wówczas nie znają się w tablicy).
-
 
 
     function myFunc(a, b, ...args) {
