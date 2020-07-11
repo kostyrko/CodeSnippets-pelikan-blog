@@ -225,6 +225,14 @@ Konstruktor droid, który dziedziczy właściwości konstruktora Robot
 
 **:::`.call()` - funkcja call pozwala na wywołanie funkcji z innego kontekstu:::**
 
+Innymi metodami są:
+
+**:::`.bind()`:::**
+
+**:::`.apply()`:::**
+
+Więcej na ten temat czytaj: [How-to: call() , apply() and bind() in JavaScript](https://www.codementor.io/@niladrisekhardutta/how-to-call-apply-and-bind-in-javascript-8i1jca6jp)
+
 aby zapewnić dziedziczenie prototypie należy to zaznaczyć w innym przypadku nie będzie to możliwe
 
       Droid.prototype = Object.create(Robot.prototype)
