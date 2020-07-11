@@ -135,6 +135,7 @@ Przykładowe zastosowanie z projektu `To Do App`[z tablicy wszystkich zadań (al
 **`forEach`** - tworzy pętlę przechodzącą przez zawartość tablicy - wymaga funkcji wywołania zwrotnego (callback), która tworzy akcję na każdym z elementów tablicy -> zwraca `undefined`, ale po drodze wywołuje wynik akcji
 
     let arrEach = [1, 2, 3, 4];
+
     arrEach.forEach(function (num) {
       console.log(num + 1);
     });
@@ -153,10 +154,11 @@ Przedstawiona poniżej funkcja zwróci nową tablicę o nazwie *birthYear* zwier
         const currYear = new Date().getFullYear()
 
         const birthYear = years.map(function(elem){
-        return currYear - elem
+            return currYear - elem
         })
-
-        >> 
+        
+        // przy założeniu, że jest rok 2020
+        >> [2000,1999,1998]
 
 ---
 
