@@ -1,6 +1,6 @@
 Title: JavaScript: XMLHttpRequest i REST API
 Author: mkostyrko
-Date: 2020-06-29 10:00
+Date: 2020-06-29 12:00
 Updated:
 Category: javascript
 Tags: javascript, js, ajax, rest, XMLHttpRequest, delete, get, put
