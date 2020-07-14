@@ -1,6 +1,6 @@
 Title: JavaScript: XMLHttpRequest - wstęp (GET)
 Author: mkostyrko
-Date: 2020-06-30 10:00
+Date: 2020-06-29 10:00
 Updated:
 Category: javascript
 Tags: javascript, js, ajax, rest, XMLHttpRequest, github, github api, api
