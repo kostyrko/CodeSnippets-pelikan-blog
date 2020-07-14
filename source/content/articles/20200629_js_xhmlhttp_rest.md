@@ -14,7 +14,7 @@ related_posts: js-asynchronicznosc-ajax, js-xhr
 
 ### Wysyłanie danych
 
-Tym razem do prezentacji możliwości XMLHttpRequest posłużę się mock API -> [https://reqres.in/](https://reqres.in/) ("A hosted REST-API ready to respond to your AJAX requests"), które pozwala na ćwiczenie funkcjonalności REST API 
+Tym razem do prezentacji możliwości XMLHttpRequest posłużę się fake API -> [https://reqres.in/](https://reqres.in/) ("A hosted REST-API ready to respond to your AJAX requests"), które pozwala na ćwiczenie funkcjonalności REST API 
 
 Wysyłanie danych wymaga
 
@@ -65,8 +65,8 @@ Całość zapytania może prezentować się w następujący sposób:
     const url = 'https://reqres.in/api/users';
 
     const data = {};
-    data.firstname = "John";
-    data.lastname  = "Snow";
+    data.first_name = "John";
+    data.last_name  = "Snow";
     const json = JSON.stringify(data);
 
 
@@ -87,7 +87,7 @@ Całość zapytania może prezentować się w następujący sposób:
 
 ### Edytowanie/Uaktualnianie istniejących danych
 
-Edytowanie danych istniejących na serwerze jest zbliżone do procesu wyżej przedstawionego związanego z wysyłaniem danych -> główne różnice zwarte są w definiowaniu połączenia (należy użyć słowo kluczowe PUT oraz zdefiniować pozycję dla której dane powinny zostać zmienione), natomiast nasłuchiwanie zwrotnej informacji (podobnie jak w przypadku pobierania danych powinno być skierowane na 200 -połączenie zakończyło się sukcesem)
+Edytowanie danych istniejących na serwerze jest zbliżone do procesu wyżej przedstawionego związanego z wysyłaniem danych -> główne różnice zwarte są w definiowaniu połączenia (należy użyć słowo kluczowe PUT oraz zdefiniować pozycję dla której dane powinny zostać zmienione), tym razem status odpowiedzi zwrotnej powinien być równy *200*
 
 Przykładowo 
 
@@ -123,30 +123,31 @@ Zapytanie może prezentować się w następujący sposób:
 ---
 ### Usuwanie danych
 
-Usuwanie danych jest jeszcze prostsze, ponieważ wymaga jedynie wskazanie na obiekt do usunięcia oraz  poprawnego zdefiniowania połączenia, tym razem przy pomocy słowa kluczowego DELETE. Usuwanie danych nie wymaga tworzenia nagłówka.
+Usuwanie danych jest jeszcze prostsze, ponieważ wymaga jedynie wskazanie na obiekt do usunięcia oraz  poprawnego zdefiniowania połączenia, tym razem przy pomocy słowa kluczowego DELETE. Usuwanie danych nie wymaga tworzenia nagłówka, jednak tym razem status odpowiedzi powinien być równy *204*
 
 Przykładowo:
 
-    xhr.open("DELETE", url+'/12', true);
-
-Zapytanie może prezentować się w następujący sposób:
-
-    const url = https://reqres.in/api/users';
-    const xhr = new XMLHttpRequest();
-    xhr.open("DELETE", url+'/12', true);
-    xhr.onload = function () {
-      const users = JSON.parse(xhr.responseText);
-      if (xhr.readyState == 4 && xhr.status == "200") {
-        console.table(users);
-      } else {
-        console.error(users);
+    function deleteUser () {
+      const usrId = document.querySelector('.delete-by-id').value
+      const xhr = new XMLHttpRequest();
+      xhr.open("DELETE", url+`/${usrId}`, true);
+      xhr.onload = function () {
+        if (xhr.readyState == 4 && xhr.status == "204") {
+          userInfo.innerText = `User width id: ${usrId} was deleted`
+        } else {
+          console.error(users);
+        }
       }
+      xhr.send(null);
     }
-    xhr.send(null);
 
 
 
 Przedstawiony wyżej kod znajduje się również tutaj na [GitHub - Gist](https://gist.github.com/kostyrko/d04ed2eb6aa9b9d9dc87d07e5f6e0c0a)
+
+
+
+
 
 I małe podsumowanie:
 
