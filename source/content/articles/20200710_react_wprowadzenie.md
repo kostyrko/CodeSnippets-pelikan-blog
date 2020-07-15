@@ -50,26 +50,27 @@ Instalacja Reacta (już nie jako deweloperska zalażność)
 
     npm i react@16.11.0 react-dom@16.11.0
 
-Przygotowanie **webpack.config.js**
+Przygotowanie **webpack.config.js** więcej na ten temat patrz: [Webpack - krótkie wprowadzenie](https://kostyrko.github.io/zfrontu/js-webpack.html)
 
         const path = require("path");
-        const entryPath = "sciezka_folderu";
-        const entryFile = "sciezka_pliku.js";
+        const entryPath = "1_hello_world/js";
+        const outPath = "1_hello_world";
+        const entryFile = "app.js";
 
         module.exports = {
         watch: true,
         entry: `./${entryPath}/${entryFile}`,
-        output: {               // miejsce i nazwa zapisu pliku wyjściowego
+        output: {
             filename: "out.js",
-            path: path.resolve(__dirname, `${entryPath}/build`)
+            path: path.resolve(__dirname, `${outPath}/build`) // folder wyjściowy/zapisu
         },
-        devServer: {            // konfiguracja webpack serwera
-            contentBase: path.join(__dirname, `${entryPath}`),
+        devServer: {
+            contentBase: path.join(__dirname, `${outPath}`),    // ścieżka gdzie znajduje się statyczna treść np. index.html (path.join by stworzyć absolutną ścieżkę)
             publicPath: "/build/",
             compress: true,
             port: 3001
         },
-        module: {               // dodanie babel-loader'a
+        module: {
             rules: [
             {
                 test: /\.js$/,
@@ -121,14 +122,22 @@ ReactDOM.render(element, miejsce)
 
 Całość pliku przechowującego react-app np. app.js może wyglądać następująco 
 
-    
+
     import React from "react";
     import ReactDOM from "react-dom";
 
     ReactDOM.render(
-    <h1>This is not the droid you are looking for!</h1>,
-    document.getElementById("app")
+        <h1>This is not the droid you are looking for!</h1>,
+        document.getElementById("app")
     );
+
+Aby zobaczyć aplikację na webpackowym serverze należy wpisać w terminalu
+
+        npm start
+
+Lub aby wykorzystać stworzyć bundle.js        
+
+        npm run-script build
 
 ---------
 
@@ -241,8 +250,13 @@ który nie tylko pozwala na tworzenie tablic, ale również na ich rozpraszanie,
 
 [Samouczek: Wstęp do Reacta](https://pl.reactjs.org/tutorial/tutorial.html)
 
+[How to set up React with Webpack and Babel [Tutorial]](https://www.robinwieruch.de/minimal-react-webpack-babel-setup)
+
+[A Complete Webpack Setup for React - Build a React project with Webpack 4 and Babel 7](https://medium.com/swlh/a-complete-webpack-setup-for-react-e56a2edf78ae)
+
 YT: 
 
 [Wprowadzenie do biblioteki React.js](https://www.youtube.com/watch?v=DN73tm89cgU)
 
 [React JS - kurs w 60 minut](https://www.youtube.com/watch?v=Qz7swLxNS0Y)
+

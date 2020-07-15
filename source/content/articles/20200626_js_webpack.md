@@ -110,11 +110,11 @@ Instalacja
       entry: './src/index.js',    // wskazanie wejścia
       output: {     // wskazanie wyjścia
         filename: 'main.js',    // podanie nazwy pliku wyjściowego
-        path: path.resolve(__dirname, 'dist'), // moduł node.js wskazujący na ścieżkę pliku wyjściowego
+        path: path.resolve(__dirname, 'dist'), // moduł node.js wskazujący na ścieżkę pliku wyjściowego __dirname (przechowuje ścieżkę katalogu, w którym znajduje się plik)
       },
     };
 
-więcej info na [temat path.resolve()](https://nodejs.org/docs/latest/api/path.html#path_path_resolve_paths)
+więcej info na [temat path.resolve()](https://nodejs.org/docs/latest/api/path.html#path_path_resolve_paths) - zwraca bezwzględny adres na podstawie przekazanych argumentów (__dirname - przechowuje ścieżkę katalogu, w którym znajduje się plik, "nazwa_katalogu")
 
 ---
 
@@ -161,32 +161,32 @@ więcej info na [webpack production](https://webpack.js.org/guides/production/)
     const entryFile = "nazwa_pliku.js";
 
     module.exports = {
-      watch: true,    // obserwuj zmiany
-      entry: `./${entryPath}/js/${entryFile}`,  // plik wejściowy
-      output: {   // plik wyjściowy
-        filename: "out.js",       // nazwa pliku wyjściowego
+      watch: true,                      // obserwuj zmiany
+      entry: `./${entryPath}/js/${entryFile}`,      // plik wejściowy
+      output: {                         // plik wyjściowy
+        filename: "out.js",             // nazwa pliku wyjściowego
         path: path.resolve(__dirname, `${entryPath}/build`) // folder wyjściowy/zapisu
       },
-      devServer: {    // tworzenie sewera (tu użyta zależność "webpack-dev-server")
-        contentBase: path.join(__dirname, `${entryPath}`),
-        publicPath: "/build/",
-        compress: true,
-        port: 3001
+      devServer: {                      // tworzenie sewera (tu użyta zależność "webpack-dev-server")
+        contentBase: path.join(__dirname, `${entryPath}`), // informacja/ścieżka gdzie znajduje się statyczna treść np. index.html (path.join by stworzyć absolutną ścieżkę)
+        publicPath: "/build/",         // stworzone pliki będą znajdować się w tym folderze
+        compress: true,               // kompresja
+        port: 3001                    // port na którym znajduje się serwer
       },
       module: { // właściwość modules z przypisanymi obiektami posiadającymi właściwość rules - te definiują sposób pracy z różnymi typami plików (tu użyta zależność "babel-loader"/"@babel/preset-env"/"@babel/core")
         rules: [
           {
-            test: /\.js$/,  // zawiera wyrażenie regularne wskazujące na rodzaj pliku (rozszerzenia), które ma być objęte działaniem loadera
+            test: /\.js$/,      // zawiera wyrażenie regularne wskazujące na rodzaj pliku (rozszerzenia), które ma być objęte działaniem loadera
             exclude: /node_modules/,    // wykluczenie plików z folderu..
             loader: "babel-loader"
           },
           {
             test: /\.css$/,
-            use: [ 'style-loader', 'css-loader' ] // css-loader importuje kod css do JS a style-loader - wstrzykuje CSS do HTML
+            use: [ 'style-loader', 'css-loader' ]       // css-loader importuje kod css do JS a style-loader - wstrzykuje CSS do HTML
           },
           {
             test: /\.scss$/,
-            use: [ 'style-loader', 'css-loader', 'sass-loader' ] // saas-loader transpiluje saas na css
+            use: [ 'style-loader', 'css-loader', 'sass-loader' ]      // saas-loader transpiluje saas na css
           }
         ]
       }
