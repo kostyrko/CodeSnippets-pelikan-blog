@@ -1,4 +1,4 @@
-Title: JavaScript: promises
+Title: JavaScript i obietnica (promise)
 Author: mkostyrko
 Date: 2020-07-18 10:00
 Updated:
