@@ -2,9 +2,9 @@ Title: JavaScript: json i json-server
 Author: mkostyrko
 Date: 2020-07-19 10:00
 Updated:
-Category: javascript
-Tags: js, javascript, json, json-server, readFile, require, node
-Slug: react-wprowadzenie
+Category: nodejs
+Tags: js, javascript, json, json-server, readFile, require, node, stringify, parse
+Slug: js-json-server
 related_posts: 
 
 ![json](http://www.webcyou.com/wp-content/uploads/2017/07/json-logo.png){: max-height="300px"}
@@ -13,9 +13,42 @@ related_posts:
 
 ### JSON - JavaScript Object Notation
 
-Format JSON zbliżony jest do obiektów znanych z JS,  z tą zasadą, że `nazwy kluczy wpisuje się w PODWÓJNY cudzysłów`, kolejne wpisy oddzielone są przecinkami a same pliki JSON przechowują jedynie dane (żadnych funkcji). Praca z plikami typu JSON przypomina te znane z obiektów JS,  stąd odwołujemy się do obiektów oraz ich poszczególnych części stosując klucze. Można np. stosować na nie destrukturyzacji.
+Format JSON zbliżony jest do obiektów znanych z JS,  z tą zasadą, że `nazwy kluczy wpisuje się w PODWÓJNY cudzysłów`, kolejne wpisy oddzielone są przecinkami a same pliki JSON przechowują jedynie dane/zmienne (żadnych funkcji/kodu wykonywalnego). Praca z plikami typu JSON przypomina te znane z obiektów JS,  stąd odwołujemy się do obiektów oraz ich poszczególnych części stosując klucze. Wartości zawarte w JSONie mogą być zapisane w postaci **łańcucha znaków, liczby lub wartości logicznej** (false, null, true), te natomiast mogą składać się na **tablicę** lub **obiekt**, które mogą być dowolnie zagnieżdżone
+
+Przykład (za [wikipedia.org](https://pl.wikipedia.org/wiki/JSON))
+
+
+        {
+            "menu": {
+                "id": "file",
+                "value": "File",
+                "popup": {
+                "menuitem": [
+                    {"value": "New", "onclick": "CreateNewDoc()"},
+                    {"value": "Open", "onclick": "OpenDoc()"},
+                    {"value": "Close", "onclick": "CloseDoc()"}
+                ]
+                }
+            }
+        }
+
 
 #### stringify i parse
+
+Dwie istotne metody w kontekście JSONa, które są warte zapamiętania to `JSON.stringify()` oraz `JSON.parse()`
+
+**JSON.stringify()** - zmienia obiekt JS w do łańcucha znaków JSON (przyjmuje również argumenty jeśli jakieś wymiana określonych wartości jest wymagana)
+
+        console.log(JSON.stringify(new Date(2020, 07, 20, 15, 4, 5)));
+        // >> ""2020-07-20T15:04:05.000Z""
+
+**JSON.parse()** - zmienia/parsuje łańcuch znaków JSON tworząc wartość JS lub obiekt JS
+
+        const json = '{"name": "BB-8", "class": "Astromech droid"'};
+        const obj = JSON.parse(json);
+
+        console.log(obj.name);
+        // >> BB-8
 
 ---
 
@@ -82,7 +115,6 @@ gdzie zawartość pliku json wygląda przykładowo:
         }
 
 
-
 ---
 
 ### JSONPlaceholder
@@ -99,9 +131,9 @@ Rauschmayer, A. (2014). Speaking JavaScript: an in-depth guide for programmers. 
 
 Duckett, Jon. Javascript and jquery: Interactive front-end web development. Wiley Publishing, 2014.
 
-[](http://kursjs.pl/kurs/ajax/server-lokalny.php)
+[Serwer lokalny i json-server](http://kursjs.pl/kurs/ajax/server-lokalny.php)
 
-[](https://blog.codingblocks.com/2018/reading-json-files-in-nodejs-require-vs-fs-readfile/)
+[Reading json files in NodeJS: require() vs fs.readFile()](https://blog.codingblocks.com/2018/reading-json-files-in-nodejs-require-vs-fs-readfile/)
 
 
 [JSON - wszystko co musisz o nim wiedzieć](https://www.youtube.com/watch?v=haY
