@@ -2,7 +2,7 @@ Title: JavaScript - kolejny test w JEST (TDD)
 Author: mkostyrko
 Date: 2020-06-10 12:00
 Updated:
-Category: javascript
+Category: testy
 Tags: test, jest, tdd, node, npm, babel, transpilacja, transpilator, babel.js, babeljs
 Slug: js-jest-test-2
 related_posts:

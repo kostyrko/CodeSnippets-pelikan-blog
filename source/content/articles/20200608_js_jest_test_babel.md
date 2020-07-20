@@ -2,7 +2,7 @@ Title: JavaScript - pierwszy test w JEST (+ Babel)
 Author: mkostyrko
 Date: 2020-06-08 10:00
 Updated:
-Category: javascript
+Category: testy
 Tags: test, jest, tdd, node, npm, babel, transpilacja, transpilator, babel.js, babeljs
 Slug: js-jest-test-babel
 related_posts: js-babel, js-jest-test-2
