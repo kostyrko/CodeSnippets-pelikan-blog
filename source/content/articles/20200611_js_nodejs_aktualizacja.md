@@ -2,7 +2,7 @@ Title: Node.js aktualizacja (Ubuntu)
 Author: mkostyrko
 Date: 2020-06-11 11:00
 Updated:
-Category: javascript
+Category: nodejs
 Tags: node.js, node, nvm, aktualizacja, linux, ubuntu, bash, curl, npm
 Slug: js-nodejs-aktualizacja
 related_posts:
