@@ -1,6 +1,6 @@
 Title: JavaScript i  Fetch API
 Author: mkostyrko
-Date: 2020-06-20 10:00
+Date: 2020-07-20 10:00
 Updated:
 Category: javascript
 Tags: javascript, js, node.js, fetch, fetch api,
