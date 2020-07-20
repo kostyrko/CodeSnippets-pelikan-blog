@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-06-11 12:00
 Updated:
 Category: javascript
-Tags: javascript, js, asynchroniczność, call stack, Web Api, obietnice, promises
+Tags: javascript, js, asynchroniczność, call stack, Web Api, obietnice, promises, callback, promise
 Slug: js-asynchronicznosc-ajax
 related_posts: js-xhr
 
@@ -32,7 +32,7 @@ JavaScript w swoim założeniu jest jednowątkowa, kod wywoływany jest w sposó
 
 **Web API** - tu trafiają asynchroniczne operacje (np. setTimeout) i są wykonywane - po wykonaniu trafia do **kolejki wywołań zwrotnych**/*Callback queue* oraz czeka na moment, w którym może zostać wprowadzony na stronę internetową.
 
-**Pętla wydarzeń**/*Event loop* - funkcja sprawdzająca czy Stos wywołań jest pusty i w momencie, gdy ten warunek zostaje spełniony przenosi wywołania z kolejki **wywołań zwrotnych** do *stosu wywołań* i wówczas funkcja jest wywoływana
+**Pętla wydarzeń**/*Event loop* - funkcja sprawdzająca czy Stos wywołań jest pusty i w momencie, gdy ten warunek zostaje spełniony przenosi wywołania z kolejki **wywołań zwrotnych** (ang. callback) do *stosu wywołań* i wówczas funkcja jest wywoływana
 
 ![event-loop](https://www.oreilly.com/library/view/learning-nodejs-development/9781788395540/assets/74fbf540-71b8-499a-a7cf-2da14ed034de.jpg)
 
@@ -40,11 +40,27 @@ JavaScript w swoim założeniu jest jednowątkowa, kod wywoływany jest w sposó
 
 ### Wyjście z piekła wywołań zwrotnych/ callback hell
 
-Callback jest funkcją przekazywaną jako parametr innej funkcji (funkcja zagnieżdżona w wywołaniu funkcji) umożliwia to uzależnienia kolejnego działania od zwrotu działania funkcji poprzedzającej - wywołanie się funkcji wewnętrznej było uzależnione od wywołania funkcji wyższego rzędu. Wielokrotne zagnieżdżenie wywołań zwrotnych, trudne do opanowania oraz utrzymania, nazywane jest `callback hell`
+Callback jest informacją zwrotną wynikającą z wywołania funkcji, ta może posłużyć jako parametr/agrument wywołania kolejnej funkcji (funkcja zagnieżdżona w wywołaniu funkcji) umożliwia to uzależnienia kolejnego działania od zwrotu działania funkcji poprzedzającej - wywołanie się funkcji wewnętrznej było uzależnione od wywołania funkcji wyższego rzędu. Wielokrotne zagnieżdżenie wywołań zwrotnych (ang. callback), trudne do opanowania oraz utrzymania, nazywane jest `callback hell`
+
+        function renderPage = function() {
+            getFirstData(function(x) {
+                getAnotherData1(x, function(y) {
+                    getAnotherData2(y, function(z) {
+                        getAnotherData3(z, function() {
+                            [...]
+                        });
+                    });
+                });
+            });
+
+
+Przykład za: [kursjs.pl - Callback i Promise](http://kursjs.pl/kurs/ajax/promise.php)
+
+---
 
 #### Obietnice/Promises
 
-*Promises* zostały wprowadzone wraz z ES6, bez nich  asynchroniczność opierano na `callbackach`/*wywołaniach zwrotnych*. Obiekty *promises* (obietnice) zakładają wykonanie pewnej czynności oraz zwrócenie rezultatu lub poinformowania o błędzie i może znajdować się w jednym stanie jednocześnie: `Pending` (wywołane i oczekuje), `Fulfilled` (wykonane z powodzeniem), `Rejected` (odrzucone z niepowodzeniem)
+*Promises* zostały wprowadzone wraz z ES6, bez nich  asynchroniczność opierano na `callbackach`/*wywołaniach zwrotnych*. Obiekty *Promise* (obietnice) zakładają wykonanie pewnej czynności oraz zwrócenie rezultatu lub poinformowania o błędzie i może znajdować się w jednym stanie jednocześnie: `Pending` (wywołane i oczekuje), `Fulfilled` (wykonane z powodzeniem), `Rejected` (odrzucone z niepowodzeniem). Wprowadzenie *obietnic* pozwala na uniknięcie stosowania funkcji warunkowych.
 
 Schemat kodu w przypadku Fulfilled
 
@@ -53,11 +69,13 @@ Schemat kodu w przypadku Fulfilled
         //rezultat do wykonania
     })
 
-Schemat kodu w przypadku Fulfilled
+Schemat kodu w przypadku Rejected
 
     Promise(treść-obietnicy).catch(error=>{
         //zwraca błąd
     })
+
+---
 
 #### Async oraz await
 
@@ -96,22 +114,22 @@ Początkowo (w momencie stworzenia AJAX) formatem, w którym dane przesyłano by
 Możliwe statusy odpowiedzi (wybrane)
 
 | Numer | Znaczenie
-|---|---|---|
-| 200 | połączenie zakończyło się sukcesem |
-| 301 | strona przeniesiona na inny adres |
-| 404 | strona nie istnieje |
-| 500 | błąd serwera|
+|---|---|
+| **200** | połączenie zakończyło się sukcesem |
+| **301** | strona przeniesiona na inny adres |
+| **404** | strona nie istnieje |
+| **500** | błąd serwera|
 
 
 Typy połączenia
 
 | Typ | Znaczenie
-|---|---|---|
-| GET | pobierani danych |
-| POST | wysyłanie danych |
-| PUT | zmiana obiektu w bazie danych |
-| PATCH | edycja pojedynczej właściwości obiektu w bazie danych |
-| DELETE | usunięcie danych |
+|---|---|
+| **GET** | pobierani danych |
+| **POST** | wysyłanie danych |
+| **PUT** | zmiana obiektu w bazie danych |
+| **PATCH** | edycja pojedynczej właściwości obiektu w bazie danych |
+| **DELETE** | usunięcie danych |
 
 
 ---

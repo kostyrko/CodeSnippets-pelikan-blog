@@ -5,7 +5,7 @@ Updated:
 Category: nodejs
 Tags: js, javascript, json, json-server, readFile, require, node, stringify, parse
 Slug: js-json-server
-related_posts: 
+related_posts: js-promises, js-xhr-rest, js-xhr, js-asynchronicznosc-ajax, js-fetch-api
 
 ![json](http://www.webcyou.com/wp-content/uploads/2017/07/json-logo.png){: max-height="300px"}
 
@@ -63,7 +63,6 @@ Instalacja (globalna - może wymagać -> sudo)
 Wykorzystanie - uruchomienie. W terminalu należy wpisać słowo kluczowe json-server dodać flagę watch oraz podać ścieżkę zapisu pliku json
 
         json-server --watch sciezka/do/pliku.json
-
 
 Przykładowo
 
@@ -136,4 +135,4 @@ Duckett, Jon. Javascript and jquery: Interactive front-end web development. Wile
 [Reading json files in NodeJS: require() vs fs.readFile()](https://blog.codingblocks.com/2018/reading-json-files-in-nodejs-require-vs-fs-readfile/)
 
 
-[JSON - wszystko co musisz o nim wiedzieć](https://www.youtube.com/watch?v=haY
+[JSON - wszystko co musisz o nim wiedzieć](https://www.youtube.com/watch?v=haY)
