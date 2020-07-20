@@ -13,7 +13,7 @@ related_posts: js-promises, js-xhr-rest, js-xhr, js-asynchronicznosc-ajax, js-fe
 
 ### JSON - JavaScript Object Notation
 
-Format JSON zbliżony jest do obiektów znanych z JS,  z tą zasadą, że `nazwy kluczy wpisuje się w PODWÓJNY cudzysłów`, kolejne wpisy oddzielone są przecinkami a same pliki JSON przechowują jedynie dane/zmienne (żadnych funkcji/kodu wykonywalnego). Praca z plikami typu JSON przypomina te znane z obiektów JS,  stąd odwołujemy się do obiektów oraz ich poszczególnych części stosując klucze. Wartości zawarte w JSONie mogą być zapisane w postaci **łańcucha znaków, liczby lub wartości logicznej** (false, null, true), te natomiast mogą składać się na **tablicę** lub **obiekt**, które mogą być dowolnie zagnieżdżone
+Format JSON zbliżony jest do obiektów znanych z JS,  z tą zasadą, że **nazwy kluczy** wpisuje się w `PODWÓJNY cudzysłów`, kolejne wpisy oddzielone są przecinkami a same pliki JSON przechowują jedynie dane/zmienne (żadnych funkcji/kodu wykonywalnego). Praca z plikami typu JSON przypomina te znane z obiektów JS,  stąd odwołujemy się do obiektów oraz ich poszczególnych części stosując klucze. Wartości zawarte w JSONie mogą być zapisane w postaci **łańcucha znaków, liczby lub wartości logicznej** (false, null, true), te natomiast mogą składać się na **tablicę** lub **obiekt**, które mogą być dowolnie zagnieżdżone
 
 Przykład (za [wikipedia.org](https://pl.wikipedia.org/wiki/JSON))
 
