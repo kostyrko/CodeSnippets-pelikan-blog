@@ -150,18 +150,68 @@ Fetch API posiada również interfejs Headers() -> [Headers - developer.mozilla.
 
 Istnieje również możliwość wysyłanie danych w postaci URL jeśli serwer, z którego korzystamy nie wymaga nagłówka wówczas...
 
+
+    fetch(url, {
+          method: "post",
+          body: uriEncode("name=Marcin&surname=Nowak")
+      })
+      .then(res => res.json())
+      .then(res => {
+          console.log("Dodałem użytkownika:");
+          console.log(res);
+      })
+
+
 Przykład za [kurjs.pl - Fetch API](http://kursjs.pl/kurs/ajax/fetch.php)
 
-  fetch(url, {
-        method: "post",
-        body: uriEncode("name=Marcin&surname=Nowak")
-    })
-    .then(res => res.json())
-    .then(res => {
-        console.log("Dodałem użytkownika:");
-        console.log(res);
-    })
+![fetch diagram](https://storage.googleapis.com/zingchart-blog/zing-content/2017/12/fetch-diagram-1.png)
 
+----
+
+### Łączenie plików HTML przy pomocy Fetch
+
+Fetch API można wykorzystać również do "łączenia" plików HTML lub inaczej to ujmując modułowej budowy plików HTML (co może być szczególnie interesujące w trakcie tworzenia stron internetowych w statyczny sposób), może być to przydatne w momencie gdy zależy nam na utrzymaniu kodu w mniejszych partiach lub gdy header ma się powtarzać na paru stronach/podstronach
+
+Takie zastosowanie może się prezentować w następujący sposób
+
+Plik index.html oraz kolejny np index.2 może wyglądać w następujący sposób -> plik JS jest wywoływany na początku
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      [...]
+      <script src='main.js'></script>
+    </head>
+    <body>
+        <header></header>
+        
+        <footer></footer>
+    </body>
+    </html>
+
+
+Plik zawierający treść headera np. header.html powinien zawierać treść jaka powinna znaleźć się na stronie (każdej do której jest podlinkowany)
+
+
+    <div>
+      <h1>Included Header</h1>
+    </div>
+
+
+Plik JS zamieszczający treść korzysta z fetch
+
+
+    fetch("./header.html")
+      .then(response => {
+        return response.text()
+      })
+      .then(data => {
+        document.querySelector("header").innerHTML = data;
+      });
+
+
+Patrz przykład na GitHub -> [staticHTML-Include](https://github.com/kostyrko/staticHTML-Include)
 
 ---
 
