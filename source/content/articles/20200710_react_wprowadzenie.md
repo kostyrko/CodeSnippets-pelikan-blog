@@ -193,21 +193,75 @@ zamiast
       "This is not the droid you are looking for!"
     );
 
-Atrybuty w JSX różnią się od HTML używają 1) camelCase 2) dodają kolejny wyraz określający np. **class** -> **className** / **background-color** -> **backgroundColor**
-W atrybutach mogą się również znaleźć wyrażenia JS zamknięte w nawiasach klamrowych 
+Atrybuty w JSX różnią się od HTML używają 1) camelCase 2) wykorzystując nieco zmienione słowa kluczowe np. **class** -> **className** / **background-color** -> **backgroundColor**
+
+#### Wyrażenia
+
+##### Zmienne
+
+W atrybutach mogą się również znaleźć wyrażenia JS zamknięte w **nawiasach klamrowych -> {}** ale mogą się tam również znaleźć **atrybuty styli**
 
     const style {
       backgroundColor: red;
     }
 
-    <div style= {style}></div>
+    <div style = {style}></div>
 
-    <div padding={2+2}></div>
+    <div padding = {2+2}></div>
 
+##### Funkcyjne
+
+
+        function yodaTalk(name){
+            return `${firstName}, you are the one, looking for, are we.`;
+        }
+        const name = 'Wookie';
+
+        <span>{ yodaTalk(name) }</span>
+
+
+##### Tagi JSX w zmiennych
+
+
+    const name = 'Wookie';
+
+    const greeting = <span> { firstName }, you are the one, looking for, are we.</span>
+    
+    <div>{ greeting }</div>
+
+
+##### Tagi JSX w funkcjach - funkcja zwracająca element
+
+    function yodaTalk(name){
+            return <span> {firstName}, you are the one, looking for, are we.</span>;
+        }
+        const name = 'Wookie';
+
+        <div>{ yodaTalk(name) }</div>
+
+##### Tagi JSX na podstawie wyrażeń logicznych
+
+
+        const dagobah = true
+
+        if (dagobah){
+            info = <span> Luke, you are the one, looking for, are we.</span>;
+        } else {
+            info = <a href="/login">Let's go to Dagobah, but first Log In</a>;
+        }
+
+        <div>{ info }</div>
+
+
+#### Opis procesu
+
+Element tworzony przy pomocy tagów JSX -> w trakcie kompilacji jest zmieniany na React.createElement -> wywołanie zwraca obiekt -> React tworzy wewnętrzne wirtualne drzewo DOM -> React tworzy drzewo DOM i wstawia je do dokumentu
+
+---
 
 ### React.Fragment -> o fragmentach słów parę 
 
-JSX może przyjąć tylko jeden element -> stąd aby wyrenderować wiele elementów należy je opakować w jeden nadrzędny np. div, ale od React 1.6 można wykorzstywyać tzw Fragmenty, które są elementem "klamrowym", który nie generuje kolejnego elementu **<> element1 element2 ...element </>**
+JSX może przyjąć tylko jeden element -> stąd aby wyrenderować wiele elementów należy je opakować w jeden nadrzędny np. div, ale od React 1.6 można wykorzystywać tzw. Fragmenty, które same w sobie są pewnego rodzaju elementem "klamrowym", który nie generuje kolejnego elementu **<> element1 element2 ...element </>**
 
 Można zaimportowania modułu "Fragment" z biblioteki "react"
 
