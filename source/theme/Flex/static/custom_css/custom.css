@@ -56,6 +56,10 @@ img{
   margin: auto;
 }
 
+article > div:first-of-type > p:first-of-type img:first-of-type {
+  max-height: 300px;
+}
+
 /* img[src*='#center'] { 
   display: block;
   margin: auto;
