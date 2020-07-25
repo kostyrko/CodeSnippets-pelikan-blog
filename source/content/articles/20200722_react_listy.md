@@ -14,7 +14,7 @@ Wiele elementów można tworzyć na różne sposoby. W tym kontekście należy w
 
 
 ### Tablice
-Proste tworzenie elementów (nie jest to lista i nie wymaga kluczy)
+Proste tworzenie elementów (klucz nie jest wymagany wymaga kluczy -> dopiero od dynamicznych elementów - np. zwykła list, która zmianie nie ulega nie będzie tego wymagać)
 
     const droids = [
       <span>C3-PO</span>,
