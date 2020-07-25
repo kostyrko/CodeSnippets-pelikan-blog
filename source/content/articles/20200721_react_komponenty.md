@@ -136,7 +136,7 @@ W ramach Greeting zagnieżdżony jest Droid.
 Właściwości są tym co dodaje dynamiki komponentom - jest tym czym właściwość/argument jest dla funkcji.
 
 
-Z perspektywy funkcji może to wylądać w następujący sposób
+Z perspektywy funkcji może to wyglądać w następujący sposób
 
     
     function Droid=(props) => {
@@ -188,18 +188,50 @@ albo
     }
 
 
-Ze względu na to, że **props** jest obiektem, możemy dokonać na nim destrukturyzacji
+---
+### Destrukturyzacja
+
+Ze względu na to, że **props** jest obiektem, możemy dokonać na nim destrukturyzacji na różne sposoby
 
 
-    const droids = ["C3-PO", "R2-D2"];
+destrukturyzacji dwóch obiektów
+
 
     const Droids = (props) => {
       const {droid1, droid2} = props;
-      return <h1>{droid1,droid2}</h1>
+      return <h1>{droid1} {droid2}</h1>
+    }
+
+    ReactDOM.render(
+      <Droids droid1="C3-PO" droid2="R2-D2"/>,
+      document.getElementById("app")
+    );
+
+
+destrukturyzacji przekazując arg. do Komponentu
+
+
+
+    const Droids = ({droid1, droid2}) => {
+      return <h1>{droid1} {droid2}</h1>
+    }
+
+    ReactDOM.render(
+      <Droids droid1="C3-PO" droid2="R2-D2"/>,
+      document.getElementById("app")
+    );
+
+
+Wykorzystując tablicę
+
+
+    const Droids = ({droids}) => {
+      return <h1>{droids[0],droids[1]}</h1>
     }
 
     <Droids props={droids} />
 
+---
 
 Jako props można przekazać różnego rodzaju dane - liczby, wartości logiczne, łańcuchy szablonowe, zmienne, tablice, funkcje jednak te wówczas winny znaleźć się w **nawiasach klamrowych**. 
 
