@@ -226,10 +226,15 @@ Wykorzystując tablicę
 
 
     const Droids = ({droids}) => {
-      return <h1>{droids[0],droids[1]}</h1>
+      return <h1>{droids[0]} {droids[1]}</h1>
     }
 
-    <Droids props={droids} />
+    const droids = ["C3-PO", "R2-D2"];
+
+    ReactDOM.render(
+      <Droids droids={droids}/>,
+      document.getElementById("app")
+    );
 
 ---
 
