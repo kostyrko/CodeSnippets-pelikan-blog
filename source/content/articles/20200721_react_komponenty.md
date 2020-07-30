@@ -1,9 +1,9 @@
-Title: React: komponenty i właściwości (props)
+Title: React: komponenty i właściwości (props) + destrukturyzacja
 Author: mkostyrko
 Date: 2020-07-21 10:00
 Updated:
 Category: reactjs
-Tags: komponenty, props, react, components
+Tags: komponenty, props, react, components, destrukturyzacja
 Slug: react-komponenty
 related_posts: 
 
@@ -191,10 +191,31 @@ albo
 ---
 ### Destrukturyzacja
 
-Ze względu na to, że **props** jest obiektem, możemy dokonać na nim destrukturyzacji na różne sposoby
+Ze względu na to, że **props** jest obiektem, możemy dokonać na nim destrukturyzacji na różne sposoby tak aby nie odwoływać się cały czas do obiektu **props**
+
+#### Klasy
+
+W przypadku **klas** należy dokonać destrukturyzacji **przed return**em
+
+    class Droids extends Component {
+      render() {
+        const { droid } = this.props;
+        return (
+          <ul>
+            {droid.map((elem) => (
+              <li key={elem.name}>
+                {elem.name}</a>
+              </li>
+            ))}
+            </ul>
+        );
+      }
+    }
 
 
-destrukturyzacji dwóch obiektów
+#### Funkcje
+
+destrukturyzacji dwóch obiektów w przypadku **komponentów funkcyjnych**
 
 
     const Droids = (props) => {
@@ -211,7 +232,6 @@ destrukturyzacji dwóch obiektów
 destrukturyzacji przekazując arg. do Komponentu
 
 
-
     const Droids = ({droid1, droid2}) => {
       return <h1>{droid1} {droid2}</h1>
     }
@@ -222,12 +242,12 @@ destrukturyzacji przekazując arg. do Komponentu
     );
 
 
-Wykorzystując tablicę
+Wykorzystując tablicę (w przypadku prostego zwrócenia elementu słowo kluczowe **return** nie jest wymagane podobnie jak nawiasy klamrowe - wynika to funkcji strzałkowej (ang. arrow function))
 
 
-    const Droids = ({droids}) => {
-      return <h1>{droids[0]} {droids[1]}</h1>
-    }
+    const Droids = ({droids}) => (
+      <h1>{droids[0]} {droids[1]}</h1>
+    )
 
     const droids = ["C3-PO", "R2-D2"];
 
@@ -235,6 +255,7 @@ Wykorzystując tablicę
       <Droids droids={droids}/>,
       document.getElementById("app")
     );
+
 
 ---
 
@@ -299,3 +320,6 @@ Właściwości pozwalają nam również na przekazanie funkcji, które mogą by�
 
 [komponenty - React docs](https://pl.reactjs.org/docs/components-and-props.html)
 
+[destrukturyzacja - kursjs.pl](http://kursjs.pl/kurs/es6/destructuring.php)
+
+[Przypisanie destrukturyzujące - MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Operatory/Destructuring_assignment)
