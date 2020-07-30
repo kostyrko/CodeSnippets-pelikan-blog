@@ -1,9 +1,9 @@
-Title: Agile > Scrum > Lean Management > Kaban
+Title: Agile > Scrum > Lean Management > Kanban
 Author: mkostyrko
 Date: 2020-06-24 11:00
 Updated:
 Category: dev
-Tags: agile, scrum, lean management, kaban, dvlpr-wnbe, tablica kaban, agile manifesto
+Tags: agile, scrum, lean management, dvlpr-wnbe, tablica kanban, agile manifesto
 Slug: dev-agile-scrum
 related_posts: 
 
@@ -16,7 +16,7 @@ W pierwszej kolejności polecam podcast **DVLPR-WNBE #14** -> [Scrum Master i od
 
 Na ogólnym poziomie rozumiem *Agile* jako pojęcie najwyższego rzędu, ukazujące pewnego rodzaju założenia pracy zespołowej, przełamujące schematyczne myślenie liniowe oparty na szybkim wprowadzeniu danego produktu lub jego modułów do użytkowania i testowania przez klienta, tak aby móc zebrać od niego informacje zwrotną oraz dostosowanie produktu na tej podstawie (zwinne programowanie). To założenie również leży u podstaw *Scrum*, który angażuje się głębiej w określenie zasad oraz interakcji panujących w zespole (np. poprzez założenie spotkań grupowych w trakcie, których przedstawia się wykonywane zadania ew. problemy czy tzw sprintów - czas w którym jest tworzona forma oprogramowania, która jest możliwa do użytkowania (testowania)). Zarówno *Agile* jak i *Scrum* się przenikają i podkreślają wagę tzw umiejętności miękkich (co wydaje się być oczywiste, ale często szybko znika za horyzontem kiedy przychodzi do działania w trakcie realizacji projektów - jest to rzecz jasna zależne od świadomości zespołu).
 
-*Lean development* również nie jest daleki od wyżej przedstawionych założeń ale kładzie nacisk na nieco inne aspekty/wartości i ujmuje problemy interakcji w zespole oraz pomiędzy nim a klientem na poziomie ogólnym - podobnie do *Agile*. *Kaban* oraz *Tablica Kaban* jest związana z *Lean development* jak *Scrum* z *Agile* - zwraca większą uwagę na proces, w sposób bardziej szczegółowy/konkretny.*Tablica Kaban* - pozwala na wizualizację tego procesu mając na uwadze zwiększenie jego transparentności oraz umożliwia łatwe zarządzanie organiczne projektem.
+*Lean development* również nie jest daleki od wyżej przedstawionych założeń ale kładzie nacisk na nieco inne aspekty/wartości i ujmuje problemy interakcji w zespole oraz pomiędzy nim a klientem na poziomie ogólnym - podobnie do *Agile*. *Kanban* oraz *Tablica Kanban* jest związana z *Lean development* jak *Scrum* z *Agile* - zwraca większą uwagę na proces, w sposób bardziej szczegółowy/konkretny.*Tablica Kanban* - pozwala na wizualizację tego procesu mając na uwadze zwiększenie jego transparentności oraz umożliwia łatwe zarządzanie organiczne projektem.
 
 
 ### Agile/Programowanie zwinne - model realizacji zadania w formie ogólnych założeń
@@ -93,13 +93,13 @@ Podstawowe założenia:
 
 ---
 
-### Tablica Kaban - wizualizacja procesu
+### Tablica Kanban - wizualizacja procesu
 
-Kaban - jest sposobem wizualizacji etapów produkcji związanych z wytwarzaniem np. nowego oprogramowania
+Kanban - jest sposobem wizualizacji etapów produkcji związanych z wytwarzaniem np. nowego oprogramowania
 
-Wymaga: wizualizacji (tablica kaban -> np. trello), ograniczenia pracy w toku (założenie, że na danym etapie tylko określona ilość zadań może być realizowana), pozwala na zarządzanie strumieniem poprzez pomiar, z góry przyjętych wartości.
+Wymaga: wizualizacji (tablica Kanban -> np. trello), ograniczenia pracy w toku (założenie, że na danym etapie tylko określona ilość zadań może być realizowana), pozwala na zarządzanie strumieniem poprzez pomiar, z góry przyjętych wartości.
 
-![kaban](https://www.heflo.com/pt-br/wp-content/uploads/sites/2/2017/12/metodo-kanban-01.png)
+![Kanban](https://www.heflo.com/pt-br/wp-content/uploads/sites/2/2017/12/metodo-kanban-01.png)
 
 ---
 Źródła:
@@ -118,6 +118,6 @@ Lean Management
 
 [Zasady lean](https://leanactionplan.pl/zasady-lean/)
 
-Kaban
+Kanban
 
 [Kanban w tworzeniu oprogramowania](https://pl.wikipedia.org/wiki/Kanban_w_tworzeniu_oprogramowania)
