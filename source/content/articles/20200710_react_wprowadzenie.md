@@ -199,10 +199,12 @@ Atrybuty w JSX różnią się od HTML używają 1) camelCase 2) wykorzystując n
 
 ##### Zmienne
 
-W atrybutach mogą się również znaleźć wyrażenia JS zamknięte w **nawiasach klamrowych -> {}** ale mogą się tam również znaleźć **atrybuty styli**
+W atrybutach mogą się również znaleźć wyrażenia JS zamknięte w **nawiasach klamrowych -> {}** ale mogą się tam również znaleźć **atrybuty styli** -> ich właściwości powinny być zamknięte w cudzysłowach, a kolejne deklaracje oddzielone przecinkami
 
     const style {
-      backgroundColor: red;
+      backgroundColor: 'red',
+      width: '100px',
+      height: '100px'
     }
 
     <div style = {style}></div>
