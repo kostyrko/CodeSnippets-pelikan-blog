@@ -9,24 +9,27 @@ related_posts: react-wprowadzenie, react-komponenty, react-listy
 
 ![react](https://teamquest.pl/img/static/blog/reactjs.jpeg){: max-height="300px"}
 
-Zadarzenia w React obługiwane są  w podobny sposób jak w HTML -> oznacza to, że inlinowo wpisywane są nasłuchiwacze (używając **camelCase**) do którego przekazywany jest atrybut w nawiasach klamrowych
+Zdarzenia w React obsługiwane są  w podobny sposób jak w HTML -> oznacza to, że inlinowo wpisywane są nasłuchiwacze (używając **camelCase**) do którego przekazywany jest atrybut w nawiasach klamrowych -> przekazywanie funkcji jako props
 
     <button onClick={buttonClick}>Button</button>
 
 Metoda, do której się odwołujemy poprzez atrybut powinna znaleźć swoje miejsca w ramach stworzonego komponentu lub jego rodzica (tak aby była osiągalna/możliwa do wywołania) - uwaga ta dotyczy komponentów klasowych oraz funkcyjnych
 
+Wydajniejszym rozwiązaniem jest jednak tworzenie funkcji po za komponenetem, ale w ramach fuunkcji/klasy- wtedy gdy renderowany jest komponent wielokrotnie to funkcja nie musi być tworzona na nowo (koszt wydajnościowy)
+
 ### Zdarzenia w komponentach klasowych 
 
-W przypadku komponentów klasowych istotne jest pamiętanie o odwołaniu się do słowa kluczowego **this**, które jest dynamiczne i będzie zależne od interakcji - stąd aby odwołanie odbywało się do całości klasy/komponentu najlepiej zastosować funkcję strzałkową (która wymaga transpilacji np. poprzez użycie wtyczki Babel -> @babel/plugin-proposal-class-properties)
+W przypadku komponentów klasowych istotne jest pamiętanie o odwołaniu się do słowa kluczowego **this**, które jest dynamiczne i będzie zależne od interakcji - stąd aby odwołanie odbywało się do całości klasy/komponentu najlepiej zastosować funkcję strzałkową (wiecej na ten temat poniżej)
 
-      class ClickTest extends Component {
-        handleClick() {
-          console.log("Clicked!");
+
+      class Droid extends Component {
+        helloDroid() {
+          console.log("Hi R2D2!");
         }
         render(){
           return (
             <>
-            <h2>Start clicking!</h2>
+            <h2>Greet Droid by clicking below!</h2>
             <button onClick={this.handleClick}>
             Start!
             </button>
@@ -48,14 +51,17 @@ W przypadku komponentów klasowych istotne jest pamiętanie o odwołaniu się do
 Wykorzystując funkcję strzałkową
 
 
-      class ClickTest extends Component {
-        handleClick= () => {
-          console.log("Clicked!");
+Funkcja strzałkowa ma **this** ze scopa zewnętrznego/**this** nie ulega zmianie
+
+
+      class Droid extends Component {
+        greetDroid= () => {
+          console.log("Hi R2D2!");
         }
         render(){
           return (
             <>
-            <h2>Start clicking!</h2>
+            <h2>Greet Droid by clicking below!</h2>
             <button onClick={this.handleClick}>
             Start!
             </button>
@@ -66,15 +72,14 @@ Wykorzystując funkcję strzałkową
 
 ### Zdarzenia w komponentach funkcyjnych
 
-    const ClickTest = (props) => {
-      const handleClick = () => {
-        console.log("Clicked!");
-        console.log(props.someProp);
+    const Droid = (props) => {
+      const greetDroid = () => {
+        console.log("Hi R2D2!");
         console.log(props.someProp);
       }
       return (
         <>
-          <h2>Start clicking!</h2>
+          <h2>Greet Droid by clicking below!</h2>
           <button onClick={handleClick}>
             Start!
           </button>
