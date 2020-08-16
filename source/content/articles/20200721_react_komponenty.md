@@ -323,3 +323,5 @@ Właściwości pozwalają nam również na przekazanie funkcji, które mogą by�
 [destrukturyzacja - kursjs.pl](http://kursjs.pl/kurs/es6/destructuring.php)
 
 [Przypisanie destrukturyzujące - MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Operatory/Destructuring_assignment)
+
+[Dobre praktyki w React cz. 1⌨️ hello roman #121](https://www.youtube.com/watch?v=POBekn2ZL9Y)
