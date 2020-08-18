@@ -3,21 +3,28 @@ Author: mkostyrko
 Date: 2020-07-21 10:00
 Updated:
 Category: reactjs
-Tags: komponenty, props, react, components, destrukturyzacja
+Tags: komponenty, props, react, components, destrukturyzacja, fragmenty
 Slug: react-komponenty
 related_posts: 
 
 ![react-props](https://cms-assets.tutsplus.com/uploads/users/1795/posts/29541/image/Stateful-vs-Stateless-Component-Tutorial-Component-with-prop.jpg){: max-height="300px"}
 
-Komponent to struktura będący częścią aplikacji składająca się elementów. Komponent jest interaktywny - może przyjmować dane i zwracać inne komponenty lub elementy. Komponent może składać się z innych komponentów (zagnieżdżanie) jak i elementów.
+Aplikacje/strony tworzone przy pomocy *Reacta* składają się z komponentów. Komponenty tworzą strukturę aplikacji i są interaktywny - mogą przyjmować dane i na ich podstawie zwracać zmienione komponenty (tworzona są przy pomocy [klas](#komponent-klasy) lub [funkcji](#komponent-funkcja))
 
-Z elementów warto stworzyć komponenty gdy te: się powtarzają i stanowią spójną całość, jeśli komponent jest duży (5-10 elmentów) wówczas należy go podzielić na mniejsze komponenty 
 
-### Tworzenie komponentu
+Komponenty są elementami strony, które się powtarzają i stanowią spójną całość, warto podzielić dany komponent na mniejsze części (również komponenty) jeśli ten składa się z większej ilości elementów (5-10).
+
+Istotne jest to, że każdy z tworzonych komponentów może zwracać tylko jeden element - oznacza to, że wszystkie elementy danego komponentu (w tym np. inne komponenty, na które się składa dany komponent) powinny być opakowane w `<div>` lub tzw. [fragmenty](#fragmenty)
+
+---
+### Tworzenie komponentu - podstawy
 
 Komponent jest tworzony przy pomocy funkcji lub klasy - w nazewnictwie stosujemy **wielką literę** na początku
 
-**Funkcja** tworząca komponent (wcześniej jedynie mogły wyświetlać strukturę JSX bez udziału logiki - to zmieniło się za sprawą React Hooks)
+**Funkcja**{#komponent-funkcja} tworząca komponent (wcześniej jedynie mogły wyświetlać strukturę JSX bez udziału logiki - to zmieniło się za sprawą [React Hooks](https://kostyrko.github.io/zfrontu/react-hooks.html) - od React v. 16.8)
+
+Przykład komponentu funkcyjnego
+
 
 
     function HelloWookie() {
@@ -29,7 +36,7 @@ Komponent jest tworzony przy pomocy funkcji lub klasy - w nazewnictwie stosujemy
     }
 
 
-albo
+oraz przy pomocy ES6
 
 
     const HelloWookie = () => {
@@ -41,8 +48,7 @@ albo
     }
 
 
-**Klasa** tworząca komponent (bardziej skomplikowana struktura, trudniejszy w kod w testowaniu)
-Wymaga zaimportowania **{Component}** i dziedziczenia od klasy **Components**
+**Klasa**{#komponent-klasy} tworząca komponent (bardziej skomplikowana struktura, trudniejszy w kod w testowaniu) wymaga zaimportowania **{Component}** i dziedziczenia z klasy **Components**
 
 
     import React, {Component} from "react";
@@ -53,90 +59,66 @@ Wymaga zaimportowania **{Component}** i dziedziczenia od klasy **Components**
       }
     }
 
+---
 
-albo
+### Fragmenty{#fragmenty}
+
+Fragmenty pozwalają na zgrupowanie wielu elementów bez konieczności dodawania dodatkowego węzła DOM (np. div) - fragment można stworzyć w sposób skrótowy `<> </>` oraz jako <React.Fragment> </React.Fragment>
+
+
 
     class HelloDroid extends Component {
       render() {
         return (
-          <div>
+          <>
             <h1>I am a Wookie!</h1>;
-          </div>
+          </>
         )
       }
     }
-
-
-
-#### Renderowanie
-
-Bez znaczenia czy komponent powstał przy pomocy klasy czy funkcji jest on renderowany w podobny sposób
-
-
-    ReactDOM.render(
-      <HelloDroid />,
-      document.getElementById("app")
-    );
-
 
 ---
 
-### Zagnieżdżanie
+### Renderowanie komponentów
 
-W ramach Greeting zagnieżdżony jest Droid.
+Bez znaczenia czy komponent powstał przy pomocy klasy czy funkcji jest on renderowany w podobny sposób -> nazwa renderowanego komponentów zamknięta jest jest pomiędzy trójkątnymi nawiasami i posiada znak zamknięcia w postaci ukośnika
 
-    class Droid extends Component {
-      render() {
-        return <h1>Hi, {this.props.name}</h1>;
-      }
-    }
-
-    class Greeting extends Component {
-      render() {
-        return <Hi name="C3-Po" />;
-      }
-    }
 
     ReactDOM.render(
-      <Greeting />,
-      document.getElementById('app')
-    );  
+      <HelloDroid/>,
+      document.getElementById("app")
+    );
+
+#### Praktyka
+
+Częstą praktyką jest korzystanie pliku głównego np. app.js, w ramach którego tworzony jest komponent główny skupiający w sobie podstawowe komponenty (patrz również poniżej [zagnieżdżanie](#zagnieżdżanie)), który następnie jest renderowany (wymaga to wcześniejszego zaimportowania komponentów z innych plików) - zamiast skupiania w metodzie renderującej należącej do ReacDOM, przy pomocy fragmentów wszystkich komponentów
 
 
-...ale takich elementów mogło by być również więcej
+    import React, from "react";
+    import ReactDOM from "react-dom";
 
-    class Droid extends Component {
-      render() {
-        return <h1>Hi, {this.props.name}</h1>;
-      }
-    }
+    import {HoverEventFunc, HoverEventClass} from './HoverEvent'
 
-    class Greeting extends Component {
-      render() {
-        return (
-          <div>
-            <Droid name="C3-PO" />
-            ...
-            ...
-          </div>
-        )
-      }
-    }
 
-    ReactDOM.render(
-      <Greeting />,
-      document.getElementById('app')
-    );    
+    const App = () => (
+      <>
+        <HoverEventFunc/>
+        <HoverEventClass/>
+      </>
+    )
 
+
+    ReactDOM.render(<App/>, document.getElementById("app"));
 
 ---
 
 ### Właściwości -> properties (obiekt props)
 
-Właściwości są tym co dodaje dynamiki komponentom - jest tym czym właściwość/argument jest dla funkcji.
+Właściwości są tym co dodaje dynamiki komponentom - jest tym czym właściwość/argument jest dla funkcji. Aby przekazać props do komponentu należy wykorzystać jego nazwę następnie wykorzystać znak równość oraz podać jego treść. Większa ilość propsów nie jest rozdzielona żadnym znakiem po za spacją.
+Argumenty do *propsu* można przekazywać pod różną postacią -> string zamknięty jest w cudzysłowie np. `name='Mike'`, natomiast wartości liczbowe w nawiasach klamrowych np. `number={5}` (więcej na ten temat poniżej [propsy-cd](#propsy-cd)).
 
 
-Z perspektywy funkcji może to wyglądać w następujący sposób
+Z perspektywy komponentu funkcyjnego może to wyglądać w następujący sposób
 
     
     function Droid=(props) => {
@@ -148,7 +130,7 @@ Z perspektywy funkcji może to wyglądać w następujący sposób
       document.getElementById('app')
     );
 
-albo z perspektywy klasy (warto zwrócić uwagę na pojawienie się słowa kluczowego **this**)
+albo z perspektywy komponentu klasowego (warto zwrócić uwagę na pojawienie się słowa kluczowego **this**)
 
 
     class Droid extends Component {
@@ -164,7 +146,7 @@ albo z perspektywy klasy (warto zwrócić uwagę na pojawienie się słowa klucz
     );
 
 
-React pobiera atrybuty przekazane do komponentu i implementuje je do obiektu **props**
+React pobiera atrybuty przekazane do komponentu i implementuje je do **obiektu** **props**
 
 np. 
 
@@ -187,9 +169,8 @@ albo
       droids = ["C3-PO", "R2-D2"]
     }
 
-
 ---
-### Destrukturyzacja
+### Destrukturyzacja (obiektów) props
 
 Ze względu na to, że **props** jest obiektem, możemy dokonać na nim destrukturyzacji na różne sposoby tak aby nie odwoływać się cały czas do obiektu **props**
 
@@ -259,6 +240,8 @@ Wykorzystując tablicę (w przypadku prostego zwrócenia elementu słowo kluczow
 
 ---
 
+### Props cd. {#propsy-cd}
+
 Jako props można przekazać różnego rodzaju dane - liczby, wartości logiczne, łańcuchy szablonowe, zmienne, tablice, funkcje jednak te wówczas winny znaleźć się w **nawiasach klamrowych**. 
 
     const firstDroid = 'C3-PO'
@@ -313,6 +296,58 @@ Właściwości pozwalają nam również na przekazanie funkcji, które mogą by�
 
     <Greeting func={simpleFunc} />
 
+---
+
+### Zagnieżdżanie komponentów{#zagnieżdżanie}
+
+Komponenty mogą składać się z innych mniejszych komponentów (interaktywnych i powtarzalnych w swojej funkcjonalności bloków kodu), oznacza to, że w ramach większego komponentu zagnieżdżane są mniejsze z których się składa
+
+W ramach Greeting zagnieżdżony jest Droid.
+
+    class Droid extends Component {
+      render() {
+        return <h1>Hi, {this.props.name}</h1>;
+      }
+    }
+
+    class Greeting extends Component {
+      render() {
+        return <Droid name="C3-Po"/>;
+      }
+    }
+
+    ReactDOM.render(
+      <Greeting />,
+      document.getElementById('app')
+    );  
+
+
+...ale takich elementów mogło by być również więcej
+
+    class Droid extends Component {
+      render() {
+        return <h1>Hi, {this.props.name}</h1>;
+      }
+    }
+
+    class Greeting extends Component {
+      render() {
+        return (
+          <div>
+            <Droid name="C3-PO" />
+            ...
+            ...
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(
+      <Greeting />,
+      document.getElementById('app')
+    );    
+
+
 
 ---
 
@@ -325,3 +360,5 @@ Właściwości pozwalają nam również na przekazanie funkcji, które mogą by�
 [Przypisanie destrukturyzujące - MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Operatory/Destructuring_assignment)
 
 [Dobre praktyki w React cz. 1⌨️ hello roman #121](https://www.youtube.com/watch?v=POBekn2ZL9Y)
+
+[Wprowadzenie do hooków](https://pl.reactjs.org/docs/hooks-intro.html)
