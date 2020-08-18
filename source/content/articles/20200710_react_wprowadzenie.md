@@ -185,7 +185,7 @@ JSX nie jest ekskluzywny dla Reacta, ale został stworzony przez developerów z 
 
     <span id="droid">This is not the droid you are looking for!</span>
 
-zamiast
+<<zamiast>>
 
     React.createElement(
       "span",
@@ -279,9 +279,9 @@ Notacje w JS dostępnych od ES6 - ten system zapisu pozwala, na oszczędność k
 
     const color = "red"
 
-    button {       zamiast      button {
+    button {       <<zamiast>>      button {
       color                         color: color;
-    }                            }
+    }                               }
 
 
 Inną cechą, o której warto sobie przypomnieć w kontekście JSX jest operator spread/rozproszenia,
@@ -292,11 +292,11 @@ który nie tylko pozwala na tworzenie tablic, ale również na ich rozpraszanie,
         marginTop: '20px'
     }
 
-    const  blue = {                 zamiast         const blue = {
+    const  blue = {                 <<zamiast>>         const blue = {
             backgroundColor:'blue',                     backgroundColor:'blue',
             ...divSize                                  width: '100px',
         }                                               marginTop: '20px'
-                                                    }
+                                                        }
 
 ---
 
