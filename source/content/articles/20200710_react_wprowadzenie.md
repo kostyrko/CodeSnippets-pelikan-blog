@@ -261,15 +261,29 @@ Element tworzony przy pomocy tagów JSX -> w trakcie kompilacji jest zmieniany n
 
 ---
 
-### React.Fragment -> o fragmentach słów parę 
+### React.Fragment -> o fragmentach słów parę{#fragmenty}
 
-JSX może przyjąć tylko jeden element -> stąd aby wyrenderować wiele elementów należy je opakować w jeden nadrzędny np. div, ale od React 1.6 można wykorzystywać tzw. Fragmenty, które same w sobie są pewnego rodzaju elementem "klamrowym", który nie generuje kolejnego elementu **<> element1 element2 ...element </>**
+JSX może przyjąć tylko jeden element -> stąd aby wyrenderować wiele elementów należy je opakować w jeden nadrzędny np. div, ale od React 1.6 można wykorzystywać tzw. Fragmenty, które same w sobie są pewnego rodzaju elementem "klamrowym", który nie generuje kolejnego elementu `<> element1 element2 ...element </>`
 
 Można zaimportowania modułu "Fragment" z biblioteki "react"
 
     import React, {Fragment} from "react";
 
-Wówczas wykorzystanie fragmentu wygląda następująco -> **<Fragment> element1 element2 ...element </Fragment>**
+Wówczas wykorzystanie fragmentu wygląda następująco -> `<Fragment> element1 element2 ...element </Fragment>`
+
+Fragmenty pozwalają na zgrupowanie wielu elementów bez konieczności dodawania dodatkowego węzła DOM (np. div) 
+
+
+    class HelloDroid extends Component {
+      render() {
+        return (
+          <>
+            <h1>I am a Wookiee!</h1>;
+            <h2>I am the planet Kashyyyk!</h2>;
+          </>
+        )
+      }
+    }
 
 ---
 
