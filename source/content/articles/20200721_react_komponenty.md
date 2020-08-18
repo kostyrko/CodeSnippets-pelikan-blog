@@ -59,23 +59,6 @@ oraz przy pomocy ES6
       }
     }
 
----
-
-### Fragmenty{#fragmenty}
-
-Fragmenty pozwalają na zgrupowanie wielu elementów bez konieczności dodawania dodatkowego węzła DOM (np. div) - fragment można stworzyć w sposób skrótowy `<> </>` oraz jako <React.Fragment> </React.Fragment>
-
-
-
-    class HelloDroid extends Component {
-      render() {
-        return (
-          <>
-            <h1>I am a Wookie!</h1>;
-          </>
-        )
-      }
-    }
 
 ---
 
@@ -91,7 +74,7 @@ Bez znaczenia czy komponent powstał przy pomocy klasy czy funkcji jest on rende
 
 #### Praktyka
 
-Częstą praktyką jest korzystanie pliku głównego np. app.js, w ramach którego tworzony jest komponent główny skupiający w sobie podstawowe komponenty (patrz również poniżej [zagnieżdżanie](#zagnieżdżanie)), który następnie jest renderowany (wymaga to wcześniejszego zaimportowania komponentów z innych plików) - zamiast skupiania w metodzie renderującej należącej do ReacDOM, przy pomocy fragmentów wszystkich komponentów
+Częstą praktyką jest korzystanie pliku głównego np. app.js, w ramach którego tworzony jest komponent główny skupiający w sobie podstawowe komponenty (patrz również poniżej [zagnieżdżanie](#zagnieżdżanie)), który następnie jest renderowany (wymaga to wcześniejszego zaimportowania komponentów z innych plików) - zamiast skupiania w metodzie renderującej należącej do ReactDOM, przy pomocy fragmentów wszystkich komponentów
 
 
     import React, from "react";
