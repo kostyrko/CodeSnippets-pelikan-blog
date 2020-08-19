@@ -43,7 +43,9 @@ W przypadku komponentów klasowych istotne jest pamiętanie o odwołaniu się do
 
 Słowo kluczowe **this** jest zależne od kontekstu, w przypadku gdy dany element powinien mieć dostęp do całości komponentu (np w celu skorzystania z *props*) stosuje się **funkcję strzałkową** [jej zastosowania wymaga użycia **dodatkowej wtyczki** *@babel/plugin-proposal-class-properties* (w klasie ES6 nie ma możliwości zastosowania funkcji strzałkowej)].
 
-**Konfiguracja @babel/plugin-proposal-class-properties** w .babelrc
+#### Konfiguracja wtyczki Babel: plugin-proposal-class-properties{#plugin-proposal-class-properties}
+
+**Konfiguracja @babel/plugin-proposal-class-properties** w .babelrc 
 
     {
       "presets": ["@babel/preset-env", "@babel/preset-react"],
