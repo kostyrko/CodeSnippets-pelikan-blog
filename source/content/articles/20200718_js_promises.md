@@ -44,6 +44,20 @@ Następnie na zwróconą funkcję należy zareagować (ang. consume), w tym celu
                 console.log(err)
             })
 
+
+Przykład zastosownia promisa
+
+
+        const myPromise = new Promise((reslove,reject)=> {
+        setTimeout(()=>{
+            reslove('List posiada znaczek')
+        },2000)})
+
+        myPromise
+        .then(data=>{
+            console.log(data, '- można go wysłać')
+        })
+
 ---
 
 ### Metody .then() i .catch()
