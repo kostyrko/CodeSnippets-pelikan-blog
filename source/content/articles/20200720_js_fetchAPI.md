@@ -89,6 +89,10 @@ Wyżej zaprezentowany zapis może również przyjąć formę wykorzystującą **
 
 Body jest właściwością informacji zwrotnej (ang. response) fetch i w niej zawarte są dane, na których pozyskaniu może nam zależeć.
 
+
+Poniższe metody znajdują się w **prototypie obiektu Response**
+
+
 **.json()** - przyjmuje informację zwrotną zapytania i zwraca obietnicę jako rezultat sparsowanego ciała tekstu w formacie JSON
 
     fetch('https://jsonplaceholder.typicode.com/posts/2')
