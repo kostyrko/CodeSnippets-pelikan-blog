@@ -83,7 +83,15 @@ Wyżej zaprezentowany zapis może również przyjąć formę wykorzystującą **
 ---
 #### Throw new Error()
 
-Zastosowana wyżej deklaracja (ang. statement) `throw` ma za zadanie zwrócić zdefiniowane przez użytkownika wyjątek i zatrzymuje wykonywanie się kodu
+Zastosowana wyżej deklaracja (ang. statement) `throw` ma za zadanie zwrócić zdefiniowane przez użytkownika wyjątek i zatrzymuje wykonywanie się kodu w tym przypadku doszło również do stworzenia nowej obiektu `Error` na podstawie klasy oraz jego konstruktora , który przyjmuje treść błędu, który może b(new Error('treść błędu')), bez słowa kluczowego **new** powstaje obiekt nad podstawie funkcji
+
+Schemta:
+
+    new Error([message[, fileName[, lineNumber]]])
+    === 
+    new Error([wiadomość[, nazwaPliku[, nrLiniiKodu]]]
+    === przykładowo ===
+    new Error("Błąd sieci")
 
 
 ---
