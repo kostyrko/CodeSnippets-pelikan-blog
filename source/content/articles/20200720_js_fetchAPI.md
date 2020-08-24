@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-07-20 10:00
 Updated:
 Category: javascript
-Tags: javascript, js, node.js, fetch, fetch api,
+Tags: javascript, js, node.js, fetch, fetch api, throw, error
 Slug: js-fetch-api
 related_posts: js-promises, js-xhr-rest, js-xhr, js-asynchronicznosc-ajax
 
@@ -19,9 +19,11 @@ Podstawową metodą *Fetch API* jest **fetch()** która przyjmuje adres parametr
     fetch('https://jsonplaceholder.typicode.com/posts/2')
       .then(response => console.log(response));
 
-Odpowiedź z serwera zawiera wiele informacji np. informacje o statusie odpowiedzi, headery, typ, url czy **body**
+Odpowiedź (ang. response - zwracana w formie obiektu) z serwera zawiera wiele informacji np. informacje o statusie odpowiedzi, headery, typ, url czy **body** - istotne jest to, że posiada ona również swoje metody (znaleźć je można w prototypie) -> np **.ok()**, **.json()**, **text()** (więcej na ten temat poniżej)
 
-W pierwszej kolejności będzie to
+#### Jak wygląda informacja zwrotna?
+
+W pierwszej kolejności będzie to... [pending]:
 
 
     Promise {<pending>}
@@ -30,13 +32,12 @@ W pierwszej kolejności będzie to
     [...]
 
 
-Następnie...
-
+Gdy promise przejdzie w status [fulfilled] to...
 
     Response {
       body: (...),          <- ciało odpowiedzi
       bodyUsed: false
-      headers: Headers {}
+      headers: Headers {}   <- obiekt zawierający nagłówki
       ok: true
       status: 200,          <- status połączenia
       statusText: ""        <- status połączenia jako tekst
@@ -44,8 +45,6 @@ Następnie...
       url: "https://jsonplaceholder.typicode.com/posts/2",
       __proto__: Response
     }
-
-
 
 
 Knyf z **fetch** polega na tym, że error nie będzie przechwytywany automatycznie przez metodę **catch()** w momencie gdy serwer działa, stąd wymaga sprawdzenia/walidacji informacji zwrotnej przy pomocy funkcji warunkowej
@@ -59,10 +58,9 @@ Knyf z **fetch** polega na tym, że error nie będzie przechwytywany automatyczn
         }
       })
 
-Właściwość **ok** metody **fetch()** zastosowana powyżej zwraca wartość logiczną (tylko odczyt) i zwraca **True** jeśli treść odpowiedzi zawiera się w przedziale **200-299**
+Metoda **.ok()** **fetch API** zastosowana powyżej zwraca wartość logiczną (tylko odczyt) i zwraca **True** jeśli treść odpowiedzi zawiera się w przedziale **200-299**
 
 Wyżej zaprezentowany zapis może również przyjąć formę wykorzystującą **obietnicę** i wówczas również możemy wykorzystać metodę **catch()**
-
 
 
     fetch("https://jsonplaceholder.typicode.com/posts/2")
@@ -70,7 +68,7 @@ Wyżej zaprezentowany zapis może również przyjąć formę wykorzystującą **
         if (response.ok) {
             return response.json()
         } else {
-            return Promise.reject(response)
+            throw new Error("Błąd sieci")
         }
     })
     .then(response => {
@@ -81,11 +79,16 @@ Wyżej zaprezentowany zapis może również przyjąć formę wykorzystującą **
             console.log("ERROR 404");
         }
     });
- 
+
+---
+#### Throw new Error()
+
+Zastosowana wyżej deklaracja (ang. statement) `throw` ma za zadanie zwrócić zdefiniowane przez użytkownika wyjątek i zatrzymuje wykonywanie się kodu
+
 
 ---
 
-### Body i jego metody
+### Ciało informacji zwrotnej (ang. Body)
 
 Body jest właściwością informacji zwrotnej (ang. response) fetch i w niej zawarte są dane, na których pozyskaniu może nam zależeć.
 
@@ -127,6 +130,9 @@ Podobnie jak w przypadku XMLHttpRequest wysyłanie danych wymaga przekazanie **1
       return response.json()
     })
       .then(data => console.log(data))
+    .catch(error => {
+      console.log(error);
+    });
 
 Ten format można zapisać również w następujący sposób
 
@@ -148,6 +154,24 @@ Ten format można zapisać również w następujący sposób
       .then(response => response.json())
       .then(data => console.log(data))
 
+---
+::: stringify() jest medotą obiektu JSON  i w efekcie zmienia kod na jsonowy element:::
+
+Przykładowo 
+
+    const data = {
+        name : "BB-8",
+        class : "Astromech droid"
+      }
+
+Zamienia na
+
+    {
+      "name" : "BB-8",
+      "class" : "Astromech droid"
+    }
+
+---
 
 Fetch API posiada również interfejs Headers() -> [Headers - developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
 

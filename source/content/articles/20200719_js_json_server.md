@@ -54,7 +54,7 @@ Dwie istotne metody w kontekście JSONa, które są warte zapamiętania to `JSON
 
 ### JSON-server
 
-JSON-server jest narzędziem pozwalające na stworzenie lokalnego serwera przy pomocy, którego można symulować REST API. Rozwiązanie to w całości oparte jest na zapisanym lokalnie pliku typu JSON
+JSON-server jest narzędziem pozwalające na stworzenie lokalnego serwera przy pomocy, którego można symulować REST API. Rozwiązanie to w całości oparte jest na zapisanym lokalnie pliku typu JSON. Istotne jest to, że **JSON-server** automatycznie nadaje
 
 Instalacja (globalna - może wymagać -> sudo)
 
@@ -73,7 +73,11 @@ Przykładowo
 Użytkowanie. W przeglądarce należy uruchomić adres
 
     http://localhost:3000/
-    lub 
+    lub
+    http://localhost:3000/db <-zwraca całość bazy danych
+
+
+    lub poprzez odwołanie się do konkretnego obiektu
     http://localhost:3000/nazwa_obiektu
 
 
@@ -84,7 +88,7 @@ Przykładowo
     http://localhost:3000/planets
 
 
-gdzie zawartość pliku json wygląda przykładowo:
+Dla pliku json, którego treść wygląda następująco:
 
         {
             "droids" : [
@@ -112,6 +116,14 @@ gdzie zawartość pliku json wygląda przykładowo:
                 }
             ]
         }
+
+
+**zmiana adresu hostowego** jest możliwa i odbywa się poprzez dodanie flagi z nr portu
+
+
+        json-server --watch sciezka/do/pliku.json --port Nr-portu
+        =====
+        json-server --watch sciezka/do/pliku.json --port 3001
 
 
 ---

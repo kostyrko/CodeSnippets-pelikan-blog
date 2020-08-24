@@ -9,45 +9,55 @@ related_posts:
 
 ### Kontroli przepływu
 
-Block
+block
 
 break
 
 continue
 
-Empty
+empty
 
-if...else
+if/if else/else - podstawowa instrukcja warunkowa 
 
-swith
+swith - instrukcja warunkowa biorąca pod uwagę zachowanie się kodu zależnego od wariacji zmiennej
 
-throw
 
-try...catch
+
+throw - ma za zadanie zwrócić zdefiniowane przez użytkownika wyjątek i zatrzymuje wykonywanie się kodu
+
+Przykładowe zastosowanie: 
+
+
+    fetch("https://jsonplaceholder.typicode.com/posts/2")
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            } else {
+                throw new Error("Błąd sieci")
+            }
+        })
+
+
+**try...catch** - instrukcja obsługi wyjątków - instrukcja **try** pozwala na zdefiniowanie wykonywania się kodu w przypadku przypadku jego nie powodzenia wykonywanie się programu powinno zostać wyłapane przez instrukcję **catch** i zostanie wywołany kod w niej zawarty
 
 ---
 
 ### Deklaracje
 
-var
-
-const
-
-let
+**var**/**const**/**let** - słowa kluczowe poprzedzające deklarację zmiennej oraz definiujące jej rodzaj
 
 ---
 
 ### Funkcji i klas
 
-function
+**function** - słowo kluczowe poprzedzające deklarację funkcji
 
-function*
 
-async function
+**async function** - funkcja asynchroniczna - wykorzystuje obiekt Promise do zwrócenia wyniku
 
-return
+**return** 
 
-class
+**class** - słowo kluczowe wstępujące przez zdefiniowaniem klasy (od JS >= ES6) -> więcej na ten temat: [JavaScript - klasy](https://kostyrko.github.io/zfrontu/js-klasy.html)
 
 ---
 
@@ -59,13 +69,13 @@ class
 
 ### Inne
 
-debugger
+**debugger** - wyrażenie uruchamiające funkcjonalność debuggowania/ kod przestaje się wywoływać gdy dotrze do instrukcji debuggera
 
-export
+**export** - słowo kluczowe poprzedzające deklarację eksport części kodu
 
-import
+**import**  - słowo kluczowe poprzedzające deklarację importu części kodu z pliku
 
-lable
+**lable**
 
 ---
 
