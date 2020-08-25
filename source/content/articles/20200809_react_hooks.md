@@ -93,12 +93,12 @@ Przykład 2
 Przykład komponentu funkcyjnego korzystającego z **hooków**
 
 
-import React, {useState, useEffect} from "react";
-import ReactDOM from "react-dom";
+    import React, {useState, useEffect} from "react";
+    import ReactDOM from "react-dom";
 
-const ShowInfo = ({info}) => {
-  return <h1>{info}</h1>
-}
+    const ShowInfo = ({info}) => {
+      return <h1>{info}</h1>
+    }
 
     const PropsToState = ({text}) => {
       const [message, setMessage] = useState(text)
@@ -132,6 +132,54 @@ const ShowInfo = ({info}) => {
       <PropsToState text='Wielokropek'/>,
       document.getElementById("app")
     );
+
+
+---
+
+### Własne hooki
+
+Haki to nic innego jak zamknięty blok kodu, który można wielokrotnie wykorzystać. Podstawową zasadą/konwencją hooka jest to, że zaczyna się od słowa kluczowego `use` i wywołuje inne **hooki** innymi słowy ma on za zadanie wydzielenie logiki wykorzystującej podstaowe hooki, dodatkowo można blok kodu skonstruować w ten sposób aby przyjmował dodatkowe argumenty (w zależności od zapotrzebowania)
+
+
+Przykład hooka który obsługuje wartość wpisaną do inputa będącego częścią formularza
+(źródło przykładu: [Create a Custom React Hook to Handle Form Fields](https://serverless-stack.com/chapters/create-a-custom-react-hook-to-handle-form-fields.html))
+
+
+    import { useState } from "react";
+
+    export function useFormFields(initialState) {
+      const [fields, setValues] = useState(initialState);
+
+      return [
+        fields,
+        function(event) {
+          setValues({
+            ...fields,
+            [event.target.id]: event.target.value
+          });
+        }
+      ];
+    }
+
+Przykładowe użycie wygląda w następujący sposóbu
+
+
+    import { useFormFields } from "../ścieżka/hooksLib";
+
+
+    [...] === deklaracja stanu ===
+    const [fields, handleFieldChange] = useFormFields({
+      email: "",
+      password: ""
+    });
+    [....] === odowłoanie się do funkcji zmieniającej stan ====
+    <FormControl
+            type="password"
+            value={fields.password}
+            onChange={handleFieldChange}
+    />
+
+[więcej na ten temat w kontekście opisywania formularzy]
 
 
 ---
