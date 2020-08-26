@@ -295,7 +295,7 @@ Każdy komponent posiada własny i zdefiniowany cykl życia ( zamontowanie(stwor
 Przykład zastosowania [w tym przypadku componentWillUnmount() nigdy nie zostanie wywołany ponieważ pomimo tego,  że shouldComponentUpdate() zablokuje aktualizację komponentu to setInterval() będzie dalej w tle pracował]
 
 
-  import React, {Component} from "react";
+    import React, {Component} from "react";
     import ReactDOM from "react-dom";
 
 

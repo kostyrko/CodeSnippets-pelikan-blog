@@ -1,6 +1,6 @@
 Title: React: przekazywanie danych pomiędzy komponentami
 Author: mkostyrko
-Date: 2020-08-08 10:00
+Date: 2020-08-20 10:00
 Updated:
 Category: reactjs
 Tags: react, formularze, hooks
@@ -79,6 +79,9 @@ Przykład przekazania informacji w komponencie klasowym
 
 
     import React from 'react';
+    import ReactDOM from "react-dom";
+
+    import PickDroid from './PickDroid'
 
     class App extends React.Component {
       constructor(props) {
@@ -88,42 +91,56 @@ Przykład przekazania informacji w komponencie klasowym
         }
       }
 
-      addDroid = (droid) ={
-        this.setState(prevState=>[...prevState, droid])
+      addDroid = (droid) => {
+        this.setState(prevState => ({
+          droids : [...prevState.droids, droid]
+        }))
       }
 
       render(){
-        <div>
+        return (<div>
           <PickDroid name="R2D2" onPick={this.addDroid}/>
           <PickDroid name="C3PO" onPick={this.addDroid}/>
           <PickDroid name="BB8" onPick={this.addDroid}/>
-          {list.length > 0 &&
+          {this.state.droids.length > 0 &&
             <ul>
               {this.state.droids.map((droid,i)=>
               <li key={i}>{droid}</li>)}
             </ul> }
-        </div>
+        </div>)
       }
     }
 
+    ReactDOM.render(
+      <App/>,
+      document.getElementById("app")
+    );
+
+    =====
+    PickDroid.js
 
     import React from 'react';
 
     class PickDroid extends React.Component {
-      const handleClick = () => {
-        if(typeof addDroid === 'function') {
-          this.props.onBuy(title);
+      handleClick = () => {
+        // console.log('clicked');
+        // console.log(this.props.onPick);
+        if(typeof this.props.onPick === 'function') {
+          // console.log(this.props.name);
+          this.props.onPick(this.props.name);
         }
       }
 
 
       render(){
-        <div>
+        return (<div>
           <h1>{this.props.name}</h1>
           <button onClick={this.handleClick}>I choose this droid</button>
-        </div>
+        </div>)
       }
     }
+
+    export default PickDroid;
 
 
 ---
