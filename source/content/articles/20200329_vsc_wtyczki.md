@@ -9,11 +9,9 @@ related_posts: vsc-skroty-klawiszowe
 
 ### Lista wtyczek wartych polecenia (alfabetycznie)
 
-Auto Close Tag
+Auto Close Tag - zamyka automatycznie tagi html
 
-Auto Rename Tag
-
-
+Auto Rename Tag - edycja pojedynczego taga zmieni od razu treść jego pary
 
 **Bracket Pair Colorizer** (CoenraadS) - koloruje nawiasy należące do tej samej pary odpowiednim kolorem [podobnie działająca wtyczka Rainbow Brackets (2gua)]
 
@@ -27,7 +25,7 @@ Git Extension Pack i Git History (Don Jayamanne) - wtyczka pozwalająca mieć ko
 
 HTML Boilerplae (sidthesloth) - Snippetty/Podpowiedzi do HTML
 
-Indent rainbow
+Indent rainbow - tęczow identacja (poprawia widoczność struktury poziomów kodu)
 
 JavaScript (ES6) code snippets - Snippetty/Podpowiedzi do JS
 
@@ -48,6 +46,9 @@ Prettier - Code formatter (Esban Pereren) [warto dodać w `settings.json` "edito
 scss intellisense
 
 show local history (warto dodać do .gitignore frazę `.history`)
+
+**TabNine** - wtyczka wykorzystująca uczenie maszynowe do podpowiadania kodu/snippetów
+
 Trailling Spaces
 
 Wallaby.js/Dingo
