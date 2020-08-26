@@ -3,9 +3,9 @@ Author: mkostyrko
 Date: 2020-08-07 10:00
 Updated:
 Category: reactjs
-Tags: react, formularze
+Tags: react, zdarzenia, bind, handleClick
 Slug: react-zdarzenia
-related_posts: react-wprowadzenie, react-komponenty, react-listy
+related_posts: react-wprowadzenie, react-komponenty, react-listy, react-stany
 
 ![react](https://i0.wp.com/css-tricks.com/wp-content/uploads/2018/08/react-events.png){: max-height="300px"}
 
@@ -41,7 +41,21 @@ W przypadku komponentów klasowych istotne jest pamiętanie o odwołaniu się do
       }
 
 ---
-Słowo kluczowe **this** jest zależne od kontekstu, w przypadku gdy dany element powinien mieć dostęp do całości komponentu (np w celu skorzystania z *props*) stosuje się **funkcję strzałkową** [jej zastosowania wymaga użycia **dodatkowej wtyczki** *@babel/plugin-proposal-class-properties* (w klasie ES6 nie ma możliwości zastosowania funkcji strzałkowej)].
+Słowo kluczowe **this** jest zależne od kontekstu, w przypadku gdy dany element powinien mieć dostęp do całości komponentu (np w celu skorzystania z *props*) można zastosować **funkcję strzałkową** [jej zastosowania wymaga użycia **dodatkowej wtyczki** *@babel/plugin-proposal-class-properties* (w klasie ES6 nie ma możliwości zastosowania funkcji strzałkowej)].
+
+
+W przeciwnym razie należy korzystać z wywołania `bind` - w tym przypadku funkcja odpowiadająca za dane zdarzenie będzie musiała zostać przypisana do stanu
+
+
+    class Droid extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = [];
+        // Poniższe wiązanie jest niezbędne do prawidłowego przekazania `this` przy wywołaniu funkcji    
+        this.handleClick = this.handleClick.bind(this);  
+        }
+      [...]
+
 
 #### Konfiguracja wtyczki Babel: plugin-proposal-class-properties {#plugin-proposal-class-properties}
 
@@ -53,6 +67,7 @@ Słowo kluczowe **this** jest zależne od kontekstu, w przypadku gdy dany elemen
         ["@babel/plugin-proposal-class-properties", { "loose": true }]
       ]
     }
+
 
 ---
 
