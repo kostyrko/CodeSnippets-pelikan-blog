@@ -1,6 +1,6 @@
 Title: React: Klucz do tworzenia wielu elementów listy
 Author: mkostyrko
-Date: 2020-07-22 10:00
+Date: 2020-07-25 10:00
 Updated:
 Category: reactjs
 Tags: listy, klucze, react

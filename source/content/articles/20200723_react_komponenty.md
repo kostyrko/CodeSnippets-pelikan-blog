@@ -1,6 +1,6 @@
 Title: React: komponenty i właściwości (props) + destrukturyzacja
 Author: mkostyrko
-Date: 2020-07-21 10:00
+Date: 2020-07-23 10:00
 Updated:
 Category: reactjs
 Tags: komponenty, props, react, components, destrukturyzacja, fragmenty

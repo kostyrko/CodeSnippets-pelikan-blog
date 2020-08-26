@@ -1,9 +1,9 @@
 Title: JavaScript: wprowadzenie do React'a
 Author: mkostyrko
-Date: 2020-07-10 10:00
+Date: 2020-07-22 10:00
 Updated:
 Category: reactjs
-Tags: notacje obiektów, react
+Tags: notacje obiektów, react, konfiguracja, webpack, wtyczki
 Slug: react-wprowadzenie
 related_posts: 
 
@@ -148,6 +148,26 @@ Dla tych co korzystają z VSC polecam dodać również bardzo przydatną informa
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     }
+
+Dodatkowo warto zainstalować wtyczkę z reactowymi oraz jsx snippetami, które na prawdę ułatwiają pracę reactem 
+
+[JS JSX Snippets](https://marketplace.visualstudio.com/items?itemName=skyran.js-jsx-snippets) lub [Simple React Snippets](https://github.com/burkeholland/simple-react-snippets)
+
+
+
+Przykładowe wykorzystanie wtyczki *JS JSX Snippets*
+
+|Wywołanie|Funkcja|
+|---|---|
+|**rcc**|tworzy szkielet komponentu klasowego|
+|**rfc**|tworzy szkielet komponentu funkcyjnego|
+|**con**|konstruktor stanowy z propsem dla elementu klasowego|
+|**est**|stan dla elementu klasowego|
+|**cdm**|componentDidMount - elementu klasowego|
+|**cdup**|componentDidUpdate - elementu klasowego|
+|**cdup**|componentWillUnmount- elementu klasowego|
+|**useState**|blok kodu useState|
+|**useEffect**|blok kodu useEffect|
 
 ---
 
@@ -311,6 +331,8 @@ który nie tylko pozwala na tworzenie tablic, ale również na ich rozpraszanie,
             ...divSize                                  width: '100px',
         }                                               marginTop: '20px'
                                                         }
+
+
 
 ---
 
