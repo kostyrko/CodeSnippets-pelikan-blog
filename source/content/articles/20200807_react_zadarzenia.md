@@ -91,13 +91,13 @@ Porównanie zachowania się **this** - `greetDroid` (funkcja strzałkowa) zadzia
       render(){
         return (
           <>
-          <h2>Greet Droid by clicking below!</h2>
-          <button onClick={this.helloDroid}>
-          Funkcja
-          </button>
-          <button onClick={this.greetDroid}>
-          Funkcja strzałkowa
-          </button>
+            <h2>Greet Droid by clicking below!</h2>
+            <button onClick={this.helloDroid}>
+              Funkcja
+            </button>
+            <button onClick={this.greetDroid}>
+              Funkcja strzałkowa
+            </button>
           </>
         );
       }
@@ -138,6 +138,38 @@ Zdarzenia w komponentach funkcyjnych wyglądają podobnie do tych stosowanych w 
       document.getElementById("app")
     );
 
+
+### Inlinowe wywołanie funkcji z argumentami
+
+funkcje powiązane z konkretnymi zdarzeniami mogą być również wywoływane *inlinowo* oraz poprzez przekazanie odpowiednich argumentów
+
+
+    import React from "react";
+    import ReactDOM from "react-dom";
+
+    const App = () => {
+      const greetDroid = (droidName) => {
+        alert(`Hi ${droidName}`);
+      }
+      return (
+        <>
+          <h2>Greet Droid by clicking below!</h2>
+          <button onClick={()=>greetDroid('C3PO')}>
+            C3PO
+          </button>
+          <button onClick={()=>greetDroid('R2D2')}>
+            R2D2
+          </button>
+        </>
+      );
+    }
+
+    ReactDOM.render(
+      <App/>,
+      document.getElementById("app")
+    );
+
+
 ### Nazwy najczęściej stosowanych wydarzeń
 
 | Nazwa zdarzenia | Opis | 
@@ -160,10 +192,10 @@ Zdarzenia w komponentach funkcyjnych wyglądają podobnie do tych stosowanych w 
 
 ### Zatrzymanie domyślnej akcji
 
-Zatrzymanie domyślnej akcji stosuje się poprzez odwołanie się do eventu
+Zatrzymanie domyślnej akcji stosuje się poprzez odwołanie się do eventu, który musi zostać przekazany do funkcji jako argument
 
 
-    const Link = () => {
+    const Link = (e) => {
       function clickLink(e){
         e.preventDefault();
       }
