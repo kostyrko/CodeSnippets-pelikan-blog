@@ -21,11 +21,22 @@ body {
   font-family: 'Fira Code', monospace;;
   line-height: 1.4rem;
   font-size: 0.9rem;
+  display: flex;
 }
 
 main {
-  width: 80vw;
-  left: 20vw;
+  width: 100vw;
+  /* left: 20vw; */
+  display: flex;
+  justify-content: center;
+}
+
+.main--margin {
+  margin-left: 20vw;
+}
+
+.d--none {
+  display: none;
 }
 
 .container {
@@ -60,12 +71,9 @@ article > div:first-of-type > p:first-of-type img:first-of-type {
   max-height: 300px;
 }
 
-/* img[src*='#center'] { 
-  display: block;
-  margin: auto;
-} */
 
-/* MAIN WINDOW */
+
+/*================= MAIN WINDOW ====================*/
 
 /* Article title */
 
@@ -82,9 +90,6 @@ article header>h1 {
 }
 
 main article header p {
-  /* color: #999;
-  font-size: .86em;
-  margin-top: 50px; */
   margin: 25px 0 20px 0;
   text-align: center;
 }
@@ -168,14 +173,41 @@ ul.list li a {
 
 aside {
   background-color: var(--gray-darker);
+  position: relative;
 }
 
 aside div > a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.aside--close {
+  position: absolute;
+  right: 20px;
+  top: 10px
+}
+
+.aside--open {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  left: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.aside--open > i {
+  margin-left: 5px;
+}
+
+
+
 #tipue_search_input {
-  max-width: 200px;
+  max-width: 350px;
   width: 90%;
   margin-top: 25px;
   border-radius: 25px;
@@ -186,9 +218,9 @@ aside div > a:hover {
 
 /* Media queries */
 @media (min-width: 1500px) {
-  main {
+  /* main {
     left: 25vw;
-  }
+  } */
   body {
     font-size: 1rem;
     line-height: 1.6rem;
@@ -201,28 +233,55 @@ aside div > a:hover {
 
 
 
-@media (min-width: 1024px) {
-  aside {
-    width: 16vw;
+@media (min-width: 767px) {
+  aside { 
+    width: 20vw;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  main {
+  /* main {
     width: 80vw;
-    /* left: 25vw; */
-  }
-  aside {
+    left: 25vw;
+  } */
+  /* aside {
     width: 20vw;
-  }
+  } */
   aside div {
     padding: 25px 2px;
   }
 }
 
+@media (max-width: 1000px) {
+  .container--smaller {
+    max-width: 650px;
+  }
+}
+
 @media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
   main {
     width: 100vw;
+  }
+  aside {
+    width: 100vw;
+  }
+  .aside--close {
+    display: none;
+  }
+  .main--margin {
+    margin-left: 0;
+  }
+  .aside--open {
+    display: none;
+  }
+  .d--none {
+    display: block;
   }
 }
 

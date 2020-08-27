@@ -107,18 +107,11 @@
   {% endif %}
 
   <!-- ASIDE -->
+  <a href="" class="aside--open">Wyszukaj / o blogu <i class="fa fa-arrow-right"></i></a>
   
-  <aside>
-    <!-- intrusion by MK - not implemented -->
-    <!-- <div>
-      <input type="checkbox" class="check-box">
-      <label for="check">
-        <i class="fa fa-bars"></i>
-        <i class="fa fa-times"></i>
-      </label>
-    </div> -->
-    <!-- END of intrusion -->
+  <aside class='d--none'>
     <div>
+      <a href="" class="aside--close"><i class="fa fa-times"></i></a>
       <a href="{{ SITEURL }}">
         {% if SITELOGO %}
         <img src="{{ SITELOGO }}" alt="{{ SITETITLE }}" title="{{ SITETITLE }}">
@@ -157,6 +150,7 @@
           {% for name, link in LINKS %}
             <li><a target="{{ get_target(link) }}" href="{{ link }}" >{{ name }}</a></li>
           {% endfor %}
+          
         </ul>
       </nav>
       {% endif %}
@@ -208,14 +202,6 @@
 
       {% if MAIN_MENU %}
 
-      <!-- intrusion by MK - ADD CHECKBOX-THEME -->
-      <!-- <input type="checkbox" name="theme" id="theme-checkbox" class="theme-checkbox">
-      <label class="theme-label" for="theme-checkbox">
-        <i class="fa fa-moon"> Ciemny motyw</i>
-        <i class="fa fa-sun"> Jasny motyw</i>
-      </label> -->
-    <!-- END of intrusion -->
-
       <nav>
         <a href="{{ SITEURL }}">{{ _('Home') }}</a>
 
@@ -230,6 +216,10 @@
         {% if FEED_ALL_RSS %}
         <a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}">{{ _('RSS') }}</a>
         {% endif %}
+
+        <!-- Switches for dark/light motive -->
+        <!-- <a href=""><i class="fa fa-moon"></i></a>
+        <a href=""><i class="fa fa-sun"></i></a> -->
 
       </nav>
       {% endif %}
@@ -274,5 +264,6 @@
     });
   </script>
   {% endif %}
+  <script src="app.js"></script>
 </body>
 </html>
