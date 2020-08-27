@@ -68,11 +68,17 @@ article > div:first-of-type > p:first-of-type img:first-of-type {
 /* MAIN WINDOW */
 
 /* Article title */
-main article header h1,
-article header h2 a {
+
+article header>h2 a {
   color: #000;
   font-weight: 600;
   font-size: 1.8rem;
+  /* text-align: center; */
+}
+
+article header>h2,
+article header>h1 {
+  text-align: center;
 }
 
 main article header p {
@@ -80,6 +86,7 @@ main article header p {
   font-size: .86em;
   margin-top: 50px; */
   margin: 25px 0 20px 0;
+  text-align: center;
 }
 
 article header h2 a:hover {
