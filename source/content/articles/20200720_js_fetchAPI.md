@@ -270,10 +270,4 @@ Filmy
 
 [Learn Fetch API In 6 Minutes](https://www.youtube.com/watch?v=cuEtnrL9-H0)
 
-[10 Gbps $900/month - Global Internet Backbone
-IP Transit For Your Network, Reach More Networks With Lower Latency
-he.net
-
-0:06 / 16:01
-2.3 HTTP Post Request with fetch() - Working with Data and APIs in JavaScript](https://www.youtube.com/watch?v=Kw5tC5nQMRY&feature=emb_title)
-
+[HTTP Post Request with fetch() - Working with Data and APIs in JavaScript](https://www.youtube.com/watch?v=Kw5tC5nQMRY&feature=emb_title)
