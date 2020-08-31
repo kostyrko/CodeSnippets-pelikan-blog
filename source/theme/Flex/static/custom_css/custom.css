@@ -18,7 +18,7 @@ html {
 
 body {
   /* font-family: 'Roboto', sans-serif; */
-  font-family: 'Fira Code', monospace;;
+  font-family: 'Fira Code', monospace;
   line-height: 1.4rem;
   font-size: 0.9rem;
   display: flex;
@@ -26,9 +26,7 @@ body {
 
 main {
   width: 100vw;
-  /* left: 20vw; */
-  display: flex;
-  justify-content: center;
+
 }
 
 .main--margin {
@@ -115,7 +113,6 @@ a.btn:hover {
   background-color: var(--gray);
   transition: transform 0.15s ease;
   box-shadow: rgb(77, 77, 77) 0px 1px 2px;
-
 }
 
 .pagination a.btn:hover {
@@ -186,6 +183,19 @@ aside div > a:hover {
   top: 10px
 }
 
+.aside--close:hover {
+  color: var(--a-blue);
+  font-size: 1.25rem;
+}
+
+.fa-times {
+  transition: transform 0.15s ease;
+}
+
+.fa-times:active {
+  transform: translateY(3px); 
+}
+
 .aside--open {
   height: 25px;
   display: flex;
@@ -234,6 +244,10 @@ aside div > a:hover {
 
 
 @media (min-width: 767px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
   aside { 
     width: 20vw;
     position: fixed;
@@ -243,13 +257,6 @@ aside div > a:hover {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* main {
-    width: 80vw;
-    left: 25vw;
-  } */
-  /* aside {
-    width: 20vw;
-  } */
   aside div {
     padding: 25px 2px;
   }
