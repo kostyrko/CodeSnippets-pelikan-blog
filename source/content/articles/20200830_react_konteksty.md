@@ -3,9 +3,9 @@ Author: mkostyrko
 Date: 2020-08-30 10:00
 Updated:
 Category: reactjs
-Tags: react, hooks, props
+Tags: react, hooks, props, props-drilling, kompozycja
 Slug: react-kontekst
-related_posts: react-wprowadzenie, react-komponenty, react-listy, react-zdarzenia, react-stany, react-warunkowe-renderowanie
+related_posts: react-kompozycja, react-komponenty, react-listy, react-zdarzenia, react-stany, react-warunkowe-renderowanie
 
 ![react](https://codesource.io/wp-content/uploads/2019/12/Getting-Started-with-React-Context-API-950x500.png)
 
@@ -14,7 +14,7 @@ related_posts: react-wprowadzenie, react-komponenty, react-listy, react-zdarzeni
 Kontekst/*Context API* pozwala komponentowi na pozyskanie danych z **kontekstu** a **nie** przez **props** poprzez tworzenie *globalnych* danych dostępnych dla całości drzewa komponentu [innymi słowy uniknięcia sytuacji, w której przekazujemy informację do wielowarstwowo-zagnieżdżonego komponentu przez wiele pośredniczących komponentów (tzn. przez każdy poziom struktury)].
 Na jakiego typu danych może nam zależeć aby były dostępne globalnie? Np. preferencje językowe, stylistyczne (np. kolorystyka) lub informacja o zalogowaniu się użytkownika.
 
-Context API ma również swoje limity - z dokumentacji Reacta możemy dowiedzieć się, że utrudnia on "wielokrotne używanie komponentów zależnych"
+Context API ma również swoje limity - z dokumentacji Reacta możemy dowiedzieć się, że utrudnia on "wielokrotne używanie komponentów zależnych" (zalecane rozwiązanie jest poprzez skorzystanie z możliwości kompozycji i props.children)
 
 ![react context api](https://www.carlrippon.com/static/0d1f722d0fe4c2bc4c3d71595dbe67dd/799d3/prop-drilling-v-context.png)
 
