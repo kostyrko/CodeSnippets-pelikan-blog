@@ -1,6 +1,6 @@
 Title: React: kompozycja
 Author: mkostyrko
-Date: 2020-08-30 10:00
+Date: 2020-08-29 10:00
 Updated:
 Category: reactjs
 Tags: react, hooks, props, props-drilling, kompozycja
