@@ -158,7 +158,52 @@ W komponencie wykorzystującym custom hook przy pomocy destrukturyzacji należy 
         );
     };
 
+### Formularze wielokrotnego wyboru (select -> option)
 
+W pewnym sensie swoją własną specyfiką charakteryzuje się formularze wielokrotnego wyboru
+
+W przypadku formularza wielokrotnego wyboru ten domyślnie jako wybraną opcję przyjmie pierwszą z możliwych - stąd jeśli będziemy chcieli ją wybrać zmiana nie zostanie odnotowana. W przypadku poniższego formularze nie możemy wybrać wartości *c3po* i ta staje się dostępna dopiero wówczas gdy zostanie wybrana jako kolejna wartość - jak temu zapobiec?
+
+<p class="codepen" data-height="388" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="MWyvRVX" style="height: 388px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="MWyvRVX">
+  <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/MWyvRVX">
+  MWyvRVX</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+**Rozwiązanie problemu**
+
+**1** - Możemy w stanie przypisać wartość początkową, która później ulegnie zmianie i wskazuje użytkownikowi na wartość, która jest domyślną np *ms*
+
+**2** - To rozwiązanie nie musi być jednak zawsze satysfakcjonujące stąd można jako pierwszą opcję wyboru dodać pozycję nie posiadającą wartości a "wypełnioną" tekstem np.
+
+    <option value="">Select option</option>
+
+Przykładowo
+
+    import ReactDOM from "react-dom";
+    import React, {useState} from "react";
+
+    const Form = () => {
+      const [droid, setDroid] = useState(''); // alternatywnie [droid, setDroid] = useState('c3po');  
+
+      const handleDroidChange = (e) => {
+        setDroid(e.target.value);
+      };
+
+      return (
+        <form>
+          <h1>Droid: {droid}</h1>
+
+          <select value={droid} onChange={handleDroidChange}>
+            <option value="">Select option</option> // w alternatywnej wersji ta linia kodu nie jest potrzebna
+            <option value="c3po">C3PO</option>
+            <option value="bb-8">BB-8</option>
+            <option value="r2d2">R2D2</option>
+          </select>
+        </form>
+      );
+    };
 
 ---
 
