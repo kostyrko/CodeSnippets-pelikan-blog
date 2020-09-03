@@ -202,7 +202,7 @@
 
       {% if MAIN_MENU %}
 
-      <nav>
+      <nav id="nav">
         <a href="{{ SITEURL }}">{{ _('Home') }}</a>
 
         {% for title, link in MENUITEMS %}
@@ -226,7 +226,9 @@
 
       {% block content %}
       {% endblock %}
-
+      <a href="#nav" class='to-top'>
+        <i class="fa fa-angle-double-up"></i>
+      </a>
       <footer>
         {% if CC_LICENSE %}
           {% include "partial/cc_license.html" %}
