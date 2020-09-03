@@ -15,7 +15,7 @@ schemat pętli **`for`**:
  
     // wykonaj pętlę do momentu w którym i jest nadal mniejsze niż y 
     
-    for (i=0; i < y; i++) { // i - akumulatorem; moment do którego wykonuje się pętla; zmiana dokonywana na akumulatorze po przejściu pętli
+    for (let i=0; i < y; i++) { // i - akumulatorem; moment do którego wykonuje się pętla; zmiana dokonywana na akumulatorze po przejściu pętli
       let x = y + 1; // wykonujący się kod
       return x;
     };

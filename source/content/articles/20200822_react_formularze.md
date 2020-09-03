@@ -55,7 +55,8 @@ Przykład gdzie jedna funkcja obsługuje wiele elementów formularza
           };
       }
 
-      // funkcja wykorzystująca event i przypisująca dane do konkretnego elementu stanu o tej samej nazwie gdzie name === jak element, do którego wartość ma być przypisana
+      // funkcja wykorzystująca event i przypisująca dane do konkretnego elementu stanu
+       o tej samej nazwie gdzie name === jak element, do którego wartość ma być przypisana
       handleChange = (event) => {    
         this.setState({
           [e.target.name]: event.target.value
@@ -97,7 +98,7 @@ W przypadku komponentów funkcyjnych możemy daną funkcję odpowiedzialną za z
 
 W przypadku stworzenia jednego stanu dla wielu elementów formularza należy pamiętać o tym, że będzie musiał być on w całości przywołany - można do tego wkorzystać operatora rozpraszającego (destrukturyzacji)
 
-const Form = () => {
+    const Form = () => {
       const [form, setForm] = useState({
         name: '',
         surname: ''
