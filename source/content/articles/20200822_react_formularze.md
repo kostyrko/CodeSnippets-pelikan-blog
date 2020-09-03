@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2020-08-25 10:00
 Updated:
 Category: reactjs
-Tags: react, formularze
+Tags: react, formularze, walidacja, radio, select
 Slug: react-formularze
 related_posts: react-wprowadzenie, react-komponenty, react-listy
 

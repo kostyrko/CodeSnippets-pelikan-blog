@@ -230,8 +230,8 @@ aside div > a:hover {
 
 .to-top {
   position: sticky;
-  bottom: 35px;
-  left: 95%;
+  bottom: 10px;
+  left: 92%;
   font-size: 2rem;
   transition: transform 0.15s ease;
 }
