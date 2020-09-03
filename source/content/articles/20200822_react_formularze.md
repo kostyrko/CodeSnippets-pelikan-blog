@@ -165,7 +165,7 @@ W pewnym sensie swoją własną specyfiką charakteryzuje się formularze wielok
 
 W przypadku formularza wielokrotnego wyboru ten domyślnie jako wybraną opcję przyjmie pierwszą z możliwych - stąd jeśli będziemy chcieli ją wybrać zmiana nie zostanie odnotowana. W przypadku poniższego formularze nie możemy wybrać wartości *c3po* i ta staje się dostępna dopiero wówczas gdy zostanie wybrana jako kolejna wartość - jak temu zapobiec?
 
-<p class="codepen" data-height="388" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="MWyvRVX" style="height: 388px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="MWyvRVX">
+<p class="codepen" data-height="388" data-theme-id="light" data-default-tab="js,result" data-droid="mkostyrko" data-slug-hash="MWyvRVX" style="height: 388px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="MWyvRVX">
   <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/MWyvRVX">
   MWyvRVX</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -268,6 +268,82 @@ można również skorzystać z opcji stworzenia własnego hooka np.  `useRadioBu
       );
 
 
+<iframe src="https://codesandbox.io/embed/6l6v9p0qkr?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="6l6v9p0qkr"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+
+### Walidacja formularza
+
+Walidacja może odbywać się na różne sposoby, ale jednym z prostszych a przez to ulubionych moich rozwiązań jest zastosowanie tablicy zbierającej informację o poszczególnych błędach, tą można przekazać do stanu a następnie wyrenderować
+
+Przykładowo
+
+    const validate = () => {
+      const errorsArr = []
+      if (!name || name.length < 5 && name.length >60 && !isNan(name) ) 
+      {errorsArr.push('Name must be at least 2 characters and max of 60 and not a number')}
+      if (!planet || planet.length < 5 && planet.length >60 && !isNan(planet) ) 
+      {errorsArr.push('Planet must be at least 2 characters and max of 60 and not a number')}
+      if (!age || age < 20) // input musi być type='number'
+      {errorsArr.push('Droid should be at least 20 and must be a number')}
+      if (errorsArr.length!==0) {
+        setError(()=>errorsArr)
+        return false
+      } else {
+        setError(null)
+        return true
+      }
+    }
+
+
+Taką funkcję walidującą można wykorzystać w innym miejscu danego komponentu np. w momencie przesyłania danych do serwera
+
+      const [isSubmitted, setIsSubmitted] = useState(false);
+      const [error, setError] = useState(null);
+
+      const handleClick = (e) => {
+        e.preventDefault(); // strona nie ma się odświeżać
+        if(validate()) { // jeśli validate() true
+          setIsSubmitted(true); // odpowiada za wyświetlania informacji o poprawnym zapisie
+          fetch(API, {
+            method: "POST",
+            body: JSON.stringify(droid),
+            headers: {
+              "Content-Type": "application/json"
+            }
+            })
+            .then(response => response.json())
+            .then(droid => {
+              // console.log(data);
+              if(typeof addDroid==='function'){
+                addUser(droid)
+              }
+            })
+            .catch(error => {
+              console.log(error);
+              setError(error)
+            });
+            setTimeout(function(){ setIsSubmitted(false) }, 2000)
+            // po upływie 2 sekund informacja znika 
+        } else {
+          setIsSubmitted(false);
+        }
+      }
+  
+      return (
+        <>
+          [...]
+          // jeśli isSubmitted = true to wyświetl
+          {isSubmitted && <h3>Data has been saved</h3>}
+
+          // jeśli isSubmitted != null/false to wyświetl
+          {error &&<ul>{error.map((error,i)=><li key={i}>{error}</li>)}</ul>}
+        </>
+      )
 
 
 ---
