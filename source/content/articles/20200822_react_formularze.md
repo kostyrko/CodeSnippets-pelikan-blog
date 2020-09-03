@@ -206,6 +206,70 @@ Przykładowo
       );
     };
 
+
+### Radio input
+
+W przypadku tzw inputu radiowego należy opcje wyboru zapakować w div lub inny element a następnie nasłuchiwać na zmiany jakie w nim zajdą / podobnie jak w przypadku inputu `select`
+
+
+    <div onChange={e=>handleChange(e)}>
+        <input type="radio" value="male" name="gender"/> Male
+        <input type="radio" value="female" name="gender"/> Female
+        <input type="radio" value="not given" name="gender"/> I don't wanna say
+    </div>
+
+
+można również skorzystać z opcji stworzenia własnego hooka np.  `useRadioButtons`
+
+źródło przykładu [StackOverflow-How to use radio buttons in ReactJS?](https://stackoverflow.com/questions/27784212/how-to-use-radio-buttons-in-reactjs)
+
+
+    function useRadioButtons(name) {
+      const [value, setState] = useState(null);
+
+      const handleChange = e => {
+        setState(e.target.value);
+      };
+
+      const inputProps = {
+        name,
+        type: "radio",
+        onChange: handleChange
+      };
+
+      return [value, inputProps];
+    }
+
+    użycie
+
+    function App() {
+      const [platformValue, plaftormInputProps] = useRadioButtons("platform");
+      const [genderValue, genderInputProps] = useRadioButtons("gender");
+      return (
+        <div>
+          <form>
+            <fieldset>
+            <fieldset>
+              Male
+              <input
+                value="male"
+                checked={genderValue === "male"}
+                {...genderInputProps}
+              />
+              Female
+              <input
+                value="female"
+                checked={genderValue === "female"}
+                {...genderInputProps}
+              />
+            </fieldset>
+          </form>
+        </div>
+      );
+
+
+
+
 ---
 
 Więcej informacji na temat forms:
@@ -219,3 +283,5 @@ Więcej informacji na temat forms:
 [GitHub: react-hook-form](https://github.com/react-hook-form/react-hook-form)
 
 [YT- The BEST Way To Create Forms In React - React Hook Form Tutorial - How To Create Forms In React](https://www.youtube.com/watch?v=bU_eq8qyjic)
+
+[StackOverflow-How to use radio buttons in ReactJS?](https://stackoverflow.com/questions/27784212/how-to-use-radio-buttons-in-reactjs)
