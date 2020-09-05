@@ -153,7 +153,9 @@ W komponencie wykorzystującym custom hook przy pomocy destrukturyzacji należy 
       const [age, connectSurname] = useInput("");
       return (
         <form>
-          <input type="text" {...connectName}/>  / destrukturyzacja zwracanego obiektu przez custom hooka, który jest tablicą {value, onChange: e=>{setValue(e.target.value)}}
+          // destrukturyzacja zwracanego obiektu przez custom hooka
+          //, który jest tablicą {value, onChange: e=>{setValue(e.target.value)}}
+          <input type="text" {...connectName}/> 
           <input type="number" {...connectSurname}/>
         </form>
         );
@@ -197,7 +199,8 @@ Przykładowo
           <h1>Droid: {droid}</h1>
 
           <select value={droid} onChange={handleDroidChange}>
-            <option value="">Select option</option> // w alternatywnej wersji ta linia kodu nie jest potrzebna
+            // w alternatywnej wersji ta linia kodu nie jest potrzebna
+            <option value="">Select option</option>
             <option value="c3po">C3PO</option>
             <option value="bb-8">BB-8</option>
             <option value="r2d2">R2D2</option>
@@ -238,7 +241,7 @@ można również skorzystać z opcji stworzenia własnego hooka np.  `useRadioBu
       };
 
       return [value, inputProps];
-    }
+    }rgba(255, 255, 255, 0)
 
     użycie
 

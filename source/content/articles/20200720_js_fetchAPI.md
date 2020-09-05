@@ -47,7 +47,7 @@ Gdy promise przejdzie w status [fulfilled] to...
     }
 
 
-Knyf z **fetch** polega na tym, że error nie będzie przechwytywany automatycznie przez metodę **catch()** w momencie gdy serwer działa, stąd wymaga sprawdzenia/walidacji informacji zwrotnej przy pomocy funkcji warunkowej
+Knyf z **fetch** polega na tym, że error nie będzie przechwytywany automatycznie przez metodę **catch()** w momencie gdy serwer działa, stąd wymaga sprawdzenia/walidacji informacji zwrotnej przy pomocy funkcji warunkowej (w praktyce jeśli wartość nie będzie **ok** ustawimy nowy obietk **Error** - więcej na ten temat poniżej)
 
     fetch('https://jsonplaceholder.typicode.com/posts/2')
       .then(response => {
@@ -57,6 +57,19 @@ Knyf z **fetch** polega na tym, że error nie będzie przechwytywany automatyczn
           console.log('not successful')
         }
       })
+
+W innej wersji poradzenia sobie z błędami można sięgnąć do właściwością **statusText** obiektu `response` pod warunkiem, że serwer zwraca zawartą w nim informację (wtedy taką informację możemy wykorzystać i wstawić do `new Error(response.statusText)` i wykorzystać ją w `catch()`)
+
+
+      fetch('https://jsonplaceholder.typicode.com/posts/2')
+      .then(response => {
+        if (response.ok) {
+          console.log(response)
+        } else {
+          console.log(response.statusText)
+        }
+      })
+
 
 Metoda **.ok()** **fetch API** zastosowana powyżej zwraca wartość logiczną (tylko odczyt) i zwraca **True** jeśli treść odpowiedzi zawiera się w przedziale **200-299**
 
@@ -85,13 +98,16 @@ Wyżej zaprezentowany zapis może również przyjąć formę wykorzystującą **
 
 Zastosowana wyżej deklaracja (ang. statement) `throw` ma za zadanie zwrócić zdefiniowane przez użytkownika wyjątek i zatrzymuje wykonywanie się kodu w tym przypadku doszło również do stworzenia nowej obiektu `Error` na podstawie klasy oraz jego konstruktora , który przyjmuje treść błędu, który może b(new Error('treść błędu')), bez słowa kluczowego **new** powstaje obiekt nad podstawie funkcji
 
-Schemta:
+Schemat:
 
     new Error([message[, fileName[, lineNumber]]])
     === 
     new Error([wiadomość[, nazwaPliku[, nrLiniiKodu]]]
     === przykładowo ===
     new Error("Błąd sieci")
+
+
+**!!!** Istotne jest to, że obiektu Error nie można dodać do DOM, aby przekazać wiadomość trzeba się odwołać do właściwości `message`
 
 
 ---
@@ -134,12 +150,17 @@ Podobnie jak w przypadku XMLHttpRequest wysyłanie danych wymaga przekazanie **1
       body: JSON.stringify({
         name: 'User 1'
       })
-    }).then(response => {
-      return response.json()
     })
-      .then(data => console.log(data))
+    .then(response => {
+        if (response.ok) {
+            return response.json()
+        } else {
+            throw new Error("Wystąpił błąd")
+        }
+    })
+    .then(data => console.log(data))
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
     });
 
 Ten format można zapisać również w następujący sposób
@@ -163,7 +184,7 @@ Ten format można zapisać również w następujący sposób
       .then(data => console.log(data))
 
 ---
-::: stringify() jest medotą obiektu JSON  i w efekcie zmienia kod na jsonowy element:::
+::: stringify() jest metodą obiektu JSON  i w efekcie zmienia kod na jsonowy element:::
 
 Przykładowo 
 
