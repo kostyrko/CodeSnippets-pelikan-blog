@@ -222,6 +222,9 @@ W przypadku tzw inputu radiowego należy opcje wyboru zapakować w div lub inny 
     </div>
 
 
+:: **W jaki sposób sprawić aby przy pomocy Radio input istniała możliwość zaznaczenia tylko jednej opcji? Najłatwiej to to osiągnąć poprzez wskazanie wspólnej nazwy => name dla wszystkich inputów a przez to i stowrzenie ich wspólnej grupy (jak w powyższym przykładzie)**::
+
+
 można również skorzystać z opcji stworzenia własnego hooka np.  `useRadioButtons`
 
 źródło przykładu [StackOverflow-How to use radio buttons in ReactJS?](https://stackoverflow.com/questions/27784212/how-to-use-radio-buttons-in-reactjs)
