@@ -58,7 +58,7 @@ Knyf z **fetch** polega na tym, że error nie będzie przechwytywany automatyczn
         }
       })
 
-W innej wersji poradzenia sobie z błędami można sięgnąć do właściwością **statusText** obiektu `response` pod warunkiem, że serwer zwraca zawartą w nim informację (wtedy taką informację możemy wykorzystać i wstawić do `new Error(response.statusText)` i wykorzystać ją w `catch()`)
+W innej wersji poradzenia sobie z błędami można sięgnąć do właściwością **statusText** obiektu `response` pod warunkiem, że serwer zwraca zawartą w nim informację a nie pusty string (wtedy taką informację możemy wykorzystać i wstawić do `new Error(response.statusText)` i wykorzystać ją w `catch()`)
 
 
       fetch('https://jsonplaceholder.typicode.com/posts/2')
