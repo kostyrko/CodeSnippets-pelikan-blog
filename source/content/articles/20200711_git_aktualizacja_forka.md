@@ -12,19 +12,18 @@ related_posts: git-gitignore, git-wprowadzenie, git-vsc-cofanie, git-galezie
 
 ### Aktualizacja sklonowanego repozytorium
 
-https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository
 
 Sprawdzenie remotów
 
-                git remote -v
+        git remote -v
 
 Dodanie remota
 
-                git remote add upstream <link do remota>
+        git remote add upstream <link do remota>
 
 Pobieranie info z dodanego/upstream remota
 
-                git fetch upstream
+        git fetch upstream
 
 Łączenie mastera (maina) lub innego głównego repo z upstreamem
 
@@ -44,7 +43,7 @@ Zaakceptowanie konfliktów na korzyść zmian wewnętrznych
 
 Usunięcie konkretnego remota
 
-                git remote rm <nazwa remota np. upstream>
+        git remote rm <nazwa remota np. upstream>
 
 ---
 Źródła:
@@ -53,4 +52,4 @@ Usunięcie konkretnego remota
 
 [Adding an existing project to GitHub using the command line](https://docs.github.com/en/free-pro-team@latest/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)
 
-
+[StackOverflow - How do I update a GitHub forked repository?](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
