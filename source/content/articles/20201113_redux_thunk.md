@@ -1,6 +1,6 @@
 Title: Redux: Duck + Redux-thunk
 Author: mkostyrko
-Date: 2020-11-08 10:00
+Date: 2020-11-13 10:00
 Updated:
 Category: redux
 Tags: react, redux, Redux DevTools Extension, useDispatch, useSelector
