@@ -4,7 +4,7 @@ Date: 2020-09-10 10:00
 Updated:
 Category: reactjs
 Tags: react, hooks, props
-Slug: react-routing
+Slug: react-cra
 related_posts: react-wprowadzenie, react-komponenty, react-listy, react-zdarzenia, react-stany, react-warunkowe-renderowanie
 
 ![react](https://create-react-app.dev/img/logo.svg)

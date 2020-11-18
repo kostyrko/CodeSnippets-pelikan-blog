@@ -4,7 +4,7 @@ Date: 2020-11-04 10:00
 Updated:
 Category: reactjs
 Tags: react, hooks, props
-Slug: react-routing
+Slug: react-gh-pages
 related_posts: react-wprowadzenie, react-komponenty, react-listy, react-zdarzenia, react-stany, react-warunkowe-renderowanie
 
 ![react](https://res.cloudinary.com/practicaldev/image/fetch/s--klrLsGeS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://completejavascript.com/wp-content/uploads/2018/08/tao-va-deploy-ung-dung-react-len-github-pages-create-react-app-completejavascript.com_.png)
