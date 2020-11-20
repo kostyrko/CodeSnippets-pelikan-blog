@@ -13,7 +13,7 @@ related_posts: html-semantyczny
 
 |Sekcje Tabeli| HTML|
 |---|---|
-|Sekcja nagłówka| `<table></table>`|
+|Tabela| `<table></table>`|
 |Sekcja nagłówka| `<thead></thead>`|
 |Sekcja główna|`<tbody></tbody>` |
 |Stopka|`<tfoot></tfoot>` |
@@ -22,10 +22,11 @@ related_posts: html-semantyczny
 |Komórka|`<td></td>` |
 |Nagłówek tabeli|`<th></th>` |
 | ---- | ---- |
-| Zasięg | `<th scope="col/row">` |
+| Zasięg (columna/wiersz) | `<th scope="col/row">` |
+| Łączenie (liczba kolumn) | `<th rowspan="2">` |
 
 ---
-### Przykładowa tabelka
+### Przykładowa tabela
 
 <table>
     <thead>
@@ -101,7 +102,7 @@ related_posts: html-semantyczny
 **Przykładowa tabela z zagnieżdżonymi tabelami**
 
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="mkostyrko" data-slug-hash="dyXEKGL" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Neste Table">
+<p class="codepen" data-height="465" data-theme-id="light" data-default-tab="html,result" data-user="mkostyrko" data-slug-hash="dyXEKGL" style="height: 465px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Neste Table">
   <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/dyXEKGL">
   Neste Table</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

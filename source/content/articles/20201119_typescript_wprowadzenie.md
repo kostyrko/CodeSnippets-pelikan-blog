@@ -1,6 +1,6 @@
-Title: TypeScript
+Title: TypeScript: wprowadzenie
 Author: mkostyrko
-Date: 2020-11-14 10:00
+Date: 2020-11-19 10:00
 Updated:
 Category: typescript
 Tags: rts, typescript
