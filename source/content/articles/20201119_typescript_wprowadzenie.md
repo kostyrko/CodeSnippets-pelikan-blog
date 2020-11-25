@@ -408,6 +408,8 @@ Wskazanie `void` może oznaczać, że z wartością zwróconą nic nie będzie w
 
 [Co to TypeScript](https://clockworkjava.pl/2019/07/co-to-typescript/)
 
+[The Catalog of TypeScript Examples](https://refactoring.guru/design-patterns/typescript)
+
 YT
 
 [Fireship -> TypeScript - The Basics](https://www.youtube.com/watch?v=ahCwqrYpIuM&t=1s&ab_channel=Fireship)
