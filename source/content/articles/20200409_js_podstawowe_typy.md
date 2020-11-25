@@ -27,8 +27,8 @@ Istnieją trzy typy deklaracji zmiennych
 
 ![starWars_zmienne](https://miro.medium.com/max/640/0*2Iz9vcaOtPNivfen.png)
 
-  * `const` - podstawowa deklaracja, nie ulega zmianie, tylko do odczytu
-  * `let` - deklaracja stosowana w przypadku gdy zmienna będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku, w którym jest zawarta
+  * `const` - podstawowa deklaracja, nie ulega zmianie, tylko do odczytu / zwany **identyfikatorem**
+  * `let` - deklaracja stosowana w przypadku gdy **zmienna** będzie musiała ulec zmianie, jest lokalna i ograniczona do bloku, w którym jest zawarta
   * `var` - wcześniej podstawowa zmienna (przed ES6), obecnie rzadziej stosowana (po wprowadzeniu const i let) więcej na ten temat [tutaj](https://medium.com/@larry.sassainsworth/let-vs-var-vs-const-in-javascript-8b898f868394) lub poniżej.
 
 
