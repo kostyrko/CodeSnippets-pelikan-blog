@@ -36,17 +36,17 @@ Wywołanie funkcji identyfikacyjnej typu generycznego
 
 Typ generyczny może określać przyjęcie tablicy (wówaczas w funkcji istnieje możliwość odwołania się do metod, które są przypisane tablicom np. length). Funkcja przyjmuje jako argument tablicę, która składa się z określonych typów
 
-  function loggingIdentity<T>(arg: T[]): T[] {
-    console.log(arg.length);
-    return arg;
-  }
+    function loggingIdentity<T>(arg: T[]): T[] {
+      console.log(arg.length);
+      return arg;
+    }
 
 Powyższą funkcję można również zapisać w następujący sposób
 
-  function loggingIdentity<T>(arg: Array<T>): Array<T> {
-    console.log(arg.length); // Array has a .length, so no more error
-    return arg;
-  }
+    function loggingIdentity<T>(arg: Array<T>): Array<T> {
+      console.log(arg.length); // Array has a .length, so no more error
+      return arg;
+    }
 
 ---
 
@@ -55,11 +55,11 @@ Powyższą funkcję można również zapisać w następujący sposób
 Tworzenie funkcji/typu generycznego jest zbliżone do interfejsów
 
 
-    function identity<T>(arg: T): T {
+    function droid<T>(arg: T): T {
       return arg;
     }
 
-    let myIdentity: <T>(arg: T) => T = identity;
+    let myDroid: <T>(arg: T) => T = droid;
 
 
 Typ generyczny napisany przypisany do postaci obiektu (patrz niżej intefejs)
@@ -84,7 +84,7 @@ Typ generyczny napisany przypisany do postaci obiektu (patrz niżej intefejs)
     let myIdentity: GenericIdentityFn = identity;
 
 
-Przesunięcie generycznego parametru całości intefejsu
+Przesunięcie generycznego parametru całości interfejsu
 
 
     interface GenericIdentityFn<T> {
@@ -101,16 +101,18 @@ Przesunięcie generycznego parametru całości intefejsu
 
 ### Klasy Generyczne
 
-class GenericNumber<T> {
-  zeroValue: T;
-  add: (x: T, y: T) => T;
-}
+    class GenericNumber<T> {
+      zeroValue: T;
+      add: (x: T, y: T) => T;
+    }
 
-let myGenericNumber = new GenericNumber<number>();
-myGenericNumber.zeroValue = 0;
-myGenericNumber.add = function (x, y) {
-  return x + y;
-};
+    let myGenericNumber = new GenericNumber<number>();
+
+    myGenericNumber.zeroValue = 0;
+    
+    myGenericNumber.add = function (x, y) {
+      return x + y;
+    };
 
 
 
