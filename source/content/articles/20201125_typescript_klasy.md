@@ -16,19 +16,25 @@ TS transpiluje do klasy jeśli wybrany jest standard ES6 lub nowszy albo do funk
 ---
 ### Przykładowa klasa
 
-    class Greeter {
-      greeting: string;
+constructor - funkcja wykonywana w trakcie inicjalizacji/tworzenia obiektu
+
+    class Droid {
+      name: string; // tak samo w JS powyżej ES6
 
       constructor(message: string) {
         this.greeting = message;
       }
 
-      greet() {
-        return "Hello, " + this.greeting;
+      greet(this: Greeter) { // odwołanie do instancji, które powstała na podstawie klasy Droid
+        return "Hello, " + this.name;
       }
     }
 
-    let greeter = new Greeter("world");
+    let r2d2 = new Droid("R2D2"); // -> arg zapisuje jako name
+
+    const r2d2Copy = { name: 'C3PO', greet : r2d2.greet}
+
+`this` - jest kontekstem, w zależności od miejsca, w którym się do niego odwołujemy może odnosić się do czegoś innego, w przypadku klas zwykle odnosi się do instancji klasy lub inaczej to ujmując do tego obiektu, na którym dana metoda jest wywoływana
 
 ---
 ### Dziedziczenie
@@ -54,40 +60,34 @@ TS transpiluje do klasy jeśli wybrany jest standard ES6 lub nowszy albo do funk
 ### Prywatne pola (Private)
 
 
-    class Person {
-        #name: string
+    class Planet {
+        private name: string  // oznaczenie prywatności sposób prywatyzacji
+        private droids: string[] = [] // to jest również oznaczenie prywatności
         
         constructor(name: string) {
             this.#name = name;
         }
 
         greet() {
-            console.log(`Hello, my name is ${this.#name}!`);
+            console.log(`This is ${this.#name}!`);
+        }
+
+        addDroid(droid: string){
+          this.droids.push(droid);
+        }
+
+        printDroids() {
+          console.log(this.droids)
         }
     }
 
-    let jeremy = new Person("Jeremy Bearimy");
+    let coruscant = new person("Coruscant");
+    coruscant.addDroid('Crime Scene Analysis Droid')
 
-    jeremy.#name
-    //     ~~~~~
-    // Property '#name' is not accessible outside class 'Person'
-    // because it has a private identifier.
+    coruscant.droids[1]=('Swtor MCR-99 Droid') // error - droids jest prywatnym polem i jego zmiana (dodanie nowej wartości to tablicy jest możliwe jedynie przy pomocy jednego sposobu, wywołanie odpowiedniej metody).
 
-Private fields start with a # character. Sometimes we call these private names.
-Every private field name is uniquely scoped to its containing class.
-TypeScript accessibility modifiers like public or private can’t be used on private fields.
-Private fields can’t be accessed or even detected outside of the containing class – even by JS users! Sometimes we call this hard privacy.
+Prywatne poleca sprawia, że jego edycja jest możliwa jedynie przy pomocy przeznaczonej do tego metody. To może się przydać szczególnie w momencie gdy dana metoda zawiera w sobie zdefiniowaną walidację (bezpośrednia edycja może być jej pozbawiono). w JS wszystkie pola są `publiczne/public` w TS,  jeśli nie są inaczej oznaczone również takie są domyślnie. Prywatne pola są również ukryte po za klasą (nie są dostępne).
 
-    class Animal {
-      private name: string;
-
-      constructor(theName: string) {
-        this.name = theName;
-      }
-    }
-
-    new Animal("Cat").name;
-    Property 'name' is private and only accessible within class 'Animal'.
 
 więcej na ten temat: [ECMAScript Private Fields](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/#ecmascript-private-fields)
 

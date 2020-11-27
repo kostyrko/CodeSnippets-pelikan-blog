@@ -41,7 +41,7 @@ Następnie w terminalu wywołać komendę odwołującą się do TS i wskazując�
 
 W folderze pojawi się nowy plik js po transpilacji -> `index.js` jego zawartość jest w JS/ES3 (w tym przypadku treść będzie taka sama)
 
-W celu wprowadzenia zmian w zachowaniu kompilatora można dodać flagi do komendy do niego się odwołującej w terminalu lub zawrzeć odpowiednie informacje w osobnym pliku `tsconfig.json`
+W celu wprowadzenia zmian w zachowaniu kompilatora można dodać flagi do komendy do niego się odwołującej w terminalu lub zawrzeć odpowiednie informacje w osobnym pliku `tsconfig.json` (plik można utworzyć poprzez komendę `tsc --init` - tworzy plik z zakomentowanymi opcjami kompilatora -> po wpisaniu `tsc` kompiluje wszystkie pliki ts/ tworzy analytics.ts i .js)
 
         //tsconfig.json
         {
@@ -50,7 +50,10 @@ W celu wprowadzenia zmian w zachowaniu kompilatora można dodać flagi do komend
                 "watch": true, // nasłuchiwanie na zmiany i kompilacja
                 "lib": ["dom", "es2017"], // biblioteki np. "pilnujące" poprawności z klasami/obiektami DOM - trakcie pisania kodu
                 "sourceMap": true // Source Map
-            }
+            },
+            "exclude" [ // pliki ts z tych folderów nie będą branę pod uwagę
+              "node_modules
+            ]
         }
 
 !! W terminalu należy zainicjować "kompilację po wykryciu zmiany" poprzez
