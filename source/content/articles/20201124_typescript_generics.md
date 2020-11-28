@@ -9,6 +9,13 @@ related_posts: typescript-wprowadzenie
 
 ![typescript-logo](https://miro.medium.com/max/700/1*Sy-lk-CZlnc2szy0SPsLEQ.jpeg)
 
+
+### Typy generyczne ("dynamiczne") wprowadzenie
+
+Tablica w TS również jest typem (podobnie jak np. obiekt) i do tego **generycznym** (dopasowuje się do danych, które przechowuje)
+
+`const names: Array = []` // Array<T>/ przedstawiony tutaj zapis faktycznie nie zostanie przyjęty przez TS, który będzie domagał się podania jakiegokolwiek typu np. **any** -> `const names: any[] = []` ten zapis jednak można przedstawić również w następujący sposób `const names: Array<any> = []`
+
 ### Typy generyczne <T>
 
 Typ generyczny (generować/tworzyć) - jest typem o szerokim polu zastosowania/akceptuje różne typy argumentów.
@@ -21,10 +28,10 @@ Funkcja identyfikacyjna typu generycznego. Przyjmuje określony dowolny typ i zw
 
 **Funkcja identyfikacyjna** - zwraca to co zostało podane jako argument
 
-**<T>** litera **T** zamknięta w nawiasach kątowych jest zwyczajowa (T-type) faktycznie może być inna i w niektórych przypadkach jest ona inna (reprezentuje konkretny typ, zatem w przypadku stosowania 2 typów, potrzebne są 2) - reprezentuje ona zmienną, która pozwala przechwycić typ.
+**<T>** litera **T** zamknięta w nawiasach kątowych jest zwyczajowa (T-type) faktycznie może być inna i w niektórych przypadkach jest ona inna (reprezentuje konkretny typ, zatem w przypadku stosowania 2 typów, potrzebne są 2 symbole, wg konwencji kolejnym z nich jest **U**) - reprezentuje ona zmienną, która pozwala przechwycić typ.
 
 
-Wywołanie funkcji identyfikacyjnej typu generycznego
+**Wywołanie funkcji identyfikacyjnej typu generycznego**
 
     // explicit - w sposób sprecyzowany
     let output = identity<string>("myString");
@@ -48,6 +55,60 @@ Powyższą funkcję można również zapisać w następujący sposób
       return arg;
     }
 
+
+Wskazanie argumentów o różnych typach / w przypadku wskazania jedynie typu obiekt TS nie połączy obiektów tylko stworzy inny
+
+    function join<T, U> (objX: T, objY: U) {
+      return Object.assign(objX, objY)
+    }
+
+    // jako arg używane są obiekty zawierające string i nr a nie wartość "string" i "number"
+    const jointObj = join({name: 'C3PO'}, {moviesNum: 9})
+
+    // można to również zapisać w tej postaci - jest to jednak o tyle zbędne,  że TS sam za nas odczyta strukturę wpisanych obiektów
+    const jointObj = join<{name: string},{movies: number}>({name: 'C3PO'), {moviesNum: 9})
+
+---
+### Constrains - ograniczenie
+
+
+    // funkcja join przyjmuje jedynie obiekty, za to ich zawartość nie jest zdefiniowana
+    function join<T extends object, U extends object> (objX: T, objY: U) {
+          return Object.assign(objX, objY)
+        }
+
+    // funkcja join przyjmuje jedynie obiekty
+    const jointObj = join({name: 'C3PO'}, {moviesNum: 9})
+
+
+Tworzenie ograniczenia na podstawie interfejsu
+
+    interface Droid {
+      length: number
+    }
+
+    zwraca krotkę/tuple
+    function count<T extends Droid> (elem: T): [T, number]  {
+      return [element, elem.length]
+    }
+
+    console.log(['R2D2';'C3PO']) // Array,2
+
+
+
+`keyof` - jakikolwiek klucz z T
+
+
+    function getKey<T extends object, U extends keyof T> (obj: T, key: U) {
+      return obj[key]
+    }
+
+    // funkcja join przyjmuje jedynie obiekty
+    const jointObj = join({name: 'C3PO'}, {moviesNum: 9})
+
+    getKey({name: 'C3PO'}, 'name')
+
+
 ---
 
 ### Typ/funkcja Generyczne
@@ -62,7 +123,7 @@ Tworzenie funkcji/typu generycznego jest zbliżone do interfejsów
     let myDroid: <T>(arg: T) => T = droid;
 
 
-Typ generyczny napisany przypisany do postaci obiektu (patrz niżej intefejs)
+Typ generyczny napisany przypisany do postaci obiektu (patrz niżej interfejs)
 
     function identity<T>(arg: T): T {
       return arg;
@@ -101,19 +162,46 @@ Przesunięcie generycznego parametru całości interfejsu
 
 ### Klasy Generyczne
 
+Stworzenie klasy generycznej pozwala na dynamiczne przypisanie typu do jej instancji
+
     class GenericNumber<T> {
       zeroValue: T;
       add: (x: T, y: T) => T;
     }
 
+    // przypisanie typu do instancji
     let myGenericNumber = new GenericNumber<number>();
 
+    // przypisanie wartości
     myGenericNumber.zeroValue = 0;
     
+    // przypisanie metody do instancji
     myGenericNumber.add = function (x, y) {
       return x + y;
     };
 
+
+Kolejny przykład
+
+    class DataArr<T extends string | numbers> {
+      private data: T[]: [];
+
+      addItem(item:T){
+        this.data.push(item)
+      }
+
+      getItems() {
+        return [...this.data]
+      }
+    }
+
+    instancja-1
+    const textStorage = new DataArr<string>();
+    textStorage.addItem('C3PO')
+
+    instancja-2
+    const numberStorage = new DataArr<number>();
+    textStorage.addItem(1)
 
 
 ---
