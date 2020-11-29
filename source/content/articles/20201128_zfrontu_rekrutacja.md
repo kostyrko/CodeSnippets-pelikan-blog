@@ -11,11 +11,13 @@ related_posts:
 
 W poniższym poście zamieszczam linki przydane w procesie rekrutacji na Frontend'owca. Zebrane materiały zarówno omawiają wybrane zagadnienia jak i przedstawiają potencjalne pytania/zadania (oraz odpowiedzi/rozwiązania) jakie można spotkać w procesie rekrutacji na front-end developera.
 
-### CSS/HTML/JS
+### CSS/HTML/JS...
 
 [Cracking the front-end interview](https://www.freecodecamp.org/news/cracking-the-front-end-interview-9a34cd46237/)
 
 [front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook/blob/master/contents/en/javascript-questions.md) i wersja PL [Podręcznik Frontend przygotowujący do rekrutacji - Frontend Interview Handbook](https://github.com/yangshun/front-end-interview-handbook/tree/master/contents/pl)
+
+[Pytania rekrutacyjne dla Front-end Developera](https://bulldogjob.pl/articles/1093-pytania-rekrutacyjne-dla-front-end-developera?fbclid=IwAR0752WMZegSs70xVjqjmIeoc2xVoqphHHA8Ew4bMNJ7pF78VoqytgOftGk)
 
 ---
 

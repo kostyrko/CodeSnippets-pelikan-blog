@@ -59,6 +59,8 @@ constructor - funkcja wykonywana w trakcie inicjalizacji/tworzenia obiektu
 ---
 ### Prywatne pola (Private)
 
+Prywatne sprawia, że jego edycja jest możliwa jedynie przy pomocy przeznaczonej do tego metody. To może się przydać szczególnie w momencie gdy dana metoda zawiera w sobie zdefiniowaną walidację (bezpośrednia edycja może być jej pozbawiono). w JS wszystkie pola są `publiczne/public` w TS,  jeśli nie są inaczej oznaczone również takie są domyślnie. Prywatne pola są również ukryte po za klasą (nie są dostępne).
+
 
     class Planet {
         private name: string  // oznaczenie prywatności sposób prywatyzacji
@@ -86,13 +88,15 @@ constructor - funkcja wykonywana w trakcie inicjalizacji/tworzenia obiektu
 
     coruscant.droids[1]=('Swtor MCR-99 Droid') // error - droids jest prywatnym polem i jego zmiana (dodanie nowej wartości to tablicy jest możliwe jedynie przy pomocy jednego sposobu, wywołanie odpowiedniej metody).
 
-Prywatne poleca sprawia, że jego edycja jest możliwa jedynie przy pomocy przeznaczonej do tego metody. To może się przydać szczególnie w momencie gdy dana metoda zawiera w sobie zdefiniowaną walidację (bezpośrednia edycja może być jej pozbawiono). w JS wszystkie pola są `publiczne/public` w TS,  jeśli nie są inaczej oznaczone również takie są domyślnie. Prywatne pola są również ukryte po za klasą (nie są dostępne).
+
 
 
 więcej na ten temat: [ECMAScript Private Fields](https://devblogs.microsoft.com/typescript/announcing-typescript-3-8-beta/#ecmascript-private-fields)
 
 ---
 ### Chronione pola (protected)
+
+**Protected** "chroniony" modyfikator jest zbliżony do **private** "prywatny" modyfikatora - rożnica jednak polega na tym, że w przypadku tego pierwszego wartości chronione są dostępne w ramach klas derywatywnych/pochodnych.
 
     class Person {
       protected name: string;
@@ -122,6 +126,7 @@ więcej na ten temat: [ECMAScript Private Fields](https://devblogs.microsoft.com
 ---
 ### Tylko do odczytu 
 
+**Readonly** jest formą zastrzeżenia wybranych wartości do postaci, w której nie mogą one ulec zmianie - innymi słowy są wartościami przeznaczonymi jedynie do odczytu.
 
     class Octopus {
       readonly name: string;
@@ -135,6 +140,41 @@ więcej na ten temat: [ECMAScript Private Fields](https://devblogs.microsoft.com
     let dad = new Octopus("Man with the 8 strong legs");
     dad.name = "Man with the 3-piece suit";
     Cannot assign to 'name' because it is a read-only property.
+
+---
+### Interfejs w klasie
+
+
+Interface dla klasy staje się swego rodzaju "kontraktem", który klasa jest zmuszona wypełnić.
+
+
+    interface Welcome{
+      name: string;
+
+      greet(phrase: string): void;
+    }
+
+Klasa droid będzie musiała posiadać imię (name) oraz metodę greet(która przyjmuje string i nic nie zwraca), może posiadać również inne właściwości - ale musi spełnić wymogi interfejsu
+
+    class Droid implements Welcome {
+      name: string;
+      moviesNum = 9;
+
+      constructor(n: string) {
+        this.name = n;
+      }
+
+      greet(phrase: string) {
+        console.log(phrase + ' ' + this.name);
+      }
+    }
+
+    let droid1: Greetings;
+
+    droid1 = new Person('C3PO');
+
+    droid1.greet('Hi there - I am');
+    console.log(droid1);
 
 
 ---

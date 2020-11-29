@@ -1,6 +1,6 @@
 Title: Ant Design: Form
 Author: mkostyrko
-Date: 2020-11-29 10:00
+Date: 2020-12-01 10:00
 Updated:
 Category: react
 Tags: react
@@ -9,7 +9,35 @@ related_posts:
 
 ![antd-logo](https://miro.medium.com/max/1000/1*fyrm-nSWAyxa5_m78mTq2g.png)
 
-"Fast 3kB React alternative with the same modern API. Components & Virtual DOM"
+### Tworzenie projektu przy pomocy CRA + instalacja ANTD
+
+Stworzenie projektu
+
+    npx create-react-app antd_form
+
+Dodanie zależności -> antd
+
+    npm add antd
+
+Zaimportowanie do App.js odpowiedniego komponentu oraz CSS do App.css
+
+    // App.css - dodanie 1 linijki treści na samej górze
+    @import '~antd/dist/antd.css';
+    [...]
+
+    //App.js
+    import { Button } from 'antd';
+    import './App.css';
+
+    function App() {
+      return (
+        <div>
+          <Button type="primary">Button</Button>
+        </div>
+      );
+    }
+
+    export default App;
 
 
 ---
@@ -31,7 +59,5 @@ related_posts:
 
 YT
 
-[Tutorial 1 : Ant Design and React JS : Learn how to create a Dashboard layout](https://www.youtube.com/watch?v=QkPJV9DonZ0&ab_channel=Shrideepghag)
-
-[3 - Add Simple Contact Form - Building a Contact Management System With React and Ant Design Library](https://www.youtube.com/watch?v=DaMxXs8Kl90&ab_channel=CodingTheWorld)
+[https://www.youtube.com/watch?v=DaMxXs8Kl90&ab_channel=CodingTheWorld](https://www.youtube.com/watch?v=DaMxXs8Kl90&ab_channel=CodingTheWorld)
 

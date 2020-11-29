@@ -153,6 +153,31 @@ Interfejs powinien być poprzedzony słowem **interface**
 
 Interfejs jest przykładem tzw. duck typing” albo “structural subtyping” (to pojęcie nie jest zarezerwowane dla TS) - "rozpoznawanie typu obiektu nie na podstawie deklaracji, ale przez badanie metod udostępnionych przez obiekt. Technika ta wywodzi się z powiedzenia: „jeśli chodzi jak kaczka i kwacze jak kaczka, to musi być kaczką”." (za wikipedia) - innymi słowy należy sprawdzić metody przypisane do obiektu/jego "zachowanie".
 
+Kolejny przykład - zawierający "funkcję"
+
+    interface Droid {
+      name: string;
+      moviesNum: number;
+
+      greet(phrase: string): void;
+    }
+
+    let droid1: Droid;
+
+    droid1 = {
+      name: 'C3PO',
+      age: 9,
+      greet(phrase: string) {
+        console.log(phrase + ' ' + this.name);
+      }
+    };
+
+    droid1.greet('Hi there - I am'); // Hi there - I am C3PO
+
+
+`Interface` przypomina `type` - jednak interface odnosi się jedynie do obiektu, interface może zostać również zaimplementowany w klasie - staje się wówczas swego rodzaju "kontraktem", który klasa jest zmuszona wypełnić.
+
+
 
 **Funkcje**
 
