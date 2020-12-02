@@ -17,7 +17,7 @@ Sprawdzenie remotów
 
         git remote -v
 
-Dodanie remota
+Dodanie kolejnego remota, z którego będą pobierane dane (tzw. upstream)
 
         git remote add upstream <link do remota>
 
@@ -25,9 +25,17 @@ Pobieranie info z dodanego/upstream remota
 
         git fetch upstream
 
-Łączenie mastera (maina) lub innego głównego repo z upstreamem
+Zmian (lub upewnienie się że jest się na gałęzi master lub tej gałęzi na której zależy nam aby była aktualna)
 
-git merge upstream/master
+        git checkout master
+
+        np. git checkout dev
+
+Łączenie mastera (main) lub gałęzi z zawartością tego co znajduje się w repo z upstream
+
+    git merge upstream/master
+
+    np. git merge upstream/dev
 
 
 Zaakceptowanie konfliktów na korzyść zmian zewnętrznych
@@ -39,6 +47,14 @@ Zaakceptowanie konfliktów na korzyść zmian wewnętrznych
 
         git checkout --ours .
         git add .
+
+
+Wypushowanie zmian na remota
+
+
+        git push origin master
+
+        np. git push origin dev
 
 
 Usunięcie konkretnego remota
