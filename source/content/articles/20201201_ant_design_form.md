@@ -11,6 +11,8 @@ related_posts:
 
 ### Tworzenie projektu przy pomocy CRA + instalacja ANTD
 
+Ant Design jest biblioteką do stylowania komponentów Reactowych (współpracuje również z VUE oraz Angularem (NG-ZORRO)) utrzymywana przez Grupę Alibaba
+
 Stworzenie projektu
 
     npx create-react-app antd_form
@@ -25,6 +27,8 @@ Zaimportowanie do App.js odpowiedniego komponentu oraz CSS do App.css
     @import '~antd/dist/antd.css';
     [...]
 
+Zaimportowanie komponentu oraz jego zastosowanie
+
     //App.js
     import { Button } from 'antd';
     import './App.css';
@@ -38,6 +42,15 @@ Zaimportowanie do App.js odpowiedniego komponentu oraz CSS do App.css
     }
 
     export default App;
+
+---
+### ANT DESIGN PRO
+
+*ANT DESIGN PRO* jest biblioteką UI należącą do ANT DESIGN reklamującą się jako rozwiązanie dla projektów komercyjnych (przedsiębiorczych/enterprise), ale z dalszego jej opisu możemy się dowiedzieć, że została stworzona pod kątem interfejsów adminowskich.
+
+
+
+
 
 
 ---
@@ -59,5 +72,5 @@ Zaimportowanie do App.js odpowiedniego komponentu oraz CSS do App.css
 
 YT
 
-[https://www.youtube.com/watch?v=DaMxXs8Kl90&ab_channel=CodingTheWorld](https://www.youtube.com/watch?v=DaMxXs8Kl90&ab_channel=CodingTheWorld)
+[3 - Add Simple Contact Form - Building a Contact Management System With React and Ant Design Library](https://www.youtube.com/watch?v=DaMxXs8Kl90&ab_channel=CodingTheWorld)
 
