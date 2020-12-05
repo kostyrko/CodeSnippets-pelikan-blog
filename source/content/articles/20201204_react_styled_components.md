@@ -4,8 +4,8 @@ Date: 2020-12-04 10:00
 Updated:
 Category: react
 Tags: react, css, radium, styled components, styled-components, css modules
-Slug: react-biblioteki-style
-related_posts:
+Slug: react-radium-styled-components
+related_posts: react-css-modules
 
 ![react-styled-components](https://www.styled-components.com/atom.png)
 
@@ -143,12 +143,6 @@ Użytkowanie:
       }
     }
 
----
-
-![css-modules](https://raw.githubusercontent.com/css-modules/logos/master/css-modules-logo.png)
-
-
-Inną metodą na stylowanie komponentów lub jego elementów w React są [CSS Modules](https://github.com/css-modules/css-modules)
 
 
 ---
