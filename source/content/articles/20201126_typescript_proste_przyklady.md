@@ -12,7 +12,7 @@ related_posts: typescript-wprowadzenie
 
 ### Przykład 1 - deklarowanie typów
 
-1.1. Number
+1.1. Funkcja definiująca argumenty jako typ Number
 TS - podkreśli num2 w wywołaniu (res) ze względu na to, że nie spełnia zdefiniowanego typu number (po transpilacji w JS (TS jej nie zablokuje) problem nie będzie sygnalizowany i wynik będzie wynosił "12" /np. zamiast oczekiwanego 3) - wynika to ze statycznego i dynamicznego typowania
 
     function addDroids(n1:number, n2:number) {
@@ -24,10 +24,10 @@ TS - podkreśli num2 w wywołaniu (res) ze względu na to, że nie spełnia zdef
     const droids = addDroids(num1,num2)
     console.log(droids);
 
-1.2. Number + String + Boolean
+1.2. Funkcja zawierająca typu Number + String + Boolean
 
     function addDroids(n1:number, n2:number, showRes: boolean, comment: string) {
-            const result = n1 + n2 // typ: number / stworzenie "nie/zmiennej" aby zachować typ: number
+            const result = n1 + n2 // typ: number / stworzenie identyfikatora aby zachować typ: number
             if (showRes) {
                 console.log(comment + result) // string + number = string
             } else {
@@ -42,7 +42,26 @@ TS - podkreśli num2 w wywołaniu (res) ze względu na to, że nie spełnia zdef
 
     addDroids(num1, num2, showResult, comment)
 
-1.3. Objects
+
+**Przykład zastosowania** - zastosowanie TS do wskazania oczekiwań typów (to info nie będzie już obecne w TS)
+
+
+    `!` - informacja dla TS, że nigdy nie zwróci Null, a zawsze znajdzie element
+
+    `as HTMLInputElement` - wskazanie na rodzaj elementu HTML (type casting)
+
+    const button = document.querySelector('button');
+    const input1 = document.querySelector('num1')! as HTMLInputElement;
+    const input2 = document.querySelector('num2')! as HTMLInputElement;
+
+    function addDroids(n1:number, n2:number) {
+            return n1 + n2;
+        }
+
+    button.addEventListener('click', function(){
+      console.log(addDroids(+input1.value, +input2.value)));
+    })
+
 
 
 

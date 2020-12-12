@@ -115,8 +115,6 @@ Dynamiczne stylowanie klasą z wykorzystaniem `.join(' ')`
     }
 
 
-
-
 ---
 
 
