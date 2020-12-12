@@ -1,10 +1,10 @@
-daTitle: React: modułowy CSS (CSS Modules)
+Title: React: modułowy CSS (CSS Modules)
 Author: mkostyrko
 Date: 2020-12-05 10:00
 Updated:
 Category: react
 Tags: react, css, radium, styled components, styled-components, css modules
-Slug: react-css-modules
+Slug: react-css-moduly
 related_posts: react-radium-styled-components
 
 ---

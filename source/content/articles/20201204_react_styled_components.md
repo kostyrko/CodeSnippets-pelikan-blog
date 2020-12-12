@@ -1,4 +1,4 @@
-daTitle: React: Styled Components oraz Radium
+Title: React: Styled Components oraz Radium
 Author: mkostyrko
 Date: 2020-12-04 10:00
 Updated:
