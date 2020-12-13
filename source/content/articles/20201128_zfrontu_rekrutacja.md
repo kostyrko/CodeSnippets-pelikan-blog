@@ -19,6 +19,8 @@ W poniższym poście zamieszczam linki przydane w procesie rekrutacji na Fronten
 
 [Pytania rekrutacyjne dla Front-end Developera](https://bulldogjob.pl/articles/1093-pytania-rekrutacyjne-dla-front-end-developera?fbclid=IwAR0752WMZegSs70xVjqjmIeoc2xVoqphHHA8Ew4bMNJ7pF78VoqytgOftGk)
 
+[zbior-zadan-html-css-js-react](https://github.com/Przemocny/zbior-zadan-html-css-js-react)
+
 ---
 
 

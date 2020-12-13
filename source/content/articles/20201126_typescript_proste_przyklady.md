@@ -1,16 +1,16 @@
-Title: TypeScript: proste przykłady
+Title: Migracja z JS do TS
 Author: mkostyrko
 Date: 2020-11-26 10:00
 Updated:
 Category: typescript
 Tags: rts, typescript
-Slug: typescript-proste-przyklady
+Slug: typescript-migracja-js-ts
 related_posts: typescript-wprowadzenie
 
 ![typescript-logo](https://www.positronx.io/wp-content/uploads/2018/11/positronx-banner-1152-1.jpg)
 
-
-### Przykład 1 - deklarowanie typów
+### Migracja z JS do TS
+#### Przykład 1 - deklarowanie typów
 
 1.1. Funkcja definiująca argumenty jako typ Number
 TS - podkreśli num2 w wywołaniu (res) ze względu na to, że nie spełnia zdefiniowanego typu number (po transpilacji w JS (TS jej nie zablokuje) problem nie będzie sygnalizowany i wynik będzie wynosił "12" /np. zamiast oczekiwanego 3) - wynika to ze statycznego i dynamicznego typowania
@@ -46,9 +46,9 @@ TS - podkreśli num2 w wywołaniu (res) ze względu na to, że nie spełnia zdef
 **Przykład zastosowania** - zastosowanie TS do wskazania oczekiwań typów (to info nie będzie już obecne w TS)
 
 
-    `!` - informacja dla TS, że nigdy nie zwróci Null, a zawsze znajdzie element
+`!` - informacja dla TS, że nigdy nie zwróci Null, a zawsze znajdzie element
 
-    `as HTMLInputElement` - wskazanie na rodzaj elementu HTML (type casting)
+`as HTMLInputElement` - wskazanie na rodzaj elementu HTML (type casting)
 
     const button = document.querySelector('button');
     const input1 = document.querySelector('num1')! as HTMLInputElement;
@@ -62,7 +62,11 @@ TS - podkreśli num2 w wywołaniu (res) ze względu na to, że nie spełnia zdef
       console.log(addDroids(+input1.value, +input2.value)));
     })
 
+---
 
+### Migracja z JS do TS
+
+[Migrating from JavaScript](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
 
 
 
@@ -71,8 +75,11 @@ TS - podkreśli num2 w wywołaniu (res) ze względu na to, że nie spełnia zdef
 Źródła:
 
 
-
 [TypeScript Course for Beginners 2020 - Learn TypeScript from Scratch!](https://www.youtube.com/watch?v=BwuLxPH8IDs)
 
 [TypeScript Tutorial - TypeScript for React - Learn TypeScript [2020]](https://www.youtube.com/watch?v=NjN00cM18Z4&ab_channel=ProgrammingwithMosh)
+
+[How to move your project to TypeScript - at your own pace](https://www.twilio.com/blog/move-to-typescript)
+
+[Node.js: Migration from JavaScript to TypeScript](https://www.youtube.com/watch?v=qFMMOJucqTw&feature=emb_title&ab_channel=JavaScriptRoom)
 
