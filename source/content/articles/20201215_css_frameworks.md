@@ -22,7 +22,7 @@ related_posts: css-rwd, html-css-bem
 [Materialize CSS](https://materializecss.com/getting-started.html)
 
 
-![css-comparison](https://themeselection.com/wp-content/uploads/2020/05/popular-css-framework-comparison-2020.png)
+![css-comparison](https://themeselection.com/wp-content/uploads/2020/05/popular-css-framework-comparison-2020.png){: max-height="500px"}
 
 ### Tailwind rozwiązanie pośrednie
 
