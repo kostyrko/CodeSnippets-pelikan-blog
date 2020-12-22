@@ -107,9 +107,31 @@ Pipe - wpływa na zachowanie/wygląd elementu
 
 ### Serwis - zaplecze/"back-end" aplikacji
 
-serwis (klasa z dekoratorem @Injectable) - wykonywanie zadań dla komponentów (dostarcza dane, pomaga w ich analizie oraz przetwarzaniu), wspomaga komunikację pomiędzy komponentami (serwisy HTTP, logowanie błędów, logowanie użytkowników) - pozwala na wstrzyknięcie providerów jako zależności do klasy
+serwis (klasa z dekoratorem @Injectable) - wykonuje zadanie związane z komunikowaniem (np. pobieraniem) danych dla komponentów  - dostarcza dane, pomaga w ich analizie oraz przetwarzaniu. Serwis również wspomaga komunikację pomiędzy komponentami (serwisy HTTP, logowanie błędów, logowanie użytkowników) - pozwala na wstrzyknięcie providerów jako zależności do klasy
 
 serwis zadeklarowany w app.module.ts jest dostępny dla całej aplikacji, natomiast jeśli zadeklarowany w dekoratorze poszczególnego komponentu to wówczas jest jedynie widoczny dla danego komponentu oraz jego dzieci.
+
+Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Component` w przypadku komponentu)
+
+#### Injector/wtryskiwacz
+
+[Angular Injector, @Injectable & @Inject](https://www.tektutorialshub.com/angular/angular-injector-injectable-inject/)
+
+[Angular InjectionToken - www.angular.love](https://www.angular.love/2018/03/09/angular-injectiontoken/)
+
+---
+
+
+#### RxJS - asynchroniczność w serwisie
+
+Observable.subscribe() is the critical difference
+
+The new version waits for the Observable to emit the array of heroes—which could happen now or several minutes from now. The subscribe() method passes the emitted array to the callback, which sets the component's heroes property.
+
+This asynchronous approach will work when the HeroService requests heroes from the server.
+
+
+[Observable data](https://angular.io/tutorial/toh-pt4#observable-data)
 
 
 ---
@@ -287,6 +309,8 @@ Przykład
     }
 
 
+[Komunikacja pomiędzy komponentami w Angular 2](https://typeofweb.com/komunikacja-pomiedzy-komponentami-w-angular-2/)
+
 --
 
 ### Routing 
@@ -301,9 +325,6 @@ Routing pozwala na zdefiniowanie ścieżki nawigacji (pomiędzy stanami aplikacj
 
 ---
 
-### Wtyczka dla Angulara
-
-[**Augury**](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd/related)
 
 ### Instalacja Angular i pierwszy projekt przy pomocy Angular CLI
 
@@ -370,6 +391,11 @@ Zawartość folderu projektowego
 
 
 Przykładowy projekt wykonany przy pomocy Angulara dostępny na stackblitz.com: [angular-nstnfl](https://stackblitz.com/edit/angular-nstnfl?file=src/app/app.component.ts) źródło projektu [Getting started with Angular](https://angular.io/start)
+
+---
+### Wtyczka dla Angulara
+
+[**Augury**](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd/related)
 
 ---
 
