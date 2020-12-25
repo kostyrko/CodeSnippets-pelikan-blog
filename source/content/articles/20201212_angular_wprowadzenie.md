@@ -54,6 +54,7 @@ Na moduły składają się komponenty (w przypadku małej aplikacji może istnie
 
 czytaj dalej [Introduction to modules](https://angular.io/guide/architecture-modules)
 
+---
 ### Komponenty - wyświetlanie i komunikacja z użytkownikiem
 
 Komponent jest klasą posiadającą dekorator - wyświetla/tworzy html i obsługuje zdarzenia,
@@ -99,12 +100,43 @@ Wykorzystując selektor komponentu możliwe jest zagnieżdżenie komponentu w in
 
 czytaj więcej: [Introduction to components and templates](https://angular.io/guide/architecture-components)
 
+---
 #### Operator Pipe
 
-`|` - pipe/rura/przewód operator użyty w ramach połączenia/powiązania (bind) danych pomiędzy html a ts w pliku html aktywuje wbudowane pipy/funkcje lub te stworzone przez użytkownika
+1 - Operator `pipe` -> `|` pozwala na pracę z danymi przed ich wyświetlaniem - wpływa na zachowanie/wygląd elementu. Istnieją wbudowane rury (metody) angulara oraz istnieje możliwość stworzenia włąsnych [wszystkie rury angulara: [Pipes - api list](https://angular.io/api?type=pipe)]
 
-Pipe - wpływa na zachowanie/wygląd elementu
+`{{ droid | uppercase }}` // spowoduje że dana zmienna wyświetlać się będzie dużymi literami
 
+**JSON** pipe (pozwala na wyświetlanie obiektów), **KeyValuPipe** (pozwala na iterowanie po obiektach za pomocą klucza), **slice** pipe (tnie)
+
+`{{getDate() | date: 'yyyy'}}` // zastosowanie operatora pipe - date wraz z parametrami więcej: [DatePipe](https://angular.io/api/common/DatePipe)
+
+    {{ num | number: '1.0-0'}} // wyświetlanie jako liczby całkowitej
+
+    {{ num | number: '2.4-5'}} // wyświetlanie 2 liczb przed i 4-5 po przecinku
+
+2 - Część pipów działa w oparciu o lokalizację (język, czas, miejsce)
+
+    {{ price | currency }}
+
+    {{ price | currency: 'PLN': 'symbol':'':'pl'}} // nadpisanie ustawień lokalnych korzystając z argumentów
+
+Nadpisanie lokalizacji
+
+    import localePl from '@angular/common/locales/pl'
+
+    registerLocaleData(localePL)
+
+    {{ '07-15-1410' | date: 'fullDate':'':'pl'}}
+
+3 - Istnieje możliwość łączenia Pipów
+
+    {{ '07-15-1410' | date: 'fullDate' | uppercase }}
+
+
+Biblioteka **nxg pipes**
+
+---
 ### Serwis - zaplecze/"back-end" aplikacji
 
 serwis (klasa z dekoratorem @Injectable) - wykonuje zadanie związane z komunikowaniem (np. pobieraniem) danych dla komponentów  - dostarcza dane, pomaga w ich analizie oraz przetwarzaniu. Serwis również wspomaga komunikację pomiędzy komponentami (serwisy HTTP, logowanie błędów, logowanie użytkowników) - pozwala na wstrzyknięcie providerów jako zależności do klasy
@@ -113,6 +145,7 @@ serwis zadeklarowany w app.module.ts jest dostępny dla całej aplikacji, natomi
 
 Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Component` w przypadku komponentu)
 
+---
 #### Injector/wtryskiwacz
 
 [Angular Injector, @Injectable & @Inject](https://www.tektutorialshub.com/angular/angular-injector-injectable-inject/)
@@ -120,7 +153,6 @@ Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Compon
 [Angular InjectionToken - www.angular.love](https://www.angular.love/2018/03/09/angular-injectiontoken/)
 
 ---
-
 
 #### RxJS - asynchroniczność w serwisie
 
@@ -132,7 +164,6 @@ This asynchronous approach will work when the HeroService requests heroes from t
 
 
 [Observable data](https://angular.io/tutorial/toh-pt4#observable-data)
-
 
 ---
 ### Biding
@@ -176,11 +207,14 @@ Przykład zastosowania (łączy input z elementem name obiektu hero zadeklarowan
     })
     export class AppModule { }
 
+---
 ### *ngFor - dyrektywa powtórzenia
 
-**#ngFor** jest dyrektywą powtórzenia dla Angulara i powtarza dany element (gospodarza) dla każdego elementu z listy // gospodarzem jest ten element w który dyrektywa jest wpisana
+**#ngFor** jest dyrektywą powtórzenia dla Angulara i powtarza dany element (gospodarza) dla każdego elementu z listy // gospodarzem jest ten element w który dyrektywa jest wpisana. Innymi słowy **ngFor** powiela elementy **html** tyle razy ile jest elementów w danej liście.
 
-`*ngFor="let hero of heroes"` - dla każdego bohater z bohaterów gdzie w pliku **heroes.components.ts** heroes został zzadeklarowany jako właściwość klasy definiującej komponent `heroes = HEROES;`
+    let (zdefiniowanie zmiennej) item of (z) items (lista np. tablica)
+
+`*ngFor="let hero of heroes"` - dla każdego bohater z bohaterów gdzie w pliku **heroes.components.ts** heroes został zadeklarowany jako właściwość klasy definiującej komponent `heroes = HEROES;`
 
     // heroes.components.html
     <ul class="heroes">
@@ -189,9 +223,10 @@ Przykład zastosowania (łączy input z elementem name obiektu hero zadeklarowan
       </li>
     </ul>
 
+---
 ### *ngIF - dyrektywa warunku istnienia
 
-Kolejną dyrektywą jest `*ngIF` która w przypadku gdy `warunek = undefined` nie tworzy elementu 
+Kolejną dyrektywą jest `*ngIF` która w przypadku gdy `warunek = undefined` nie tworzy elementu
 
 Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu / np na początku gdy nie został jeszcze wybrany)
 
@@ -199,6 +234,7 @@ Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu
       [...]
     </div>
     
+---
 ### Events binding
 
 Składnia -> (nasłuchujTegoWydarzenia)="wykonajTąFunkcję(zTymArgumentem")
@@ -222,6 +258,7 @@ Funkcja ta jest metodą przypisaną do klasy komponentu
 
     [...]
 
+---
 ### Class binding
 
 Powiązania pozwalają również na połączenie klasy oraz powiązanych z nią styli wraz ze zdefiniowanym warunkiem
@@ -327,6 +364,8 @@ Routing pozwala na zdefiniowanie ścieżki nawigacji (pomiędzy stanami aplikacj
 
 
 ### Instalacja Angular i pierwszy projekt przy pomocy Angular CLI
+
+[Angular CLI Cheat Sheet: The best Commands to boost your productivity](https://malcoded.com/posts/angular-fundamentals-cli/)
 
 ng - next generation (Angular reprezentuje kolejną generację HTML)
 
