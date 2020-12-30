@@ -71,7 +71,9 @@ Komponent składa się z 3-4 (ts,css,html,ts) plików zawartych we wspólnym fol
 
 W pliku TS (np. heroes.component.ts) zawarta jest klasa z dekoratorem komponentowym, który należy zaimportować z **@angular/core** a następnie podpiąć pod niego odpowiednio klasę
 
-Metadane zawarte w dekoratorze odwołują się do -  definiuje selektor CSS komponentu, wskazuje na miejsce znajdowania się pliku zawierającego style, wskazuje lokację szablonu HTML
+Metadane zawarte w dekoratorze odwołują się do -  definiuje selektor CSS komponentu, wskazuje na miejsce znajdowania się pliku zawierającego style, wskazuje lokację szablonu HTML.
+
+Selektor komponentu jest referencją do danego komponentu. Przykładowo jeśli selektor został w komponencie zdefiniowany w sposób następujący `selector: 'app-name-editor',` aby go "zawrzeć" w ramach innego komponentu (wyświetlić/html) należy się do niego odwołać w sposób następujący: `<app-name-editor></app-name-editor> `
 
 `@Component()` - dekorator komponentu identyfikuje pierwszą klasę znajdującą się pod nim jako przynależną do komponentu i zapewnia metadane dla tego komponentu.
 
@@ -101,7 +103,38 @@ Wykorzystując selektor komponentu możliwe jest zagnieżdżenie komponentu w in
 czytaj więcej: [Introduction to components and templates](https://angular.io/guide/architecture-components)
 
 ---
-#### Operator Pipe
+
+## Wprowadzenia do składni szablonów - zagadnienia podstawowe
+
+---
+Wytłumaczenie podstawowych znaków: 
+
+`{{ }}` - **interpolacja** wyświetla wszystko na stronie w postaci tekstu, wyświetla typy proste, pozwala na wywołanie metod
+`[ ]` - łączenie wartości
+`( )` - łączenie wydarzenia
+`#` - odwołanie do zmiennej/referencji szablonu zmiennych (elementu HTML)
+`*` - dyrektywa strukturalna
+
+### Interpolacja
+
+Interpolacja jest podstawowym narzędziem Angulara, które pozwala na wymianę danych pomiędzy klasą a szablonem HTML
+(stosowane jest w html ale odwołuje się do informacji zawartych w klasie komponentu)
+
+Przykłady zastosowania interpolacji
+
+`{{ droid }}` - zmienna zawarta w komponencie (ts) // jeśli jest to obiekt zwróci `[object Object]`
+
+`{{ droid.name }}` - odwołanie się do właściwości name obiektu droid
+
+`{{ getDroid().name }}` - interpolacja danych `name` z obiektu zwracanego przez funkcję `getDroid()`
+
+`{{ getDroid }}` - interpolacja funkcji działa na nią metod toString() , wyjątkiem jest jeśli ta jest poprzedzona słowem kluczowym `get`, wówczas przedstawiony zostanie wynik wywołania funkcji// w takim przypadku zastosowania `{{ getDroid() }}` zwróci jedynie informacje o typie 
+
+`{{ 2+2 }}` - interpolacja wyrażenia matematycznego
+
+---
+
+### Operator Pipe
 
 1 - Operator `pipe` -> `|` pozwala na pracę z danymi przed ich wyświetlaniem - wpływa na zachowanie/wygląd elementu. Istnieją wbudowane rury (metody) angulara oraz istnieje możliwość stworzenia włąsnych [wszystkie rury angulara: [Pipes - api list](https://angular.io/api?type=pipe)]
 
@@ -135,35 +168,6 @@ Nadpisanie lokalizacji
 
 
 Biblioteka **nxg pipes**
-
----
-### Serwis - zaplecze/"back-end" aplikacji
-
-serwis (klasa z dekoratorem @Injectable) - wykonuje zadanie związane z komunikowaniem (np. pobieraniem) danych dla komponentów  - dostarcza dane, pomaga w ich analizie oraz przetwarzaniu. Serwis również wspomaga komunikację pomiędzy komponentami (serwisy HTTP, logowanie błędów, logowanie użytkowników) - pozwala na wstrzyknięcie providerów jako zależności do klasy
-
-serwis zadeklarowany w app.module.ts jest dostępny dla całej aplikacji, natomiast jeśli zadeklarowany w dekoratorze poszczególnego komponentu to wówczas jest jedynie widoczny dla danego komponentu oraz jego dzieci.
-
-Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Component` w przypadku komponentu)
-
----
-#### Injector/wtryskiwacz
-
-[Angular Injector, @Injectable & @Inject](https://www.tektutorialshub.com/angular/angular-injector-injectable-inject/)
-
-[Angular InjectionToken - www.angular.love](https://www.angular.love/2018/03/09/angular-injectiontoken/)
-
----
-
-#### RxJS - asynchroniczność w serwisie
-
-Observable.subscribe() is the critical difference
-
-The new version waits for the Observable to emit the array of heroes—which could happen now or several minutes from now. The subscribe() method passes the emitted array to the callback, which sets the component's heroes property.
-
-This asynchronous approach will work when the HeroService requests heroes from the server.
-
-
-[Observable data](https://angular.io/tutorial/toh-pt4#observable-data)
 
 
 ---
@@ -266,8 +270,6 @@ Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu
       <span #ngSwitchCase="3">Środa</span>
       <span #ngSwitchDefault>Każdy inny dzień</span>
     </ng-container>
-
-
 
 
 ---
@@ -458,97 +460,55 @@ Dyrektywa **ngModel** pozwala na dwustronne powiązanie pomiędzy zmiennymi klas
 
 istnieje jeszcze event `(ngModelChange)` dostępny dla formularzy
 
+
 ---
-### Dekorator @Input()
+### Serwis - zaplecze/"back-end" aplikacji
 
-Łączy input z danym komponentem pozwalając mu na zewnętrzne użytkowanie - rozbicie logiki komponentu na mniejsze części (komponenty)
+serwis (klasa z dekoratorem @Injectable) - wykonuje zadanie związane z komunikowaniem (np. pobieraniem) danych dla komponentów  - dostarcza dane, pomaga w ich analizie oraz przetwarzaniu. Serwis również wspomaga komunikację pomiędzy komponentami (serwisy HTTP, logowanie błędów, logowanie użytkowników) - pozwala na wstrzyknięcie providerów jako zależności do klasy
 
-Wymaga importu z counterReducer
+serwis zadeklarowany w app.module.ts jest dostępny dla całej aplikacji, natomiast jeśli zadeklarowany w dekoratorze poszczególnego komponentu to wówczas jest jedynie widoczny dla danego komponentu oraz jego dzieci.
 
-    import { Component, OnInit, Input } from '@angular/core';
+Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Component` w przypadku komponentu)
 
-Oraz zdefiniowania identyfikatora opatrzonego dekoratorem @Input() 
+---
 
-    @Input() hero: Hero;
+## Zagadnienia zaawansowane - wyjaśnione w kolejnych postach
 
+#### @Input @Output
 
-Odwołanie się w komponencie posiadającym element, do którego następuje odwołanie (komponent rodzica) wygląda w sposób następujący (np. heroes.component.html -> selectedHero)
-
-    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-
-`[hero]="selectedHero"` - składnia definiująca połączenie jednostronne, w ramach właściwości elementu DOM (właściwość selectedHero komponentu HeroesComponent zostaje skopiowana/przeniesiona do właściwości hero celowego elementu, który jest zmapowany na podstawie danych z HeroDetailComponent). Kiedy użytkownik klika selectedHero ulega zmianie, a przez to również HeroDetailComponent (property bindig go odświeża)
-
-Przykład
-
-    ==== Usunięcie tego fragmentu =====
-    <div *ngIf="selectedHero">
-      <h2>{{ selectedHero.name | uppercase }} Details</h2>
-      <div><span>id: </span>{{ selectedHero.id }}</div>
-      <div>
-        <label
-          >name:
-          <input [(ngModel)]="selectedHero.name" placeholder="name" />
-        </label>
-      </div>
-    </div>
-    ============ Zastąpienie go tym ========
-    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-
-
-    >>>>>>> Komponent dziecka zawierającego input <<<<<<<
-
-    // HTML dziecka
-    <div *ngIf="hero">
-
-      <h2>{{hero.name | uppercase}} Details</h2>
-      <div><span>id: </span>{{hero.id}}</div>
-      <div>
-        <label>name:
-          <input [(ngModel)]="hero.name" placeholder="name"/>
-        </label>
-      </div>
-
-    </div>
-
-    // TS dziecka
-    import { Component, OnInit, Input } from '@angular/core';
-    import { Hero } from '../hero';
-
-    @Component({
-      selector: 'app-hero-detail',
-      templateUrl: './hero-detail.component.html',
-      styleUrls: ['./hero-detail.component.css']
-    })
-    export class HeroDetailComponent implements OnInit {
-
-      @Input() hero: Hero;
-
-      constructor() { }
-
-      ngOnInit(): void {
-      }
-
-    }
-
-
-[Komunikacja pomiędzy komponentami w Angular 2](https://typeofweb.com/komunikacja-pomiedzy-komponentami-w-angular-2/)
+Dekoratory pozwalające na rozbicie logiki komponentu na mniejsze części/komponenty i komunikowanie się danymi pomiędzy nimi
 
 --
-
 ### Routing 
 
 Routing pozwala na zdefiniowanie ścieżki nawigacji (pomiędzy stanami aplikacji)
 
+---
+#### Injector/wtryskiwacz
 
-### Glossary
+[Angular Injector, @Injectable & @Inject](https://www.tektutorialshub.com/angular/angular-injector-injectable-inject/)
+
+[Angular InjectionToken - www.angular.love](https://www.angular.love/2018/03/09/angular-injectiontoken/)
+
+---
+
+#### RxJS - asynchroniczność w serwisie
+
+Observable.subscribe() is the critical difference
+
+The new version waits for the Observable to emit the array of heroes—which could happen now or several minutes from now. The subscribe() method passes the emitted array to the callback, which sets the component's heroes property.
+
+This asynchronous approach will work when the HeroService requests heroes from the server.
 
 
-[Słownik z najważniejszymi pojęciami dla Angulara (ENG)](https://angular.io/guide/glossary)
+[Observable data](https://angular.io/tutorial/toh-pt4#observable-data)
+
+
 
 ---
 
 
-### Instalacja Angular i pierwszy projekt przy pomocy Angular CLI
+## Instalacja Angular i stworzenie pierwszego projektu przy pomocy Angular CLI
 
 [Angular CLI Cheat Sheet: The best Commands to boost your productivity](https://malcoded.com/posts/angular-fundamentals-cli/)
 
@@ -617,9 +577,16 @@ Zawartość folderu projektowego
 Przykładowy projekt wykonany przy pomocy Angulara dostępny na stackblitz.com: [angular-nstnfl](https://stackblitz.com/edit/angular-nstnfl?file=src/app/app.component.ts) źródło projektu [Getting started with Angular](https://angular.io/start)
 
 ---
+
+## Na zakończenie
 ### Wtyczka dla Angulara
 
 [**Augury**](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd/related)
+
+### Glossary
+
+[Słownik z najważniejszymi pojęciami dla Angulara (ENG)](https://angular.io/guide/glossary)
+
 
 ---
 
@@ -632,4 +599,6 @@ Przykładowy projekt wykonany przy pomocy Angulara dostępny na stackblitz.com: 
 
 [Angular workspace configuration](https://angular.io/guide/workspace-config)
 
-[Udemy - Angular - kompletny kurs od podstaw - nowa edycja 2020](https://www.udemy.com/course/angular-kompletny-kurs-
+[Udemy - Angular - kompletny kurs od podstaw - nowa edycja 2020](https://www.udemy.com/course/angular-kompletny-kurs)
+
+[angular.io - template-syntax](https://angular.io/guide/template-syntax)
