@@ -1,6 +1,6 @@
 Title: JavaScript: formularze
 Author: mkostyrko
-Date: 2020-01-02 12:00
+Date: 2020-12-31 12:00
 Updated:
 Category: javascript
 Tags: bootstrap, angular, javascript
