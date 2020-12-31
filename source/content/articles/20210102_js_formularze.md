@@ -36,9 +36,11 @@ Pełna lista właściwości formularza i źródło: [HTMLFormElement](https://de
 |---|---|---|
 |formularz.submit()|"wysyła formularz"||
 |formularz.reset()|"przywraca formularz do jego stanu początkowego"||
+|formularz.requestSubmit()|Wysyła żądanie aby formularz został zatwierdzony przez konkretny przycisk oraz, do którego jest przypisana konkretna konfiguracja||
+|Walidacja|Walidacja|Walidacja|
 |formularz.checkValidity()|Zwraca **true** jeśli walidacja elementów formularza przebiegła poprawnie||
 |formularz.raportValidity()|Zwraca **true** jeśli walidacja elementów formularza przebiegła poprawnie||
-|formularz.requestSubmit()|Wysyła żądanie aby formularz został zatwierdzony przez konkretny przycisk oraz, do którego jest przypisana konkretna konfiguracja||
+|formularz.setCustomValidity()|Zwraca informację związaną z walidacją inputu o dowolnej wskazanej treści|
 
 ### Zdarzenia (events)
 
@@ -85,7 +87,7 @@ Pełna lista właściwości formularza i źródło: [HTMLFormElement](https://de
 ---
 ### Pola formularza
 
-
+Główne zdarzenia - **change, focus/blur, keypress/keyup/keydown, input** (gdy wartość pola zostaje zmienione)
 ### Inputy
 
 źródło lub inspiracja poniższych przykładów [kursjs.pl - formularze](https://kursjs.pl/kurs/formularze/formularze.php)
@@ -107,6 +109,13 @@ Wydobycie informacji poprzez odwołanie się do właściwości **value** inputu
             input.classList.remove("field-error");
         }
     });
+
+<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="YzGejNK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_tekst/email">
+  <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/YzGejNK">
+  JS_formularz_tekst/email</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 #### Radiobox i Checkbox
 
