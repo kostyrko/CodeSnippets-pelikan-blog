@@ -1,6 +1,6 @@
 Title: JavaScript: formularze
 Author: mkostyrko
-Date: 2020-12-31 12:00
+Date: 2020-01-02 12:00
 Updated:
 Category: javascript
 Tags: bootstrap, angular, javascript
@@ -110,7 +110,7 @@ Wydobycie informacji poprzez odwołanie się do właściwości **value** inputu
         }
     });
 
-<p class="codepen" data-height="265" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="YzGejNK" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_tekst/email">
+<p class="codepen" data-height="365" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="YzGejNK" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_tekst/email">
   <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/YzGejNK">
   JS_formularz_tekst/email</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -134,6 +134,12 @@ Wydobycie informacji poprzez odwołanie się do właściwości **value** inputu
       });
     }
 
+<p class="codepen" data-height="365" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="eYdMZJJ" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_radiobox/checkbox">
+  <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/eYdMZJJ">
+  JS_formularz_radiobox/checkbox</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 #### Select
 
