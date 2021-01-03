@@ -1,11 +1,11 @@
 Title: JavaScript: formularze
 Author: mkostyrko
-Date: 2020-01-02 12:00
+Date: 2021-01-02 12:00
 Updated:
 Category: javascript
-Tags: bootstrap, angular, javascript
+Tags: bootstrap, js, javascript, formularze, walidacja
 Slug: javascript-formularze
-related_posts: 
+related_posts: javascript-formularze-walidacja
 
 ![java-script-formularz](https://www.proformat.pl/wp-content/uploads/U%C5%BCyteczny-formularz-kontaktowy.jpg)
 
@@ -110,7 +110,7 @@ Wydobycie informacji poprzez odwołanie się do właściwości **value** inputu
         }
     });
 
-<p class="codepen" data-height="365" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="YzGejNK" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_tekst/email">
+<p class="codepen" data-height="365" data-theme-id="dark" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="YzGejNK" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_tekst/email">
   <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/YzGejNK">
   JS_formularz_tekst/email</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -134,7 +134,7 @@ Wydobycie informacji poprzez odwołanie się do właściwości **value** inputu
       });
     }
 
-<p class="codepen" data-height="365" data-theme-id="light" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="eYdMZJJ" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_radiobox/checkbox">
+<p class="codepen" data-height="365" data-theme-id="dark" data-default-tab="js,result" data-user="mkostyrko" data-slug-hash="eYdMZJJ" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_formularz_radiobox/checkbox">
   <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/eYdMZJJ">
   JS_formularz_radiobox/checkbox</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
@@ -153,9 +153,20 @@ Właściwości elementu formularza typu select
 
 **select.options[selectedIndex]** - indeks wybranej opcji z formularza select
 
+**option.selected** - wydarzenie związane z elementem option wewnątrz elementu **select** - zwraca wartość logiczną - wybrany lub nie (true/false)
+
 Przy tworzeniu opcji formularza select istnieje możliwość wykorzystania konstruktora **Option(text*, value*, defaultSelected*, selected*)**
 
+Zdarzenia dla elementu select: **focus, blur, change, keydown, keyup, keypress**
+
     const option1 = new Option("Tekst", 102);
+
+<p class="codepen" data-height="365" data-theme-id="dark" data-default-tab="html,result" data-user="mkostyrko" data-slug-hash="qBaoPxp" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_select_bootstrap">
+  <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/qBaoPxp">
+  JS_select_bootstrap</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 #### Color
 
@@ -172,6 +183,13 @@ Reaguje na zdarzenia typu change(gdy zmienia się wartość) oraz input(w czasie
         console.log(input.value)
     });
 
+<p class="codepen" data-height="365" data-theme-id="dark" data-default-tab="html,result" data-user="mkostyrko" data-slug-hash="MWjVVzG" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JS_fromularz_zasieg">
+  <span>See the Pen <a href="https://codepen.io/mkostyrko/pen/MWjVVzG">
+  JS_fromularz_zasieg</a> by Mikołaj Kostyrko (<a href="https://codepen.io/mkostyrko">@mkostyrko</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 ---
 Źródła:
 
@@ -180,3 +198,5 @@ Reaguje na zdarzenia typu change(gdy zmienia się wartość) oraz input(w czasie
 [kursjs.pl -> Formularze - walidacja](https://kursjs.pl/kurs/formularze/formularze-walidacja.php)
 
 [kursjs.pl - Formularze](https://kursjs.pl/kurs/formularze/formularze.php)
+
+[Demo: Handling Select List OnChange Event](https://www.dyn-web.com/tutorials/forms/examples/select-pizza.php)
