@@ -1,0 +1,41 @@
+Title: JavaScript: walidacja formularzy
+Author: mkostyrko
+Date: 2021-01-03 12:00
+Updated:
+Category: javascript
+Tags: bootstrap, js, javascript, formularze, walidacja
+Slug: javascript-formularze-walidacja
+related_posts: javascript-formularze
+
+![java-script-formularz](https://i2.wp.com/www.cssscript.com/wp-content/uploads/2017/12/js-form-validator.js.png?fit=555%2C404&ssl=1)
+
+## Walidacja formularzy
+
+1 - `e.preventDefault();` - powstrzymanie przed wysłaniem
+
+2 - stworzenie odpowiednich warunków walidujących przy pomocy **if/else**
+
+3 - Przekazanie informacji o błędzie
+
+
+### Bootstrap walidacja formularza
+
+
+
+### Biblioteki
+
+[js-form-validator](https://github.com/Via-profit/js-form-validator) - projekt zarchiwizowany
+
+[validate.js](https://validatejs.org/)
+
+[Parsley](https://parsleyjs.org/)
+
+---
+Źródła:
+
+[tutorialspoint.com -> JavaScript - Form Validation](https://www.tutorialspoint.com/javascript/javascript_form_validations.htm)
+
+[kursjs.pl -> Formularze - walidacja](https://kursjs.pl/kurs/formularze/formularze-walidacja.php)
+
+[w3schools.com -> JavaScript Forms](https://www.w3schools.com/js/js_validation.asp)
+

@@ -1,0 +1,14 @@
+Title: Angular: referencje szablonów i ng-content
+Author: mkostyrko
+Date: 2020-12-28 10:00
+Updated:
+Category: angular
+Tags: angular
+Slug: angular-ng-content
+related_posts: 
+
+---
+
+![angular](https://wpblog.semaphoreci.com/wp-content/uploads/2019/01/Testing-Components-in-Angular-2-with-Jasmine-776x320.png)
+
+

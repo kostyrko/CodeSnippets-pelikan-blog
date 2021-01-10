@@ -1,0 +1,82 @@
+Title: Wordpress: podstrony i nawigacja
+Author: mkostyrko
+Date: 2021-03-04 14:00
+Updated:
+Category: wordpress
+Tags: wordpress, php, local, flywheel
+Slug: wordpress-podstrony
+related_posts: wordpress-wprowadzenie
+
+![wordpress](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/600px-WordPress_blue_logo.svg.png)
+
+### Podstrony strony 
+
+// page.php
+`get_theme_file_uri()` -> look up wp_content/theme_name (sprawdź/wyszukaj nazwę folderu i wykorzystaj ją do wyszukania folderu/pliku, który ma być w danym miejscu podlinkowany)
+
+    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
+
+`<?php the_title(); ?>` - w dynamiczny sposób pobiera i wyświetla tytuł strony
+
+// functions.php
+
+`add_theme_support()` - dodanie funkcji do motywu strony
+
+    add_theme_support('title_tag'); 
+
+[add_theme_support - code reference -> wordpress.org](https://developer.wordpress.org/reference/functions/add_theme_support/)
+
+// header.php
+
+`site_url('/about-us/')` - generuje link strony + przedłuża o adres podany w argumencie (stos do nav oraz linku)
+`site_url()` - generuje root/home url
+
+    <li><a href="<?php echo site_url('/about-us/') ?>">About Us</a></li>
+
+// page.php
+
+`get_the_ID();` // gets the id of a page being viewed
+`wp_get_post_parent_id(get_the_ID());` // get parent id of a given's post id (as an argument) - returns 0 if no parent page
+
+Kontrola przepływu informacji/dokonywanych -> **if**
+
+TRUE = 1 i każda kolejna
+FALSE = 0
+
+    <?php 
+      if(wp_get_post_parent_id(get_the_ID())) {
+        echo "I am a child page";
+      }
+    ?>
+
+    <?php 
+      if(wp_get_post_parent_id(get_the_ID())) { ?> // znaki zamykające php
+        <div class="metabox">
+          <p>Wstawiany element</p>
+        </div>
+      <?php } // znaki otwierające php
+    ?>
+
+get_the_title($theParent) - pobiera tytuł strony/przyjmuje jako arg. id postu/strony
+get_the_permalink($theParent) - pobiera link strony/przyjmuje jako arg. id postu/strony
+
+    <?php 
+      $theParent = wp_get_post_parent_id(get_the_ID());
+        if($theParent) { ?>
+          <div class="metabox metabox--position-up metabox--with-home-link">
+            <p><a class="metabox__blog-home-link" href="<?php echo get_the_permalink($theParent) ?>"><i class="fa fa-home" aria-hidden="true"></i> Back to <?php echo get_the_title($theParent) ?></a> <span class="metabox__main"><?php the_title(); ?></span></p>
+          </div>
+        <?php }
+      ?>
+
+---
+
+Źródła:
+
+[How to Install PHP on Ubuntu 20.04](https://linuxize.com/post/how-to-install-php-on-ubuntu-20-04/)
+
+[LearnWebCode/university-static](https://github.com/LearnWebCode/university-static)
+
+[Udemy - Become a WordPress Developer: Unlocking Power With Code](https://www.udemy.com/course/become-a-wordpress-developer-php-javascript)
+
+[code reference -> wordpress.org](https://developer.wordpress.org/reference/functions/)
