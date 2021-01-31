@@ -69,6 +69,11 @@ get_the_permalink($theParent) - pobiera link strony/przyjmuje jako arg. id postu
         <?php }
       ?>
 
+
+### Podpięcie nawigacji do CMS
+
+
+
 ---
 
 Źródła:

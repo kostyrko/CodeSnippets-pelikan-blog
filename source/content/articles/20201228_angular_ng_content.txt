@@ -7,6 +7,21 @@ Tags: angular
 Slug: angular-ng-content
 related_posts: 
 
+
+Przy pomocy ng-content można przekazywać treść oraz różne komponenty
+
+ng-content jest swego rodzaju wskaźnikiem pozwalającym na opakowanie elementu komponentem
+
+    <button class="btn-floating teal add-button" (click)="clickButton.emit()">
+      <ng-content></ng-content>
+    </button>
+
+zastosowanie
+
+    <app-button (clickButton)="form.onSwitchForm()">
+        <i class="material-icons">add</i>
+    </app-button>
+
 ---
 
 ![angular](https://wpblog.semaphoreci.com/wp-content/uploads/2019/01/Testing-Components-in-Angular-2-with-Jasmine-776x320.png)
