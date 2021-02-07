@@ -10,7 +10,7 @@ related_posts:
 
 Przy pomocy ng-content można przekazywać treść oraz różne komponenty
 
-ng-content jest swego rodzaju wskaźnikiem pozwalającym na opakowanie elementu komponentem
+ng-content jest swego rodzaju wskaźnikiem/selektorem pozwalającym na opakowanie elementu komponentem, innymi słowy na zagnieżdżenie innego komponentu, fragmentu kodu html lub treści (stringa) w ramach innego komponentu.
 
     <button class="btn-floating teal add-button" (click)="clickButton.emit()">
       <ng-content></ng-content>
@@ -21,6 +21,19 @@ zastosowanie
     <app-button (clickButton)="form.onSwitchForm()">
         <i class="material-icons">add</i>
     </app-button>
+
+
+### Rozbudowane użycie ng-content
+
+Nadawanie nazwy aby mieć większy wpływ na to, gdzie dany element jest wyświetlany
+
+    select=[first]
+
+Wstrzykiwanie ng-content
+
+ngAfterViewInit() / @ContentChild / @ContentChildren
+
+https://github.com/ZacznijProgramowac/ng-template-examples/tree/master/src/app
 
 ---
 

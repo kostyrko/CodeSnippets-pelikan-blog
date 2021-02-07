@@ -83,7 +83,10 @@ Uruchamia się po detekcji zmiany - gdy widok komponentu lub jego dziecka zostan
 
 ### OnDestroy
 
-Wywołuje się tylko gdy Angular będzie niszczony przez Angulara (np przy pomocy ngIf).
+Wywołuje się tylko gdy Angular będzie niszczony przez Angulara (np przy pomocy ngIf, inaczej rzecz ujmując gdy likwidowana jest logika, aplikacji która zajmuje pamięć przeglądarki).
+
+@HostListener('window:beforeunload') - listener zakładany na metodę, który wykona się przy wpisanej w argument akcji
+
 
 ---
 
