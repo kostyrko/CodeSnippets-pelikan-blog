@@ -14,9 +14,9 @@ Wykorzystanie obu jest dość proste:
 
 1) serwujemy php np. przy pomocy narzędzia Flywheel (zdaje się że w wersji pro istniej możliwość serwowania w wersji live)
 
-2) Wybieramy plik php do serwowania przez
+2) Wybieramy plik php do serwowania przez wtyczkę Live Server/Go live (Ctrl+Shift+P -> Live Server: Open with Live Server)
 
-3) Wykorzystując wtyczkę w chromę wpisujemy hosta podstawowego oraz tego z wtyczki vsc i sprawa gotowa
+3) Wykorzystując wtyczkę w chromę/firefox wpisujemy hosta podstawowego (w pierwszym inpucie np. ten serwowany przez Flywheel) oraz tego z wtyczki Live Server vsc (np. 127.0.0.1:5501 ) w górnej części okna zaznaczamy opcję Live Reload i teraz możemy na żywo obserwować zmiany jak zachodzą na naszym podstawowym serwrze (tym hostowanym przez Flywheel np. localhost:10008)
 
 
  
