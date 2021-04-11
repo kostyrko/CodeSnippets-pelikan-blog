@@ -7,7 +7,8 @@ Tags: react, formularze, hooks
 Slug: react-warunkowe-renderowanie
 related_posts: react-wprowadzenie, react-komponenty, react-listy, react-zdarzenia, react-stany
 
-![react](https://daqxzxzy8xq3u.cloudfront.net/wp-content/uploads/2019/06/29192442/react-conditional-types.jpg){: max-height="300px"}
+![react](https://daqxzxzy8xq3u.cloudfront.net/wp-content/uploads/2019/06/29192442/react-conditional-types.jpg)
+
 
 Warunkowe renderowanie pozwala na zmianie zachowania się komponentu w zależności od informacji zawartych w stanie komponentu lub w propsie. Jest parę prostych zasad, o których warto pamiętać w tym kontekście.
 

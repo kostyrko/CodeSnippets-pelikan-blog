@@ -4,7 +4,7 @@ Date: 2020-02-07 10:00
 Updated:
 Category: angular
 Tags: angular
-Slug: angular-lifecycle-hooks
+Slug: angular-routing
 related_posts:
 
 ![angular](https://wpblog.semaphoreci.com/wp-content/uploads/2019/01/Testing-Components-in-Angular-2-with-Jasmine-776x320.png)
