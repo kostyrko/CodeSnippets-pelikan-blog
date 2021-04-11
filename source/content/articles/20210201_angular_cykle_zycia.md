@@ -1,6 +1,6 @@
 Title: Angular: cykle życia komponentu
 Author: mkostyrko
-Date: 2020-02-01 10:00
+Date: 2021-02-01 10:00
 Updated:
 Category: angular
 Tags: angular

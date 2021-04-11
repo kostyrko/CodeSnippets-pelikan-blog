@@ -7,6 +7,7 @@ Tags: angular
 Slug: angular-ng-content
 related_posts: 
 
+![angular ng-content](https://cdn-media-1.freecodecamp.org/images/1*mFnAxpS3I_lpRPnIyevxKw.png)
 
 Przy pomocy ng-content można przekazywać treść oraz różne komponenty
 

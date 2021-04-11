@@ -1,9 +1,9 @@
-Title: Angular: komunikacja pomiędzy dzieckiem a rodzicem (input,output,eventEmitter, ViewChild)
+Title: Angular: komunikacja pomiędzy dzieckiem a rodzicem (input, output, eventEmitter, ViewChild)
 Author: mkostyrko
 Date: 2020-12-23 10:00
 Updated:
 Category: angular
-Tags: angular
+Tags: angular, input, output, eventEmitter, ViewChild
 Slug: angular-komunikacja-komponentow
 related_posts: angular-wprowadzenie
 
