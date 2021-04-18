@@ -1,10 +1,9 @@
 Title: Angular -> Mały projekt od podstaw
 Author: mkostyrko
-Date: 2021-01-23
- 12:00
+Date: 2021-01-23 12:00
 Updated:
 Category: angular
-Tags: bootstrap, angular, javascript
+Tags: angular, javascript, models
 Slug: angular-projekt
 related_posts: 
 
@@ -38,6 +37,8 @@ Dodanie iko w sekcji head index.html
 
 ----
 1. Dodanie folderu modeli -> /star-wars-quotes-app/src/models
+
+>> plik models lub folder zwyczajowo zawiera modele przkazywanych/używanych danych - np. interfejsów lub enumów <<
 
 `quotation.ts` -> zawiera interfejs pojedynczego cytatu
 
