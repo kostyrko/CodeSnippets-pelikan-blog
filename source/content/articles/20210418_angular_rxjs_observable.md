@@ -75,6 +75,21 @@ Może zdążyć się tak, że informacje inicjalizacyjne zostają przekazane do 
 
 Inne subjecty: **ReplaySubject** (def buforu), **AsynSubject** (ostatnia wartość wykonania obserwacji jest przekazana ale dopiero po jej wykonaniu)
 
+#### Subscribe
+
+Obiekt **subscribe** jest otrzymywany po wywołaniu metody subscribe na **Observable** // przechwytywanie poprzez przypisanie zmiennej i przypisanie tego co zwraca metoda subscribe
+
+    // zwraca obiekt subscribe (isStopped: false // subskrypcja trwa)
+    const subscribe = subjectBehavior.subscribe(x => console.log('BehaviorSubject: ', x));
+
+#### Unsubscribe
+
+Unsubscribe - metoda służąca do anulowania/zaprzestania subskrypcji (w przypadku Angulara np na ngOnDestroy)
+
+**Observable** z formularzy, routingu, subjectu bez anulowania subskrypcji będą zajmowały pamięć (z HTTP kończą działanie jak przekażą dane). Observable stworzony wykorzystując metodę **from()** nie muszą być usuwane (subskrypcja jest zamknięta), przy pomocy **interval()** będzie tego wymagał.
+
+    subscribe.unsubscribe();
+
 
 ---
 
@@ -90,4 +105,4 @@ Inne subjecty: **ReplaySubject** (def buforu), **AsynSubject** (ostatnia wartoś
 
 [RxJS w Angular – co wypada wiedzieć](https://www.angular.love/2018/07/04/rxjs-w-angular-co-wypada-wiedziec/)
 
-[https://kamilmysliwiec.com/rxjs-hot-vs-cold-observable-operator-create](https://kamilmysliwiec.com/rxjs-hot-vs-cold-observable-operator-create)
+[https://kamilmysliwiec.com/rxjs-hot-vs-cold-observable-operator-create](https://kamilmysliwiec.com/rxjs-hot-vs-cold-ob
