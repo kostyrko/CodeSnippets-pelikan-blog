@@ -4,7 +4,7 @@ Date: 2021-01-25
  12:00
 Updated:
 Category: angular
-Tags: bootstrap, angular, javascript
+Tags: bootstrap, angular, javascript, unfinished
 Slug: angular-cli
 related_posts: 
 

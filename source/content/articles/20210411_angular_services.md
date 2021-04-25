@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2021-04-11 10:00
 Updated:
 Category: angular
-Tags: angular
+Tags: angular, serwis, service, subscribe, unfinished
 Slug: angular-serwisy
 related_posts:
 
@@ -85,49 +85,52 @@ Orginalne żródło poniższego projektu: [GH - ZacznijProgramowac/easy-words](h
 [Udemy -Angular - kompletny kurs od podstaw - edycja na rok 2021](https://www.udemy.com/course/angular-kompletny-kurs-od-podstaw)
 
 
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/bcommit/7150e1ce3b29825f61b5a2320250c74ca1c9bfdf?branch=7150e1ce3b29825f61b5a2320250c74ca1c9bfdf&diff=split"></script>
 
 **model danych** easy-words-app/src/app/data/models.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/data/models.ts"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/data/models.ts"></script>
 
 
 **dane/plik zastępujący bazę danych** easy-words-app/src/app/data/data-base.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/data/data-base.ts"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/data/data-base.ts"></script>
 
 
 **serwis** - easy-words-app/src/app/services/words.service.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/services/words.service.ts"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/services/words.service.ts"></script>
 
 **Komponent korzystający z serwisu** - easy-words-app/src/app/compontents/question/question.component.ts 
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.ts"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.ts"></script>
 
 easy-words-app/src/app/compontents/question/question.component.html
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.html"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.html"></script>
 
 
 **Komponent korzystający z serwisu 2 - główny komponent przekazujący dane do dziecka (dump komponentu)**
 
 easy-words-app/src/app/app.component.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.ts"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.ts"></script>
 
 easy-words-app/src/app/app.component.html
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.html"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.html"></script>
 
 
 **Komponent przyjmujący dane od rodzica**  - easy-words-app/src/app/compontents/answers/answers.component.ts 
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.ts"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.ts"></script>
 
 
 easy-words-app/src/app/compontents/answers/answers.component.html
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.html"></script>
+<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.html"></script>
+
+
 
 
 
