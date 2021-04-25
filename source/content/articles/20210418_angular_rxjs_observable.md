@@ -98,10 +98,10 @@ Unsubscribe - metoda służąca do anulowania/zaprzestania subskrypcji (w przypa
 
 [Udemy -Angular - kompletny kurs od podstaw - edycja na rok 2021](https://www.udemy.com/course/angular-kompletny-kurs-od-podstaw)
 
-#### Projekt porównujący zachowanie **subject** oraz **Behavior subject**: [peoples-list-subjects-app](https://github.com/kostyrko/JS-sandbox/tree/master/7_Angular/peoples-list-subjects-app)
+#### Projekt porównujący zachowanie **subject** oraz **Behavior subject** => [peoples-list-subjects-app](https://github.com/kostyrko/JS-sandbox/tree/master/7_Angular/peoples-list-subjects-app)
 
 
-#### Projekt easy-words bazujący na Subjects
+#### Projekt easy-words bazujący na Subjects:
 
 <script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/bcommit/7150e1ce3b29825f61b5a2320250c74ca1c9bfdf?branch=7150e1ce3b29825f61b5a2320250c74ca1c9bfdf&diff=split"></script>
 
