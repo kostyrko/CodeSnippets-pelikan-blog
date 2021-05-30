@@ -26,11 +26,11 @@ Moduły, komponenty oraz serwisy są klasami posiadającymi dekoratory. Dekorato
 
 ngModules - nazwa aby rozróżnić od JS modules.
 
-Moduły tworzą kompilacyjny kontekst dla zbioru modułów (przez konwencję *root module* nazywa się *AppModule*)
+Moduły tworzą kompilacyjny kontekst dla zbioru modułów, które składają się na aplikację (przez konwencję *root module* nazywa się *AppModule*) - tu deklarujemy moduły, z których aplikacja się składa.
 
 Angular składa się z modułów -> app.module.ts (src/app/app.module.ts) splata wszystkie moduły w całość, poszczególny moduł natomiast zbudowana jest jako drzewo składające się z komponentów.
 
-główny moduł posiada dekorator @NgModule, który skłąda się na aplikację Angularową.
+główny moduł posiada dekorator @NgModule, który skłąda się na aplikację Angularową (nie mylić z dyrektywą **NgModel**).
 
 Na moduły składają się komponenty (w przypadku małej aplikacji może istnieć jeden moduł - root module)
 
@@ -48,7 +48,7 @@ Na moduły składają się komponenty (w przypadku małej aplikacji może istnie
           BrowserModule
         ],
         providers: [LoginService], // ! serwis zadeklarowany dla całej aplikacji - jeśli zadeklarowany w dekoratorze poszczególnego komponentu to wówczas jest jedynie widoczny dla danego komponentu oraz jego dzieci
-        bootstrap: [AppComponent] // ! zadeklarowanie początku aplikacji
+        bootstrap: [AppComponent] // ! zadeklarowanie początku aplikacji lub tzw root - na podstawie tego "komponentu" Angular tworzy aplikację.
       })
       export class AppModule { }
 
@@ -273,20 +273,23 @@ Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu
 
 
 ---
-### Biding
+### Biding - łączenie
 
-Event binding - pozwala aplikacji na reakcję na dane wprowadzone przez użytkownika
+** Podstawy **
 
-Property binding - pozwala na interpolację właściwości pozyskanych z aplikacji oraz wykorzystanie ich w HTML
+Event binding - pozwala aplikacji na reakcję na dane wprowadzone przez użytkownika - łączenie elementu DOM poprzez wydarzeniem z właściwościami komponentu (ts).
 
+Property binding - pozwala na interpolację właściwości pozyskanych z aplikacji oraz wykorzystanie ich w HTML - pozwala na połączenie właściwości komponentu z właściwością elementu drzewa dom.
 
-Obiekty HTML posiadają Atrybuty
+Two way binding - połączenie zwrotne, gdzie właściwość elementu drzewa dom jest połączony z właściwoscią komponentu, a ten jest połączony za pomocą wydarzenia z elementem drzewa DOM.
 
-Obiekty DOM posiadają właściwości (property)
+** Wyjaśnienie działania/ Podsumowanie **
 
-Atrybuty inicjalizują właściwości (property) w drzewie DOM, bindowanie w Angularze bezpośrednio wpływa stan właściwości obiektu z drzewa DOM (bindowanie wartości do właściwości/property), które mają wpływ na wyświetlanie się obiektów.
+Obiekty HTML posiadają Atrybuty // Obiekty DOM posiadają właściwości (property)
 
-Rodzaje bindingu (powiązań) - `One-way binding:` **Event binding ()**, **Property binding (Data binding) []** (np. poprzez interpolację), `Two-way binding [()]:`
+Atrybuty inicjalizują właściwości (property) w drzewie DOM, łaczenie/bindowanie w Angularze bezpośrednio wpływa na stan właściwości obiektu z drzewa DOM (łączenie/bindowanie wartości do właściwości/property), które mają wpływ na wyświetlanie się obiektów.
+
+Rodzaje bindingu (powiązań) - `One-way binding:` **Event binding ()**, **Property binding (Data binding) []** (np. poprzez interpolację), `Two-way binding [()]:` => patrz !! **Dyrektywa ngModel**
 
 
 #### Przykłady
@@ -474,9 +477,34 @@ Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Compon
 
 ## Zagadnienia zaawansowane - wyjaśnione w kolejnych postach
 
-#### @Input @Output
+#### @Input oraz @Output
 
-Dekoratory pozwalające na rozbicie logiki komponentu na mniejsze części/komponenty i komunikowanie się danymi pomiędzy nimi
+Dekoratory pozwalające na rozbicie logiki komponentu na mniejsze części/komponenty i komunikowanie się danymi pomiędzy nimi -> **@Input** działa niczym właściwość komponentu w React (props) tzn. pozwala na przekazanie do komponentu danych np.
+
+    // rodzic
+    <app-user [name]="Mike"></app-user>
+
+gdzie komponent app-user musie mieć przy pomocy dekoratora @Input zdefiniową właściwość
+
+    @Input() name: string;
+
+
+**@Output** - pozwala na przekazanie informacji do rodzica, aby tego dokoną naleŻy stworzyć nową instację klasy EventEmmiter // wywołanie funkcji konstruktora
+
+    @Output() nameChanged = new EventEmmiter<string>(); // typ generyczny moŻe być róŻnego rodzaju
+
+    onUserInput(event){
+      this.nameChanged.emit(event.target.value);
+    }
+
+    // rodzic:
+    <app-user [name]="name" (nameChanged)="onNameChanged($event)"></app-user>
+
+    name = "Mike"
+    
+    onNameChannged(newName) {
+      this.name = newName;
+    }
 
 --
 ### Routing 
