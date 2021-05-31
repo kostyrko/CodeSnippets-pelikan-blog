@@ -5,7 +5,7 @@ Updated:
 Category: angular
 Tags: angular, input, output, eventEmitter, ViewChild
 Slug: angular-komunikacja-komponentow
-related_posts: angular-wprowadzenie
+related_posts: angular-wprowadzenie, typescript-klasy
 
 ---
 

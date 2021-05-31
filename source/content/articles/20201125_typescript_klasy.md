@@ -1,11 +1,11 @@
 Title: TypeScript: klasy
 Author: mkostyrko
 Date: 2020-11-25 10:00
-Updated:
+Updated: 2021-05-31 10:00
 Category: typescript
 Tags: rts, typescript
 Slug: typescript-klasy
-related_posts: react-wprowadzenie
+related_posts: angular-wprowadzenie
 
 ![typescript-logo](https://refactoring.guru/images/patterns/languages/typescript.png)
 
@@ -19,20 +19,30 @@ TS transpiluje do klasy jeśli wybrany jest standard ES6 lub nowszy albo do funk
 constructor - funkcja wykonywana w trakcie inicjalizacji/tworzenia obiektu
 
     class Droid {
-      name: string; // tak samo w JS powyżej ES6
+      // deklaracja pola jakie zawiera klasa wraz z typem danych (inaczej typ any)
+      name: string; 
 
-      constructor(message: string) {
-        this.greeting = message;
+      // metoda konstruktora - tworzy nowe obiekty instancji klasy 
+      // pozwala na istnienie arg. przy inicjalizacji nowej instancji klasy
+      constructor(name: string) {
+        this.name = name;
       }
 
-      greet(this: Greeter) { // odwołanie do instancji, które powstała na podstawie klasy Droid
+      // funkcja zwracająca string
+      greet() : string {  
         return "Hello, " + this.name;
+      }
+
+      // zmienia imię ale nic nie zwraca, jako arg. przyjmuje string
+      changeDroidName (droid: string) : void {
+        this.name = droid;
       }
     }
 
-    let r2d2 = new Droid("R2D2"); // -> arg zapisuje jako name
+    // tworzenie nowej instancji klasy o typie Droid (>>kaŻda klasa definiuje nowy typ<<)
+    // zmienna r2d2 o typie Droid
+    const r2dr : Droid = new Droid("R2D2");
 
-    const r2d2Copy = { name: 'C3PO', greet : r2d2.greet}
 
 `this` - jest kontekstem, w zależności od miejsca, w którym się do niego odwołujemy może odnosić się do czegoś innego, w przypadku klas zwykle odnosi się do instancji klasy lub inaczej to ujmując do tego obiektu, na którym dana metoda jest wywoływana
 
@@ -67,7 +77,7 @@ Prywatne sprawia, że jego edycja jest możliwa jedynie przy pomocy przeznaczone
         private droids: string[] = [] // to jest również oznaczenie prywatności
         
         constructor(name: string) {
-            this.#name = name;
+            this.name = name;
         }
 
         greet() {
@@ -182,6 +192,13 @@ Klasa droid będzie musiała posiadać imię (name) oraz metodę greet(która pr
 [TypeScript - Generics, klasy i zaawansowane typy](https://www.frontlive.pl/typescript-sredniozaawansowany/)
 
 [The Catalog of TypeScript Examples](https://refactoring.guru/design-patterns/typescript)
+
+[TypeScript – pierwsze kroki. Tworzenie klas w TypeScript. Część Pierwsza.](http://jsdn.pl/typescript-pierwsze-kroki-tworzenie-klas-w-typescript/)
+
+[www.typescriptlang.org -> Classes](https://www.typescriptlang.org/docs/handbook/2/classes.html)
+
+[Klasy w TypeScript - clockworkjava.pl](https://clockworkjava.pl/2019/09/klasy-w-typescript/)
+
 
 JS
 

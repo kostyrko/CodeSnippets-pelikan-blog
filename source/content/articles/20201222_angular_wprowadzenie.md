@@ -5,7 +5,7 @@ Updated:
 Category: angular
 Tags: angular
 Slug: angular-wprowadzenie
-related_posts: react-wprowadzenie
+related_posts: react-wprowadzenie, typescript-klasy
 
 ---
 
