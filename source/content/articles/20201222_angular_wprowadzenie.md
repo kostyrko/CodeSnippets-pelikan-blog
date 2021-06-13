@@ -1,7 +1,7 @@
 Title: Angular: wprowadzenie
 Author: mkostyrko
 Date: 2020-12-22 10:00
-Updated:
+Updated: 2021-06-13 10:00
 Category: angular
 Tags: angular
 Slug: angular-wprowadzenie
@@ -13,16 +13,30 @@ related_posts: react-wprowadzenie, typescript-klasy
 
 ### Angular wprowadzenie
 
-Angular został napisany w TypeScript
+Angular opraty jest o TypeScript
 
-Aplikacje budowane są z modułów, które składają się komponentów (w przypadku małej aplikacji może istnieć jeden moduł - root module). Każdy z komponentów składa się z klasy pisanej w TS oraz szablony w HTML. Pierwszy z nich odpowiada za informacje, które powinny być widoczne w kodzie html, natomiast informacje zapisane w html powinny odpowiadać za wyświetlanie danych i umożliwienie interakcji z użytkownikiem.
+Aplikacje budowane są z modułów, które składają się komponentów (w przypadku małej aplikacji może istnieć jeden moduł - root module). Każdy z komponentów składa się z klasy pisanej w TS oraz szablonu w HTML. Pierwszy z nich odpowiada za informacje, które powinny być widoczne w kodzie html, natomiast informacje zapisane w html powinny odpowiadać za wyświetlanie danych i umożliwienie interakcji z użytkownikiem.
 
 Moduły, komponenty oraz serwisy są klasami posiadającymi dekoratory. Dekoratory wskazują na ich typ oraz zapewniają ich metadane, które mają wpływ na zachowanie Angulara.
+
+Angular wymaga używania podwójnego cudzysłowu przy pisaniu wyrażeń.
+
+Przykładowo
+
+    [ngClass] = "{'btn-primary' : newItem !== '' , btn-default === ''}"
+
+#### Spis treści
+
+[* ngModules](#ngModules)
+
+[* Komponenty - wyświetlanie i komunikacja z użytkownikiem ](#komponenty)
+
+[* Interpolacja](#interpolacja)
 
 
 ---
 
-### Moduły (ngModules) - kontekts
+### Moduły (ngModules) - kontekts {#ngModules}
 
 ngModules - nazwa aby rozróżnić od JS modules.
 
@@ -55,7 +69,7 @@ Na moduły składają się komponenty (w przypadku małej aplikacji może istnie
 czytaj dalej [Introduction to modules](https://angular.io/guide/architecture-modules)
 
 ---
-### Komponenty - wyświetlanie i komunikacja z użytkownikiem
+### Komponenty - wyświetlanie i komunikacja z użytkownikiem {#komponenty}
 
 Komponent jest klasą posiadającą dekorator - wyświetla/tworzy html i obsługuje zdarzenia,
 komponenty muszą być zadeklarowane w module (środowisku/kontekście). Komponenty służą do wyświetlania danych i komunikacji z użytkownikiem.
@@ -115,7 +129,7 @@ Wytłumaczenie podstawowych znaków:
 `#` - odwołanie do zmiennej/referencji szablonu zmiennych (elementu HTML)
 `*` - dyrektywa strukturalna
 
-### Interpolacja
+### Interpolacja {#interpolacja}
 
 Interpolacja jest podstawowym narzędziem Angulara, które pozwala na wymianę danych pomiędzy klasą a szablonem HTML
 (stosowane jest w html ale odwołuje się do informacji zawartych w klasie komponentu)
@@ -133,6 +147,7 @@ Przykłady zastosowania interpolacji
 `{{ 2+2 }}` - interpolacja wyrażenia matematycznego
 
 ---
+## Operatory
 
 ### Operator Pipe
 
@@ -169,13 +184,18 @@ Nadpisanie lokalizacji
 
 Biblioteka **nxg pipes**
 
+## Dyrektywy {#dyrektywy}
+
+Komponent sam w sobie jest dyrektywą (instrukcją wykonania czegoś), jednak równie istotanymi dyrektywami w Angularze, są te które pozwalającymi na manipulowanie szablonem (html) np. poprzez tworzenie warunków, pętli, wprowadzaniem klas w sposób dynamiczny etc. (gdzie zmienna, na której są one oparte lub od kttórej są zaleŻne znajduje się w TS). 
+
+Warto pamiętać: Dyrektywy które mają wpływ na strukturę drzewa DOM mają przed sobą gwiazdkę np. *ngFor w odróżnieniu od ngModel - te dyrektywy nazywane strukturalnymi. Inne dyrektywy nazywamy atrybutowymi, ponieważ zmieniają atrybutu elementów drzewa DOM.
 
 ---
-### *ngFor - dyrektywa powtórzenia
+### *ngFor - dyrektywa powtórzenia {#ngFor}
 
-**#ngFor** jest dyrektywą powtórzenia dla Angulara i powtarza dany element (gospodarza) dla każdego elementu z listy // gospodarzem jest ten element w który dyrektywa jest wpisana. Innymi słowy **ngFor** powiela elementy **html** tyle razy ile jest elementów w danej liście.
+**ngFor** jest dyrektywą powtórzenia - powtarza dany element (gospodarza) dla każdego elementu ze zbioru (gospodarzem jest ten element w który dyrektywa jest wpisana). Innymi słowy **ngFor** powiela elementy **html** tyle razy ile jest elementów w danym zbiorze. Dyrektywa ***ngFor** jest częścią modułu **BrowserModule** (importowanego w pliku TS komponentu).
 
-    let (zdefiniowanie zmiennej) item of (z) items (lista np. tablica)
+    let (zdefiniowanie zmiennej) item of (z) items (zbiór/lista np. tablica)
 
 `*ngFor="let hero of heroes"` - dla każdego bohater z bohaterów gdzie w pliku **heroes.components.ts** heroes został zadeklarowany jako właściwość klasy definiującej komponent `heroes = HEROES;`
 
@@ -185,6 +205,8 @@ Biblioteka **nxg pipes**
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
+
+W wyniku zastosowania dyrektywy **ngFor** w powyŻszym przykładzie, postanie li * n , gdzie *n* odpowiada liczbie elementów w zbiorze **heroes**
 
 **ngFor** pozwala również na odwołanie się do właściwości indeksowej danego elementu, w tym celu można stworzyć kolejną zminną **i**, którą można następnie wykorzystać w interpolacji - `*ngFor="let hero of heroes, let i = index"`
 
@@ -210,22 +232,38 @@ Patrz pipe: [KeyValuePipe](https://angular.io/api/common/KeyValuePipe) od pobier
       object: {[key: number]: string} = {2: 'foo', 1: 'bar'};
       map = new Map([[2, 'foo'], [1, 'bar']]);
     }
+---
 
+### *ngClass {#ngClass}
+
+Zmień klasę elementu do którego dyrektywa jest przypisana, moŻe być zastosowana jedynie wówczas gdy jest jej przypisana jakaś określona (ngClass stosuje się w połączeniu z data binding -> [] tak aby nie trzeba było definiować połączenia osobno, jednak ngClass .
+
+    [ngClass]="someItem"
+
+albo przekazujemy obiekt,  który zawiera w sobie warunek (jeden lub więcej, oddzielone przecinkiem).
+
+    [ngClass] = "{'btn-primary' : newItem !== '' , 'btn-default' === ''}"
+
+### *ngStyle {#ngStyle}
+
+Dyrektywa pozwalająca na edytowanie stylu danego obiektu
+
+    [ngStyle]="{backgroundColor: i % 2 === 0 ? 'yellow' : 'blue'}"
 
 ---
-### *ngIF (then,else, ngSwitch) - dyrektywa warunku istnienia
+### *ngIF (then, else, ngSwitch) - dyrektywa warunku istnienia {#ngIf}
 
-Kolejną dyrektywą jest `*ngIF` która w przypadku gdy `warunek = undefined` nie tworzy elementu, natomiast jeśli warunek jest spełniony to tworzy dany element.
+Kolejną dyrektywą jest `*ngIF` która w przypadku gdy `warunek = undefined lub false` nie tworzy elementu, natomiast jeśli warunek jest spełniony to tworzy dany element.
 
-**:::** ***alternatywnie :*** visibility -> hidden `<button (click)="btn.style.visibility = 'hidden">`  - element nie znika z drzewa DOM, a do tego nie zwalania miejsca na stronie **:::**
+**:::** ***alternatywnie :*** visibility -> hidden `<button (click)="btn.style.visibility = 'hidden'">`  - ale w takim przypadku element nie znika z drzewa DOM, a do tego nie zwalania miejsca na stronie **:::**
 
-Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu / np na początku gdy nie został jeszcze wybrany)
+Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu / np. na początku gdy nie został jeszcze wybrany)
 
     <div *ngIf="selectedHero">
       [...]
     </div>
 
-#### *ngIF, else i ng-template
+#### *ngIF, else i ng-template {#ngTemplate}
 
 **else** podobnie jak w innych elementach JS oznacza możliwość alternatywną. Np. można wskazać odwołujący się do lokalnej referencji zawarty w znacznikach `<ng-template></ng-template>` który jest wykorzystywany w tym kontekście - opakowuje element, który ma się pojawić gdy dany warunek wcześniej postawiony nie zostaje spełniony (znaczniki te nie tworzą same w sobie elementu - nie istnieją w drzewie DOM)
 
@@ -236,7 +274,7 @@ Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu
     </ng-template>
 
 
-#### *ngIF, then, else i ng-container
+#### *ngIF, then, else i ng-container {#ngContainer}
 
 `ng-container` - jest znacznikiem/kontenerem, który pozwala na skonstruowanie bardziej złożonej logiki związanej z dyrektywą warunku istnienia ( w ten sposób unikamy tworzenia dodatkowego elementu DIV lub innego dodatkowego elementu drzewa DOM) - pełni rolę elementu do obsługi logiki
 
@@ -260,7 +298,7 @@ Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu
     </ng-container>
 
 
-#### ngSwitch + ngSwitchCase - wyświetlanie warunkowe
+#### ngSwitch + ngSwitchCase - wyświetlanie warunkowe {#ngSwitch}
 
 **ngSwitch** - sprawdza warunek i jeśli jest on spełniony to wówczas dany element jest tworzony 
 
@@ -273,7 +311,7 @@ Przykład zastosowania (jeśli selectedHero = undefined nie twórz tego elementu
 
 
 ---
-### Biding - łączenie
+### Biding - łączenie {#binding}
 
 ** Podstawy **
 
@@ -309,7 +347,7 @@ Rodzaje bindingu (powiązań) - `One-way binding:` **Event binding ()**, **Prope
     <input type="text" [(value)]="task.name">
 
 
-#### Property binding
+#### Property binding {#propertyBinding}
 
 Pierwszy sposób na data-binging **heroes.component.html** -> `{{hero}}`, w nawiązaniu do **heroes.component.ts** -> gdzie hero zostało zadeklarowane jako właściwość klasy `hero = 'Windstorm';`
 
@@ -347,7 +385,7 @@ Wywołanie zadarzenia asynchronicznego np. `(keyup)="0"` albo `(change)="(0)"` w
 
 
 
-### Events binding
+### Event binding {#eventBinding}
 
 Składnia -> (nasłuchujTegoWydarzenia)="wykonajTąFunkcję(zTymArgumentem")
 
@@ -387,8 +425,7 @@ Spis wydarzeń: [Event reference](https://developer.mozilla.org/en-US/docs/Web/E
 
 ---
 
-
-### Class binding
+### Class binding {#classBinding}
 
 Powiązania pozwalają również na połączenie klasy oraz konkretnych styli wraz ze zdefiniowanym warunkiem
 
@@ -403,9 +440,9 @@ Składnia: `[class.jakaś-klasa-css]="jakiś-warunek"`
 
 ---
 
-### Dyrektywa ngModel - Dwustronne połączenie (property+event binding)
+### Dyrektywa ngModel - Dwustronne połączenie (property + event binding) {#ngModel}
 
-`[(ngModel)]` - składnia definiująca połączenie dwustronne i można je rozumieć jako połączenie **property** oraz **event binding**
+`[(ngModel)]` - składnia definiująca połączenie dwustronne (funkcjonuje na zasadzie połączenie **property** oraz **event binding**). Nie posiada gwiazdki przez nazwą powniewaŻ nie zmienia struktury drzewa DOM, a jedynie zmienia wartość przypisaną do obiektu drzewa DOM.
 
 Przykład zastosowania (łączy input z elementem name obiektu hero zadeklarowanym jako właściwość komponentu)
 
@@ -465,7 +502,7 @@ istnieje jeszcze event `(ngModelChange)` dostępny dla formularzy
 
 
 ---
-### Serwis - zaplecze/"back-end" aplikacji
+### Serwis - zaplecze/"back-end" aplikacji {#serwis}
 
 serwis (klasa z dekoratorem @Injectable) - wykonuje zadanie związane z komunikowaniem (np. pobieraniem) danych dla komponentów  - dostarcza dane, pomaga w ich analizie oraz przetwarzaniu. Serwis również wspomaga komunikację pomiędzy komponentami (serwisy HTTP, logowanie błędów, logowanie użytkowników) - pozwala na wstrzyknięcie providerów jako zależności do klasy
 
@@ -477,7 +514,7 @@ Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Compon
 
 ## Zagadnienia zaawansowane - wyjaśnione w kolejnych postach
 
-#### @Input oraz @Output
+#### @Input oraz @Output {#inputOutput}
 
 Dekoratory pozwalające na rozbicie logiki komponentu na mniejsze części/komponenty i komunikowanie się danymi pomiędzy nimi -> **@Input** działa niczym właściwość komponentu w React (props) tzn. pozwala na przekazanie do komponentu danych np.
 
@@ -520,7 +557,7 @@ Routing pozwala na zdefiniowanie ścieżki nawigacji (pomiędzy stanami aplikacj
 
 ---
 
-#### RxJS - asynchroniczność w serwisie
+#### RxJS - asynchroniczność w serwisie {#rxJs}
 
 Observable.subscribe() is the critical difference
 
@@ -605,11 +642,6 @@ Zawartość folderu projektowego
 Przykładowy projekt wykonany przy pomocy Angulara dostępny na stackblitz.com: [angular-nstnfl](https://stackblitz.com/edit/angular-nstnfl?file=src/app/app.component.ts) źródło projektu [Getting started with Angular](https://angular.io/start)
 
 ---
-
-## Na zakończenie
-### Wtyczka dla Angulara
-
-[**Augury**](https://chrome.google.com/webstore/detail/augury/elgalmkoelokbchhkhacckoklkejnhcd/related)
 
 ### Glossary
 
