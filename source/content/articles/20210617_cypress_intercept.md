@@ -1,0 +1,55 @@
+Title: Cypress: cy.intercept() - przechwytywanie zapytań HTTP
+Author: mkostyrko
+Date: 2021-06-17 10:00
+Updated:
+Category: angular
+Tags: unfinished, angular, cypress, testy
+Slug: cypress-angular-komponenty
+related_posts:
+
+
+![cypress]()
+
+### cy.intercept()
+
+HTTP requests - manage the behavior of these requests
+
+Waiting on HTTP requests to complete before executing commands. Making assertions and modifying (statically or dynamically): the request made by your front-end application.
+the response from your back-end service. Mocking all or some of your backend API by stubbing out responses.
+
+    beforeEach(() => {
+        cy.viewport(viewport)
+        cy.intercept('GET', '/xxx/xxx_data?page=1', { fixture: 'xxx/xxx_data.json' })
+        
+        
+ ### cy.intercept() + cy.wait()
+ 
+Listen to GET to comments/1
+
+    cy.intercept('GET', '**/comments/*').as('getComment')
+
+
+we have code that gets a comment when
+
+    // the button is clicked in scripts.js
+    cy.get('.network-btn').click()
+
+wait for GET comments/1
+
+    cy.wait('@getComment').its('response.statusCode').should('be.oneOf', [200, 304])
+    
+    
+tip: log the request object to see everything it has in the console
+
+    cy.get('@post').then(console.log)
+
+
+Źródło:
+
+[intercept - cypress.io](https://docs.cypress.io/api/commands/intercept)
+
+[example.cypress.io/commands/waiting](https://example.cypress.io/commands/waiting)
+
+[Asserting Network Calls from Cypress Tests](https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/)
+
+
