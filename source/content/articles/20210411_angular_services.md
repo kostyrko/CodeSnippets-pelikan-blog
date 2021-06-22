@@ -13,16 +13,20 @@ related_posts:
 
 #### Wstęp
 
-Dowolna klasa TS, wykonuje zadanie dostarczania danych na potrzeby komponentów (komunikacja z API, komunikacja pomiędzy komponentami, przechowywanie stanu aplikacji).
-Serwis posiada swój dekorator @Injectable (wskauje na to, że jest serwisem + dane określające w jaki sposób działa serwis + użycie innych serwisów).
+Dowolna klasa TS, przy pomocy, której istnieje możliwość zarządzania danymi (stanem aplikacji) - wykonuje zadanie dostarczania danych na potrzeby komponentów (np. poprzez komunikacja z API, komunikacja pomiędzy komponentami, przechowywanie stanu aplikacji).
 
+
+Serwis posiada swój dekorator **@Injectable** - ten wskazuje na to, że dana klasa jest serwisem i jej logikę można wstzyknąć do innego komponentu przy pomocy **providera** (dostarczyciela) + dane określające w jaki sposób działa serwis + użycie innych serwisówv.
+
+
+Przykładowa deklaracja serwisu
 
     @Injectable()
     export class LoggerService {
       log(msg: any) {console.log(msg);}
     }
 
-Provider w deklaracji komponentu ===> providers: [LoggerService]
+Deklaracja serwisu znajduje się w tablicy **providers** (dostarczycieli) danego komponentu ===> providers: [LoggerService]
 
 W kostruktorze -> dependency Injection (przygotowanie instancji obiektu i wstyrzknięcie jej do komponentu)
 
@@ -84,30 +88,183 @@ Orginalne żródło poniższego projektu: [GH - ZacznijProgramowac/easy-words](h
 
 [Udemy -Angular - kompletny kurs od podstaw - edycja na rok 2021](https://www.udemy.com/course/angular-kompletny-kurs-od-podstaw)
 
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/bcommit/7150e1ce3b29825f61b5a2320250c74ca1c9bfdf?branch=7150e1ce3b29825f61b5a2320250c74ca1c9bfdf&diff=split"></script>
-
+---
 **model danych** easy-words-app/src/app/data/models.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/data/models.ts"></script>
+    export interface WordType {
+      word: string;
+      type: Type;
+      correct?: boolean;
+    }
 
+    export enum Type {
+      NOUN, VERB
+    }
 
+---
 **dane/plik zastępujący bazę danych** easy-words-app/src/app/data/data-base.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/data/data-base.ts"></script>
 
+    import { Type, WordType } from './models';
 
+    export const WORDS: WordType[] = [
+      {
+        word: 'accept',
+        type: Type.VERB,
+      },
+      {
+        word: 'advice',
+        type: Type.NOUN,
+      },
+      {
+        word: 'blood',
+        type: Type.NOUN,
+      },
+      {
+        word: 'clear',
+        type: Type.VERB,
+      },
+      {
+        word: 'damage',
+        type: Type.VERB,
+      },
+      {
+        word: 'choice',
+        type: Type.NOUN,
+      },
+      {
+        word: 'educate',
+        type: Type.VERB,
+      },
+    ];
+
+---
 **serwis** - easy-words-app/src/app/services/words.service.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/services/words.service.ts"></script>
 
+    import { Injectable } from '@angular/core';
+    import { WORDS } from '../data/data-base';
+    import { WordType, Type } from '../data/models';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class WordsService {
+
+      // zdefiniowanie tablic jako prywatnych i niewidocznych po za klasą (do ich wydobycia poniższe metody)
+      private words: WordType[] = [];
+      private nouns: WordType[] = [];
+      private verbs: WordType[] = [];
+
+      constructor() {
+        // zainicjowanie zawartości tablicy przechowującej słowa
+        this.words = WORDS;
+      }
+
+      getWords(): WordType[] {
+        return this.words;
+      }
+
+      getNouns(): WordType[] {
+        return this.nouns;
+      }
+
+      getVerbs(): WordType[] {
+        return this.verbs;
+      }
+
+      addNoun(value: WordType): void {
+        this.nouns.push(value);
+      }
+
+      addVerb(value: WordType): void {
+        this.verbs.push(value);
+      }
+
+      check() {
+        // word.correct true albo false jeśli typ słowa jest równy tej grupie do, której został przypisany
+        this.nouns.map(word => (word.correct = word.type === Type.NOUN));
+        this.verbs.map(word => (word.correct = word.type === Type.VERB));
+      }
+    }
+
+---
 **Komponent korzystający z serwisu** - easy-words-app/src/app/compontents/question/question.component.ts 
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.ts"></script>
 
+    import { Component, OnInit } from '@angular/core';
+    import { WordType } from 'src/app/data/models';
+    import { WordsService } from 'src/app/services/words.service';
+
+    @Component({
+      selector: 'app-question',
+      templateUrl: './question.component.html',
+      styleUrls: ['./question.component.css']
+    })
+    export class QuestionComponent implements OnInit {
+
+      // przechowuje jedno słowo, wyświetlane w danym momencie
+      // ma postać obiektu WordType zdefiniowane w models.ts
+      word: WordType = null;
+
+      constructor(
+        // wstrzyknięcie komponentu (@Injectable({providedIn: 'root'})) więc tu nie musi być podany w tablicy providers
+        // private - dostępny tylko w klasie komponentu // public - html również ma do niego dostęp
+        private wordsService: WordsService
+      ) { }
+
+      ngOnInit(): void {
+        // wywołanie metody w celu pobrania słowa
+        this.fetchWord();
+      }
+
+      // pobiera element z listy oraz go usuwa (shift())
+      private fetchWord(): void {
+        this.word = this.wordsService.getWords().shift();
+      }
+
+      // dodanie słowa do zbioru (tablicy) nouns znajdującej się serwisie WordsService
+      addToNouns(word: WordType): void {
+        this.wordsService.addNoun(word);
+        this.fetchWord();
+      }
+
+      // dodanie słowa do zbioru (tablicy) verbs znajdującej się serwisie WordsService
+      addToVerbs(word: WordType): void {
+        this.wordsService.addVerb(word);
+        this.fetchWord();
+      }
+
+      // odwołanie się do metody sprawdzającej poprawność przypisani słów znajdującej się serwisie WordsService
+      check(): void {
+        this.wordsService.check();
+      }
+    }
+
+---
 easy-words-app/src/app/compontents/question/question.component.html
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.html"></script>
+    <div class="row center">
+      <div class="col s12">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <!-- jeżeli obiekt word ma wartość to jest wyświetlane w innym przypadku koniec/ obiekt ten za każdym razem ulega zmianie w momencie użycia poniższych 2 pierwszych metod-->
+            <h2>{{ word ? word.word : 'Koniec'}}</h2>
+          </div>
+          <div class="card-action">
+            <button class="btn-large blue m5" (click)="addToNouns(word)" *ngIf="word">
+              Noun
+            </button>
+            <button class="btn-large blue" (click)="addToVerbs(word)" *ngIf="word">
+              Verb
+            </button>
+            <button class="btn-large black" (click)="check()" *ngIf="!word">
+              Sprawdź
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 **Komponent korzystający z serwisu 2 - główny komponent przekazujący dane do dziecka (dump komponentu)**
