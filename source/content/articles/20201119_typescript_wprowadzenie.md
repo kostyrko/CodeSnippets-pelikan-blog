@@ -1,13 +1,25 @@
 Title: TypeScript: wprowadzenie + podstawowe typy
 Author: mkostyrko
 Date: 2020-11-19 10:00
-Updated:
+Updated: 2021-06-25 10:00
 Category: typescript
 Tags: rts, typescript
 Slug: typescript-wprowadzenie
 related_posts: react-wprowadzenie
 
 ![typescript-logo](https://raw.githubusercontent.com/basarat/typescript-book/master/images/venn.png)
+
+#### Spis treści
+
+[* interface](#interface)
+
+[* enum](#enum)
+
+[* Funkcje jako typy](#funkcjaTyp)
+
+[* Funkcje - zwracanie typów oraz 'void' & 'undefined'](#zwracanieTypu)
+
+----
 
 TypeScript jest supersetem (nadzbiorem) JavaScript - oznacza to, że jest swego rodzaju "rozszerzeniem" JS posiadającym własne reguły (nowe możliwości) ale ulega kompilacji do JS.
 
@@ -129,8 +141,7 @@ Tworzenie własnego **typu** - Zmienna
 
 
 
-
-**Interface** - tworzenie typu **Obiektów**
+**Interface** {#interface} - tworzenie typu **Obiektów**
 
 Interfejs powinien być poprzedzony słowem **interface**
 
@@ -244,11 +255,11 @@ więcej na ten temat: [TypeScript - Tuples](https://www.tutorialsteacher.com/typ
 
 ---
 
-**Enum - wyliczeniowy typ danych**
+**Enum - wyliczeniowy typ danych** {#emu}
 
-Enums to "zbiór nazwanych, określonych wartości liczbowych", gdzie początkowa liczba domyślnie jest równa 0 a każda kolejna jest +1
+Enums to jest **zbiorem wyliczeniowym możliwych wartości typu** (gdzie początkowa liczba domyślnie jest równa 0 a każda kolejna jest +1).
 
-    enum Status {
+    const enum Status {
         Running,
         Timeout,
         Disabled
@@ -258,7 +269,7 @@ Enums to "zbiór nazwanych, określonych wartości liczbowych", gdzie początkow
 
 Poszczególnym wartościom mogą być przypisane inne liczby np.
 
-    enum Status {
+    const enum Status {
         Running = 5,
         Timeout = 10,
         Disabled // domyślnie jest +1 więc = 11
@@ -266,6 +277,23 @@ Poszczególnym wartościom mogą być przypisane inne liczby np.
 
 Często nazwy poszczególnych wartości w enum pisanę są wyłącznie dużymi literami np. `RUNNING` zamiast `Running`
 
+
+Enum pozwala również na zadeklarowanie wartości przy pomocy łańcucha znaków
+
+
+    const enum Status {
+            RUNNING = 'Running',
+            TIMEOUT = 'Timeout',
+            DISABLED = 'Disabled''
+        }
+
+    stosowanie:
+
+    const runner = (status: Status) => console.log(`the status is: ${status}`)
+
+    runner(Status.RUNNING) // 'the status is: running'
+
+    runner(Stoped) // Nie można przypisać argumentu typu Stoped to parametru 'Status'
 
 źródła:
 
@@ -351,7 +379,7 @@ funkcja może zwracać *never* w przypadku, gdy funkcja nie tworzy wartości/val
 
 
 --
-### 5. Funkcje jako typy
+### 5. Funkcje jako typy {#funkcjaTyp}
 
 Deklarowanie zmiennej z typem **Function** pozwala nam na zapewnienie tego, że będzie ona przechowywać jedynie funkcję,a nie coś innego dodatkowo istnieje możliwość wskazania wzoru (typu) tej funkcji
 
@@ -380,7 +408,7 @@ Przykład ze wskazaniem typu funkcji np. `()=> number` nie przyjmuje żadnych ar
     sumDroids = addDroids // ok - spełnia definicję wyżej wskazaną
     sumDroids = sumUpDroids // error - nie spełnia wskazanego typu
 
-### Funkcje - zwracanie typów + 'void' & 'undefined'
+### Funkcje - zwracanie typów + 'void' & 'undefined' {#zwracanieTypu}
 
 Istnieje możliwość typu zwracanej wartości funkcji -> poprzez zastosowanie po argumentach dwukropka oraz podania odpowiedniego typu (stosowane jedynie w przypadku potrzeby)
 
