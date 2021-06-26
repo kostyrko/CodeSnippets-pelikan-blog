@@ -54,22 +54,30 @@ Deklaracja serwisu (*dependency injection*) znajduje się w tablicy **providers*
 
 **Wykorzystanie serwisu w ramach komponentu**
 
+W Angular analizuje argumenty w konstruktorze oraz zadeklarowane zależności (wyżej) i dokonuje wstrzyknięcia zależności (dependency injection) na podstawie wskazania w konstruktorze
+
 
     import { Component } from "@angular/core";
     import { LoggerService } from '../shared/loggerService.service';
 
     @Component({
         selector: "log-test",
-        templateUrl: "./log-test.component.html"
+        templateUrl: "./log-test.component.html",
+        providers: [LoggerService] // wskazanie typu providera
     })
     export class LogTestComponent {
+
+        loggerService : LoggerService // nowa właściwość klasy loggerService typu LoggerService
+
         constructor(
-          private logger: LoggerService
-          ) { }
+          loggerService: LoggerService // deklaracja argumentu
+          ) { 
+            this.loggerService = LoggerService // dependency injection
+          }
 
         ngOnInit {
           testLog(): void {
-            this.logger.log("Test the `log()` Method");
+            this.loggerService.log("Test the `log()` Method");
           }
         }
     }
