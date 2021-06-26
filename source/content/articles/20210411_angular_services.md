@@ -13,34 +13,86 @@ related_posts:
 
 #### Wstęp
 
-Dowolna klasa TS, przy pomocy, której istnieje możliwość zarządzania danymi (stanem aplikacji) - wykonuje zadanie dostarczania danych na potrzeby komponentów (np. poprzez komunikacja z API, komunikacja pomiędzy komponentami, przechowywanie stanu aplikacji).
+Klasa TyperScriptowa - przy pomocy, której istnieje możliwość zarządzania danymi (a docelowo stanem aplikacji). Jej zadaniem jest - dostarczania danych na potrzeby komponentów (np. poprzez komunikacja z API, komunikacja pomiędzy komponentami, przechowywanie stanu aplikacji).
 
 
-Serwis posiada swój dekorator **@Injectable** - ten wskazuje na to, że dana klasa jest serwisem i jej logikę można wstzyknąć do innego komponentu przy pomocy **providera** (dostarczyciela) + dane określające w jaki sposób działa serwis + użycie innych serwisówv.
+Serwis posiada swój dekorator **@Injectable** - ten wskazuje na to, że dana klasa jest serwisem i jej logikę można wstzyknąć do innego komponentu przy pomocy **dependecy injection**  poprzez zadeklarowanie providera (dostarczyciela) + dane określające w jaki sposób działa serwis + użycie innych serwisówv.
 
+---
+Przykładowa **deklaracja tworząca klasę serwisu** (np. **loggerService.service.ts**)
 
-Przykładowa deklaracja serwisu
-
+    import { Injectable } from '@angular/core';
     @Injectable()
     export class LoggerService {
-      log(msg: any) {console.log(msg);}
+      log(msg: any) {
+        console.log(msg);
+      }
     }
 
-Deklaracja serwisu znajduje się w tablicy **providers** (dostarczycieli) danego komponentu ===> providers: [LoggerService]
 
-W kostruktorze -> dependency Injection (przygotowanie instancji obiektu i wstyrzknięcie jej do komponentu)
+---
+**Wykorzystanie serwisu w ramach aplikacji**
 
+
+Deklaracja serwisu (*dependency injection*) znajduje się w tablicy **providers** (dostarczycieli ===> `providers: [LoggerService]` w **app.module.ts**
+
+**app.module.ts**
+
+    // import serwisu
+    import { LoggerService } from './shared/loggerService.service';
+    // import komponentu wykorzystującego serwis
+    import { LoggingComponent } from './logging/logging.component';
 
     @NgModule({
-        imports: [ BrowserModule ],
-        declarations: [ App, OtherComponent ],
-        bootstrap: [ App ],
-        providers: [ LoggerService ]
-      })
-      export class AppModule {
-        constructor(private logger: LoggerService) {
-        logger.log('Hello')
+      imports: [BrowserModule],
+      declarations: [AppComponent, LogTestComponent],
+      bootstrap: [AppComponent],
+      providers: [LoggerService]
+    })
+    export class AppModule { }
+
+
+**Wykorzystanie serwisu w ramach komponentu**
+
+
+    import { Component } from "@angular/core";
+    import { LoggerService } from '../shared/loggerService.service';
+
+    @Component({
+        selector: "log-test",
+        templateUrl: "./log-test.component.html"
+    })
+    export class LogTestComponent {
+        constructor(
+          private logger: LoggerService
+          ) { }
+
+        ngOnInit {
+          testLog(): void {
+            this.logger.log("Test the `log()` Method");
+          }
+        }
+    }
+
+
+
+**providedIn: 'root'**
+
+zastosowanie providedIn: 'root' w ramach dekoratora `@Injectable()` powoduje, że deklarujemy jego dostępność w całym komponencie, wówczas nie ma potrzeby deklarowania go wśród providerów w **app.module.ts**
+
+Alternatywnie -> można zastosować `providedIn: 'root'`
+
+    import { Injectable } from '@angular/core';
+    @Injectable(
+      // declares that this service should be created
+      // by the root application injector.
+      providedIn: 'root',
+    )
+    export class LoggerService {
+      log(msg: any) {
+        console.log(msg);
       }
+    }
 
 #### Dekoratory
 
@@ -308,3 +360,5 @@ easy-words-app/src/app/compontents/answers/answers.component.html
 [angular.io -> Add services](https://angular.io/tutorial/toh-pt4)
 
 [angular.io -> Dependency injection in Angular](https://angular.io/guide/dependency-injection)
+
+[Logging in Angular Applications](https://www.codemag.com/article/1711021/Logging-in-Angular-Applications)
