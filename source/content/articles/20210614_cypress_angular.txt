@@ -31,7 +31,6 @@ atrybut data-cy będzie tworzony na podstawie stringu 'nav' oraz zmiennej *nav*
 ## App Actions i Page Objects
 
 
-
 Cypress jednostkowy
 
 cypress + react -> [@cypress/react](https://github.com/cypress-io/cypress/tree/master/npm/react)

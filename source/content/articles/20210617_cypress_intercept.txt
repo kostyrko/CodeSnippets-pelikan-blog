@@ -4,13 +4,15 @@ Date: 2021-06-17 10:00
 Updated:
 Category: angular
 Tags: unfinished, angular, cypress, testy
-Slug: cypress-angular-komponenty
+Slug: cypress-intercept
 related_posts:
 
 
 ![cypress]()
 
 ### cy.intercept()
+
+Stubbing - podstawianie danych pod zapytania
 
 HTTP requests - manage the behavior of these requests
 
@@ -20,7 +22,7 @@ the response from your back-end service. Mocking all or some of your backend API
     beforeEach(() => {
         cy.viewport(viewport)
         cy.intercept('GET', '/xxx/xxx_data?page=1', { fixture: 'xxx/xxx_data.json' })
-        
+    })
         
  ### cy.intercept() + cy.wait()
  
