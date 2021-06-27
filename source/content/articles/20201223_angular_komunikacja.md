@@ -3,13 +3,44 @@ Author: mkostyrko
 Date: 2020-12-23 10:00
 Updated:
 Category: angular
-Tags: angular, input, output, eventEmitter, ViewChild
+Tags: angular, input, output, eventEmitter, ViewChild, unfinished
 Slug: angular-komunikacja-komponentow
 related_posts: angular-wprowadzenie, typescript-klasy
 
 ---
 
 ![angular](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png)
+
+#### @Input oraz @Output {#inputOutput}
+
+Dekoratory pozwalające na rozbicie logiki komponentu na mniejsze części/komponenty i komunikowanie się danymi pomiędzy nimi -> **@Input** działa niczym właściwość komponentu w React (props) tzn. pozwala na przekazanie do komponentu danych np.
+
+    // rodzic
+    <app-user [name]="Mike"></app-user>
+
+gdzie komponent app-user musie mieć przy pomocy dekoratora @Input zdefiniową właściwość
+
+    @Input() name: string;
+
+
+**@Output** - pozwala na przekazanie informacji do rodzica, aby tego dokoną naleŻy stworzyć nową instację klasy EventEmmiter // wywołanie funkcji konstruktora
+
+    @Output() nameChanged = new EventEmmiter<string>(); // typ generyczny moŻe być róŻnego rodzaju
+
+    onUserInput(event){
+      this.nameChanged.emit(event.target.value);
+    }
+
+    // rodzic:
+    <app-user [name]="name" (nameChanged)="onNameChanged($event)"></app-user>
+
+    name = "Mike"
+    
+    onNameChannged(newName) {
+      this.name = newName;
+    }
+
+
 
 ### Dekorator @Input()
 
@@ -92,15 +123,11 @@ Przykład
 W przypadku wielu takich samych komponentów przy odwołaniu się do klasy komponentu dziecka, zostanie wykorzystany pierwszy napotkany komponent (aby temu zapobiec można wykorzystać **template reference**)
 
 
+Patrz: [template-reference-examples](https://github.com/ZacznijProgramowac/template-reference-examples/tree/master/src/app)
 
-<script src="http://gist-it.appspot.com/github.com/ZacznijProgramowac/template-reference-examples/blob/master/src/app/app.component.ts"></script>
-
-<script src="http://gist-it.appspot.com/github.com/ZacznijProgramowac/template-reference-examples/blob/master/src/app/app.component.html"></script>
-
-[Komunikacja pomiędzy komponentami w Angular 2](https://typeofweb.com/komunikacja-pomiedzy-komponentami-w-angular-2/)
 
 ---
 
-
 Źródła:
 
+[Komunikacja pomiędzy komponentami w Angular 2](https://typeofweb.com/komunikacja-pomiedzy-komponentami-w-angular-2/)

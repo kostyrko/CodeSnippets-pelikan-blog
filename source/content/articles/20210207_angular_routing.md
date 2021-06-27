@@ -1,6 +1,6 @@
 Title: Angular: routing
 Author: mkostyrko
-Date: 2020-02-07 10:00
+Date: 2021-02-07 10:00
 Updated:
 Category: angular
 Tags: angular

@@ -5,7 +5,7 @@ Updated: 2021-06-13 10:00
 Category: angular
 Tags: angular
 Slug: angular-wprowadzenie
-related_posts: react-wprowadzenie, typescript-klasy
+related_posts: react-wprowadzenie, typescript-klasy, angular-serwisy
 
 ---
 
@@ -27,11 +27,67 @@ Przykładowo
 
 #### Spis treści
 
-[* ngModules](#ngModules)
+[ngModules](#ngModules)
 
-[* Komponenty - wyświetlanie i komunikacja z użytkownikiem ](#komponenty)
 
-[* Interpolacja](#interpolacja)
+[Komponenty - wyświetlanie i komunikacja z użytkownikiem ](#komponenty)
+
+
+[SZABLONY](#szablony)
+
+
+[Interpolacja](#interpolacja)
+
+----
+
+[OPERATORY - zmiana danych w szablonie](#operatory)
+
+----
+
+[DYREKTYWY - tworzenie dynamicznego szablonu](#dyrektywy)
+
+
+[ngFor](#ngFor)
+
+
+[ngClass](#ngClass)
+
+
+[ngStyle](#ngStyle)
+
+
+[ngIF, else i ng-template](#ngIf)
+
+
+[ngIF, then, else i ng-container](#ngContainer)
+
+
+[ngSwitch + ngSwitchCase](#ngSwitch)
+
+----
+
+[BINDING - tworzenie logiki aplikacji w ramach komponentu](#binding)
+
+
+[propertyBinding](#propertyBinding)
+
+
+[eventBinding](#eventBinding)
+
+
+[classsBinding](#classBinding)
+
+
+[ngModel](#ngModel)
+
+----
+[SERWIS](#serwis)
+
+
+[Instalacja Angular i stworzenie pierwszego projektu przy pomocy Angular CLI](#instalacjaAngular)
+
+
+[Słownik z najważniejszymi pojęciami Angulara](#glossary)
 
 
 ---
@@ -118,7 +174,7 @@ czytaj więcej: [Introduction to components and templates](https://angular.io/gu
 
 ---
 
-## Wprowadzenia do składni szablonów - zagadnienia podstawowe
+## Wprowadzenia do składni szablonów - zagadnienia podstawowe {#szablony}
 
 ---
 Wytłumaczenie podstawowych znaków: 
@@ -147,7 +203,7 @@ Przykłady zastosowania interpolacji
 `{{ 2+2 }}` - interpolacja wyrażenia matematycznego
 
 ---
-## Operatory
+## Operatory {#operatory}
 
 ### Operator Pipe
 
@@ -183,6 +239,8 @@ Nadpisanie lokalizacji
 
 
 Biblioteka **nxg pipes**
+
+---
 
 ## Dyrektywy {#dyrektywy}
 
@@ -510,70 +568,13 @@ serwis zadeklarowany w app.module.ts jest dostępny dla całej aplikacji, natomi
 
 Dekorator serwisu `@Injectable()` przyjmuje jego metadane (podobnie jak `@Component` w przypadku komponentu)
 
----
-
-## Zagadnienia zaawansowane - wyjaśnione w kolejnych postach
-
-#### @Input oraz @Output {#inputOutput}
-
-Dekoratory pozwalające na rozbicie logiki komponentu na mniejsze części/komponenty i komunikowanie się danymi pomiędzy nimi -> **@Input** działa niczym właściwość komponentu w React (props) tzn. pozwala na przekazanie do komponentu danych np.
-
-    // rodzic
-    <app-user [name]="Mike"></app-user>
-
-gdzie komponent app-user musie mieć przy pomocy dekoratora @Input zdefiniową właściwość
-
-    @Input() name: string;
-
-
-**@Output** - pozwala na przekazanie informacji do rodzica, aby tego dokoną naleŻy stworzyć nową instację klasy EventEmmiter // wywołanie funkcji konstruktora
-
-    @Output() nameChanged = new EventEmmiter<string>(); // typ generyczny moŻe być róŻnego rodzaju
-
-    onUserInput(event){
-      this.nameChanged.emit(event.target.value);
-    }
-
-    // rodzic:
-    <app-user [name]="name" (nameChanged)="onNameChanged($event)"></app-user>
-
-    name = "Mike"
-    
-    onNameChannged(newName) {
-      this.name = newName;
-    }
-
---
-### Routing 
-
-Routing pozwala na zdefiniowanie ścieżki nawigacji (pomiędzy stanami aplikacji)
-
----
-#### Injector/wtryskiwacz
-
-[Angular Injector, @Injectable & @Inject](https://www.tektutorialshub.com/angular/angular-injector-injectable-inject/)
-
-[Angular InjectionToken - www.angular.love](https://www.angular.love/2018/03/09/angular-injectiontoken/)
-
----
-
-#### RxJS - asynchroniczność w serwisie {#rxJs}
-
-Observable.subscribe() is the critical difference
-
-The new version waits for the Observable to emit the array of heroes—which could happen now or several minutes from now. The subscribe() method passes the emitted array to the callback, which sets the component's heroes property.
-
-This asynchronous approach will work when the HeroService requests heroes from the server.
-
-
-[Observable data](https://angular.io/tutorial/toh-pt4#observable-data)
-
+więcej na ten temat  czytaj tutaj -> [Angular: serwis](https://kostyrko.github.io/zfrontu/angular-serwisy.html)
 
 
 ---
 
 
-## Instalacja Angular i stworzenie pierwszego projektu przy pomocy Angular CLI
+## Instalacja Angular i stworzenie pierwszego projektu przy pomocy Angular CLI {#instalacjaAngular}
 
 [Angular CLI Cheat Sheet: The best Commands to boost your productivity](https://malcoded.com/posts/angular-fundamentals-cli/)
 
@@ -643,7 +644,7 @@ Przykładowy projekt wykonany przy pomocy Angulara dostępny na stackblitz.com: 
 
 ---
 
-### Glossary
+### Glossary {#glossary}
 
 [Słownik z najważniejszymi pojęciami dla Angulara (ENG)](https://angular.io/guide/glossary)
 

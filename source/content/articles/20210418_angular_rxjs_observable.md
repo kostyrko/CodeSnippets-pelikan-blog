@@ -96,57 +96,42 @@ Unsubscribe - metoda służąca do anulowania/zaprzestania subskrypcji (w przypa
 
 ::: Orginalne żródło poniższego projektu: [GH - ZacznijProgramowac](https://github.com/ZacznijProgramowac/)
 
-[Udemy -Angular - kompletny kurs od podstaw - edycja na rok 2021](https://www.udemy.com/course/angular-kompletny-kurs-od-podstaw)
-
-#### Projekt porównujący zachowanie **subject** oraz **Behavior subject** => [peoples-list-subjects-app](https://github.com/kostyrko/JS-sandbox/tree/master/7_Angular/peoples-list-subjects-app)
-
-
 #### Projekt easy-words bazujący na Subjects:
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/bcommit/7150e1ce3b29825f61b5a2320250c74ca1c9bfdf?branch=7150e1ce3b29825f61b5a2320250c74ca1c9bfdf&diff=split"></script>
+[easy-words-app](https://github.com/kostyrko/JS-sandbox/tree/master/7_Angular/angular-easy-words/easy-words-app)
 
-**model danych** easy-words-app/src/app/data/models.ts
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/data/models.ts"></script>
+**model danych** [easy-words-app/src/app/data/models.ts](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/data/models.ts)
 
 
-**dane/plik zastępujący bazę danych** easy-words-app/src/app/data/data-base.ts
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/data/data-base.ts"></script>
+**dane/plik zastępujący bazę danych** [easy-words-app/src/app/data/data-base.ts](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/data/data-base.ts)
 
 
-**serwis** - easy-words-app/src/app/services/words.service.ts
+**serwis** - [easy-words-app/src/app/services/words.service.ts](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/services/words.service.ts)
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/services/words.service.ts"></script>
 
-**Komponent korzystający z serwisu** - easy-words-app/src/app/compontents/question/question.component.ts 
+**Komponent korzystający z serwisu** - [easy-words-app/src/app/compontents/question/question.component.ts](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.ts)
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.ts"></script>
 
-easy-words-app/src/app/compontents/question/question.component.html
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.html"></script>
+[easy-words-app/src/app/compontents/question/question.component.html](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/question/question.component.html)
 
 
 **Komponent korzystający z serwisu 2 - główny komponent przekazujący dane do dziecka (dump komponentu)**
 
-easy-words-app/src/app/app.component.ts
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.ts"></script>
-
-easy-words-app/src/app/app.component.html
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.html"></script>
+[easy-words-app/src/app/app.component.ts](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.ts)
 
 
-**Komponent przyjmujący dane od rodzica**  - easy-words-app/src/app/compontents/answers/answers.component.ts 
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.ts"></script>
+[easy-words-app/src/app/app.component.html](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.html)
 
 
-easy-words-app/src/app/compontents/answers/answers.component.html
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.html"></script>
+**Komponent przyjmujący dane od rodzica**  - [easy-words-app/src/app/compontents/answers/answers.component.ts](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.ts) 
+
+
+[easy-words-app/src/app/compontents/answers/answers.component.html](github.com/kostyrko/JS-sandbox/blob/master/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.html)
+
+
+#### Projekt porównujący zachowanie **subject** oraz **Behavior subject** => [peoples-list-subjects-app](https://github.com/kostyrko/JS-sandbox/tree/master/7_Angular/peoples-list-subjects-app)
+
 
 
 ---
@@ -157,6 +142,7 @@ easy-words-app/src/app/compontents/answers/answers.component.html
 
 [GH - ReactiveX/rxjs](https://github.com/ReactiveX/rxjs)
 
+[Udemy -Angular - kompletny kurs od podstaw - edycja na rok 2021](https://www.udemy.com/course/angular-kompletny-kurs-od-podstaw)
 
 [RxJS z Angularem - programowanie reaktywne aplikacji frontendowej](shorturl.at/nqP46)
 

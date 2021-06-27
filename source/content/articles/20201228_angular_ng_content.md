@@ -1,9 +1,9 @@
 Title: Angular: referencje szablonów i ng-content
 Author: mkostyrko
 Date: 2020-12-28 10:00
-Updated:
+Updated: 2021-06-27 10:00
 Category: angular
-Tags: angular
+Tags: angular, unfinished
 Slug: angular-ng-content
 related_posts: 
 
@@ -38,6 +38,5 @@ https://github.com/ZacznijProgramowac/ng-template-examples/tree/master/src/app
 
 ---
 
-![angular](https://wpblog.semaphoreci.com/wp-content/uploads/2019/01/Testing-Components-in-Angular-2-with-Jasmine-776x320.png)
 
 
