@@ -47,7 +47,7 @@ Deklaracja serwisu (*dependency injection*) znajduje się w tablicy **providers*
       imports: [BrowserModule],
       declarations: [AppComponent, LogTestComponent],
       bootstrap: [AppComponent],
-      providers: [LoggerService]
+      providers: [LoggerService] // jedna instancja dla całej aplikacji
     })
     export class AppModule { }
 
@@ -63,7 +63,6 @@ W Angular analizuje argumenty w konstruktorze oraz zadeklarowane zależności (w
     @Component({
         selector: "log-test",
         templateUrl: "./log-test.component.html",
-        providers: [LoggerService] // wskazanie typu providera
     })
     export class LogTestComponent {
 
@@ -83,12 +82,10 @@ W Angular analizuje argumenty w konstruktorze oraz zadeklarowane zależności (w
     }
 
 
-
 **providedIn: 'root'**
 
 zastosowanie providedIn: 'root' w ramach dekoratora `@Injectable()` powoduje, że deklarujemy jego dostępność w całym komponencie, wówczas nie ma potrzeby deklarowania go wśród providerów w **app.module.ts**
 
-Alternatywnie -> można zastosować `providedIn: 'root'`
 
     import { Injectable } from '@angular/core';
     @Injectable(
@@ -121,8 +118,13 @@ tożsame działanie: providers: [ LoggerService ] - również tworzy sinleton w 
 
 providers: [ LoggerService ] w dekoratorze @Component({.... - dla komponentu oraz wszystkich jego dzieci powstanie nowa instancja serwisu // Dzieci już nie muszą deklarować tego serwisu w soich prowiderach. Tym samym również dochodzi do nadpisania globalnego serwisu.
 
+#### Wykorzystanie serwisu w serwisie
 
+Serwis może zostać zadeklarowany w **app.component.ts** (spaja aplikację) jednak aby faktycznie był widoczny (używalny) w innym serwisie musi on zostać zadeklarowany w głównym pliku modułowym angulara **app.module.ts**
 
+Dodatkowo serwis korzystający z innego serwisu musi posiadać dekorator **@Injectable**!! (importowany z '@angular/core') [dependency injector w angularze współpracuje tylko z klasami, które posiadają dekorator **Injectable**]
+
+---
 #### Generowanie serwisu przy pomocy Angular CLI
 
 ng g s services/serviceName (ng generate service)
@@ -141,6 +143,7 @@ Wynik:
           constructor() { }
         }
 
+---
 
 ### Przykładowy projekt z zastosowaniem serwisu
 
@@ -329,25 +332,94 @@ easy-words-app/src/app/compontents/question/question.component.html
 
 **Komponent korzystający z serwisu 2 - główny komponent przekazujący dane do dziecka (dump komponentu)**
 
-easy-words-app/src/app/app.component.ts
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.ts"></script>
-
-easy-words-app/src/app/app.component.html
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/app.component.html"></script>
+**easy-words-app/src/app/app.component.ts**
 
 
-**Komponent przyjmujący dane od rodzica**  - easy-words-app/src/app/compontents/answers/answers.component.ts 
+    import { Component } from '@angular/core';
+    import { WordsService } from './services/words.service';
 
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.ts"></script>
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+    export class AppComponent {
+      title = 'easy-words-app';
+
+      constructor(private wordsService: WordsService) {}
+
+      // bezpośredni dostęp do zawartości serwisu
+      // getter rzeczowników
+      get nouns() {
+        return this.wordsService.getNouns()
+      }
+
+      // 'getter' czasowników
+      get verbs() {
+        return this.wordsService.getVerbs()
+      }
+    }
 
 
-easy-words-app/src/app/compontents/answers/answers.component.html
-
-<script src="http://gist-it.appspot.com/github.com/kostyrko/JS-sandbox/blob/easy-words-app-noSubjects/7_Angular/angular-easy-words/easy-words-app/src/app/compontents/answers/answers.component.html"></script>
+**easy-words-app/src/app/app.component.html**
 
 
+    <div class="row">
+      <div class="col s12">
+        <app-question></app-question>
+      </div>
+      <div class="col s6">
+        <!-- property title oraz words - lista nouns/getter z komponentu rodzica (@Input) -->
+        <app-answers title="Nouns" [words]="nouns"></app-answers>
+      </div>
+      <div class="col s6">
+        <app-answers title="Verbs" [words]="verbs"></app-answers>
+      </div>
+    </div>
+
+
+**Komponent przyjmujący dane od rodzica** 
+
+**easy-words-app/src/app/compontents/answers/answers.component.ts**
+
+
+    import { Component, Input, OnInit } from '@angular/core';
+    import { WordType } from 'src/app/data/models';
+
+    @Component({
+      selector: 'app-answers',
+      templateUrl: './answers.component.html',
+      styleUrls: ['./answers.component.css']
+    })
+    export class AnswersComponent {
+
+      // nazwa listy verbs albo nouns
+      @Input() title: string;
+      // przechowuję listę przypisanych słów
+      @Input() words: WordType[];
+
+      constructor() { }
+
+    }
+
+
+**easy-words-app/src/app/compontents/answers/answers.component.html**
+
+  
+    <ul class="collection with-header">
+      <li class="collection-header">
+        <h4>{{ title }}</h4>
+      </li>
+      <!-- word?.correct zawiera ? ponieważ nie jest obowiązkowe i jest przypisywane dopiero w momencie sprawdzania -->
+      <li
+        class="collection-item"
+        *ngFor="let word of words"
+        [ngClass]="{ incorrect: word?.correct === false}"
+      >
+        {{ word.word }}
+      </li>
+    </ul>
 
 
 
