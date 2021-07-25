@@ -1,11 +1,11 @@
-Title: Angular: serwisy
+Title: Angular: przekazanie danych pomiędzy komponentami cz. 2 -> serwis
 Author: mkostyrko
 Date: 2021-04-11 10:00
-Updated:
+Updated: 2021-07-24 10:00
 Category: angular
 Tags: angular, serwis, service, subscribe, unfinished
 Slug: angular-serwisy
-related_posts:
+related_posts: angular-komunikacja-komponentow
 
 ![angular](https://i.stack.imgur.com/E8ItT.png)
 
@@ -13,10 +13,12 @@ related_posts:
 
 #### Wstęp
 
-Klasa TyperScriptowa - przy pomocy, której istnieje możliwość zarządzania danymi (a docelowo stanem aplikacji). Jej zadaniem jest - dostarczania danych na potrzeby komponentów (np. poprzez komunikacja z API, komunikacja pomiędzy komponentami, przechowywanie stanu aplikacji).
+Klasa TyperScriptowa - stworzona do centralizacji danych/zarządzania danymi (a docelowo stanem aplikacji). Jej zadaniem jest - dostarczania danych na potrzeby komponentów (np. poprzez komunikacja z API, komunikacja pomiędzy komponentami, przechowywanie stanu aplikacji).
 
 
-Serwis posiada swój dekorator **@Injectable** - ten wskazuje na to, że dana klasa jest serwisem i jej logikę można wstzyknąć do innego komponentu przy pomocy **dependecy injection**  poprzez zadeklarowanie providera (dostarczyciela) + dane określające w jaki sposób działa serwis + użycie innych serwisówv.
+Serwis posiada swój dekorator **@Injectable** - ten wskazuje na to, że dana klasa jest serwisem i jej logikę można wstrzyknąć do innego komponentu przy pomocy **dependecy injection**  poprzez zadeklarowanie providera (dostarczyciela) + dane określające w jaki sposób działa serwis + użycie innych serwisów. 
+
+Warto pamiętać : dekorator **@Injectable** nie jest warunkiem koniecznym do implementacji serwisu, jest natomiast warunkiem niezbędnym do wstrzyknięcia serwisu w serwis (wówczas serwis, do którego inny jest wstrzykiwany musi posiadać taki dekorator).)
 
 ---
 Przykładowa **deklaracja tworząca klasę serwisu** (np. **loggerService.service.ts**)
@@ -29,6 +31,11 @@ Przykładowa **deklaracja tworząca klasę serwisu** (np. **loggerService.servic
       }
     }
 
+Przykład prostej aplikacji korzystającej z serwisu [star-wars-app](https://github.com/kostyrko/JS-sandbox/tree/angular-service/7_Angular/angular-service-app/star-wars-services/src/app) 
+
+Przykład tej samej aplikacji, ale gdzie serwis (ServiceLog) został wstrzyknięty do serwisu (StarWarsService) [star-wars-app](https://github.com/kostyrko/JS-sandbox/tree/angular-service-into-service/7_Angular/angular-service-app/star-wars-services/src/app)
+
+-> więcej na temat tej aplikacji [Udemy: Angular Essentials (Angular 2+ with TypeScript)](https://www.udemy.com/course/angular-essentials-angular-2-angular-4-with-typescript/)
 
 ---
 **Wykorzystanie serwisu w ramach aplikacji**
