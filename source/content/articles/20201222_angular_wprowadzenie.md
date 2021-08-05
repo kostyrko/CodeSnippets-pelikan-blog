@@ -284,7 +284,7 @@ Patrz pipe: [KeyValuePipe](https://angular.io/api/common/KeyValuePipe) od pobier
         <div *ngFor="let item of map | keyvalue">
           {{item.key}}:{{item.value}}
         </div>
-      </span>`
+      </span>
     })
     export class KeyValuePipeComponent {
       object: {[key: number]: string} = {2: 'foo', 1: 'bar'};
@@ -498,7 +498,13 @@ Składnia: `[class.jakaś-klasa-css]="jakiś-warunek"`
 
 ---
 
-### Dyrektywa ngModel - Dwustronne połączenie (property + event binding) {#ngModel}
+### Dyrektywa ngModel - Dwustronne połączenie (property + event binding) i nie tylko {#ngModel}
+
+dyrektyra **ngModel** jest częścią '@angular/forms' i jest z formularzami właśnie powiązana. Pozwala na dwustronne powiązanie (o czym poniżej), ale kiedy jest używana w pojedynce, wskazuje Angularowi, na element HTML, który ma kontrolować/ którego powinien być świadomy.
+
+
+    <input type="text" id="name" name="name" class="form-control" ngModel>
+
 
 `[(ngModel)]` - składnia definiująca połączenie dwustronne (funkcjonuje na zasadzie połączenie **property** oraz **event binding**). Nie posiada gwiazdki przez nazwą powniewaŻ nie zmienia struktury drzewa DOM, a jedynie zmienia wartość przypisaną do obiektu drzewa DOM.
 

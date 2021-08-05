@@ -29,6 +29,48 @@ Zarówno formy **reaktywne** jak i **szablonowe** korzystają z poniższych klas
 
 ---
 
+### Dyrektywy
+
+**ngModel**
+
+dyrektyra **ngModel** jest częścią '@angular/forms' i jest z formularzami właśnie powiązana. Pozwala na dwustronne powiązanie `[()]`, ale kiedy jest używana w pojedynce, wskazuje Angularowi, na element HTML, który ma kontrolować/ którego powinien być świadomy, w kontekście formularza oraz jego obsługi (patrz **ngSubmit**) - tworzy obiekt związany z formularzem.
+
+
+    <input type="text" id="name" name="name" class="form-control" ngModel>
+
+    <input
+      class="col s8"
+      type="text"
+      placeholder="Dodaj zadanie i datę wykonania"
+      [(ngModel)]="taskName"
+    />
+
+
+**ngSubmit**
+
+dyrektywa **ngSubmit** pozwala na połączenie z wydarzeniem, które ma zostać wykonane w trakcie wysyłania formularza - zapobiega wysłaniu formularza i wywołuje właściwe zdarzenie.
+
+    <form (ngSubmit)="onSubmit()">
+
+
+**ngModelChange**
+
+
+### Lokalna referencja
+
+`#form = "ngForm"` - tworzy lokalną referencję (#form) do szablonu formularza poprzez wykorzystanie słowa kluczowego (ngForm) oraz obiektu formularza utworzony przez Angular (patrz **ngModel**).
+
+    // html
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+    // ts
+    onSubmit(submittedForm: {}) {
+     console.log(submittedForm);
+   } 
+
+
+---
+
 **Przykład reactive form** - model formularza jest bezpośrednio definiowany w klasie (wyraźny model formularza) - dyrektywa [formControl] łączy instancję **FormControl**
 do konkretnego elementu formy (widoku) poprzez wewnętrzną wartość "akcesorium" / **model formularza jest źródłem prawdy**
 
