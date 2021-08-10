@@ -28,7 +28,7 @@ Komponent *providera* przetrzymuje wartość jaką "konsumencki" komponent będz
 
     <MyContext.Provider value={/* jakaś wartość */}>
 
-Wskazanie *konsumenta* odbywa się poprzez opakowanie go w kompontent wyżeszgo tympanus
+Wskazanie *konsumenta* odbywa się poprzez opakowanie go w komponent wyższego rzędu
 
     <MyContext.Consumer>
 

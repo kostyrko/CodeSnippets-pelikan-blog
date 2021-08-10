@@ -15,7 +15,7 @@ Przy pomocy Create React APP oraz jednej komendy tworzymy repopozytorium z szkie
     npx create-react-app <nazwa-aplikacji/projektu>
 
 
-Jeśli chcemy wypushować do GitHuba to odwiedzamy własne konto tworzymy nowe repo nadajemy mu nazwę (licencję, readme i inne informacje pomijamy) następnie kopiujemy link do wypuszowania (wyprzchnięcia na zdalne repo)
+Jeśli chcemy wypushować do GitHuba to odwiedzamy własne konto tworzymy nowe repo nadajemy mu nazwę (licencję, readme i inne informacje pomijamy) następnie kopiujemy link do wypuszowania (wypchnięcia na zdalne repo)
 
   git remote add origin https://github.com/kostyrko/<nazwa-repopozytorium>
 
@@ -50,12 +50,12 @@ Uruchomienie się serwera jest zdefiniowane w pliku package.json -> wystarczy w 
 
 Instalacja **Sass** (bezpośrednio wczytanie do pliku App.js) // css plik tworzy się dopiero przy buildzie 
 
-  npm install node-sass --save
+    npm install node-sass --save
 
 
 Instalacja **React-router**
 
-  npm install react-router-dom
+    npm install react-router-dom
 
 
 ---

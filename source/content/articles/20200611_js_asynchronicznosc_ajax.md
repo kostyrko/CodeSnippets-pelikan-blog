@@ -155,6 +155,8 @@ Duckett, Jon. Javascript and jquery: Interactive front-end web development. Wile
 
 [AJAX what is it? (it’s not DHTML)](https://derivadow.com/2007/01/05/ajax-what-is-it-its-not-dhtml/)
 
-http://kursjs.pl/kurs/ajax/ajax.php
+[How to Use Async/Await to Write Better JavaScript Code](https://www.freecodecamp.org/news/how-to-use-async-await-write-better-javascript/)
 
-https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started
+[AJAX - kursjs.pl](http://kursjs.pl/kurs/ajax/ajax.php)
+
+[AJAX - getting started - developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started)

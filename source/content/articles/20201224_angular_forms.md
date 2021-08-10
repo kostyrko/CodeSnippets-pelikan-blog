@@ -33,7 +33,7 @@ Zarówno formy **reaktywne** jak i **szablonowe** korzystają z poniższych klas
 
 **ngModel**
 
-dyrektyra **ngModel** jest częścią '@angular/forms' i jest z formularzami właśnie powiązana. Pozwala na dwustronne powiązanie `[()]`, ale kiedy jest używana w pojedynce, wskazuje Angularowi, na element HTML, który ma kontrolować/ którego powinien być świadomy, w kontekście formularza oraz jego obsługi (patrz **ngSubmit**) - tworzy obiekt związany z formularzem.
+dyrektywa **ngModel** jest częścią '@angular/forms' i jest z formularzami właśnie powiązana. Pozwala na dwustronne powiązanie `[(ngModel)]` (w odróżnieniu od pojedynczego `[ngModel]` np. w celu wskazania wartości początkowej/domyślnej), ale kiedy jest używana w pojedynce, wskazuje Angularowi, na element HTML, który ma kontrolować/ którego powinien być świadomy, w kontekście formularza oraz jego obsługi (patrz **ngSubmit**) - tworzy obiekt związany z formularzem. (patrz również poniżej **Lokalna referencja + ngModel**)
 
 
     <input type="text" id="name" name="name" class="form-control" ngModel>
@@ -66,7 +66,32 @@ dyrektywa **ngSubmit** pozwala na połączenie z wydarzeniem, które ma zostać 
     // ts
     onSubmit(submittedForm: {}) {
      console.log(submittedForm);
-   } 
+   }
+
+### Lokalna referencja + ngModel
+
+Przy pomocy lokalnej refencji oraz użyciu `ngModel` w szablonie formularza wskazujemy Angularowi jaki element chcemy kontrolować/ do którego chcemy się podpiąć -> patrz span: jeśli input/element posiada jest invalid to wtedy zaistniej.
+
+    <div class="form-group">
+        <label for="name">Character name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          ngModel
+          required
+          #nameCtrl="ngModel"
+        />
+        <span class="help-block" *ngIf="nameCtrl.invalid">Please enter a character name!</span>
+    </div>
+
+Podobny przypadek -> jeśli obiekt formularza posiada invalid = true to przycisk będzie niedostępny/disabled
+
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+      [...]]
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Add Character</button>
+    </form>
 
 
 ---
@@ -109,28 +134,21 @@ Do przeczytania -> Przepływ danych w formularzach: [angular.io - Data flow in f
 
 ### Reaktywne formularze
 
-1 - Postawowy formularz reaktywny
+1 - Postawowy formularz reaktywny / całe repo dostępne [tutaj](https://github.com/kostyrko/JS-sandbox/tree/master/7_Angular/angular-reactive-forms-example)
+
+Opis:
 
 Importowanie modułu ReactiveFormsModule do app.module.ts
 
-<script src="http://gist-it.appspot.com/github/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/app.module.ts"></script>
 
-Komponent name-editor -> name-editor.component.ts
+Komponent name-editor -> name-editor.component.ts/name-editor.component.html
 
-<script src="http://gist-it.appspot.com/github/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/name-editor/name-editor.component.ts
-"></script>
-
-name-editor.component.html
-
-<script src="http://gist-it.appspot.com/github/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/name-editor/name-editor.component.html"></script>
 
 2- Zarządzanie formularzem z wieloma elementami oraz zagnieżdżone formularze
 
 Zarządzanie **wieloma instancjami** Kontroli Formularza (**form control**) w pojedynczej grupie -> wykorzystanie `FormGroup`
 
-<script src="http://gist-it.appspot.com/github/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/profile-editor/profile-editor.component.ts"></script>
-
-<script src="http://gist-it.appspot.com/github/kostyrko/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/profile-editor/profile-editor.component.html"></script>
+profile-editor.component.ts i profile-editor.component.html
 
 Przykładowy zwracany obiekt ->
 
@@ -146,19 +164,13 @@ Istnieją dwa sposoby na aktualizację wartości:
 
 3 - Tworzenie formularza przy pomocy **FormBuildera** + Walidacja
 
-<script src="http://gist-it.appspot.com/github/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/profile-editor-form-builder/profile-editor-form-builder.component.ts"></script>
+Szablon HTML z dodaną walidacją ()
 
-Szablon HTML z dodaną walidacją
-
-<script src="http://gist-it.appspot.com/github/kostyrko/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/profile-editor-form-builder/profile-editor-form-builder.component.html"></script>
 
 4 - Dynamicznie modyfikowany formularz przy pomocy FromArray (alternatywa dla FromGroup)
 
-<script src="http://gist-it.appspot.com/github/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/profile-editor-dynamic-form/profile-editor-dynamic-form.component.ts"></script>
 
 Szablon HTML wykorzystujący **\*ngFor**
-
-<script src="http://gist-it.appspot.com/github/kostyrko/kostyrko/JS-sandbox/blob/master/7_Angular/angular-reactive-forms-example/src/app/profile-editor-dynamic-form/profile-editor-dynamic-form.component.html"></script>
 
 Przykładowe dane zwrotne ->
 

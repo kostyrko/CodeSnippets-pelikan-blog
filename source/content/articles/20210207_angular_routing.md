@@ -9,6 +9,70 @@ related_posts:
 
 ![angular](https://wpblog.semaphoreci.com/wp-content/uploads/2019/01/Testing-Components-in-Angular-2-with-Jasmine-776x320.png)
 
+Client-side rendering - bez zapytania do serwera (wymaga konfiguracji serwera tak aby zwracał index.html skąd angular przejmuje tworzenie ścieżki)
+
+app.component.html - wykorzystanie `<router-outlet></router-outlet>` dyrektywy w celu wskazania, w którym miejscu powinien pojawić sie komponent związany z routingiem
+
+    <div class="container">
+        [...]
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- load router here -->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+
+app-routing.module.ts - zdefiniowanie ścieżek routingu
+
+
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { CreateCharacterComponent } from './create-character/create-character.component';
+    import { TabsComponent } from './tabs/tabs.component';
+
+    const routes: Routes = [ 
+      {path: '', component: TabsComponent},
+      {path: 'new-character', component: CreateCharacterComponent}
+    ];
+
+    @NgModule({
+      // registers routes in the angular router module
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
+
+app.module.ts - zaimportowanie do głównego modułu
+
+    import { BrowserModule } from '@angular/platform-browser';
+    [...]
+
+    @NgModule({
+      declarations: [
+        ...
+      ],
+      imports: [BrowserModule, AppRoutingModule, FormsModule],
+      [...]
+    })
+    export class AppModule {}
+
+
+header.component.html - gdzie routing jest stosowany po str html ->  `routerLinkActive="active"` oraz `[routerLinkActiveOptions]="{exact: true}"`
+
+    <ul class="nav nav-pills">
+        <!-- add active class when link active -->
+        <!-- active only when exactly and not only part of the path -->
+      <li class="nav-item" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/">Star Wars Characters</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/new-character"> New Character</a>
+      </li>
+    </ul>
+
+  
 ### Zastosowanie routingu w małej aplikacji
 
     import { BrowserModule } from '@angular/platform-browser';
