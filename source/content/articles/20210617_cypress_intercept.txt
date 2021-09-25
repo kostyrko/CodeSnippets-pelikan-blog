@@ -45,6 +45,10 @@ tip: log the request object to see everything it has in the console
 
     cy.get('@post').then(console.log)
 
+### przechwytywanie wielu zapytań
+
+
+
 
 Źródło:
 

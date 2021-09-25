@@ -3,7 +3,7 @@ Author: mkostyrko
 Date: 2021-06-14 10:00
 Updated:
 Category: angular
-Tags: unfinished, angular, cypress, testy
+Tags: unfinished, angular, cypress, testy, page objects, app actions
 Slug: cypress-angular-komponenty
 related_posts:
 
@@ -28,7 +28,7 @@ atrybut data-cy będzie tworzony na podstawie stringu 'nav' oraz zmiennej *nav*
     <span data-cy="navPhotos"> Photos </span>
 
 
-## App Actions i Page Objects
+## App Actions
 
 
 Cypress jednostkowy
@@ -133,6 +133,11 @@ Zastosowanie
     })
 
 
+### Page Objects
+
+### JSDoc
+
 
 Źródła:
 
+[Starting with TypeScript in Cypress](https://filiphric.com/starting-with-typescript-in-cypress)

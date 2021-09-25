@@ -57,10 +57,6 @@ konstruktor - pozwala na inicjalizowanie zależności (w postaci argumentów), c
         }
 
 
-
-
-
-
 ---
 
 

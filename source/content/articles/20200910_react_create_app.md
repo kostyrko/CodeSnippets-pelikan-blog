@@ -1,3 +1,4 @@
+
 Title: React: create APP
 Author: mkostyrko
 Date: 2020-09-10 10:00
@@ -50,7 +51,7 @@ Uruchomienie się serwera jest zdefiniowane w pliku package.json -> wystarczy w 
 
 Instalacja **Sass** (bezpośrednio wczytanie do pliku App.js) // css plik tworzy się dopiero przy buildzie 
 
-    npm install node-sass --save
+    npm install sass --save
 
 
 Instalacja **React-router**
