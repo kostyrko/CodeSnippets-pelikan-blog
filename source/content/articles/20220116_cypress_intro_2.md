@@ -1,4 +1,4 @@
-Title: Cypress: ciągi oraz asynchroniczność
+Title: Cypress: wprowadzenie cz. 2
 Author: mkostyrko
 Date: 2022-01-16 12:00
 Updated:
@@ -46,4 +46,27 @@ Przykładowe funkcje, które pozwalają na interakcję z testowaną stroną -
 .`rightclick()` - prawy-klik na wybrany element DOM.
 
 
-### Cypress i Asynchroniczność
+### Cypress i jego Asynchroniczność
+
+Cypressowe komendy są asynchroniczne  (JS jest jednowątkowy, a Cypress jest na Node.js) - jakikolwiek krok jest możliwy do egzekucji to zostanie wykonany/ może wykonywać więcej niż jeden wątek na raz - cypressowe funkcje nie są wykonywane w trakcie wywołania a są kolejkowane w celu ich wykonania. Można mieć wpływ na kolejność wykonywania się testów poprzez użycie `then`.
+
+
+### Cypress promise i then
+
+then jest używany w przypadku pozytywnego wyniku promisa (resolve), catch w przypadku negatywnego (reject).
+
+
+        let promise = new Promise((resolve, reject) => {
+            let a = 1 + 1
+            if(a == 2) {
+                resolve('Promise Fulfilled')
+            } else {
+                reject('Promise not fulfilled')
+            }
+        })
+
+        promise.then((message) => {
+            console.log(message + ', promise has passed!')
+        }).catch((message) => {
+            console.log(message + ', promise has failed')
+        })

@@ -160,7 +160,6 @@ Sprawdza zbiera aktualny URL strony i przechowuje go jako łańcuch znaków/stri
         cy.url().should("include", "http://example.com")
 
 
-
 ### Strony/projekty do testowania 
 
 [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app)
