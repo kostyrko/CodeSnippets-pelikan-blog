@@ -105,6 +105,14 @@ Stan elementu
             .should("be.visible")
 
 
+`expect` - asercja (Chai), która pozwala na sprawdzenie założenia w ramach enkapsulacji funckcji wywołanej przez zastosowanie then() / obsługi promisa.
+
+        cy.get("input")
+            .should("have.value", "xyz")
+            .then(function(input) {
+                expect(input.val()).to.equal("xyz")
+            })
+
 
 #### Zawiera/Contains
 

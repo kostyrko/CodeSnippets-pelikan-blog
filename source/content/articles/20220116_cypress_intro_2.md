@@ -3,8 +3,8 @@ Author: mkostyrko
 Date: 2022-01-16 12:00
 Updated:
 Category: testing
-Tags: testing, cypress, wprowadzenie
-Slug: cypress-chaining
+Tags: testing, cypress, wprowadzenie, then, promise, chaining, variables, zmienne
+Slug: cypress-intro-2
 related_posts:
 
 
@@ -53,6 +53,8 @@ Cypressowe komendy są asynchroniczne  (JS jest jednowątkowy, a Cypress jest na
 
 ### Cypress promise i then
 
+Cypressowe komendy działają na zasadzie promisa/ są promisami.
+
 then jest używany w przypadku pozytywnego wyniku promisa (resolve), catch w przypadku negatywnego (reject).
 
 
@@ -70,3 +72,25 @@ then jest używany w przypadku pozytywnego wyniku promisa (resolve), catch w prz
         }).catch((message) => {
             console.log(message + ', promise has failed')
         })
+
+Cy.then() - pozwala na pracę z obiektem dostarczonym poprzez poprzedzającą funkcję np. cy.get()
+
+        cy.get('xyz').then(($xyz) => {}) // 1) dostarcza xyz 2) wykonuje na xyz funkcję
+
+
+### Stosowanie zmiennych
+
+W kontekście stosowania zmiennych należy mieć na uwadze asynchroniczność oraz promisy (dlatego aby wykorzystać obiekt, który cypress zwraca należy wykorzystać komendę then lub zasadę łańcuchowania/łączenia ciągów komend).
+
+        //To podejście nie zadziała, ponieważ cy.get() zwraca Promise
+        const header = cy.get("div .header");
+        cy.log(header.text())
+
+        //To podejście zadziała, ponieważ cy.get() jest odpowiednio obsłużony poprzez zastosowanie cy.then()
+        cy.get("div .header")
+            .then($header => {
+                const headerText = $header.text()
+                expect(headerText).to.equal("xyz")
+            })
+
+### Iteracje
