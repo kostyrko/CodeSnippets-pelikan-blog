@@ -5,7 +5,7 @@ Updated:
 Category: testing
 Tags: testing, cypress, wprowadzenie, asercje, js
 Slug: cypress-intro
-related_posts: cypress-intro
+related_posts: cypress-intro-2
 
 ## Cypress wprowadzenie
 

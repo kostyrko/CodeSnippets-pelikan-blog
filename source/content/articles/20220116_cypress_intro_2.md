@@ -5,7 +5,7 @@ Updated:
 Category: testing
 Tags: testing, cypress, wprowadzenie, then, promise, chaining, variables, zmienne
 Slug: cypress-intro-2
-related_posts:
+related_posts: cypress-intro
 
 
 ## Cypress i tworzenie ciągów
@@ -93,4 +93,50 @@ W kontekście stosowania zmiennych należy mieć na uwadze asynchroniczność or
                 expect(headerText).to.equal("xyz")
             })
 
-### Iteracje
+### Iteracje .each()
+
+`.each(callBackFn) `- iteruje po wszystkich elementach znajdujących się w tablicy wykonując na nich przypisaną funkcję / podobnie jak JS forEeach().
+
+
+### Wrap()
+ 
+`.wrap()` - zwraca obiekt, który pozwala na wykonanie cypressowej komendy -> opakowuje wybraną zmienną, po którą jest zapisane odniesienie do elementu DOM tak aby zastosować cypressową komendy -> pozwala na rozróżnienie cy.click() od js.click()
+
+
+### invoke
+
+invoke() - pozwala na wywołanie właściwości danego elementu DOM.
+
+        cy.get('button').invoke('text').then((text) => {
+            expect(text).to.equal('xyz')
+        })
+
+### Alias
+
+`.as()` - jest swego rodzaju cypressową zmienną - pozwala na odwołanie się do przechowywanej wartości w innej części kodu.
+Odwołanie się do aliasy zależne jest od kontekstu i wymaga wskazania poprzez `this` lub `@`
+
+        cy.get('button').inovke('text').as('buttonText')
+
+        this.buttonText
+
+        cy.get('@buttonText')
+
+
+## Przeglądarka 
+### Wiele tabów w przeglądarce
+
+Cypress nie obsługuje wielu tabów w przeglądarce - obejściem tej zasady jest wyświetlenie wszystkich możliwych informacji w pojedynczym oknie przeglądarki - w przypadku linków może oznaczać to usunięcie atrybutu odpowiedzialnego za wyświetlenie treści w nowym oknie.
+
+        cy.get('#xyz').invoke('removeAttr', 'target').click({force:true})
+
+### Akcje przeglądarki
+
+Cypressowe akcje pozwalają na sterowanie przeglądarką: do przodu, do tyłu, przeładuj
+
+        cy.go('back')
+        cy.reload()
+        cy.reload(true) //przeładuj nie korzystając z cache
+
+        cy.go('forward')
+        cy.url().should('include', 'xyz')
