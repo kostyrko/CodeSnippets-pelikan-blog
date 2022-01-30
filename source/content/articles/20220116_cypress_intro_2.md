@@ -93,12 +93,14 @@ W kontekście stosowania zmiennych należy mieć na uwadze asynchroniczność or
                 expect(headerText).to.equal("xyz")
             })
 
+ faktycznie w przypadku cypressa aliasy zastępują zmienne - patrz przykłady zastosowania `alias` i `iframe `          
+
 ### Iteracje .each()
 
 `.each(callBackFn) `- iteruje po wszystkich elementach znajdujących się w tablicy wykonując na nich przypisaną funkcję / podobnie jak JS forEeach().
 
 
-### Wrap()
+### Wrap() 🎁
  
 `.wrap()` - zwraca obiekt, który pozwala na wykonanie cypressowej komendy -> opakowuje wybraną zmienną, po którą jest zapisane odniesienie do elementu DOM tak aby zastosować cypressową komendy -> pozwala na rozróżnienie cy.click() od js.click()
 
@@ -130,7 +132,7 @@ Cypress nie obsługuje wielu tabów w przeglądarce - obejściem tej zasady jest
 
         cy.get('#xyz').invoke('removeAttr', 'target').click({force:true})
 
-### Akcje przeglądarki
+### Akcje przeglądarki 
 
 Cypressowe akcje pozwalają na sterowanie przeglądarką: do przodu, do tyłu, przeładuj
 
@@ -140,3 +142,93 @@ Cypressowe akcje pozwalają na sterowanie przeglądarką: do przodu, do tyłu, p
 
         cy.go('forward')
         cy.url().should('include', 'xyz')
+
+### Alerty - cy.on() 🚨
+
+Cypress automatycznie zwraca alerty jako `true` - stąd aby stworzyć asercję lub zwrócić inny wynik alertu należy 'wyłapać' pojawienie się okna alertu oraz zwrócić `false`
+
+
+        cy.on('window:alert', (str) => {
+            expect(str).to.equal('I am an alert box!')
+        })
+
+        cy.on('window:alert', (str) => {
+            return false;
+        })
+
+### iframe 🖼
+
+Cypress nie obsługuje `iframe` stad testowanie wymaga wydobycia informacji
+
+
+        cy.get('#iframe').invoke('removeAttr', 'target').click({force:true})
+
+        cy.get('#frame').then($iframe => {
+            const body = $iframe.contents().find('body')
+            cy.wrap(body).as('iframe')
+        })
+
+        cy.get('@iframe').find('#button').click()
+
+        cy.get('@iframe').find('#qwer').as('qwer')
+
+        cy.get('@qwerl').should(($expectedText) => {
+            const text = $expectedText.text()
+            expect(text).to.include('XYZ');
+        })
+
+        cy.get('@qwer').contains('Close').click()
+
+
+### Obsługa checkboxów - cy.check() ☑
+
+
+        cy.get('#radio-buttons').find("[type='radio']").first().check()
+
+        cy.get('#radio-buttons').find("[type='radio']").eq(1).check()
+        
+        cy.get('#radio-buttons').find("[type='radio']").eq(2).uncheck()
+        
+        cy.get("[value='a']").should('be.checked')
+        
+        cy.get("[value='b']").should('not.be.checked')
+        
+        cy.get("[value='c']").should('be.disabled')
+
+### cy.trigger() ⌨ 
+
+wywołanie wydarzenia na elementach drzewa DOM - np. w celu wywołania zdarzeń jak np. kliknięcia, wpisywania tekstu, wyboru opcji, itp. Wymaga wcześniejszego wywołania elementu (podpięcia pod element niosący element DOM)
+
+        cy.get('#radio-buttons').find("[type='radio']").first().trigger('click')
+        $el.trigger('click')
+        $el.trigger('keydown')
+        $el.trigger('keypress')
+        $el.trigger('keyup')
+        $el.trigger('focus')
+        $el.trigger('blur')
+        $el.trigger('change')
+
+#### akcje myszy 🐁 
+
+Kliknięcie myszy na środek elementu ({which: 1})
+
+        cy.get('#draggable').trigger('mousedown', {which: 1});
+
+Kliknięcie mysz w określonym miejscu elementu przez podanie współrzędnych
+
+        cy.get('#draggable').trigger('mousemove', {clientX: 100, clientY: 100});
+
+Przenieś mysz (1) a następnie upuść (2) na element
+
+        cy.get('#droppable').trigger('mousemove').trigger('mouseup', {force:true})
+
+        cy.get('#droppable').dblclick()
+
+
+Sprawdzenie czy kliknięty element posiada konkretny css
+
+        cy.get('#click-box').trigger('mousedown', {which: 1}).then(($element) => {
+            expect($element).to.have.css('background-color', 'rgb(0, 255, 0)')
+        })
+
+
