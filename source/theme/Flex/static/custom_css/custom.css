@@ -35,7 +35,25 @@ main {
 
 .d--none {
   display: none;
+  animation: fade_out 0.5s;
 }
+
+aside {
+  animation: fade_in_show 0.5s;
+}
+
+@keyframes fade_in_show {
+  0% {
+       opacity: 0;
+       left: -120px;
+  }
+
+  100% {
+       opacity: 1;
+  }
+}
+
+
 
 .container {
   max-width: 1100px;
@@ -54,6 +72,7 @@ a:hover {
   background-color: var(--a-blue);
   box-shadow: none;
 }
+
 
 h3 {
   font-size: 1.6em;
@@ -208,12 +227,17 @@ aside div > a:hover {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 25px;
   padding: 5px;
+  transition-duration: 0.5s;
 }
+
 
 .aside--open > i {
   margin-left: 5px;
 }
 
+.aside--open:hover {
+  padding: 7px 12px;
+}
 
 
 #tipue_search_input {
