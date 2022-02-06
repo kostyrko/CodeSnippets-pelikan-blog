@@ -238,7 +238,7 @@
       </footer>
     </div>
   </main>
-
+  <!-- <script src="app.js"></script> -->
   {% if GUAGES %}
     {% include "partial/guages.html" %}
   {% endif %}
@@ -253,7 +253,9 @@
 
   {% include "partial/jsonld.html" %}
 
-  {% block additional_js %}{% endblock %}
+  {% block additional_js %}
+    <script src="app.js"></script>
+  {% endblock %}
 
   {% if GITHUB_CORNER_URL %}
   {% include 'partial/github.html' %}
@@ -266,6 +268,5 @@
     });
   </script>
   {% endif %}
-  <script src="app.js"></script>
 </body>
 </html>
