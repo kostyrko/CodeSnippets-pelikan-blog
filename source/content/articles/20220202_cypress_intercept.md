@@ -2,17 +2,26 @@ Title: Cypress: cy.intercept() - przechwytywanie zapytań HTTP
 Author: mkostyrko
 Date: 2022-02-02 10:00
 Updated:
-Category: angular
-Tags: unfinished, angular, cypress, testy
+Category: qa
+Tags: cypress, testy, intercept
 Slug: cypress-intercept
-related_posts:
+related_posts: cypress-commands, automatyzacja-testow-js, api-testing
 
 
-![cypress](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.somkiat.cc%2Fcypress-access-element%2F&psig=AOvVaw2bv1cAfoF7EKJUw4EaZZL3&ust=1643823831383000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNjKj5KH3_UCFQAAAAAdAAAAABAJ)
+![cypress](https://i.ytimg.com/vi/gGDI3ee81d8/maxresdefault.jpg)
 
-### cy.intercept()
+### Wprowadzenie stubbing vs mocking
 
-**Stubbing** - podstawianie danych pod zapytania
+Oba pojęcia odnoszą się do podstawiania danych w celu przeprowadzenia testów - **mockowanie** odnosi się jednak do podstawiania danych w celu **testowania funkcjonalności**, podczas gdy **stubowanie** w celu **zmiany stanu** komponentu/strony/aplikacji.
+
+
+**Mocks** vs **Stubs** = Testowanie funkcjonalne vs testowanie stanu => oznacza to że może w teście być wiele stubbów ale tylko jeden mock (w ramach zasady: testowania jednej funkcjonalności na test).
+
+
+!!! -> więcej na ten temat patrz: [SO - What's the difference between a mock & stub?](https://stackoverflow.com/questions/3459287/whats-the-difference-between-a-mock-stub)
+
+### 1. cy.intercept()
+
 
 `cy.request() `- pozwala na przechwycenie zapytania typu HTTP przez test cypressowy - taka komenda może przydać się w przypadku gdy 1) chcemy aby dane zapytanie doszło do skutku zanim zaczniemy wykonywać kolejną komendę lub 2) gdy zależy nam na przechwyceniu requestu HTTP i podstawienia danych do niego, w celu testowania zachowania się aplikacji front-endowej.
 
@@ -22,7 +31,8 @@ related_posts:
         cy.intercept('GET', '/xxx/xxx_data?page=1', { fixture: 'xxx/xxx_data.json' })
     })
         
- ### cy.intercept() + cy.wait()
+---
+### 2. cy.intercept() + cy.wait()
  
 Nasłuchiwanie zapytania typu GET na `*/comments/*`
 
@@ -36,19 +46,23 @@ Logowanie obiektu (DTO) w konsoli
 
     cy.get('@post').then(console.log)
 
+---
+### 3. cy.intercept() + cy.wait() + cy.command()
 
-### cy.intercept() + cy.wait() + cy.commnad()
+Cypress custom command zawierający interceptowane zapytania + wykorzystanie fixture do mockowania stanu + aliasowanie do nich
 
     Cypress.Commands.add('waitForApp2Start', dto => {
       cy.intercept('GET', '/xyz', { fixture: 'xdata' }).as('xdata')
       cy.intercept('GET', '/search_data?*', { fixture: 'searchData' }).as('searchData')
     })
 
+Wywołanie funkcji interceptów/przed faktycznym cy.visit() - inicjacja zmiany stanu aplikacji + w następnym kroku czekanie na wykonanie się zapytań
 
     cy.waitForApp2Start()
     cy.visit('').wait('@xdata').wait('@searchData')
 
-### przechwytywanie wielu zapytań / stubbowanie wielu zapytań
+---
+### Przechwytywanie wielu zapytań / mockowanie wielu zapytań
 
 `cy.clock() `- pozwala na "zamrożenie" zegara oraz wszystkich funkcji związanych z mierzeniem czasu jak setInterval czy setTimeout
 
@@ -67,7 +81,7 @@ Logowanie obiektu (DTO) w konsoli
       [...]
 
 
-Stubbing zapytania HTTP
+Mockowanie zapytania HTTP
 
       it('returns different fruits every 30 seconds', () => {
         cy.clock()
@@ -118,10 +132,24 @@ Po pierwszych dwóch razach, responses.shift() zawsze zwraca **undefined** i wte
       cy.contains('kiwi 🥝')
     })
     
-   
+
+----
+### Testowanie API przy pomocy Cypressa
+
+Generalnie Cypress nie powstał w celu testowania API - do tego zostały stworzone inne biblioteki oraz narzędzia (patrz linki w sekcji: Powiązane artykuły) nie oznacza to jednak, że nie może być z powodzeniem do tego wykorzystywany. Powstała nawet do tego osobna wtyczka [cy-api](https://github.com/bahmutov/cy-api).
+
+Tutaj znajdziesz linki do materiałów na YT(ang), które przedstawiają w jaki sposób można testować API w Cypressie (i jest to naturalne rozwinięcie materiału opisanego powyżej)
+
+[Cypress - API Testing | Part 14](https://www.youtube.com/watch?v=TocjjF_pARo)
+
+[Cy-api/Cypress API testing Tricks](https://www.youtube.com/watch?v=OICPSvIWAQg)
+
+[CYPRESS API TESTING Introduction - CYPRESS REQUEST](https://www.youtube.com/watch?v=bcO2E6XFJCY&list=PLYDwWPRvXB8-8LG2hZv25HO6C3w_vezZb&index=15)
 
 
-Źródło:
+----
+
+Źródła:
 
 [intercept - cypress.io](https://docs.cypress.io/api/commands/intercept)
 
@@ -130,4 +158,5 @@ Po pierwszych dwóch razach, responses.shift() zawsze zwraca **undefined** i wte
 [Asserting Network Calls from Cypress Tests](https://www.cypress.io/blog/2019/12/23/asserting-network-calls-from-cypress-tests/)
 
 [Testing periodic network requests with cy.intercept and cy.clock combination](https://www.cypress.io/blog/2021/02/23/cy-intercept-and-cy-clock/)
+
 

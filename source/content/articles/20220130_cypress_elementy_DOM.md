@@ -2,12 +2,12 @@ Title: Cypress: przechodzenie pomiędzy elementami drzewa DOM
 Author: mkostyrko
 Date: 2022-01-30 12:00
 Updated:
-Category: testing
+Category: qa
 Tags: testing, cypress
 Slug: cypress-dom
-related_posts: cypress-intro
+related_posts: cypress-intro, cypress-intro-2
 
-
+![dom-html](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/DOM-model.svg/1200px-DOM-model.svg.png)
 ## Cypress i trawersowanie pomiędzy elementami drzewa DOM
 
 `children()` - wydobywa dzieci wybranego elementu drzewa DOM / pozwala na przekazanie selektora w celu wybrania konkretnego dziecka np.

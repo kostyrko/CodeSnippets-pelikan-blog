@@ -2,10 +2,11 @@ Title: Cypress - Fixtures
 Author: mkostyrko
 Date: 2022-02-01 13:00
 Updated:
-Category: testing
+Category: qa
 Tags: cypress, fixtures, alias, this
 Slug: cypress-fixtures
-related_posts:
+related_posts: automatyzacja-testow-js, cypress-intercept, cypress-commands
+
 
 
 ![cypress](https://www.cypress.io/static/cypress-io-logo-social-share-8fb8a1db3cdc0b289fad927694ecb415.png)
@@ -39,7 +40,7 @@ Wygląd przykładowego pliku fixture/ JSON:
 
 ### 1. sposób odwołani się do fixture - korzystając z this
 
-/// <reference types="cypress" />
+        /// <reference types="cypress" />
 
         describe("Test Contact Us form", () => {
             before(function() {
@@ -78,16 +79,16 @@ Wygląd przykładowego pliku fixture/ JSON:
 ### 3. odwołanie się do fixture w cy.intercept()
 
 
-    cy.intercept('GET', '/users/**', { fixture: 'users' })
+        cy.intercept('GET', '/users/**', { fixture: 'users' })
 
 
-    Cypress.Commands.add('interceptXYZPage', () => {
-    cy.intercept('PUT', '/xyz/track_event', trackEvent)
-    cy.intercept('POST', '/profile/record_viewing_history', { fixture: 'xyz/recordViewingHistory' })
-    cy.intercept('GET', 'purchases/status', { fixture: 'xyz/purchasesStatus' })
-    })
+        Cypress.Commands.add('interceptXYZPage', () => {
+            cy.intercept('PUT', '/xyz/track_event', trackEvent)
+            cy.intercept('POST', '/profile/record_viewing_history', { fixture: 'xyz/recordViewingHistory' })
+            cy.intercept('GET', 'purchases/status', { fixture: 'xyz/purchasesStatus' })
+        })
 
-
+---
 ### Czy fixtures są nam niezbędne?
 
 Fixtury przechowują dane statyczne i to często nie jest korzystne ponieważ zawęża znacząco zakres testu - test w ten sposób jest zawsze wspierany tymi samymi danymi. Często korzystniejsze jest podstawianie danych, które z testu na test są zmienne - tym samym dodatkowo poszerzając zakres naszego testu - w tym celu można wykorzystać biblioteki generujące dane np. FakkerJS.
@@ -95,8 +96,8 @@ Fixtury przechowują dane statyczne i to często nie jest korzystne ponieważ za
 
 Aby uniknąć tworzenia wielu plików z fixturami można też łączyć ze sobą obiekty lub podmieniać ich części np. wykorzystując bibliotekę [deepmerge](https://www.npmjs.com/package/deepmerge)
 
-
-źródła
+----
+Źródła
 
 [How to update a fixture file in Cypress](https://stackoverflow.com/questions/65012366/how-to-update-a-fixture-file-in-cypress)
 

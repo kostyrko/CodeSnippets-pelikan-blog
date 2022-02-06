@@ -2,12 +2,12 @@ Title: Cypress: wprowadzenie cz. 2
 Author: mkostyrko
 Date: 2022-01-16 12:00
 Updated:
-Category: testing
+Category: qa
 Tags: testing, cypress, wprowadzenie, then, promise, chaining, variables, zmienne
 Slug: cypress-intro-2
 related_posts: cypress-intro
 
-
+![cypress](https://www.cypress.io/static/cypress-io-logo-social-share-8fb8a1db3cdc0b289fad927694ecb415.png)
 ## Cypress i tworzenie ciągów
 
 Cypress oparty jest o tworzenie ciągów (łączeniu ze sobą funkcji w celu stworzenia testu). Cypress sam zajmuje się Promisami.
@@ -39,13 +39,13 @@ Przykładowe funkcje, które pozwalają na interakcję z testowaną stroną -
 
 `.uncheck()` - Odznacza checkbox(es).
 
-`.select()` - Select an <option> within a <select>.
+`.select()` - Select an `<option>` within a `<select>`.
 
 `.dblclick()` - podwójny-click na wybrany element DOM.
 
 .`rightclick()` - prawy-klik na wybrany element DOM.
 
-
+---
 ### Cypress i jego Asynchroniczność
 
 Cypressowe komendy są asynchroniczne  (JS jest jednowątkowy, a Cypress jest na Node.js) - jakikolwiek krok jest możliwy do egzekucji to zostanie wykonany/ może wykonywać więcej niż jeden wątek na raz - cypressowe funkcje nie są wykonywane w trakcie wywołania a są kolejkowane w celu ich wykonania. Można mieć wpływ na kolejność wykonywania się testów poprzez użycie `then`.
@@ -95,16 +95,17 @@ W kontekście stosowania zmiennych należy mieć na uwadze asynchroniczność or
 
  faktycznie w przypadku cypressa aliasy zastępują zmienne - patrz przykłady zastosowania `alias` i `iframe `          
 
+---
 ### Iteracje .each()
 
 `.each(callBackFn) `- iteruje po wszystkich elementach znajdujących się w tablicy wykonując na nich przypisaną funkcję / podobnie jak JS forEeach().
 
-
+---
 ### Wrap() 🎁
  
 `.wrap()` - zwraca obiekt, który pozwala na wykonanie cypressowej komendy -> opakowuje wybraną zmienną, po którą jest zapisane odniesienie do elementu DOM tak aby zastosować cypressową komendy -> pozwala na rozróżnienie cy.click() od js.click()
 
-
+---
 ### invoke
 
 invoke() - pozwala na wywołanie właściwości danego elementu DOM.
@@ -112,7 +113,7 @@ invoke() - pozwala na wywołanie właściwości danego elementu DOM.
         cy.get('button').invoke('text').then((text) => {
             expect(text).to.equal('xyz')
         })
-
+---
 ### Alias
 
 `.as()` - jest swego rodzaju cypressową zmienną - pozwala na odwołanie się do przechowywanej wartości w innej części kodu.
@@ -124,7 +125,7 @@ Odwołanie się do aliasy zależne jest od kontekstu i wymaga wskazania poprzez 
 
         cy.get('@buttonText')
 
-
+---
 ## Przeglądarka 
 ### Wiele tabów w przeglądarce
 
@@ -208,6 +209,7 @@ wywołanie wydarzenia na elementach drzewa DOM - np. w celu wywołania zdarzeń 
         $el.trigger('blur')
         $el.trigger('change')
 
+---
 #### akcje myszy 🐁 
 
 Kliknięcie myszy na środek elementu ({which: 1})
@@ -231,4 +233,19 @@ Sprawdzenie czy kliknięty element posiada konkretny css
             expect($element).to.have.css('background-color', 'rgb(0, 255, 0)')
         })
 
+---
+### cypress real events
 
+Podstawowe eventy cypressa są symulowane - wszystkie eventy pochodzą z JS, ich zachowanie może się trochę różnić od prawdziwych zachowań, a część zachowań nie może być w ogóle symulowana np. wpisywanie informacji do alertów lub kopiowanie - wtyczka [cypress-real-events](https://github.com/dmtrKovalenko/cypress-real-events) ma za zadanie odpowiedzieć na te problemy.
+
+Więcej na temat zastosowanie tej wtyczki przeczytasz tutaj [Cypress Real Events Plugin](https://glebbahmutov.com/blog/cypress-real-events/)
+
+
+---
+Źródła:
+
+[Cypress Real Events - github.io](https://github.com/dmtrKovalenko/cypress-real-events)
+
+[Cypress Real Events Plugin](https://glebbahmutov.com/blog/cypress-real-events/)
+
+[cypress.io](https://docs.cypress.io)

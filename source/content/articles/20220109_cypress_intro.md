@@ -2,13 +2,15 @@ Title: Cypress wprowadzenie
 Author: mkostyrko
 Date: 2022-01-09 12:00
 Updated:
-Category: testing
-Tags: testing, cypress, wprowadzenie, asercje, js
+Category: qa
+Tags: testing, cypress, wprowadzenie, asercje, js, qa
 Slug: cypress-intro
 related_posts: cypress-intro-2
 
+![cypress](https://www.cypress.io/static/cypress-io-logo-social-share-8fb8a1db3cdc0b289fad927694ecb415.png)
 ## Cypress wprowadzenie
 
+Cypress jest oparty o bibl. Mocha (struktura test) oraz Chai (asercje, funkcje, wywołania).
 #### Mocha 🥤 
 
 `describe` - opis testu / grupowanie serii tekstu / przyjmuje 2 argumenty - nazwę testu i funkcję (call back function)
@@ -167,7 +169,7 @@ Sprawdza zbiera aktualny URL strony i przechowuje go jako łańcuch znaków/stri
 
         cy.url().should("include", "http://example.com")
 
-
+---
 ### Strony/projekty do testowania 
 
 [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app)
@@ -176,9 +178,12 @@ Sprawdza zbiera aktualny URL strony i przechowuje go jako łańcuch znaków/stri
 [juice-shop](https://github.com/juice-shop/juice-shop)
 
 
-[ypress-applitools-webinar](https://github.com/applitools/cypress-applitools-webinar)
+[http://the-internet.herokuapp.com/](http://the-internet.herokuapp.com/)
 
 
+[cypress-applitools-webinar](https://github.com/applitools/cypress-applitools-webinar)
+
+---
 ### cypress example recipes
 
 [cypress example recipes 🚀 ](https://github.com/cypress-io/cypress-example-recipes#logging-in-recipes)

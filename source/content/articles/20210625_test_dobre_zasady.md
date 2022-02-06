@@ -2,8 +2,8 @@ Title: Dobre zasady testowania
 Author: mkostyrko
 Date: 2021-06-25 10:00
 Updated:
-Category: testing
-Tags: cypress, testing, good practices
+Category: qa
+Tags: cypress, testing, good practices, tests, qa
 Slug: testing-good-practices
 related_posts:
 
