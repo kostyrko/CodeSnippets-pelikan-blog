@@ -181,7 +181,11 @@ Sprawdza zbiera aktualny URL strony i przechowuje go jako łańcuch znaków/stri
 [http://the-internet.herokuapp.com/](http://the-internet.herokuapp.com/)
 
 
+[saoucedemo by swaglabs](https://www.saucedemo.com/)
+
 [cypress-applitools-webinar](https://github.com/applitools/cypress-applitools-webinar)
+
+[conduit](https://cirosantilli-realworld-next.herokuapp.com/)
 
 ---
 ### cypress example recipes

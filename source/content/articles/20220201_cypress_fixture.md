@@ -102,3 +102,5 @@ Aby uniknąć tworzenia wielu plików z fixturami można też łączyć ze sobą
 [How to update a fixture file in Cypress](https://stackoverflow.com/questions/65012366/how-to-update-a-fixture-file-in-cypress)
 
 [Don't use fixtures in Cypress and unit tests - use factories](https://dev.to/dgreene1/don-t-use-fixtures-in-cypress-and-unit-tests-use-factories-5cnh)
+
+[ITERATE over JSON OBJECT using CYPRESS IO | Cypress Fixture JSON Array](https://www.youtube.com/watch?v=rEJFrj2mZdc)
