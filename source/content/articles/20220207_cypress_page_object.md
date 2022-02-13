@@ -7,6 +7,7 @@ Tags: cypress, page object model, page object
 Slug: cypress-page-objects
 related_posts: testing-good-practices
 
+![cypress](https://www.cypress.io/static/cypress-io-logo-social-share-8fb8a1db3cdc0b289fad927694ecb415.png)
 ### Page objects
 
 **Page object pattern** - główne założenia: wprowadzenie modułowości w testach -> skupienie logiki testu w jednym miejscu a w innym stworzenie samego testu.
@@ -23,6 +24,8 @@ Podsumowując
 Page objecty przechowujemy w dedykowanym folderze (np. pageObjects) znajdującym się po za folderem 'integrations' jak reszta plików z kodem testowym.
 
 #### 1. Page object oparty na klasie
+
+Przyjęte jest, że Page Objecty tworzone są na podstawie klasy / w przypadku Cypressa nie jest to jedank konieczne (o czym mowa poniżej).
 
 
         export class CreditsPgObj {
@@ -48,14 +51,16 @@ Page objecty przechowujemy w dedykowanym folderze (np. pageObjects) znajdującym
         }
 
 
-Wykorzystanie
+**Zastosowanie**
 
         /// <reference types="cypress" />
         import { viewports } from '../../support/main'
+        // zaimportowanie klasy obiektu
         import { CreditsPage } from '../../support/credits'
 
         viewports.forEach(viewport => {
         describe(`Bonus credits management - (${viewport})`, () => {
+            // stworzenie nowej instancji klasy page obiektu
             const creditsPage = new CreditsPgObj()
             beforeEach(() => {
                 cy.viewport(viewport)
@@ -75,17 +80,19 @@ Wykorzystanie
 
 #### 2. Page object oparty na obiekcie
 
+W przypadku Cypressa, nie ma potrzeby tworzenia Page Objectów jako klas, a także tworzenia ich instancji ponieważ te nie wymagaj  prototypów innych klas i same nimi być nie muszą - zamiast tego Page Objecty mogą składać się nawet z pojedynczych funkcji lub dla porządku mogą one być zebrane w ramach obiektu.
+
         export const menuPage = {
-        menuOpen: () => {
-            cy.get(menuSelectors.openMenuBtn).click();
-        },
-        menuClose: () => {
-            cy.get(menuSelectors.closMenuBtn).click().should('not.be.visible');
-        },
-        logOut: () => {
-            cy.get(menuSelectors.menuItems.logout).click();
-            cy.url().should('include', '/login');
-        },
+            menuOpen: () => {
+                cy.get(menuSelectors.openMenuBtn).click();
+            },
+            menuClose: () => {
+                cy.get(menuSelectors.closMenuBtn).click().should('not.be.visible');
+            },
+            logOut: () => {
+                    cy.get(menuSelectors.menuItems.logout).click();
+                    cy.url().should('include', '/login');
+                },
         };
 
 #### 3. Sposób na podział logiki w Page Objecty Model (POM)
@@ -96,19 +103,54 @@ Scenariusz testowy w kontekście testowania aplikacji blogowej może przedstawia
 
 **Często spotykane podejście (podejście liniowe)** => 1. Zebranie selektorów w obiekcie (w którym przechowywany jest PageObject), 2. wykorzystanie PageObjectu min. do cy.get() + funkcjonalność 3. wykorzystanie w tekście getterów z PageObjectu do tworzenia asercji.
 
-const SELECTORS = {
-    ACCEPT_BUTTON: "#accept-cookies",
-    REJECT_BUTTON: "#reject-cookies",
-    LOCALSTORAGE_DISABLED_WARNING: "#localstorage-disabled-warning",
-  };
+        const SELECTORS = {
+            ACCEPT_BUTTON: "#accept-cookies",
+            REJECT_BUTTON: "#reject-cookies",
+            LOCALSTORAGE_DISABLED_WARNING: "#localstorage-disabled-warning",
+        };
 
 **Alternatywne podejście: rozbicie logiki na 3 klasy/obiekty/części (podejście funkcjonalne)** => 1. przechowuje gettery = cy.get() + selektory 2. akcje/funkcjonalność (wykorzystuje logikę 1.) 3. test (tu wykorzystywana jest logika z 1. 2.)
 
         const getSubmitSearchButton = () => cy.get('[cypress-id]=submit-search');
 
+Powyżej przedstawiony jest przypadek pojedynczej funkcji, ale te (jak zauważyłem powyżej mogą być również zebrane w obiektach)
+
 wykorzystując [cypress-selectors](https://anton-kravchenko.github.io/cypress-selectors/) zapis może wyglądać następująco:
 
         @ByType('input') static searchInput: Selector;
+
+
+Przykładowe zastosowanie
+
+        it('change language between different languages', () => {
+            Object.keys(i18nextLngs).forEach((language) => {
+                cy.wrap(footerPage.changeLanguage(language)).then(() =>
+                    expect(localStorage.getItem('i18nextLng')).to.eq(i18nextLngs[language])
+                );
+            });
+        });
+
+
+gdzie footerPage.js (w tym przypadku selektory przetrzymywane są w osobnym pliku oraz obiekcie 'footerSelectors' choć nie w postaci getterów a jedynie selektorów - zatem realizowane jest podejście liniowe):
+
+
+        import { footerSelectors } from '../support/selectors/footerSelectors';
+
+        const i18nextLngs = {
+            en: 'en',
+            pl: 'pl',
+        };
+
+        export const footerPage = {
+            changeLanguage: (language) => {
+                cy.get(footerSelectors.languageBtn).click({ waitForAnimations: false });
+                cy.get(footerSelectors.languageOption)
+                .contains(language[0].toUpperCase() + language.substring(1))
+                .click({ waitForAnimations: false });
+            },
+        };
+
+
 
 ----
 
